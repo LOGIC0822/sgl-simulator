@@ -1,0 +1,18 @@
+{
+  "cwd": "/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator",
+  "argv": [
+    "env",
+    "PYTHONNOUSERSITE=1",
+    "CUDA_VISIBLE_DEVICES=",
+    "OMP_NUM_THREADS=1",
+    "nice",
+    "-n",
+    "10",
+    "/home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python",
+    "-c",
+    "import hashlib,json,math\nfrom pathlib import Path\nroot=Path(\"test-results/pr33824_expanded_all13_predictors_20260928_1933/models/llama-2-7b\")\ndef load(path):\n    return [json.loads(line) for line in path.read_text().splitlines() if line.strip()]\ndef digest(item):\n    return hashlib.sha256(json.dumps(item[\"input_ids\"],separators=(\",\",\":\")).encode()).hexdigest()\ntraining=[item for path in (root/\"calibration/real\").glob(\"repeat-*/cases/*/TP0.raw_request.jsonl\") for item in load(path)]\nassert len(training)==800\ntrain_ids={item[\"rid\"] for item in training}; train_prompts={digest(item) for item in training}\nprevious_ids={item[\"rid\"] for repeat in (1,2) for path in (root/f\"holdout/real/repeat-{repeat}/cases\").glob(\"*/TP0.raw_request.jsonl\") for item in load(path)}\nassert len(previous_ids)==512\ngroup=root/\"holdout/real/repeat-3\"\nassert (group/\"BASELINE_COLLECTION_COMPLETE\").read_text().strip()==\"complete\"\nassert (group/\"package_versions.txt\").read_bytes()==(root/\"calibration/real/repeat-1/package_versions.txt\").read_bytes()\nmeta=dict(line.split(\"=\",1) for line in (group/\"run_metadata.txt\").read_text().splitlines() if \"=\" in line)\nassert int(meta[\"seed\"])==202609382\ncases={}; new_ids=set(); prompt_overlap=0\nfor path in sorted((group/\"cases\").glob(\"*/TP0.raw_request.jsonl\")):\n    case=path.parent\n    assert (case/\"status.txt\").read_text().strip()==\"ok\"\n    manifest=json.loads((case/\"TP0.manifest.json\").read_text())\n    raw=load(path); trace=load(case/\"autobench_trace.jsonl\"); batches=load(case/\"TP0.schedule_batch.jsonl\")\n    benchmark=load(case/\"benchmark.jsonl\")[-1]\n    assert len(raw)==manifest[\"request_count\"]==len(trace)==benchmark[\"completed\"]\n    assert len(batches)==manifest[\"schedule_batch_count\"]\n    assert all(math.isfinite(item[\"iter_latency\"]) and 0<item[\"iter_latency\"]<=30 for item in batches)\n    copies={item[\"metadata\"][\"source_rid\"]:item for item in trace}\n    assert len(copies)==len(raw)\n    for item in raw:\n        assert item[\"rid\"] not in train_ids|previous_ids|new_ids\n        copied=copies[item[\"rid\"]]\n        assert len(item[\"input_ids\"])==item[\"input_length\"]==copied[\"prompt_len\"]\n        assert item[\"input_ids\"]==copied[\"prompt\"] and item[\"output_length\"]==copied[\"output_len\"]\n        prompt_overlap+=int(digest(item) in train_prompts)\n        new_ids.add(item[\"rid\"])\n    cases[case.name]={\"requests\":len(raw),\"timing_rows\":len(batches)}\nassert len(cases)==5 and len(new_ids)==256 and prompt_overlap==0\nprint(json.dumps({\"repeat\":3,\"seed\":202609382,\"cases\":cases,\"requests\":len(new_ids),\"timing_rows\":sum(item[\"timing_rows\"] for item in cases.values()),\"training_prompt_overlap\":prompt_overlap,\"reused_request_ids\":0,\"actual_replay_payloads_verified\":len(new_ids),\"cumulative_independent_requests\":len(previous_ids|new_ids)},sort_keys=True))\nprint(\"PASS: completed group 3 integrity; no model fitting/scoring or extra GPU workload.\")\n"
+  ],
+  "stdout_stderr": "test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/llama7b_third_holdout_group_integrity_20260929.log",
+  "observed_exit_code": 0,
+  "scope": "Read-only completed group 3 JSON integrity check; no fitting, scoring, GPU server or active-script changes."
+}

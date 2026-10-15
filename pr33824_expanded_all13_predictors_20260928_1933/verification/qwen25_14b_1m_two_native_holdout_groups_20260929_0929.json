@@ -1,0 +1,137 @@
+{
+  "started_at": "2026-09-29T09:29:51.082385+08:00",
+  "finished_at": "2026-09-29T09:29:51.739313+08:00",
+  "exit_code": 0,
+  "model": "Qwen2.5-14B-Instruct-1M",
+  "groups": [
+    {
+      "group": 1,
+      "seed": 202609380,
+      "completed_at": "2026-09-29T09:07:45+08:00",
+      "cases": [
+        {
+          "case": "latency_256x128_r1",
+          "requests": 32,
+          "timing_rows": 171,
+          "prefill_rows": 24,
+          "decode_rows": 147
+        },
+        {
+          "case": "service_1024x256_r4",
+          "requests": 64,
+          "timing_rows": 489,
+          "prefill_rows": 97,
+          "decode_rows": 392
+        },
+        {
+          "case": "saturation_1024x256_inf",
+          "requests": 64,
+          "timing_rows": 489,
+          "prefill_rows": 97,
+          "decode_rows": 392
+        },
+        {
+          "case": "latency_128x64_r1",
+          "requests": 32,
+          "timing_rows": 113,
+          "prefill_rows": 23,
+          "decode_rows": 90
+        },
+        {
+          "case": "saturation_1536x384_inf",
+          "requests": 64,
+          "timing_rows": 756,
+          "prefill_rows": 126,
+          "decode_rows": 630
+        }
+      ],
+      "totals": {
+        "requests": 256,
+        "timing_rows": 2018,
+        "prefill_rows": 367,
+        "decode_rows": 1651
+      },
+      "unique_complete_prompts": 178
+    },
+    {
+      "group": 2,
+      "seed": 202609381,
+      "completed_at": "2026-09-29T09:27:28+08:00",
+      "cases": [
+        {
+          "case": "latency_256x128_r1",
+          "requests": 32,
+          "timing_rows": 153,
+          "prefill_rows": 20,
+          "decode_rows": 133
+        },
+        {
+          "case": "service_1024x256_r4",
+          "requests": 64,
+          "timing_rows": 454,
+          "prefill_rows": 88,
+          "decode_rows": 366
+        },
+        {
+          "case": "saturation_1024x256_inf",
+          "requests": 64,
+          "timing_rows": 454,
+          "prefill_rows": 88,
+          "decode_rows": 366
+        },
+        {
+          "case": "latency_128x64_r1",
+          "requests": 32,
+          "timing_rows": 102,
+          "prefill_rows": 20,
+          "decode_rows": 82
+        },
+        {
+          "case": "saturation_1536x384_inf",
+          "requests": 64,
+          "timing_rows": 680,
+          "prefill_rows": 130,
+          "decode_rows": 550
+        }
+      ],
+      "totals": {
+        "requests": 256,
+        "timing_rows": 1843,
+        "prefill_rows": 346,
+        "decode_rows": 1497
+      },
+      "unique_complete_prompts": 177
+    }
+  ],
+  "totals": {
+    "requests": 512,
+    "timing_rows": 3861,
+    "prefill_rows": 713,
+    "decode_rows": 3148
+  },
+  "training_requests_compared": 800,
+  "test_unique_complete_prompts": 355,
+  "cross_role_request_ids": 0,
+  "cross_role_complete_prompt_hashes": 0,
+  "p50_bundle_sha256": "3e05a39f06627711016bdb2094f5fc9747197738d6ab638670c9a868194b31e1",
+  "source_files_verified_unchanged": 126,
+  "per_file_hash_manifest_exported": false,
+  "checks": [
+    "Two whole-group completion markers and ten ok statuses",
+    "Correct seeds 202609380/381 and native dual-chunk/page256 configuration",
+    "Versions byte-match completed calibration",
+    "Benchmark/raw/native-request/replay/manifest counts agree",
+    "Exact native input IDs/output lengths preserved",
+    "Finite positive synchronized seconds and native phase labels",
+    "Schedule request IDs belong to corresponding case",
+    "Frozen bundle matches executed calibration audit",
+    "Before/after source hashes agree"
+  ],
+  "environment": {
+    "PYTHONNOUSERSITE": "1",
+    "CUDA_VISIBLE_DEVICES": "",
+    "OMP_NUM_THREADS": "1",
+    "nice": 15
+  },
+  "scope": "First two closed independent native groups only. No fit/predict/scoring/AIC/GPU/profile/replay. Three later native groups and original all-test score gates remain required; no shared-partial-prefix or all1280 identity claim."
+}

@@ -1,0 +1,4306 @@
+{
+  "native_marker": "sglang_native_run_batch/mode1/index2",
+  "native_cpu_range_us": 34071.154296875,
+  "instrumented_iteration_us": 43674.91090670228,
+  "native_gpu_event_count": 419,
+  "native_gpu_duration_sum_us": 40246.9716796875,
+  "native_gpu_interval_union_us": 40246.9716796875,
+  "unattributed_gpu_event_count": 0,
+  "unattributed_gpu_duration_sum_us": 0,
+  "gpu_attribution_duration_pct": 100.0,
+  "iteration_wall_minus_attributed_gpu_union_us": 3427.93922701478,
+  "families": {
+    "gpu_memcpy": {
+      "event_count": 4,
+      "duration_sum_us": 4.9619140625
+    },
+    "other_kernel": {
+      "event_count": 217,
+      "duration_sum_us": 1996.982421875
+    },
+    "gemm_gemv": {
+      "event_count": 113,
+      "duration_sum_us": 31290.0498046875
+    },
+    "triton_prefill_attention": {
+      "event_count": 28,
+      "duration_sum_us": 6872.998046875
+    },
+    "gpu_memset": {
+      "event_count": 57,
+      "duration_sum_us": 81.9794921875
+    }
+  },
+  "gpu_events": [
+    {
+      "name": "Memcpy HtoD (Pinned -> Device)",
+      "category": "gpu_memcpy",
+      "start_us": 7760314015862.731,
+      "end_us": 7760314015864.045,
+      "duration_us": 1.3134765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 15
+    },
+    {
+      "name": "Memcpy HtoD (Pinned -> Device)",
+      "category": "gpu_memcpy",
+      "start_us": 7760314016099.086,
+      "end_us": 7760314016100.142,
+      "duration_us": 1.0556640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 36
+    },
+    {
+      "name": "Memcpy HtoD (Pinned -> Device)",
+      "category": "gpu_memcpy",
+      "start_us": 7760314016164.462,
+      "end_us": 7760314016165.551,
+      "duration_us": 1.0888671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 56
+    },
+    {
+      "name": "compute_position_kernel",
+      "category": "kernel",
+      "start_us": 7760314016292.624,
+      "end_us": 7760314016294.8,
+      "duration_us": 2.17578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 85
+    },
+    {
+      "name": "void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::UnaryOpFunctor<long, 2, 1, 1>, at::native::Copy<long, long> >(at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::UnaryOpFunctor<long, 2, 1, 1>, at::native::Copy<long, long>)",
+      "category": "kernel",
+      "start_us": 7760314016630.867,
+      "end_us": 7760314016634.644,
+      "duration_us": 3.7763671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 103
+    },
+    {
+      "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+      "category": "kernel",
+      "start_us": 7760314016924.086,
+      "end_us": 7760314016926.23,
+      "duration_us": 2.14453125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 146
+    },
+    {
+      "name": "void at_cuda_detail::cub::DeviceScanInitKernel<at_cuda_detail::cub::ScanTileState<long, true> >(at_cuda_detail::cub::ScanTileState<long, true>, int)",
+      "category": "kernel",
+      "start_us": 7760314016950.199,
+      "end_us": 7760314016951.607,
+      "duration_us": 1.408203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 172
+    },
+    {
+      "name": "void at_cuda_detail::cub::DeviceScanKernel<at_cuda_detail::cub::DeviceScanPolicy<long, std::plus<long> >::Policy900, long const*, long*, at_cuda_detail::cub::ScanTileState<long, true>, std::plus<long>, at_cuda_detail::cub::NullType, int, long>(long const*, long*, at_cuda_detail::cub::ScanTileState<long, true>, int, std::plus<long>, at_cuda_detail::cub::NullType, int)",
+      "category": "kernel",
+      "start_us": 7760314016964.855,
+      "end_us": 7760314016967.319,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 182
+    },
+    {
+      "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#3}::operator()() const::{lambda(int)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#3}::operator()() const::{lambda(int)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+      "category": "kernel",
+      "start_us": 7760314016999.575,
+      "end_us": 7760314017001.591,
+      "duration_us": 2.015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 194
+    },
+    {
+      "name": "create_flashinfer_kv_indices_triton",
+      "category": "kernel",
+      "start_us": 7760314017114.264,
+      "end_us": 7760314017117.016,
+      "duration_us": 2.751953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 217
+    },
+    {
+      "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+      "category": "kernel",
+      "start_us": 7760314017163.577,
+      "end_us": 7760314017165.497,
+      "duration_us": 1.919921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 232
+    },
+    {
+      "name": "void at_cuda_detail::cub::DeviceScanInitKernel<at_cuda_detail::cub::ScanTileState<long, true> >(at_cuda_detail::cub::ScanTileState<long, true>, int)",
+      "category": "kernel",
+      "start_us": 7760314017181.721,
+      "end_us": 7760314017183.097,
+      "duration_us": 1.3759765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 258
+    },
+    {
+      "name": "void at_cuda_detail::cub::DeviceScanKernel<at_cuda_detail::cub::DeviceScanPolicy<long, std::plus<long> >::Policy900, long const*, long*, at_cuda_detail::cub::ScanTileState<long, true>, std::plus<long>, at_cuda_detail::cub::NullType, int, long>(long const*, long*, at_cuda_detail::cub::ScanTileState<long, true>, int, std::plus<long>, at_cuda_detail::cub::NullType, int)",
+      "category": "kernel",
+      "start_us": 7760314017190.809,
+      "end_us": 7760314017192.856,
+      "duration_us": 2.0478515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 268
+    },
+    {
+      "name": "Memcpy DtoD (Device -> Device)",
+      "category": "gpu_memcpy",
+      "start_us": 7760314017229.338,
+      "end_us": 7760314017230.842,
+      "duration_us": 1.50390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 279
+    },
+    {
+      "name": "void at::native::vectorized_gather_kernel<16, long>(char*, char*, long*, int, long, long, long, long, bool)",
+      "category": "kernel",
+      "start_us": 7760314017475.132,
+      "end_us": 7760314017481.147,
+      "duration_us": 6.015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 306
+    },
+    {
+      "name": "void flashinfer::norm::RMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314017626.045,
+      "end_us": 7760314017633.214,
+      "duration_us": 7.1689453125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 322
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314017798.623,
+      "end_us": 7760314017895.392,
+      "duration_us": 96.7685546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 342
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314017939.969,
+      "end_us": 7760314017946.017,
+      "duration_us": 6.0478515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 346
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314018106.274,
+      "end_us": 7760314018109.603,
+      "duration_us": 3.328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 354
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314018178.659,
+      "end_us": 7760314018183.043,
+      "duration_us": 4.3837890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 365
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314018214.627,
+      "end_us": 7760314018218.979,
+      "duration_us": 4.3515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 382
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314018418.053,
+      "end_us": 7760314018664.04,
+      "duration_us": 245.9873046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 400
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314018665.672,
+      "end_us": 7760314018666.76,
+      "duration_us": 1.087890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 410
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314018668.616,
+      "end_us": 7760314018749.897,
+      "duration_us": 81.28125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 413
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314018750.985,
+      "end_us": 7760314018760.873,
+      "duration_us": 9.8876953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 419
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314018770.345,
+      "end_us": 7760314019346.318,
+      "duration_us": 575.9736328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 431
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314019347.407,
+      "end_us": 7760314019377.68,
+      "duration_us": 30.2724609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 442
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314019379.183,
+      "end_us": 7760314019380.366,
+      "duration_us": 1.18359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 452
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314019382.063,
+      "end_us": 7760314019719.604,
+      "duration_us": 337.5400390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 455
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314019720.915,
+      "end_us": 7760314019730.643,
+      "duration_us": 9.7275390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 461
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314019731.699,
+      "end_us": 7760314019828.437,
+      "duration_us": 96.7373046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 479
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314019829.588,
+      "end_us": 7760314019836.404,
+      "duration_us": 6.81640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 483
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314019837.78,
+      "end_us": 7760314019841.204,
+      "duration_us": 3.423828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 491
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314019842.516,
+      "end_us": 7760314019846.899,
+      "duration_us": 4.3837890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 502
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314019848.244,
+      "end_us": 7760314019852.532,
+      "duration_us": 4.2880859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 519
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314019853.844,
+      "end_us": 7760314020097.751,
+      "duration_us": 243.9072265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 537
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314020099.511,
+      "end_us": 7760314020100.599,
+      "duration_us": 1.087890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 547
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314020102.423,
+      "end_us": 7760314020182.712,
+      "duration_us": 80.2890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 550
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314020183.832,
+      "end_us": 7760314020193.432,
+      "duration_us": 9.599609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 556
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314020194.584,
+      "end_us": 7760314020770.878,
+      "duration_us": 576.2939453125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 568
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314020771.966,
+      "end_us": 7760314020802.27,
+      "duration_us": 30.3037109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 579
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314020803.902,
+      "end_us": 7760314020804.99,
+      "duration_us": 1.087890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 589
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314020806.718,
+      "end_us": 7760314021143.073,
+      "duration_us": 336.35546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 592
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314021144.257,
+      "end_us": 7760314021153.697,
+      "duration_us": 9.4404296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 598
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314021155.041,
+      "end_us": 7760314021251.202,
+      "duration_us": 96.1611328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 616
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314021252.29,
+      "end_us": 7760314021258.5625,
+      "duration_us": 6.2724609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 620
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314021259.65,
+      "end_us": 7760314021263.011,
+      "duration_us": 3.3603515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 628
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314021264.386,
+      "end_us": 7760314021268.77,
+      "duration_us": 4.3837890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 639
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314021270.083,
+      "end_us": 7760314021274.435,
+      "duration_us": 4.3515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 656
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314021275.778,
+      "end_us": 7760314021520.837,
+      "duration_us": 245.05859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 674
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314021522.437,
+      "end_us": 7760314021523.524,
+      "duration_us": 1.087890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 684
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314021525.381,
+      "end_us": 7760314021605.733,
+      "duration_us": 80.3525390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 687
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314021606.918,
+      "end_us": 7760314021616.87,
+      "duration_us": 9.9521484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 693
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314021617.926,
+      "end_us": 7760314022194.668,
+      "duration_us": 576.7421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 705
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314022195.884,
+      "end_us": 7760314022226.221,
+      "duration_us": 30.3369140625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 716
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314022227.98,
+      "end_us": 7760314022229.068,
+      "duration_us": 1.087890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 726
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314022230.764,
+      "end_us": 7760314022568.527,
+      "duration_us": 337.763671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 729
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314022569.904,
+      "end_us": 7760314022579.568,
+      "duration_us": 9.6640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 735
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314022580.816,
+      "end_us": 7760314022677.554,
+      "duration_us": 96.7373046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 753
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314022678.737,
+      "end_us": 7760314022685.01,
+      "duration_us": 6.2724609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 757
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314022686.065,
+      "end_us": 7760314022689.489,
+      "duration_us": 3.423828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 765
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314022690.801,
+      "end_us": 7760314022695.152,
+      "duration_us": 4.3515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 776
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314022696.497,
+      "end_us": 7760314022700.849,
+      "duration_us": 4.3515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 793
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314022702.001,
+      "end_us": 7760314022947.156,
+      "duration_us": 245.1552734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 811
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314022948.788,
+      "end_us": 7760314022950.004,
+      "duration_us": 1.2158203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 821
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314022951.828,
+      "end_us": 7760314023034.196,
+      "duration_us": 82.3681640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 824
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314023035.285,
+      "end_us": 7760314023045.045,
+      "duration_us": 9.759765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 830
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314023046.325,
+      "end_us": 7760314023623.803,
+      "duration_us": 577.4775390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 842
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314023624.923,
+      "end_us": 7760314023655.611,
+      "duration_us": 30.6884765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 853
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314023657.499,
+      "end_us": 7760314023659.099,
+      "duration_us": 1.599609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 863
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314023660.827,
+      "end_us": 7760314023999.359,
+      "duration_us": 338.5322265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 866
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314024000.67,
+      "end_us": 7760314024010.623,
+      "duration_us": 9.953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 872
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314024011.935,
+      "end_us": 7760314024109.118,
+      "duration_us": 97.18359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 890
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314024110.431,
+      "end_us": 7760314024117.119,
+      "duration_us": 6.6884765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 894
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314024118.143,
+      "end_us": 7760314024121.631,
+      "duration_us": 3.48828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 902
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314024122.784,
+      "end_us": 7760314024127.168,
+      "duration_us": 4.3837890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 913
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314024128.512,
+      "end_us": 7760314024132.799,
+      "duration_us": 4.287109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 930
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314024133.856,
+      "end_us": 7760314024379.746,
+      "duration_us": 245.8896484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 948
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314024381.314,
+      "end_us": 7760314024382.786,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 958
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314024385.026,
+      "end_us": 7760314024467.075,
+      "duration_us": 82.048828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 961
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314024468.131,
+      "end_us": 7760314024478.179,
+      "duration_us": 10.0478515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 967
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314024479.331,
+      "end_us": 7760314025054.7295,
+      "duration_us": 575.3984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 979
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314025055.913,
+      "end_us": 7760314025086.218,
+      "duration_us": 30.3046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 990
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314025087.722,
+      "end_us": 7760314025089.193,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1000
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314025091.274,
+      "end_us": 7760314025430.189,
+      "duration_us": 338.9150390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1003
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314025431.213,
+      "end_us": 7760314025440.589,
+      "duration_us": 9.3759765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1009
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314025441.869,
+      "end_us": 7760314025538.126,
+      "duration_us": 96.2568359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1027
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314025539.15,
+      "end_us": 7760314025545.391,
+      "duration_us": 6.240234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1031
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314025547.054,
+      "end_us": 7760314025550.605,
+      "duration_us": 3.5517578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1039
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314025551.694,
+      "end_us": 7760314025556.078,
+      "duration_us": 4.3837890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1050
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314025557.198,
+      "end_us": 7760314025561.487,
+      "duration_us": 4.2890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1067
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314025562.863,
+      "end_us": 7760314025806.865,
+      "duration_us": 244.001953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1085
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314025808.625,
+      "end_us": 7760314025810.097,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1095
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314025812.337,
+      "end_us": 7760314025892.466,
+      "duration_us": 80.12890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1098
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314025893.778,
+      "end_us": 7760314025903.858,
+      "duration_us": 10.080078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1104
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314025905.17,
+      "end_us": 7760314026482.904,
+      "duration_us": 577.734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1116
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314026484.184,
+      "end_us": 7760314026514.903,
+      "duration_us": 30.7197265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1127
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314026516.408,
+      "end_us": 7760314026517.88,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1137
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314026519.992,
+      "end_us": 7760314026858.269,
+      "duration_us": 338.2763671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1140
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314026859.58,
+      "end_us": 7760314026869.052,
+      "duration_us": 9.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1146
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314026870.172,
+      "end_us": 7760314026967.197,
+      "duration_us": 97.025390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1164
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314026968.349,
+      "end_us": 7760314026974.364,
+      "duration_us": 6.015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1168
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314026975.613,
+      "end_us": 7760314026979.005,
+      "duration_us": 3.3916015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1176
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314026980.317,
+      "end_us": 7760314026984.669,
+      "duration_us": 4.3515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1187
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314026986.013,
+      "end_us": 7760314026990.364,
+      "duration_us": 4.3515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1204
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314026991.389,
+      "end_us": 7760314027237.248,
+      "duration_us": 245.859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1222
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314027239.008,
+      "end_us": 7760314027240.512,
+      "duration_us": 1.50390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1232
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314027242.336,
+      "end_us": 7760314027323.072,
+      "duration_us": 80.736328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1235
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314027324.128,
+      "end_us": 7760314027334.048,
+      "duration_us": 9.919921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1241
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314027335.137,
+      "end_us": 7760314027913.958,
+      "duration_us": 578.8212890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1253
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314027915.046,
+      "end_us": 7760314027945.127,
+      "duration_us": 30.0810546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1264
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314027946.855,
+      "end_us": 7760314027948.359,
+      "duration_us": 1.50390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1274
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314027950.055,
+      "end_us": 7760314028286.441,
+      "duration_us": 336.38671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1277
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314028287.562,
+      "end_us": 7760314028297.354,
+      "duration_us": 9.7919921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1283
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314028298.634,
+      "end_us": 7760314028394.923,
+      "duration_us": 96.2890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1301
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314028396.075,
+      "end_us": 7760314028402.476,
+      "duration_us": 6.400390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1305
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314028403.627,
+      "end_us": 7760314028407.307,
+      "duration_us": 3.6796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1313
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314028408.619,
+      "end_us": 7760314028412.971,
+      "duration_us": 4.3515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1324
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314028414.347,
+      "end_us": 7760314028418.636,
+      "duration_us": 4.2890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1341
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314028420.012,
+      "end_us": 7760314028664.974,
+      "duration_us": 244.9619140625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1359
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314028666.766,
+      "end_us": 7760314028668.237,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1369
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314028670.062,
+      "end_us": 7760314028750.895,
+      "duration_us": 80.8330078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1372
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314028752.143,
+      "end_us": 7760314028762.19,
+      "duration_us": 10.0478515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1378
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314028763.311,
+      "end_us": 7760314029339.061,
+      "duration_us": 575.75,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1390
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314029340.181,
+      "end_us": 7760314029370.709,
+      "duration_us": 30.5283203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1401
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314029372.661,
+      "end_us": 7760314029374.165,
+      "duration_us": 1.50390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1411
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314029375.893,
+      "end_us": 7760314029714.713,
+      "duration_us": 338.8203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1414
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314029715.897,
+      "end_us": 7760314029725.466,
+      "duration_us": 9.568359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1420
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314029726.777,
+      "end_us": 7760314029823.675,
+      "duration_us": 96.8974609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1438
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314029824.954,
+      "end_us": 7760314029831.162,
+      "duration_us": 6.2080078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1442
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314029832.378,
+      "end_us": 7760314029835.77,
+      "duration_us": 3.3916015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1450
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314029837.082,
+      "end_us": 7760314029841.434,
+      "duration_us": 4.3515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1461
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314029842.714,
+      "end_us": 7760314029847.034,
+      "duration_us": 4.3203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1478
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314029848.314,
+      "end_us": 7760314030090.014,
+      "duration_us": 241.69921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1496
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314030091.933,
+      "end_us": 7760314030093.404,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1506
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314030095.645,
+      "end_us": 7760314030175.037,
+      "duration_us": 79.392578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1509
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314030176.19,
+      "end_us": 7760314030186.238,
+      "duration_us": 10.0478515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1515
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314030187.294,
+      "end_us": 7760314030764.419,
+      "duration_us": 577.125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1527
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314030765.731,
+      "end_us": 7760314030795.973,
+      "duration_us": 30.2412109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1538
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314030797.444,
+      "end_us": 7760314030798.916,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1548
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314030800.964,
+      "end_us": 7760314031139.015,
+      "duration_us": 338.05078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1551
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314031140.295,
+      "end_us": 7760314031150.119,
+      "duration_us": 9.82421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1557
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314031151.271,
+      "end_us": 7760314031247.049,
+      "duration_us": 95.77734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1575
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314031248.072,
+      "end_us": 7760314031254.216,
+      "duration_us": 6.1435546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1579
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314031255.272,
+      "end_us": 7760314031258.568,
+      "duration_us": 3.2958984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1587
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314031259.72,
+      "end_us": 7760314031264.041,
+      "duration_us": 4.3212890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1598
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314031265.353,
+      "end_us": 7760314031269.641,
+      "duration_us": 4.2880859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1615
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314031270.952,
+      "end_us": 7760314031512.684,
+      "duration_us": 241.7314453125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1633
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314031514.187,
+      "end_us": 7760314031515.658,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1643
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314031517.867,
+      "end_us": 7760314031597.74,
+      "duration_us": 79.873046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1646
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314031599.052,
+      "end_us": 7760314031609.067,
+      "duration_us": 10.015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1652
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314031610.316,
+      "end_us": 7760314032185.427,
+      "duration_us": 575.1103515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1664
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314032186.738,
+      "end_us": 7760314032217.107,
+      "duration_us": 30.369140625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1675
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314032218.579,
+      "end_us": 7760314032220.051,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1685
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314032222.131,
+      "end_us": 7760314032558.357,
+      "duration_us": 336.2265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1688
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314032559.734,
+      "end_us": 7760314032569.015,
+      "duration_us": 9.2802734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1694
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314032570.07,
+      "end_us": 7760314032664.728,
+      "duration_us": 94.6572265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1712
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314032666.071,
+      "end_us": 7760314032672.312,
+      "duration_us": 6.240234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1716
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314032673.431,
+      "end_us": 7760314032676.8545,
+      "duration_us": 3.423828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1724
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314032677.879,
+      "end_us": 7760314032682.23,
+      "duration_us": 4.3515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1735
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314032683.543,
+      "end_us": 7760314032687.799,
+      "duration_us": 4.255859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1752
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314032689.143,
+      "end_us": 7760314032930.554,
+      "duration_us": 241.4111328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1770
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314032932.122,
+      "end_us": 7760314032933.594,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1780
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314032935.45,
+      "end_us": 7760314033016.218,
+      "duration_us": 80.767578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1783
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314033017.563,
+      "end_us": 7760314033027.676,
+      "duration_us": 10.1123046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1789
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314033028.763,
+      "end_us": 7760314033603.68,
+      "duration_us": 574.9169921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1801
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314033604.736,
+      "end_us": 7760314033635.168,
+      "duration_us": 30.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1812
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314033636.929,
+      "end_us": 7760314033638.4,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1822
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314033640.065,
+      "end_us": 7760314033977.668,
+      "duration_us": 337.6025390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1825
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314033978.724,
+      "end_us": 7760314033988.388,
+      "duration_us": 9.6640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1831
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314033989.444,
+      "end_us": 7760314034085.253,
+      "duration_us": 95.80859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1849
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314034086.533,
+      "end_us": 7760314034092.965,
+      "duration_us": 6.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1853
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314034094.085,
+      "end_us": 7760314034097.541,
+      "duration_us": 3.4560546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1861
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314034098.661,
+      "end_us": 7760314034103.013,
+      "duration_us": 4.3515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1872
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314034104.325,
+      "end_us": 7760314034108.614,
+      "duration_us": 4.2890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1889
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314034109.926,
+      "end_us": 7760314034351.943,
+      "duration_us": 242.017578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1907
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314034353.736,
+      "end_us": 7760314034355.305,
+      "duration_us": 1.568359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1917
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314034357.128,
+      "end_us": 7760314034436.681,
+      "duration_us": 79.552734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1920
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314034437.769,
+      "end_us": 7760314034447.496,
+      "duration_us": 9.7275390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1926
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314034448.745,
+      "end_us": 7760314035024.335,
+      "duration_us": 575.58984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1938
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314035025.455,
+      "end_us": 7760314035056.463,
+      "duration_us": 31.0078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1949
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314035058.223,
+      "end_us": 7760314035059.663,
+      "duration_us": 1.4404296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1959
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314035061.391,
+      "end_us": 7760314035397.202,
+      "duration_us": 335.8115234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1962
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314035398.355,
+      "end_us": 7760314035408.02,
+      "duration_us": 9.6640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1968
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314035409.107,
+      "end_us": 7760314035504.885,
+      "duration_us": 95.77734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1986
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314035505.972,
+      "end_us": 7760314035512.308,
+      "duration_us": 6.3359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1990
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314035513.332,
+      "end_us": 7760314035516.692,
+      "duration_us": 3.3603515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1998
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314035518.004,
+      "end_us": 7760314035522.292,
+      "duration_us": 4.2880859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2009
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314035523.316,
+      "end_us": 7760314035527.572,
+      "duration_us": 4.255859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2026
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314035528.916,
+      "end_us": 7760314035770.199,
+      "duration_us": 241.283203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2044
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314035771.703,
+      "end_us": 7760314035773.175,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2054
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314035775.415,
+      "end_us": 7760314035856.152,
+      "duration_us": 80.7373046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2057
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314035857.464,
+      "end_us": 7760314035867.479,
+      "duration_us": 10.0146484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2063
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314035868.76,
+      "end_us": 7760314036443.485,
+      "duration_us": 574.7255859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2075
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314036444.606,
+      "end_us": 7760314036475.391,
+      "duration_us": 30.7841796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2086
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314036476.894,
+      "end_us": 7760314036478.365,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2096
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314036480.446,
+      "end_us": 7760314036816.386,
+      "duration_us": 335.939453125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2099
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314036817.633,
+      "end_us": 7760314036827.009,
+      "duration_us": 9.3759765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2105
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314036828.097,
+      "end_us": 7760314036923.714,
+      "duration_us": 95.6171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2123
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314036924.866,
+      "end_us": 7760314036931.01,
+      "duration_us": 6.1435546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2127
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314036932.098,
+      "end_us": 7760314036935.554,
+      "duration_us": 3.4560546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2135
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314036936.674,
+      "end_us": 7760314036940.994,
+      "duration_us": 4.3203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2146
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314036942.306,
+      "end_us": 7760314036946.594,
+      "duration_us": 4.2880859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2163
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314036947.939,
+      "end_us": 7760314037190.31,
+      "duration_us": 242.3701171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2181
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314037191.845,
+      "end_us": 7760314037193.316,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2191
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314037195.493,
+      "end_us": 7760314037275.015,
+      "duration_us": 79.521484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2194
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314037276.134,
+      "end_us": 7760314037285.766,
+      "duration_us": 9.6318359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2200
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314037287.078,
+      "end_us": 7760314037863.916,
+      "duration_us": 576.837890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2212
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314037865.068,
+      "end_us": 7760314037895.276,
+      "duration_us": 30.2080078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2223
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314037896.78,
+      "end_us": 7760314037898.252,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2233
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314037900.364,
+      "end_us": 7760314038235.504,
+      "duration_us": 335.1396484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2236
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314038236.848,
+      "end_us": 7760314038246.416,
+      "duration_us": 9.568359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2242
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314038247.696,
+      "end_us": 7760314038343.377,
+      "duration_us": 95.6806640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2260
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314038344.465,
+      "end_us": 7760314038350.929,
+      "duration_us": 6.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2264
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314038352.113,
+      "end_us": 7760314038355.537,
+      "duration_us": 3.423828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2272
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314038356.785,
+      "end_us": 7760314038361.137,
+      "duration_us": 4.3515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2283
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314038362.417,
+      "end_us": 7760314038366.705,
+      "duration_us": 4.2880859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2300
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314038368.017,
+      "end_us": 7760314038610.067,
+      "duration_us": 242.05078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2318
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314038611.668,
+      "end_us": 7760314038613.14,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2328
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314038614.995,
+      "end_us": 7760314038693.877,
+      "duration_us": 78.8818359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2331
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314038695.188,
+      "end_us": 7760314038705.205,
+      "duration_us": 10.0166015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2337
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314038706.517,
+      "end_us": 7760314039283.227,
+      "duration_us": 576.7099609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2349
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314039284.539,
+      "end_us": 7760314039314.683,
+      "duration_us": 30.1435546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2360
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314039316.283,
+      "end_us": 7760314039317.724,
+      "duration_us": 1.4404296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2370
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314039319.419,
+      "end_us": 7760314039656.735,
+      "duration_us": 337.31640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2373
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314039657.79,
+      "end_us": 7760314039667.199,
+      "duration_us": 9.4091796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2379
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314039668.254,
+      "end_us": 7760314039763.807,
+      "duration_us": 95.552734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2397
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314039765.088,
+      "end_us": 7760314039771.647,
+      "duration_us": 6.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2401
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314039772.768,
+      "end_us": 7760314039776.159,
+      "duration_us": 3.3916015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2409
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314039777.248,
+      "end_us": 7760314039781.568,
+      "duration_us": 4.3203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2420
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314039782.912,
+      "end_us": 7760314039787.168,
+      "duration_us": 4.255859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2437
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314039788.512,
+      "end_us": 7760314040030.466,
+      "duration_us": 241.9541015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2455
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314040032.034,
+      "end_us": 7760314040033.475,
+      "duration_us": 1.4404296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2465
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314040035.234,
+      "end_us": 7760314040114.756,
+      "duration_us": 79.521484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2468
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314040116.035,
+      "end_us": 7760314040125.827,
+      "duration_us": 9.7919921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2474
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314040126.915,
+      "end_us": 7760314040702.217,
+      "duration_us": 575.3017578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2486
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314040703.497,
+      "end_us": 7760314040733.993,
+      "duration_us": 30.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2497
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314040735.465,
+      "end_us": 7760314040736.937,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2507
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314040738.665,
+      "end_us": 7760314041076.332,
+      "duration_us": 337.6669921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2510
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314041077.389,
+      "end_us": 7760314041087.0205,
+      "duration_us": 9.6318359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2516
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314041088.301,
+      "end_us": 7760314041182.926,
+      "duration_us": 94.625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2534
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314041183.982,
+      "end_us": 7760314041190.318,
+      "duration_us": 6.3359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2538
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314041191.31,
+      "end_us": 7760314041194.766,
+      "duration_us": 3.4560546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2546
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314041195.918,
+      "end_us": 7760314041200.27,
+      "duration_us": 4.3515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2557
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314041201.55,
+      "end_us": 7760314041205.806,
+      "duration_us": 4.255859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2574
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314041206.83,
+      "end_us": 7760314041446.833,
+      "duration_us": 240.0029296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2592
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314041448.56,
+      "end_us": 7760314041450.031,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2602
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314041452.208,
+      "end_us": 7760314041532.209,
+      "duration_us": 80.0009765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2605
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314041533.522,
+      "end_us": 7760314041543.281,
+      "duration_us": 9.7587890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2611
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314041544.594,
+      "end_us": 7760314042118.936,
+      "duration_us": 574.341796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2623
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314042120.087,
+      "end_us": 7760314042150.744,
+      "duration_us": 30.6572265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2634
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314042152.28,
+      "end_us": 7760314042153.849,
+      "duration_us": 1.568359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2644
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314042156.312,
+      "end_us": 7760314042493.755,
+      "duration_us": 337.443359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2647
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314042494.844,
+      "end_us": 7760314042504.22,
+      "duration_us": 9.3759765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2653
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314042505.307,
+      "end_us": 7760314042600.476,
+      "duration_us": 95.1689453125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2671
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314042601.724,
+      "end_us": 7760314042607.836,
+      "duration_us": 6.1123046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2675
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314042608.925,
+      "end_us": 7760314042612.253,
+      "duration_us": 3.328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2683
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314042613.309,
+      "end_us": 7760314042617.66,
+      "duration_us": 4.3515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2694
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314042618.973,
+      "end_us": 7760314042623.261,
+      "duration_us": 4.2880859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2711
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314042624.604,
+      "end_us": 7760314042866.11,
+      "duration_us": 241.5068359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2729
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314042867.679,
+      "end_us": 7760314042869.15,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2739
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314042871.36,
+      "end_us": 7760314042950.272,
+      "duration_us": 78.912109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2742
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314042951.392,
+      "end_us": 7760314042961.216,
+      "duration_us": 9.82421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2748
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314042962.336,
+      "end_us": 7760314043536.39,
+      "duration_us": 574.0537109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2760
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314043537.478,
+      "end_us": 7760314043567.974,
+      "duration_us": 30.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2771
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314043569.542,
+      "end_us": 7760314043570.982,
+      "duration_us": 1.4404296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2781
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314043573.094,
+      "end_us": 7760314043909.129,
+      "duration_us": 336.03515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2784
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314043910.282,
+      "end_us": 7760314043919.594,
+      "duration_us": 9.3115234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2790
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314043920.65,
+      "end_us": 7760314044015.308,
+      "duration_us": 94.6572265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2808
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314044016.618,
+      "end_us": 7760314044023.051,
+      "duration_us": 6.4326171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2812
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314044024.299,
+      "end_us": 7760314044027.723,
+      "duration_us": 3.423828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2820
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314044028.875,
+      "end_us": 7760314044033.227,
+      "duration_us": 4.3515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2831
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314044034.539,
+      "end_us": 7760314044038.827,
+      "duration_us": 4.2880859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2848
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314044040.139,
+      "end_us": 7760314044281.549,
+      "duration_us": 241.41015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2866
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314044283.15,
+      "end_us": 7760314044284.622,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2876
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314044286.477,
+      "end_us": 7760314044366.126,
+      "duration_us": 79.6494140625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2879
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314044367.246,
+      "end_us": 7760314044377.263,
+      "duration_us": 10.0166015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2885
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314044378.478,
+      "end_us": 7760314044952.243,
+      "duration_us": 573.765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2897
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314044953.46,
+      "end_us": 7760314044983.764,
+      "duration_us": 30.3037109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2908
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314044985.685,
+      "end_us": 7760314044987.156,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2918
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314044988.821,
+      "end_us": 7760314045325.112,
+      "duration_us": 336.291015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2921
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314045326.232,
+      "end_us": 7760314045335.416,
+      "duration_us": 9.18359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2927
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314045336.696,
+      "end_us": 7760314045431.3545,
+      "duration_us": 94.658203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2945
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314045432.441,
+      "end_us": 7760314045438.81,
+      "duration_us": 6.3681640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2949
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314045439.833,
+      "end_us": 7760314045443.226,
+      "duration_us": 3.392578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2957
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314045444.409,
+      "end_us": 7760314045448.7295,
+      "duration_us": 4.3203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2968
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314045450.073,
+      "end_us": 7760314045454.33,
+      "duration_us": 4.2568359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2985
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314045455.61,
+      "end_us": 7760314045696.412,
+      "duration_us": 240.8017578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3003
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314045698.044,
+      "end_us": 7760314045699.612,
+      "duration_us": 1.568359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3013
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314045701.436,
+      "end_us": 7760314045781.0205,
+      "duration_us": 79.5849609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3016
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314045782.077,
+      "end_us": 7760314045791.741,
+      "duration_us": 9.6640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3022
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314045792.925,
+      "end_us": 7760314046366.627,
+      "duration_us": 573.7021484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3034
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314046367.746,
+      "end_us": 7760314046397.955,
+      "duration_us": 30.208984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3045
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314046399.459,
+      "end_us": 7760314046400.931,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3055
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314046402.627,
+      "end_us": 7760314046740.103,
+      "duration_us": 337.4755859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3058
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314046741.286,
+      "end_us": 7760314046751.175,
+      "duration_us": 9.888671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3064
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314046752.326,
+      "end_us": 7760314046848.168,
+      "duration_us": 95.841796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3082
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314046849.255,
+      "end_us": 7760314046855.528,
+      "duration_us": 6.2734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3086
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314046856.616,
+      "end_us": 7760314046860.04,
+      "duration_us": 3.423828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3094
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314046861.191,
+      "end_us": 7760314046865.575,
+      "duration_us": 4.3837890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3105
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314046866.856,
+      "end_us": 7760314046871.177,
+      "duration_us": 4.3203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3122
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314046872.456,
+      "end_us": 7760314047116.011,
+      "duration_us": 243.5546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3140
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314047117.61,
+      "end_us": 7760314047119.082,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3150
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314047121.258,
+      "end_us": 7760314047201.003,
+      "duration_us": 79.7451171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3153
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314047202.091,
+      "end_us": 7760314047212.171,
+      "duration_us": 10.080078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3159
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314047213.227,
+      "end_us": 7760314047788.496,
+      "duration_us": 575.26953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3171
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314047789.617,
+      "end_us": 7760314047819.826,
+      "duration_us": 30.208984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3182
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314047821.586,
+      "end_us": 7760314047823.026,
+      "duration_us": 1.4404296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3192
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314047825.106,
+      "end_us": 7760314048161.653,
+      "duration_us": 336.546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3195
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314048162.709,
+      "end_us": 7760314048171.989,
+      "duration_us": 9.2802734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3201
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314048173.173,
+      "end_us": 7760314048268.758,
+      "duration_us": 95.5849609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3219
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314048270.038,
+      "end_us": 7760314048276.534,
+      "duration_us": 6.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3223
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314048277.75,
+      "end_us": 7760314048281.047,
+      "duration_us": 3.296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3231
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314048282.358,
+      "end_us": 7760314048286.679,
+      "duration_us": 4.3203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3242
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314048288.022,
+      "end_us": 7760314048292.311,
+      "duration_us": 4.2880859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3259
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314048293.655,
+      "end_us": 7760314048536.025,
+      "duration_us": 242.3701171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3277
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314048537.657,
+      "end_us": 7760314048539.129,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3287
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314048541.337,
+      "end_us": 7760314048622.97,
+      "duration_us": 81.6328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3290
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314048624.25,
+      "end_us": 7760314048634.202,
+      "duration_us": 9.9521484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3296
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314048635.482,
+      "end_us": 7760314049209.921,
+      "duration_us": 574.4384765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3308
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314049210.944,
+      "end_us": 7760314049241.408,
+      "duration_us": 30.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3319
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314049243.04,
+      "end_us": 7760314049244.512,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3329
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314049246.592,
+      "end_us": 7760314049582.755,
+      "duration_us": 336.1630859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3332
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314049584.1,
+      "end_us": 7760314049593.668,
+      "duration_us": 9.568359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3338
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314049594.819,
+      "end_us": 7760314049690.565,
+      "duration_us": 95.74609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3356
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314049691.748,
+      "end_us": 7760314049698.053,
+      "duration_us": 6.3046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3360
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314049699.14,
+      "end_us": 7760314049702.501,
+      "duration_us": 3.361328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3368
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314049703.685,
+      "end_us": 7760314049708.004,
+      "duration_us": 4.3193359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3379
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314049709.317,
+      "end_us": 7760314049713.573,
+      "duration_us": 4.255859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3396
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314049714.885,
+      "end_us": 7760314049957.0625,
+      "duration_us": 242.177734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3414
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314049958.631,
+      "end_us": 7760314049960.071,
+      "duration_us": 1.4404296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3424
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314049961.895,
+      "end_us": 7760314050041.64,
+      "duration_us": 79.7451171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3427
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314050042.824,
+      "end_us": 7760314050052.744,
+      "duration_us": 9.919921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3433
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314050054.056,
+      "end_us": 7760314050637.422,
+      "duration_us": 583.3662109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3445
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314050638.83,
+      "end_us": 7760314050669.711,
+      "duration_us": 30.880859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3456
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314050671.375,
+      "end_us": 7760314050672.879,
+      "duration_us": 1.50390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3466
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314050674.639,
+      "end_us": 7760314051022.514,
+      "duration_us": 347.875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3469
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314051023.858,
+      "end_us": 7760314051033.747,
+      "duration_us": 9.888671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3475
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314051034.834,
+      "end_us": 7760314051136.339,
+      "duration_us": 101.5048828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3493
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314051137.556,
+      "end_us": 7760314051144.307,
+      "duration_us": 6.7509765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3497
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314051145.46,
+      "end_us": 7760314051148.9795,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3505
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314051150.132,
+      "end_us": 7760314051154.803,
+      "duration_us": 4.6708984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3516
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314051156.116,
+      "end_us": 7760314051160.725,
+      "duration_us": 4.6083984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3533
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314051162.132,
+      "end_us": 7760314051420.374,
+      "duration_us": 258.2421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3551
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314051422.039,
+      "end_us": 7760314051423.607,
+      "duration_us": 1.568359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3561
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314051425.526,
+      "end_us": 7760314051510.328,
+      "duration_us": 84.8017578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3564
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314051511.511,
+      "end_us": 7760314051522.008,
+      "duration_us": 10.4970703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3570
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314051523.415,
+      "end_us": 7760314052111.005,
+      "duration_us": 587.58984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3582
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314052112.381,
+      "end_us": 7760314052143.102,
+      "duration_us": 30.720703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3593
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314052144.702,
+      "end_us": 7760314052146.2705,
+      "duration_us": 1.568359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3603
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314052148.094,
+      "end_us": 7760314052495.681,
+      "duration_us": 347.5869140625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3606
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314052496.897,
+      "end_us": 7760314052507.138,
+      "duration_us": 10.240234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3612
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314052508.513,
+      "end_us": 7760314052609.985,
+      "duration_us": 101.47265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3630
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314052611.266,
+      "end_us": 7760314052617.954,
+      "duration_us": 6.6884765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3634
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314052619.33,
+      "end_us": 7760314052622.787,
+      "duration_us": 3.45703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3642
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314052623.938,
+      "end_us": 7760314052628.644,
+      "duration_us": 4.705078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3653
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314052630.018,
+      "end_us": 7760314052634.627,
+      "duration_us": 4.609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3670
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314052636.035,
+      "end_us": 7760314052893.221,
+      "duration_us": 257.185546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3688
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314052895.077,
+      "end_us": 7760314052896.741,
+      "duration_us": 1.6640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3698
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314052899.109,
+      "end_us": 7760314052985.414,
+      "duration_us": 86.3046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3701
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314052986.822,
+      "end_us": 7760314052997.286,
+      "duration_us": 10.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3707
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314052998.694,
+      "end_us": 7760314053586.124,
+      "duration_us": 587.4296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3719
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314053587.34,
+      "end_us": 7760314053617.612,
+      "duration_us": 30.2724609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3730
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314053619.469,
+      "end_us": 7760314053621.005,
+      "duration_us": 1.5361328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3740
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314053623.181,
+      "end_us": 7760314053971.248,
+      "duration_us": 348.0673828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3743
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314053972.336,
+      "end_us": 7760314053982.256,
+      "duration_us": 9.919921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3749
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314053983.409,
+      "end_us": 7760314054084.242,
+      "duration_us": 100.8330078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3767
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314054085.425,
+      "end_us": 7760314054092.21,
+      "duration_us": 6.78515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3771
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314054093.361,
+      "end_us": 7760314054097.169,
+      "duration_us": 3.8076171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3779
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314054098.322,
+      "end_us": 7760314054102.931,
+      "duration_us": 4.6083984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3790
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314054104.37,
+      "end_us": 7760314054108.946,
+      "duration_us": 4.576171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3807
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314054110.354,
+      "end_us": 7760314054367.412,
+      "duration_us": 257.05859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3825
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314054369.268,
+      "end_us": 7760314054370.804,
+      "duration_us": 1.5361328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3835
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314054373.108,
+      "end_us": 7760314054458.741,
+      "duration_us": 85.6328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3838
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314054459.957,
+      "end_us": 7760314054470.326,
+      "duration_us": 10.369140625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3844
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314054471.445,
+      "end_us": 7760314055057.948,
+      "duration_us": 586.5029296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3856
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314055059.099,
+      "end_us": 7760314055089.884,
+      "duration_us": 30.78515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3867
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314055091.484,
+      "end_us": 7760314055093.0205,
+      "duration_us": 1.5361328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3877
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314055095.58,
+      "end_us": 7760314055442.431,
+      "duration_us": 346.8505859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3880
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314055443.68,
+      "end_us": 7760314055454.111,
+      "duration_us": 10.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3886
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314055455.264,
+      "end_us": 7760314055556.225,
+      "duration_us": 100.9609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3904
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314055557.633,
+      "end_us": 7760314055564.513,
+      "duration_us": 6.8798828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3908
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314055565.857,
+      "end_us": 7760314055569.506,
+      "duration_us": 3.6484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3916
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314055570.881,
+      "end_us": 7760314055575.553,
+      "duration_us": 4.671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3927
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314055576.961,
+      "end_us": 7760314055581.569,
+      "duration_us": 4.6083984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3944
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314055582.945,
+      "end_us": 7760314055839.428,
+      "duration_us": 256.482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3962
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314055841.027,
+      "end_us": 7760314055842.563,
+      "duration_us": 1.5361328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3972
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314055844.483,
+      "end_us": 7760314055929.381,
+      "duration_us": 84.8974609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3975
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314055930.692,
+      "end_us": 7760314055941.188,
+      "duration_us": 10.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3981
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314055942.404,
+      "end_us": 7760314056529.162,
+      "duration_us": 586.7578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3993
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314056530.314,
+      "end_us": 7760314056560.619,
+      "duration_us": 30.3046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4004
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314056562.443,
+      "end_us": 7760314056563.9795,
+      "duration_us": 1.5361328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4014
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314056565.771,
+      "end_us": 7760314056913.551,
+      "duration_us": 347.779296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4017
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314056914.638,
+      "end_us": 7760314056924.75,
+      "duration_us": 10.1123046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4023
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_relu_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314056925.935,
+      "end_us": 7760314057027.407,
+      "duration_us": 101.47265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4041
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7760314057028.752,
+      "end_us": 7760314057035.312,
+      "duration_us": 6.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4045
+    },
+    {
+      "name": "void sglang::store_kvcache<1024l, 1024l, 2, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7760314057036.464,
+      "end_us": 7760314057040.048,
+      "duration_us": 3.583984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4053
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314057041.456,
+      "end_us": 7760314057046.064,
+      "duration_us": 4.6083984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4064
+    },
+    {
+      "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1}>(at::TensorIteratorBase&, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#12}::operator()() const::{lambda(c10::BFloat16)#1} const&)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314057047.504,
+      "end_us": 7760314057052.08,
+      "duration_us": 4.576171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4081
+    },
+    {
+      "name": "_fwd_kernel",
+      "category": "kernel",
+      "start_us": 7760314057053.52,
+      "end_us": 7760314057310.386,
+      "duration_us": 256.8662109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4099
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314057311.955,
+      "end_us": 7760314057313.587,
+      "duration_us": 1.6318359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4109
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314057316.082,
+      "end_us": 7760314057401.971,
+      "duration_us": 85.888671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4112
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314057403.123,
+      "end_us": 7760314057413.396,
+      "duration_us": 10.2734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4118
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314057414.515,
+      "end_us": 7760314058002.81,
+      "duration_us": 588.294921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4130
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7760314058003.994,
+      "end_us": 7760314058034.746,
+      "duration_us": 30.751953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4141
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314058036.602,
+      "end_us": 7760314058037.754,
+      "duration_us": 1.15234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4151
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_256x128_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7760314058039.578,
+      "end_us": 7760314058387.422,
+      "duration_us": 347.84375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4154
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7760314058388.734,
+      "end_us": 7760314058399.038,
+      "duration_us": 10.3037109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4160
+    },
+    {
+      "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#4}::operator()() const::{lambda(long)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+      "category": "kernel",
+      "start_us": 7760314058400.446,
+      "end_us": 7760314058403.326,
+      "duration_us": 2.8798828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4175
+    },
+    {
+      "name": "void at_cuda_detail::cub::DeviceScanInitKernel<at_cuda_detail::cub::ScanTileState<long, true> >(at_cuda_detail::cub::ScanTileState<long, true>, int)",
+      "category": "kernel",
+      "start_us": 7760314058404.734,
+      "end_us": 7760314058406.206,
+      "duration_us": 1.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4201
+    },
+    {
+      "name": "void at_cuda_detail::cub::DeviceScanKernel<at_cuda_detail::cub::DeviceScanPolicy<long, std::plus<long> >::Policy900, long const*, long*, at_cuda_detail::cub::ScanTileState<long, true>, std::plus<long>, at_cuda_detail::cub::NullType, int, long>(long const*, long*, at_cuda_detail::cub::ScanTileState<long, true>, int, std::plus<long>, at_cuda_detail::cub::NullType, int)",
+      "category": "kernel",
+      "start_us": 7760314058407.614,
+      "end_us": 7760314058410.366,
+      "duration_us": 2.751953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4211
+    },
+    {
+      "name": "void at::native::vectorized_elementwise_kernel<2, at::native::CUDAFunctorOnSelf_add<long>, std::array<char*, 2ul> >(int, at::native::CUDAFunctorOnSelf_add<long>, std::array<char*, 2ul>)",
+      "category": "kernel",
+      "start_us": 7760314058411.774,
+      "end_us": 7760314058413.79,
+      "duration_us": 2.015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4226
+    },
+    {
+      "name": "void at::native::vectorized_gather_kernel<16, long>(char*, char*, long*, int, long, long, long, long, bool)",
+      "category": "kernel",
+      "start_us": 7760314058414.878,
+      "end_us": 7760314058417.4375,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4238
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7760314058418.59,
+      "end_us": 7760314059035.78,
+      "duration_us": 617.1904296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4254
+    },
+    {
+      "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+      "category": "kernel",
+      "start_us": 7760314059036.996,
+      "end_us": 7760314059043.524,
+      "duration_us": 6.5283203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4267
+    },
+    {
+      "name": "void at::native::vectorized_elementwise_kernel<2, at::native::CUDAFunctorOnSelf_add<long>, std::array<char*, 2ul> >(int, at::native::CUDAFunctorOnSelf_add<long>, std::array<char*, 2ul>)",
+      "category": "kernel",
+      "start_us": 7760314059044.708,
+      "end_us": 7760314059047.14,
+      "duration_us": 2.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4278
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7760314059048.74,
+      "end_us": 7760314059049.86,
+      "duration_us": 1.1201171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4293
+    },
+    {
+      "name": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::ArgMaxOps<float>, unsigned int, long, 4, 4> >(at::native::ReduceOp<float, at::native::ArgMaxOps<float>, unsigned int, long, 4, 4>)",
+      "category": "kernel",
+      "start_us": 7760314059051.844,
+      "end_us": 7760314059063.812,
+      "duration_us": 11.9677734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4295
+    },
+    {
+      "name": "void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native::index_put_kernel_impl<at::native::OpaqueType<8> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_put_kernel_impl<at::native::OpaqueType<8> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1}>(long, at::native::gpu_index_kernel<at::native::index_put_kernel_impl<at::native::OpaqueType<8> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_put_kernel_impl<at::native::OpaqueType<8> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7760314059065.092,
+      "end_us": 7760314059069.508,
+      "duration_us": 4.416015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4302
+    }
+  ],
+  "unattributed_gpu_events": [],
+  "scope": "Instrumented native diagnostic only. GPU families are name-based, not exact AIC-op mappings. Wall-minus-union is not pure CPU time or a correction to formal labels.",
+  "input_interpretations": {
+    "extend": [
+      498,
+      14
+    ],
+    "prefix": [
+      1024,
+      0
+    ],
+    "runtime": [
+      1024,
+      0
+    ],
+    "physical_before": [
+      1024,
+      0
+    ]
+  },
+  "aic_predictions": {
+    "prefix": {
+      "total_ms": 41.156523458456384,
+      "operators_ms": {
+        "context_embedding": 0.0053708113695090445,
+        "context_add_norm_1": 0.34953087338501293,
+        "context_qkv_gemm": 2.725432872772217,
+        "context_attention": 5.937117719464716,
+        "context_proj_gemm": 2.3678293757968483,
+        "context_add_norm_2": 0.34953087338501293,
+        "context_gate_ffn1_gemm": 18.084864298502602,
+        "context_act_gate": 1.1366402480620155,
+        "context_ffn2_gemm": 9.5206970638699,
+        "context_logits_gemm": 0.6795093218485514,
+        "context_embedding_ar": 0.0,
+        "context_ar_1": 0.0,
+        "context_ar_2": 0.0,
+        "context_p2p": 0.0
+      }
+    },
+    "runtime": {
+      "total_ms": 41.156523458456384,
+      "operators_ms": {
+        "context_embedding": 0.0053708113695090445,
+        "context_add_norm_1": 0.34953087338501293,
+        "context_qkv_gemm": 2.725432872772217,
+        "context_attention": 5.937117719464716,
+        "context_proj_gemm": 2.3678293757968483,
+        "context_add_norm_2": 0.34953087338501293,
+        "context_gate_ffn1_gemm": 18.084864298502602,
+        "context_act_gate": 1.1366402480620155,
+        "context_ffn2_gemm": 9.5206970638699,
+        "context_logits_gemm": 0.6795093218485514,
+        "context_embedding_ar": 0.0,
+        "context_ar_1": 0.0,
+        "context_ar_2": 0.0,
+        "context_p2p": 0.0
+      }
+    },
+    "physical_before": {
+      "total_ms": 41.156523458456384,
+      "operators_ms": {
+        "context_embedding": 0.0053708113695090445,
+        "context_add_norm_1": 0.34953087338501293,
+        "context_qkv_gemm": 2.725432872772217,
+        "context_attention": 5.937117719464716,
+        "context_proj_gemm": 2.3678293757968483,
+        "context_add_norm_2": 0.34953087338501293,
+        "context_gate_ffn1_gemm": 18.084864298502602,
+        "context_act_gate": 1.1366402480620155,
+        "context_ffn2_gemm": 9.5206970638699,
+        "context_logits_gemm": 0.6795093218485514,
+        "context_embedding_ar": 0.0,
+        "context_ar_1": 0.0,
+        "context_ar_2": 0.0,
+        "context_p2p": 0.0
+      }
+    }
+  },
+  "metadata_path": "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/analysis/workloads/matched_native_profiles/Qwen2.5-7B-Instruct/saturation_1536x384_inf/profiles/mode1_index2.trace.metadata.json"
+}

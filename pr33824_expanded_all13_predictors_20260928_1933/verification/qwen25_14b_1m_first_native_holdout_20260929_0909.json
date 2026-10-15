@@ -1,0 +1,24 @@
+{
+  "started_at": "2026-09-29T09:09:13.787744+08:00",
+  "finished_at": "2026-09-29T09:09:14.176149+08:00",
+  "exit_code": 0,
+  "group_completed_at": "2026-09-29T09:07:45+08:00",
+  "cases": [
+    {"case": "latency_256x128_r1", "requests": 32, "timing_rows": 171, "prefill_rows": 24, "decode_rows": 147},
+    {"case": "service_1024x256_r4", "requests": 64, "timing_rows": 489, "prefill_rows": 97, "decode_rows": 392},
+    {"case": "saturation_1024x256_inf", "requests": 64, "timing_rows": 489, "prefill_rows": 97, "decode_rows": 392},
+    {"case": "latency_128x64_r1", "requests": 32, "timing_rows": 113, "prefill_rows": 23, "decode_rows": 90},
+    {"case": "saturation_1536x384_inf", "requests": 64, "timing_rows": 756, "prefill_rows": 126, "decode_rows": 630}
+  ],
+  "totals": {"requests": 256, "timing_rows": 2018, "prefill_rows": 367, "decode_rows": 1651},
+  "training_requests_compared": 800,
+  "test_unique_complete_prompts": 178,
+  "cross_role_request_ids": 0,
+  "cross_role_complete_prompt_hashes": 0,
+  "p50_bundle_sha256": "3e05a39f06627711016bdb2094f5fc9747197738d6ab638670c9a868194b31e1",
+  "source_files_verified_unchanged": 60,
+  "per_file_hash_manifest_exported": false,
+  "checks": ["Whole first-group completion marker and five ok statuses", "Correct seed 202609380 and native dual-chunk/page256 settings", "Native version record byte-matches completed training", "Benchmark/raw-request/replay/manifest counts agree", "Exact native input IDs and output lengths preserved in trace", "Synchronized finite positive seconds and native phase labels", "Schedule request IDs belong to corresponding native case", "Frozen bundle SHA agrees with executed full calibration audit", "Before/after file hashes agree"],
+  "environment": {"PYTHONNOUSERSITE": "1", "CUDA_VISIBLE_DEVICES": "", "OMP_NUM_THREADS": "1", "nice": 15},
+  "scope": "First closed independent native group only. No fit/predict/scoring/AIC/new GPU/profile/replay. Remaining four groups and all substantive score gates unchanged. Zero overlap here is not yet a claim for all 1280 held-out requests; shared partial prefixes were not audited."
+}

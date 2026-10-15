@@ -1,0 +1,40 @@
+{
+  "request": "Summarize currently available dense models using experiment data, environment, historical comparison plots, necessary descriptions and conclusions.",
+  "scope": "10 completed dense checkpoints, not all13 final completion; no new native benchmark/fit/predictor/AIC/GPU profile.",
+  "snapshot_at": "2026-09-29T19:13:21+08:00",
+  "artifacts": {
+    "markdown": "/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/docs/pr33824_dense_models_stage_20260929_1906.md",
+    "docx": "/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/docs/pr33824_dense_models_stage_20260929_1906.docx",
+    "figures": [
+      "01_current_real_vs_predicted.png",
+      "02_matched_workload_old_vs_new_mape.png",
+      "03_matched_workload_real_and_predicted.png",
+      "04_workload_mape_heatmap.png",
+      "05_frozen_fit_vs_independent.png",
+      "06_historical_ml_vs_aic.png"
+    ],
+    "tables": 11,
+    "dense_models": 10,
+    "training_requests": 8000,
+    "independent_test_requests": 12800,
+    "training_timing_rows": 98127,
+    "heldout_timing_rows": 164241
+  },
+  "validation": {
+    "structured": "document_validation.json: exact Markdown/DOCX text and table content; six embedded PNGs byte-match originals; all Word font slots explicitly SimSun without theme overrides; 1540 selected original data files unchanged.",
+    "visual": "All six generated Matplotlib charts inspected. LibreOffice PDF preview has14pages; pages2,7,14 visually inspected for table width/contents/source section.",
+    "comparison": "Main historical ML comparison uses shared1024/256burst workload,5x64 requests per model, not a comparison of old SAT versus all current mixed workloads. Nonidentical seeds/training families and changed0.6/3B static fractions are explicit.",
+    "aic": "Only existing Sept18 AIC results are included and clearly marked historical; new AIC is pending.",
+    "generation_warning": "Snapshot generator exited0 but its large stdout was truncated, causing one JSON-parse observation error. The complete on-disk summary was then read through a smaller jq projection; generator and GPU jobs were not rerun.",
+    "pdf_warning": "LibreOffice emitted a javaldx Java warning but converted successfully with exit0; no Java functionality was required.",
+    "layout_fix": "After initial content/font validation, table widths were adjusted to actual page availability and validated/rendered again; earlier validation retained separately.",
+    "final_tool_evidence": {
+      "chunk_id": "ac1794",
+      "wall_time_seconds": 0.000039287,
+      "exit_code": 0,
+      "original_token_count": 410,
+      "output": "2026-09-29T19:25:48+08:00\n61534e2f25579f8d0434b14e4a762005ea35284c74d51d0a07e8c250e70855c5  docs/pr33824_dense_models_stage_20260929_1906.md\n8c74ed910b2528cb5c1c4637296dab5d49c5d11a5b4ac6acee128b7b965caa1f  docs/pr33824_dense_models_stage_20260929_1906.docx\ntrue\ntrue\n    PID    PPID                  STARTED     ELAPSED STAT COMMAND\n1379762       1 Mon Sep 28 20:44:00 2026    22:41:48 S    bash /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/scripts/run_pr33824_data_tools_same_distribution_matrix.sh --results-root /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933 --models Qwen3-0.6B,Qwen2.5-3B-Instruct,llama-2-7b,Mistral-7B-Instruct-v0.2,Qwen2.5-7B-Instruct,Qwen3-8B,Qwen2.5-14B-Instruct,Qwen2.5-14B-Instruct-1M,Qwen3-14B,Meta-Llama-3.1-70B-Instruct-AWQ,Qwen3-30B-A3B,Qwen3-30B-A3B-Instruct-2507,Qwen3-32B --train-repeats 5 --holdout-repeats 5 --prompt-multiplier 2 --resume\n2116929       1 Tue Sep 29 17:07:20 2026    02:18:28 Ss   /home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/scripts/resume_pr33824_after_orphan.py --results-root /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933 --native-pid 1379762 --out-dir /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/orphan_recovery_20260929_1706 --interval 600\n"
+    }
+  },
+  "ongoing_scope": "Full13 experiment, fresh AIC comparison/curves/historical same-test controls/selected90profiles/unified final report remain required. Existing queue and supervisor are confirmed live; no active source, runtime, kernel or experiment process was changed."
+}

@@ -1,0 +1,203 @@
+{
+  "program": "residuals.py",
+  "program_sha256": "a327e4cef94dc67a6ba311b37e5a0af8ce8a6c6bbe301635f14e4c4ce83ba2e4",
+  "command": "env PYTHONNOUSERSITE=1 CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 nice -n 15 /home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/moe30_instruct_full_independent_saved_score_integrity_20260929_2354/residuals.py",
+  "working_directory": "/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator",
+  "exit_code": 0,
+  "wall_time_seconds": 0.065681646,
+  "result": {
+    "source_path": "/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-30B-A3B-Instruct-2507/holdout/ml_teacher_forced/per_batch.csv",
+    "source_sha256": "dea1ab5c8aab702a10b6ccfbde206dfe03bdb26df1ddb8e19b638dbf212ff650",
+    "source_unchanged": true,
+    "rows": 12188,
+    "no_rows_removed": true,
+    "no_fit_or_prediction": true,
+    "actual_ms_quantiles": {
+      "1": 2390.1087269186974,
+      "0.5": 85.0364645011723,
+      "0.95": 94.28374310955405,
+      "0.99": 338.65239518694574
+    },
+    "prediction_ms_quantiles": {
+      "1": 94.54408703824443,
+      "0.5": 85.1992036898943,
+      "0.95": 91.6876764561079,
+      "0.99": 93.52467712729533
+    },
+    "absolute_error_concentration": [
+      {
+        "ranked_by": "absolute_error_ms",
+        "top_fraction": 0.01,
+        "count": 122,
+        "absolute_error_share_pct": 68.0051292538524,
+        "ape_sum_share_pct": 18.407957926343045,
+        "actual_latency_min_ms": 338.70743308216333,
+        "actual_latency_max_ms": 2390.1087269186974,
+        "cases": {
+          "saturation_1024x256_inf": 21,
+          "saturation_1536x384_inf": 24,
+          "latency_256x128_r1": 26,
+          "latency_128x64_r1": 26,
+          "service_1024x256_r4": 25
+        },
+        "phases": {
+          "1": 60,
+          "2": 62
+        }
+      },
+      {
+        "ranked_by": "absolute_error_ms",
+        "top_fraction": 0.05,
+        "count": 610,
+        "absolute_error_share_pct": 77.8897672761741,
+        "ape_sum_share_pct": 32.66043552593131,
+        "actual_latency_min_ms": 84.05055478215218,
+        "actual_latency_max_ms": 2390.1087269186974,
+        "cases": {
+          "saturation_1024x256_inf": 113,
+          "saturation_1536x384_inf": 44,
+          "latency_256x128_r1": 121,
+          "latency_128x64_r1": 158,
+          "service_1024x256_r4": 174
+        },
+        "phases": {
+          "1": 127,
+          "2": 483
+        }
+      }
+    ],
+    "largest_10_absolute_errors": [
+      {
+        "case": "saturation_1024x256_inf",
+        "schedule_path": "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-30B-A3B-Instruct-2507/holdout/real/repeat-4/cases/saturation_1024x256_inf/TP0.schedule_batch.jsonl",
+        "line_number": 504,
+        "forward_mode": 2,
+        "batch_size": 1,
+        "sum_extend": 1,
+        "sum_past": 1046,
+        "actual_ms": 2390.1087269186974,
+        "predicted_ms": 84.39942253624629,
+        "absolute_error_ms": 2305.709304382451,
+        "ape_pct": 96.46880405122603
+      },
+      {
+        "case": "saturation_1024x256_inf",
+        "schedule_path": "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-30B-A3B-Instruct-2507/holdout/real/repeat-5/cases/saturation_1024x256_inf/TP0.schedule_batch.jsonl",
+        "line_number": 475,
+        "forward_mode": 2,
+        "batch_size": 1,
+        "sum_extend": 1,
+        "sum_past": 418,
+        "actual_ms": 2385.3872129693627,
+        "predicted_ms": 85.61873619271428,
+        "absolute_error_ms": 2299.7684767766486,
+        "ape_pct": 96.41069861835409
+      },
+      {
+        "case": "saturation_1536x384_inf",
+        "schedule_path": "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-30B-A3B-Instruct-2507/holdout/real/repeat-1/cases/saturation_1536x384_inf/TP0.schedule_batch.jsonl",
+        "line_number": 680,
+        "forward_mode": 2,
+        "batch_size": 1,
+        "sum_extend": 1,
+        "sum_past": 1362,
+        "actual_ms": 2361.2820357084274,
+        "predicted_ms": 85.02427573344039,
+        "absolute_error_ms": 2276.257759974987,
+        "ape_pct": 96.3992325165879
+      },
+      {
+        "case": "latency_256x128_r1",
+        "schedule_path": "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-30B-A3B-Instruct-2507/holdout/real/repeat-5/cases/latency_256x128_r1/TP0.schedule_batch.jsonl",
+        "line_number": 2,
+        "forward_mode": 2,
+        "batch_size": 1,
+        "sum_extend": 1,
+        "sum_past": 249,
+        "actual_ms": 2365.964354015887,
+        "predicted_ms": 89.89555253316806,
+        "absolute_error_ms": 2276.0688014827188,
+        "ape_pct": 96.20046885403902
+      },
+      {
+        "case": "latency_128x64_r1",
+        "schedule_path": "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-30B-A3B-Instruct-2507/holdout/real/repeat-2/cases/latency_128x64_r1/TP0.schedule_batch.jsonl",
+        "line_number": 2,
+        "forward_mode": 2,
+        "batch_size": 1,
+        "sum_extend": 1,
+        "sum_past": 85,
+        "actual_ms": 2356.8015340715647,
+        "predicted_ms": 84.21092551793568,
+        "absolute_error_ms": 2272.590608553629,
+        "ape_pct": 96.42689788255294
+      },
+      {
+        "case": "service_1024x256_r4",
+        "schedule_path": "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-30B-A3B-Instruct-2507/holdout/real/repeat-5/cases/service_1024x256_r4/TP0.schedule_batch.jsonl",
+        "line_number": 484,
+        "forward_mode": 2,
+        "batch_size": 1,
+        "sum_extend": 1,
+        "sum_past": 418,
+        "actual_ms": 2355.3239149041474,
+        "predicted_ms": 85.61873619271428,
+        "absolute_error_ms": 2269.7051787114333,
+        "ape_pct": 96.36488486144384
+      },
+      {
+        "case": "saturation_1536x384_inf",
+        "schedule_path": "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-30B-A3B-Instruct-2507/holdout/real/repeat-4/cases/saturation_1536x384_inf/TP0.schedule_batch.jsonl",
+        "line_number": 700,
+        "forward_mode": 2,
+        "batch_size": 1,
+        "sum_extend": 1,
+        "sum_past": 893,
+        "actual_ms": 2350.988066755235,
+        "predicted_ms": 84.08550422332483,
+        "absolute_error_ms": 2266.9025625319105,
+        "ape_pct": 96.42339723402436
+      },
+      {
+        "case": "saturation_1536x384_inf",
+        "schedule_path": "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-30B-A3B-Instruct-2507/holdout/real/repeat-3/cases/saturation_1536x384_inf/TP0.schedule_batch.jsonl",
+        "line_number": 710,
+        "forward_mode": 2,
+        "batch_size": 1,
+        "sum_extend": 1,
+        "sum_past": 37,
+        "actual_ms": 2344.7007196955383,
+        "predicted_ms": 84.33054486576545,
+        "absolute_error_ms": 2260.3701748297726,
+        "ape_pct": 96.4033556966402
+      },
+      {
+        "case": "latency_256x128_r1",
+        "schedule_path": "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-30B-A3B-Instruct-2507/holdout/real/repeat-1/cases/latency_256x128_r1/TP0.schedule_batch.jsonl",
+        "line_number": 399,
+        "forward_mode": 2,
+        "batch_size": 1,
+        "sum_extend": 1,
+        "sum_past": 119,
+        "actual_ms": 2342.0433457940817,
+        "predicted_ms": 83.18707862721227,
+        "absolute_error_ms": 2258.856267166869,
+        "ape_pct": 96.4480982481984
+      },
+      {
+        "case": "saturation_1536x384_inf",
+        "schedule_path": "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-30B-A3B-Instruct-2507/holdout/real/repeat-2/cases/saturation_1536x384_inf/TP0.schedule_batch.jsonl",
+        "line_number": 616,
+        "forward_mode": 2,
+        "batch_size": 1,
+        "sum_extend": 1,
+        "sum_past": 1447,
+        "actual_ms": 2340.942914132029,
+        "predicted_ms": 85.02427573344039,
+        "absolute_error_ms": 2255.9186383985884,
+        "ape_pct": 96.36794749585059
+      }
+    ],
+    "limits": "Source-integrity-verified stored wall-clock labels; descriptive heavy-tail statistics only. No claim of GPU stalls, CPU bubbles, JIT compilation or token-content causation; no outlier filtering, refitting or corrected performance score."
+  }
+}

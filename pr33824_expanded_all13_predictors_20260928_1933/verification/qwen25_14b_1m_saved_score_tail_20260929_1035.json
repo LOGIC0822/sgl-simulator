@@ -1,0 +1,286 @@
+{
+  "started_at": "2026-09-29T10:35:12.744852+08:00",
+  "finished_at": "2026-09-29T10:35:12.894879+08:00",
+  "model": "Qwen2.5-14B-Instruct-1M",
+  "exit_code": 0,
+  "all_rows": {
+    "rows": 9974,
+    "mean_actual_ms": 310.803497095247,
+    "mean_predicted_ms": 300.5954506506314,
+    "mape_pct": 12.182504675584088
+  },
+  "descriptive_threshold_ape_pct": 100,
+  "threshold_rows": {
+    "rows": 96,
+    "row_pct": 0.962502506516944,
+    "share_of_total_ape_pct": 26.8047823116341,
+    "contribution_to_pooled_mape_pp": 3.2654938583949487
+  },
+  "by_case": [
+    {
+      "case": "latency_128x64_r1",
+      "rows": 557,
+      "mean_actual_ms": 357.04971844484254,
+      "mean_predicted_ms": 389.9594422740743,
+      "mape_pct": 30.393097372817486,
+      "ape_at_least_100_rows": 48,
+      "ape_at_least_100_row_pct": 8.617594254937163,
+      "ape_at_least_100_share_of_case_ape_pct": 96.80841585460297,
+      "ape_at_least_100_contribution_to_pooled_mape_pp": 1.6431374960241378,
+      "high_error_phases": {
+        "1": 0,
+        "2": 48
+      },
+      "high_error_batch_sizes": {
+        "7": 1,
+        "8": 1,
+        "10": 2,
+        "11": 2,
+        "12": 1,
+        "13": 3,
+        "14": 4,
+        "15": 4,
+        "16": 1,
+        "17": 7,
+        "18": 12,
+        "19": 6,
+        "22": 1,
+        "24": 1,
+        "26": 2
+      },
+      "high_error_means": {
+        "rows": 48,
+        "mean_actual_ms": 109.47828111238778,
+        "mean_predicted_ms": 483.1518173156766,
+        "mape_pct": 341.430278861349
+      }
+    },
+    {
+      "case": "latency_256x128_r1",
+      "rows": 850,
+      "mean_actual_ms": 288.5203128406668,
+      "mean_predicted_ms": 295.814373944315,
+      "mape_pct": 24.33081799050966,
+      "ape_at_least_100_rows": 48,
+      "ape_at_least_100_row_pct": 5.647058823529412,
+      "ape_at_least_100_share_of_case_ape_pct": 78.24200743657258,
+      "ape_at_least_100_contribution_to_pooled_mape_pp": 1.6223563623708102,
+      "high_error_phases": {
+        "1": 0,
+        "2": 48
+      },
+      "high_error_batch_sizes": {
+        "18": 2,
+        "19": 2,
+        "20": 3,
+        "21": 1,
+        "22": 10,
+        "23": 3,
+        "24": 4,
+        "25": 4,
+        "26": 13,
+        "27": 1,
+        "28": 1,
+        "29": 2,
+        "31": 2
+      },
+      "high_error_means": {
+        "rows": 48,
+        "mean_actual_ms": 111.11250087075557,
+        "mean_predicted_ms": 485.5851923435185,
+        "mape_pct": 337.1121324643013
+      }
+    },
+    {
+      "case": "saturation_1024x256_inf",
+      "rows": 2463,
+      "mean_actual_ms": 332.2812048211645,
+      "mean_predicted_ms": 303.51587908718574,
+      "mape_pct": 10.75611658102842,
+      "ape_at_least_100_rows": 0,
+      "ape_at_least_100_row_pct": 0,
+      "ape_at_least_100_share_of_case_ape_pct": 0,
+      "ape_at_least_100_contribution_to_pooled_mape_pp": 0
+    },
+    {
+      "case": "saturation_1536x384_inf",
+      "rows": 3641,
+      "mean_actual_ms": 302.3924594352406,
+      "mean_predicted_ms": 284.0895845115609,
+      "mape_pct": 12.213935624526322,
+      "ape_at_least_100_rows": 0,
+      "ape_at_least_100_row_pct": 0,
+      "ape_at_least_100_share_of_case_ape_pct": 0,
+      "ape_at_least_100_contribution_to_pooled_mape_pp": 0
+    },
+    {
+      "case": "service_1024x256_r4",
+      "rows": 2463,
+      "mean_actual_ms": 298.99129868510363,
+      "mean_predicted_ms": 303.51587908718574,
+      "mape_pct": 5.251683458266266,
+      "ape_at_least_100_rows": 0,
+      "ape_at_least_100_row_pct": 0,
+      "ape_at_least_100_share_of_case_ape_pct": 0,
+      "ape_at_least_100_contribution_to_pooled_mape_pp": 0
+    }
+  ],
+  "largest_ape_observations": [
+    {
+      "case": "latency_128x64_r1",
+      "repeat": "repeat-4",
+      "line_number": 91,
+      "forward_mode": 2,
+      "batch_size": 10,
+      "sum_extend": 10,
+      "sum_past": 507,
+      "actual_ms": 107.47449705377221,
+      "predicted_ms": 482.1610104846515,
+      "ape_pct": 348.6283013200928
+    },
+    {
+      "case": "latency_128x64_r1",
+      "repeat": "repeat-4",
+      "line_number": 85,
+      "forward_mode": 2,
+      "batch_size": 13,
+      "sum_extend": 13,
+      "sum_past": 701,
+      "actual_ms": 107.79008874669671,
+      "predicted_ms": 482.9289413476157,
+      "ape_pct": 348.02722306174496
+    },
+    {
+      "case": "latency_128x64_r1",
+      "repeat": "repeat-4",
+      "line_number": 81,
+      "forward_mode": 2,
+      "batch_size": 14,
+      "sum_extend": 14,
+      "sum_past": 802,
+      "actual_ms": 107.83289978280663,
+      "predicted_ms": 483.0048034257661,
+      "ape_pct": 347.9197020562537
+    },
+    {
+      "case": "latency_128x64_r1",
+      "repeat": "repeat-4",
+      "line_number": 90,
+      "forward_mode": 2,
+      "batch_size": 10,
+      "sum_extend": 10,
+      "sum_past": 507,
+      "actual_ms": 108.0132550559938,
+      "predicted_ms": 482.1610104846515,
+      "ape_pct": 346.3905936680646
+    },
+    {
+      "case": "latency_128x64_r1",
+      "repeat": "repeat-4",
+      "line_number": 86,
+      "forward_mode": 2,
+      "batch_size": 13,
+      "sum_extend": 13,
+      "sum_past": 701,
+      "actual_ms": 108.21259021759033,
+      "predicted_ms": 482.9289413476157,
+      "ape_pct": 346.27796116566293
+    },
+    {
+      "case": "latency_128x64_r1",
+      "repeat": "repeat-4",
+      "line_number": 82,
+      "forward_mode": 2,
+      "batch_size": 14,
+      "sum_extend": 14,
+      "sum_past": 802,
+      "actual_ms": 108.31951070576906,
+      "predicted_ms": 483.0048034257661,
+      "ape_pct": 345.90748266742446
+    },
+    {
+      "case": "latency_128x64_r1",
+      "repeat": "repeat-4",
+      "line_number": 92,
+      "forward_mode": 2,
+      "batch_size": 8,
+      "sum_extend": 8,
+      "sum_past": 361,
+      "actual_ms": 108.07058913633227,
+      "predicted_ms": 481.6333324286419,
+      "ape_pct": 345.66550092648794
+    },
+    {
+      "case": "latency_128x64_r1",
+      "repeat": "repeat-4",
+      "line_number": 78,
+      "forward_mode": 2,
+      "batch_size": 15,
+      "sum_extend": 15,
+      "sum_past": 891,
+      "actual_ms": 108.49127685651183,
+      "predicted_ms": 483.2660451342215,
+      "ape_pct": 345.44230571954506
+    },
+    {
+      "case": "latency_128x64_r1",
+      "repeat": "repeat-4",
+      "line_number": 69,
+      "forward_mode": 2,
+      "batch_size": 18,
+      "sum_extend": 18,
+      "sum_past": 1154,
+      "actual_ms": 108.52254601195455,
+      "predicted_ms": 483.3574375876202,
+      "ape_pct": 345.39817332923144
+    },
+    {
+      "case": "latency_128x64_r1",
+      "repeat": "repeat-4",
+      "line_number": 74,
+      "forward_mode": 2,
+      "batch_size": 17,
+      "sum_extend": 17,
+      "sum_past": 1026,
+      "actual_ms": 108.54947892948985,
+      "predicted_ms": 483.3574375876202,
+      "ape_pct": 345.2876626902956
+    },
+    {
+      "case": "latency_128x64_r1",
+      "repeat": "repeat-4",
+      "line_number": 93,
+      "forward_mode": 2,
+      "batch_size": 7,
+      "sum_extend": 7,
+      "sum_past": 353,
+      "actual_ms": 108.12757909297943,
+      "predicted_ms": 481.45907981699213,
+      "ape_pct": 345.2694528590002
+    },
+    {
+      "case": "latency_128x64_r1",
+      "repeat": "repeat-4",
+      "line_number": 73,
+      "forward_mode": 2,
+      "batch_size": 18,
+      "sum_extend": 18,
+      "sum_past": 1154,
+      "actual_ms": 108.5754120722413,
+      "predicted_ms": 483.3574375876202,
+      "ape_pct": 345.1813061193039
+    }
+  ],
+  "source_sha256": {
+    "test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen2.5-14B-Instruct-1M/holdout/ml_teacher_forced/per_batch.csv": "529e2832e5ec9135fe67c4ac6fc26c5b2e3abfacc67ecdfa6b928008d56b7326",
+    "test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen2.5-14B-Instruct-1M/holdout/ml_teacher_forced/summary.csv": "7f3d17f92334209b6545d37e13390d59c7cbea3c9ff78c25cd3299eddff0f579",
+    "test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen2.5-14B-Instruct-1M/holdout/distribution_audit.csv": "e68eab7a85fc439708e0b478ff7e6d8c783bcb21340baafeb9677af799da82bf"
+  },
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "OMP_NUM_THREADS": "1",
+    "PYTHONNOUSERSITE": "1",
+    "nice": 15
+  },
+  "scope": "Readonly descriptive contribution of already-verified saved scores. Every original row retained. No fitting, prediction invocation, correction, filtering, GPU/profile/replay/AIC query or cause attribution."
+}

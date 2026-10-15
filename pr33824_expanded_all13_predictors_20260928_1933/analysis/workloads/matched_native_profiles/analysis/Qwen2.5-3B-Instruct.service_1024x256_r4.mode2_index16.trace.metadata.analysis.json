@@ -1,0 +1,4972 @@
+{
+  "native_marker": "sglang_native_run_batch/mode2/index16",
+  "native_cpu_range_us": 42756.296875,
+  "instrumented_iteration_us": 42869.02118474245,
+  "native_gpu_event_count": 484,
+  "native_gpu_duration_sum_us": 6023.984375,
+  "native_gpu_interval_union_us": 6023.984375,
+  "unattributed_gpu_event_count": 0,
+  "unattributed_gpu_duration_sum_us": 0,
+  "gpu_attribution_duration_pct": 100.0,
+  "iteration_wall_minus_attributed_gpu_union_us": 36845.03680974245,
+  "families": {
+    "other_kernel": {
+      "event_count": 266,
+      "duration_sum_us": 799.2666015625
+    },
+    "gemm_gemv": {
+      "event_count": 145,
+      "duration_sum_us": 4567.3330078125
+    },
+    "triton_decode_attention": {
+      "event_count": 72,
+      "duration_sum_us": 656.3291015625
+    },
+    "gpu_memset": {
+      "event_count": 1,
+      "duration_sum_us": 1.0556640625
+    }
+  },
+  "gpu_events": [
+    {
+      "name": "void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native::OpaqueType<8> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_kernel_impl<at::native::OpaqueType<8> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1}>(long, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native::OpaqueType<8> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_kernel_impl<at::native::OpaqueType<8> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7759584559599.324,
+      "end_us": 7759584559602.94,
+      "duration_us": 3.6162109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65343
+    },
+    {
+      "name": "void sglang::clamp_position_kernel<long>(long*, long const*, unsigned long)",
+      "category": "kernel",
+      "start_us": 7759584559773.468,
+      "end_us": 7759584559775.067,
+      "duration_us": 1.599609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65356
+    },
+    {
+      "name": "void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::UnaryOpFunctor<long, 2, 1, 1>, at::native::Copy<long, long> >(at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::UnaryOpFunctor<long, 2, 1, 1>, at::native::Copy<long, long>)",
+      "category": "kernel",
+      "start_us": 7759584560023.708,
+      "end_us": 7759584560027.516,
+      "duration_us": 3.8076171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65374
+    },
+    {
+      "name": "void at_cuda_detail::cub::DeviceScanInitKernel<at_cuda_detail::cub::ScanTileState<long, true> >(at_cuda_detail::cub::ScanTileState<long, true>, int)",
+      "category": "kernel",
+      "start_us": 7759584560257.693,
+      "end_us": 7759584560258.974,
+      "duration_us": 1.2802734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65429
+    },
+    {
+      "name": "void at_cuda_detail::cub::DeviceScanKernel<at_cuda_detail::cub::DeviceScanPolicy<long, std::plus<long> >::Policy900, long const*, long*, at_cuda_detail::cub::ScanTileState<long, true>, std::plus<long>, at_cuda_detail::cub::NullType, int, long>(long const*, long*, at_cuda_detail::cub::ScanTileState<long, true>, int, std::plus<long>, at_cuda_detail::cub::NullType, int)",
+      "category": "kernel",
+      "start_us": 7759584560270.557,
+      "end_us": 7759584560273.245,
+      "duration_us": 2.6884765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65439
+    },
+    {
+      "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#3}::operator()() const::{lambda(int)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#3}::operator()() const::{lambda(int)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+      "category": "kernel",
+      "start_us": 7759584560304.221,
+      "end_us": 7759584560305.917,
+      "duration_us": 1.6962890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65451
+    },
+    {
+      "name": "create_flashinfer_kv_indices_triton",
+      "category": "kernel",
+      "start_us": 7759584560410.814,
+      "end_us": 7759584560414.2705,
+      "duration_us": 3.4560546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65474
+    },
+    {
+      "name": "get_num_kv_splits_triton",
+      "category": "kernel",
+      "start_us": 7759584560508.67,
+      "end_us": 7759584560511.934,
+      "duration_us": 3.263671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65500
+    },
+    {
+      "name": "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<int>, std::array<char*, 1ul> >(int, at::native::FillFunctor<int>, std::array<char*, 1ul>)",
+      "category": "kernel",
+      "start_us": 7759584560585.47,
+      "end_us": 7759584560586.781,
+      "duration_us": 1.3115234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65532
+    },
+    {
+      "name": "void at::native::(anonymous namespace)::indexSelectSmallIndex<c10::BFloat16, long, unsigned int, 2, 2, -2>(at::cuda::detail::TensorInfo<c10::BFloat16, unsigned int>, at::cuda::detail::TensorInfo<c10::BFloat16 const, unsigned int>, at::cuda::detail::TensorInfo<long const, unsigned int>, int, int, unsigned int, long)",
+      "category": "kernel",
+      "start_us": 7759584560718.591,
+      "end_us": 7759584560726.142,
+      "duration_us": 7.55078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65553
+    },
+    {
+      "name": "void flashinfer::norm::RMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584560820.094,
+      "end_us": 7759584560823.23,
+      "duration_us": 3.13671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65567
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584560991.263,
+      "end_us": 7759584561004.543,
+      "duration_us": 13.2802734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65587
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584561161.727,
+      "end_us": 7759584561164.224,
+      "duration_us": 2.4970703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65591
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584561398.048,
+      "end_us": 7759584561400.768,
+      "duration_us": 2.7197265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65599
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584561681.505,
+      "end_us": 7759584561695.009,
+      "duration_us": 13.50390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65610
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584561754.945,
+      "end_us": 7759584561759.394,
+      "duration_us": 4.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65618
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584561946.562,
+      "end_us": 7759584561957.281,
+      "duration_us": 10.7197265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65634
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584561958.914,
+      "end_us": 7759584561961.762,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65636
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584562063.042,
+      "end_us": 7759584562066.274,
+      "duration_us": 3.232421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65642
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584562213.954,
+      "end_us": 7759584562277.762,
+      "duration_us": 63.8076171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65654
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584562368.611,
+      "end_us": 7759584562371.3,
+      "duration_us": 2.6884765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65665
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584562552.26,
+      "end_us": 7759584562583.844,
+      "duration_us": 31.583984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65681
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584562584.899,
+      "end_us": 7759584562587.716,
+      "duration_us": 2.81640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65683
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584562709.636,
+      "end_us": 7759584562713.284,
+      "duration_us": 3.6484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65689
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584562848.772,
+      "end_us": 7759584562862.244,
+      "duration_us": 13.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65706
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584563015.204,
+      "end_us": 7759584563017.86,
+      "duration_us": 2.65625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65710
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584563232.485,
+      "end_us": 7759584563234.949,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65718
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584563412.197,
+      "end_us": 7759584563426.213,
+      "duration_us": 14.015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65729
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584563473.413,
+      "end_us": 7759584563477.861,
+      "duration_us": 4.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65737
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584563576.966,
+      "end_us": 7759584563586.854,
+      "duration_us": 9.8876953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65753
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584563587.846,
+      "end_us": 7759584563590.726,
+      "duration_us": 2.8798828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65755
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584563664.87,
+      "end_us": 7759584563668.198,
+      "duration_us": 3.328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65761
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584563745.126,
+      "end_us": 7759584563805.382,
+      "duration_us": 60.255859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65772
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584563829.478,
+      "end_us": 7759584563832.038,
+      "duration_us": 2.560546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65783
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584563913.479,
+      "end_us": 7759584563945.862,
+      "duration_us": 32.3837890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65799
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584563946.887,
+      "end_us": 7759584563949.99,
+      "duration_us": 3.103515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65801
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584564005.127,
+      "end_us": 7759584564008.711,
+      "duration_us": 3.583984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65807
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584564085.543,
+      "end_us": 7759584564098.727,
+      "duration_us": 13.18359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65824
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584564176.712,
+      "end_us": 7759584564179.207,
+      "duration_us": 2.4951171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65828
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584564314.12,
+      "end_us": 7759584564316.616,
+      "duration_us": 2.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65836
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584564481.0,
+      "end_us": 7759584564494.76,
+      "duration_us": 13.759765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65847
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584564541.161,
+      "end_us": 7759584564545.609,
+      "duration_us": 4.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65855
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584564643.817,
+      "end_us": 7759584564653.802,
+      "duration_us": 9.984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65871
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584564654.889,
+      "end_us": 7759584564657.736,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65873
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584564730.217,
+      "end_us": 7759584564733.673,
+      "duration_us": 3.4560546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65879
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584564807.625,
+      "end_us": 7759584564869.097,
+      "duration_us": 61.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65890
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584564892.362,
+      "end_us": 7759584564894.953,
+      "duration_us": 2.5908203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65901
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584564985.482,
+      "end_us": 7759584565017.963,
+      "duration_us": 32.48046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65917
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584565018.922,
+      "end_us": 7759584565022.025,
+      "duration_us": 3.103515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65919
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584565077.77,
+      "end_us": 7759584565081.321,
+      "duration_us": 3.5517578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65925
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584565159.21,
+      "end_us": 7759584565172.554,
+      "duration_us": 13.34375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65942
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584565253.034,
+      "end_us": 7759584565255.53,
+      "duration_us": 2.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65946
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584565391.659,
+      "end_us": 7759584565394.123,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65954
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584565554.891,
+      "end_us": 7759584565568.395,
+      "duration_us": 13.50390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65965
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584565612.523,
+      "end_us": 7759584565616.972,
+      "duration_us": 4.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65973
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584565713.995,
+      "end_us": 7759584565723.82,
+      "duration_us": 9.8251953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65989
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584565724.78,
+      "end_us": 7759584565727.628,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65991
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584565826.732,
+      "end_us": 7759584565829.9,
+      "duration_us": 3.16796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 65997
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584565910.444,
+      "end_us": 7759584565971.628,
+      "duration_us": 61.18359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66008
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584565998.38,
+      "end_us": 7759584566000.972,
+      "duration_us": 2.591796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66019
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584566087.372,
+      "end_us": 7759584566119.82,
+      "duration_us": 32.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66035
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584566120.876,
+      "end_us": 7759584566124.012,
+      "duration_us": 3.1357421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66037
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584566181.613,
+      "end_us": 7759584566185.132,
+      "duration_us": 3.5185546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66043
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584566265.708,
+      "end_us": 7759584566279.405,
+      "duration_us": 13.697265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66060
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584566362.541,
+      "end_us": 7759584566365.133,
+      "duration_us": 2.591796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66064
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584566508.589,
+      "end_us": 7759584566511.053,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66072
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584566683.534,
+      "end_us": 7759584566697.166,
+      "duration_us": 13.6318359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66083
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584566745.326,
+      "end_us": 7759584566749.774,
+      "duration_us": 4.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66091
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584566853.614,
+      "end_us": 7759584566863.502,
+      "duration_us": 9.8876953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66107
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584566864.494,
+      "end_us": 7759584566867.374,
+      "duration_us": 2.8798828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66109
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584566943.375,
+      "end_us": 7759584566946.607,
+      "duration_us": 3.232421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66115
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584567035.119,
+      "end_us": 7759584567095.184,
+      "duration_us": 60.064453125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66126
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584567120.271,
+      "end_us": 7759584567122.831,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66137
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584567203.503,
+      "end_us": 7759584567236.2705,
+      "duration_us": 32.767578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66153
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584567237.263,
+      "end_us": 7759584567240.559,
+      "duration_us": 3.2958984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66155
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584567295.632,
+      "end_us": 7759584567299.216,
+      "duration_us": 3.583984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66161
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584567373.968,
+      "end_us": 7759584567387.279,
+      "duration_us": 13.3115234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66178
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584567465.36,
+      "end_us": 7759584567467.856,
+      "duration_us": 2.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66182
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584567603.728,
+      "end_us": 7759584567606.159,
+      "duration_us": 2.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66190
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584567768.625,
+      "end_us": 7759584567782.545,
+      "duration_us": 13.919921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66201
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584567827.121,
+      "end_us": 7759584567831.537,
+      "duration_us": 4.416015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66209
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584567928.849,
+      "end_us": 7759584567938.833,
+      "duration_us": 9.984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66225
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584567939.857,
+      "end_us": 7759584567942.737,
+      "duration_us": 2.8798828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66227
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584568013.617,
+      "end_us": 7759584568016.882,
+      "duration_us": 3.2646484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66233
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584568091.922,
+      "end_us": 7759584568153.362,
+      "duration_us": 61.4404296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66244
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584568175.826,
+      "end_us": 7759584568178.386,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66255
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584568259.538,
+      "end_us": 7759584568291.666,
+      "duration_us": 32.1279296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66271
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584568292.722,
+      "end_us": 7759584568296.018,
+      "duration_us": 3.2958984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66273
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584568349.907,
+      "end_us": 7759584568353.459,
+      "duration_us": 3.5517578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66279
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584568428.69,
+      "end_us": 7759584568442.195,
+      "duration_us": 13.5048828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66296
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584568520.979,
+      "end_us": 7759584568523.475,
+      "duration_us": 2.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66300
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584568659.603,
+      "end_us": 7759584568662.099,
+      "duration_us": 2.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66308
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584568824.148,
+      "end_us": 7759584568837.8125,
+      "duration_us": 13.6640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66319
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584568882.163,
+      "end_us": 7759584568886.611,
+      "duration_us": 4.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66327
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584568985.876,
+      "end_us": 7759584568995.732,
+      "duration_us": 9.8564453125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66343
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584568996.756,
+      "end_us": 7759584568999.604,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66345
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584569071.988,
+      "end_us": 7759584569075.349,
+      "duration_us": 3.3603515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66351
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584569150.036,
+      "end_us": 7759584569210.676,
+      "duration_us": 60.6396484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66362
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584569233.396,
+      "end_us": 7759584569235.957,
+      "duration_us": 2.560546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66373
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584569316.437,
+      "end_us": 7759584569348.788,
+      "duration_us": 32.3515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66389
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584569349.94,
+      "end_us": 7759584569353.014,
+      "duration_us": 3.0732421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66391
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584569406.037,
+      "end_us": 7759584569409.781,
+      "duration_us": 3.744140625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66397
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584569486.293,
+      "end_us": 7759584569499.733,
+      "duration_us": 13.4404296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66414
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584569576.822,
+      "end_us": 7759584569579.317,
+      "duration_us": 2.4951171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66418
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584569714.325,
+      "end_us": 7759584569716.758,
+      "duration_us": 2.4326171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66426
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584569911.318,
+      "end_us": 7759584569925.078,
+      "duration_us": 13.759765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66437
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584569972.759,
+      "end_us": 7759584569977.207,
+      "duration_us": 4.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66445
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584570081.047,
+      "end_us": 7759584570090.711,
+      "duration_us": 9.6640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66461
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584570091.799,
+      "end_us": 7759584570094.646,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66463
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584570172.151,
+      "end_us": 7759584570175.543,
+      "duration_us": 3.3916015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66469
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584570254.519,
+      "end_us": 7759584570316.694,
+      "duration_us": 62.17578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66480
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584570342.392,
+      "end_us": 7759584570344.95,
+      "duration_us": 2.55859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66491
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584570430.104,
+      "end_us": 7759584570462.327,
+      "duration_us": 32.2236328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66507
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584570463.352,
+      "end_us": 7759584570466.52,
+      "duration_us": 3.16796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66509
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584570525.336,
+      "end_us": 7759584570529.016,
+      "duration_us": 3.6796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66515
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584570609.496,
+      "end_us": 7759584570622.904,
+      "duration_us": 13.408203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66532
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584570706.809,
+      "end_us": 7759584570709.367,
+      "duration_us": 2.55859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66536
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584570855.161,
+      "end_us": 7759584570857.625,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66544
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584571035.289,
+      "end_us": 7759584571048.985,
+      "duration_us": 13.6962890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66555
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584571092.921,
+      "end_us": 7759584571097.402,
+      "duration_us": 4.4814453125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66563
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584571194.938,
+      "end_us": 7759584571204.923,
+      "duration_us": 9.984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66579
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584571205.85,
+      "end_us": 7759584571208.697,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66581
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584571280.602,
+      "end_us": 7759584571283.77,
+      "duration_us": 3.16796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66587
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584571358.01,
+      "end_us": 7759584571418.81,
+      "duration_us": 60.7998046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66598
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584571442.458,
+      "end_us": 7759584571445.019,
+      "duration_us": 2.560546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66609
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584571548.827,
+      "end_us": 7759584571581.339,
+      "duration_us": 32.51171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66625
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584571582.331,
+      "end_us": 7759584571585.563,
+      "duration_us": 3.232421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66627
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584571641.211,
+      "end_us": 7759584571644.763,
+      "duration_us": 3.5517578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66633
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584571721.531,
+      "end_us": 7759584571734.747,
+      "duration_us": 13.2158203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66650
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584571813.692,
+      "end_us": 7759584571816.188,
+      "duration_us": 2.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66654
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584571951.579,
+      "end_us": 7759584571954.043,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66662
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584572115.9,
+      "end_us": 7759584572129.692,
+      "duration_us": 13.7919921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66673
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584572173.5,
+      "end_us": 7759584572177.948,
+      "duration_us": 4.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66681
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584572274.492,
+      "end_us": 7759584572284.22,
+      "duration_us": 9.7275390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66697
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584572285.244,
+      "end_us": 7759584572288.092,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66699
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584572359.996,
+      "end_us": 7759584572363.389,
+      "duration_us": 3.392578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66705
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584572438.461,
+      "end_us": 7759584572499.037,
+      "duration_us": 60.576171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66716
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584572522.557,
+      "end_us": 7759584572525.116,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66727
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584572605.693,
+      "end_us": 7759584572637.789,
+      "duration_us": 32.095703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66743
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584572638.813,
+      "end_us": 7759584572641.758,
+      "duration_us": 2.9443359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66745
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584572696.029,
+      "end_us": 7759584572699.6455,
+      "duration_us": 3.6162109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66751
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584572777.022,
+      "end_us": 7759584572790.591,
+      "duration_us": 13.568359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66768
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584572870.878,
+      "end_us": 7759584572873.406,
+      "duration_us": 2.5283203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66772
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584573009.31,
+      "end_us": 7759584573011.773,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66780
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584573173.759,
+      "end_us": 7759584573187.486,
+      "duration_us": 13.7275390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66791
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584573231.199,
+      "end_us": 7759584573235.68,
+      "duration_us": 4.48046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66799
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584573332.735,
+      "end_us": 7759584573342.72,
+      "duration_us": 9.984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66815
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584573343.711,
+      "end_us": 7759584573346.559,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66817
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584573419.391,
+      "end_us": 7759584573422.623,
+      "duration_us": 3.232421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66823
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584573497.632,
+      "end_us": 7759584573558.271,
+      "duration_us": 60.6396484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66834
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584573581.152,
+      "end_us": 7759584573583.681,
+      "duration_us": 2.5283203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66845
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584573665.504,
+      "end_us": 7759584573698.08,
+      "duration_us": 32.576171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66861
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584573699.104,
+      "end_us": 7759584573702.399,
+      "duration_us": 3.2958984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66863
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584573778.272,
+      "end_us": 7759584573781.984,
+      "duration_us": 3.7119140625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66869
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584573864.353,
+      "end_us": 7759584573878.017,
+      "duration_us": 13.6640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66886
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584573962.369,
+      "end_us": 7759584573964.865,
+      "duration_us": 2.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66890
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584574108.993,
+      "end_us": 7759584574111.457,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66898
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584574283.554,
+      "end_us": 7759584574297.506,
+      "duration_us": 13.9521484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66909
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584574344.418,
+      "end_us": 7759584574348.866,
+      "duration_us": 4.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66917
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584574452.45,
+      "end_us": 7759584574462.338,
+      "duration_us": 9.8876953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66933
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584574463.33,
+      "end_us": 7759584574466.178,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66935
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584574543.01,
+      "end_us": 7759584574546.211,
+      "duration_us": 3.201171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66941
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584574624.867,
+      "end_us": 7759584574687.715,
+      "duration_us": 62.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66952
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584574713.219,
+      "end_us": 7759584574715.811,
+      "duration_us": 2.591796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66963
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584574801.539,
+      "end_us": 7759584574833.827,
+      "duration_us": 32.2880859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66979
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584574834.883,
+      "end_us": 7759584574837.955,
+      "duration_us": 3.072265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66981
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584574897.187,
+      "end_us": 7759584574900.866,
+      "duration_us": 3.6796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 66987
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584575000.803,
+      "end_us": 7759584575014.371,
+      "duration_us": 13.568359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67004
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584575096.228,
+      "end_us": 7759584575098.724,
+      "duration_us": 2.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67008
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584575235.204,
+      "end_us": 7759584575237.7,
+      "duration_us": 2.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67016
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584575400.196,
+      "end_us": 7759584575413.925,
+      "duration_us": 13.728515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67027
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584575458.053,
+      "end_us": 7759584575462.501,
+      "duration_us": 4.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67035
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584575560.357,
+      "end_us": 7759584575570.021,
+      "duration_us": 9.6640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67051
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584575571.045,
+      "end_us": 7759584575573.861,
+      "duration_us": 2.81640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67053
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584575645.765,
+      "end_us": 7759584575649.093,
+      "duration_us": 3.328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67059
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584575723.173,
+      "end_us": 7759584575784.038,
+      "duration_us": 60.865234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67070
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584575806.95,
+      "end_us": 7759584575809.509,
+      "duration_us": 2.55859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67081
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584575890.534,
+      "end_us": 7759584575922.566,
+      "duration_us": 32.0322265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67097
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584575923.59,
+      "end_us": 7759584575926.758,
+      "duration_us": 3.16796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67099
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584575980.294,
+      "end_us": 7759584575983.846,
+      "duration_us": 3.5517578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67105
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584576063.366,
+      "end_us": 7759584576076.646,
+      "duration_us": 13.2802734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67122
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584576165.287,
+      "end_us": 7759584576167.751,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67126
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584576303.783,
+      "end_us": 7759584576306.247,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67134
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584576468.775,
+      "end_us": 7759584576482.535,
+      "duration_us": 13.759765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67145
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584576526.503,
+      "end_us": 7759584576530.951,
+      "duration_us": 4.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67153
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584576627.912,
+      "end_us": 7759584576637.832,
+      "duration_us": 9.919921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67169
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584576638.824,
+      "end_us": 7759584576641.672,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67171
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584576712.84,
+      "end_us": 7759584576716.072,
+      "duration_us": 3.232421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67177
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584576793.064,
+      "end_us": 7759584576854.856,
+      "duration_us": 61.7919921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67188
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584576876.521,
+      "end_us": 7759584576879.08,
+      "duration_us": 2.55859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67199
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584576960.329,
+      "end_us": 7759584576992.265,
+      "duration_us": 31.935546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67215
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584576993.257,
+      "end_us": 7759584576996.36,
+      "duration_us": 3.103515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67217
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584577050.281,
+      "end_us": 7759584577053.865,
+      "duration_us": 3.583984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67223
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584577129.609,
+      "end_us": 7759584577142.602,
+      "duration_us": 12.9921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67240
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584577221.833,
+      "end_us": 7759584577224.489,
+      "duration_us": 2.65625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67244
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584577360.042,
+      "end_us": 7759584577362.506,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67252
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584577524.874,
+      "end_us": 7759584577538.698,
+      "duration_us": 13.82421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67263
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584577582.346,
+      "end_us": 7759584577586.826,
+      "duration_us": 4.48046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67271
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584577684.427,
+      "end_us": 7759584577694.379,
+      "duration_us": 9.9521484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67287
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584577695.307,
+      "end_us": 7759584577698.154,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67289
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584577793.098,
+      "end_us": 7759584577796.459,
+      "duration_us": 3.361328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67295
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584577876.715,
+      "end_us": 7759584577937.707,
+      "duration_us": 60.9921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67306
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584577965.835,
+      "end_us": 7759584577968.395,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67317
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584578055.531,
+      "end_us": 7759584578088.331,
+      "duration_us": 32.7998046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67333
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584578089.451,
+      "end_us": 7759584578092.555,
+      "duration_us": 3.103515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67335
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584578151.34,
+      "end_us": 7759584578154.956,
+      "duration_us": 3.6162109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67341
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584578236.236,
+      "end_us": 7759584578249.677,
+      "duration_us": 13.4404296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67358
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584578332.972,
+      "end_us": 7759584578335.468,
+      "duration_us": 2.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67362
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584578478.22,
+      "end_us": 7759584578480.651,
+      "duration_us": 2.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67370
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584578652.717,
+      "end_us": 7759584578666.413,
+      "duration_us": 13.6962890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67381
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584578713.997,
+      "end_us": 7759584578718.478,
+      "duration_us": 4.48046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67389
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584578821.933,
+      "end_us": 7759584578831.597,
+      "duration_us": 9.6640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67405
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584578832.717,
+      "end_us": 7759584578835.564,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67407
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584578911.502,
+      "end_us": 7759584578914.766,
+      "duration_us": 3.263671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67413
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584579003.534,
+      "end_us": 7759584579063.918,
+      "duration_us": 60.3837890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67424
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584579087.15,
+      "end_us": 7759584579089.71,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67435
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584579170.094,
+      "end_us": 7759584579202.605,
+      "duration_us": 32.51171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67451
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584579203.726,
+      "end_us": 7759584579207.021,
+      "duration_us": 3.2958984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67453
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584579260.015,
+      "end_us": 7759584579263.759,
+      "duration_us": 3.744140625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67459
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584579339.215,
+      "end_us": 7759584579352.814,
+      "duration_us": 13.599609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67476
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584579431.183,
+      "end_us": 7759584579433.839,
+      "duration_us": 2.65625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67480
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584579569.231,
+      "end_us": 7759584579571.695,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67488
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584579734.384,
+      "end_us": 7759584579748.111,
+      "duration_us": 13.7275390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67499
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584579792.464,
+      "end_us": 7759584579796.944,
+      "duration_us": 4.48046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67507
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584579894.352,
+      "end_us": 7759584579904.304,
+      "duration_us": 9.9521484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67523
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584579905.36,
+      "end_us": 7759584579908.208,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67525
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584579979.568,
+      "end_us": 7759584579982.93,
+      "duration_us": 3.361328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67531
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584580057.169,
+      "end_us": 7759584580117.905,
+      "duration_us": 60.736328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67542
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584580141.809,
+      "end_us": 7759584580144.368,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67553
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584580227.185,
+      "end_us": 7759584580259.761,
+      "duration_us": 32.576171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67569
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584580260.785,
+      "end_us": 7759584580263.7295,
+      "duration_us": 2.9443359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67571
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584580318.129,
+      "end_us": 7759584580321.65,
+      "duration_us": 3.521484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67577
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584580397.81,
+      "end_us": 7759584580410.93,
+      "duration_us": 13.1201171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67594
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584580488.338,
+      "end_us": 7759584580490.962,
+      "duration_us": 2.6240234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67598
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584580627.73,
+      "end_us": 7759584580630.194,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67606
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584580791.602,
+      "end_us": 7759584580805.426,
+      "duration_us": 13.82421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67617
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584580850.003,
+      "end_us": 7759584580854.45,
+      "duration_us": 4.447265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67625
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584580951.123,
+      "end_us": 7759584580960.883,
+      "duration_us": 9.759765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67641
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584580961.939,
+      "end_us": 7759584580964.819,
+      "duration_us": 2.8798828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67643
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584581037.075,
+      "end_us": 7759584581040.467,
+      "duration_us": 3.3916015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67649
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584581115.155,
+      "end_us": 7759584581175.955,
+      "duration_us": 60.7998046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67660
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584581198.675,
+      "end_us": 7759584581201.234,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67671
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584581282.676,
+      "end_us": 7759584581314.899,
+      "duration_us": 32.2236328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67687
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584581315.892,
+      "end_us": 7759584581318.964,
+      "duration_us": 3.072265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67689
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584581372.5,
+      "end_us": 7759584581376.148,
+      "duration_us": 3.6484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67695
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584581452.244,
+      "end_us": 7759584581465.716,
+      "duration_us": 13.4716796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67712
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584581543.156,
+      "end_us": 7759584581545.8125,
+      "duration_us": 2.65625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67716
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584581682.581,
+      "end_us": 7759584581685.045,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67724
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584581874.933,
+      "end_us": 7759584581888.757,
+      "duration_us": 13.82421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67735
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584581936.374,
+      "end_us": 7759584581940.8545,
+      "duration_us": 4.48046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67743
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584582044.47,
+      "end_us": 7759584582054.102,
+      "duration_us": 9.6318359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67759
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584582055.158,
+      "end_us": 7759584582058.006,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67761
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584582136.15,
+      "end_us": 7759584582139.414,
+      "duration_us": 3.263671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67767
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584582218.454,
+      "end_us": 7759584582280.054,
+      "duration_us": 61.599609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67778
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584582307.35,
+      "end_us": 7759584582309.909,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67789
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584582395.383,
+      "end_us": 7759584582428.215,
+      "duration_us": 32.83203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67805
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584582429.207,
+      "end_us": 7759584582432.247,
+      "duration_us": 3.0400390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67807
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584582491.543,
+      "end_us": 7759584582495.383,
+      "duration_us": 3.83984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67813
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584582576.375,
+      "end_us": 7759584582589.431,
+      "duration_us": 13.0556640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67830
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584582672.6,
+      "end_us": 7759584582675.19,
+      "duration_us": 2.5908203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67834
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584582841.912,
+      "end_us": 7759584582844.376,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67842
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584583026.809,
+      "end_us": 7759584583040.633,
+      "duration_us": 13.82421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67853
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584583085.176,
+      "end_us": 7759584583089.625,
+      "duration_us": 4.44921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67861
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584583187.257,
+      "end_us": 7759584583197.209,
+      "duration_us": 9.9521484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67877
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584583198.233,
+      "end_us": 7759584583201.081,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67879
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584583272.153,
+      "end_us": 7759584583275.417,
+      "duration_us": 3.263671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67885
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584583350.489,
+      "end_us": 7759584583411.706,
+      "duration_us": 61.216796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67896
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584583433.818,
+      "end_us": 7759584583436.377,
+      "duration_us": 2.55859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67907
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584583516.762,
+      "end_us": 7759584583549.113,
+      "duration_us": 32.3515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67923
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584583550.202,
+      "end_us": 7759584583553.498,
+      "duration_us": 3.2958984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67925
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584583605.85,
+      "end_us": 7759584583609.594,
+      "duration_us": 3.744140625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67931
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584583684.666,
+      "end_us": 7759584583698.426,
+      "duration_us": 13.759765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67948
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584583776.794,
+      "end_us": 7759584583779.418,
+      "duration_us": 2.6240234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67952
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584583916.41,
+      "end_us": 7759584583918.874,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67960
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584584080.155,
+      "end_us": 7759584584094.107,
+      "duration_us": 13.9521484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67971
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584584138.427,
+      "end_us": 7759584584142.907,
+      "duration_us": 4.48046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67979
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584584241.083,
+      "end_us": 7759584584251.035,
+      "duration_us": 9.9521484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67995
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584584252.123,
+      "end_us": 7759584584254.971,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 67997
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584584327.515,
+      "end_us": 7759584584330.907,
+      "duration_us": 3.392578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68003
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584584405.532,
+      "end_us": 7759584584466.908,
+      "duration_us": 61.3759765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68014
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584584491.932,
+      "end_us": 7759584584494.46,
+      "duration_us": 2.5283203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68025
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584584576.604,
+      "end_us": 7759584584608.571,
+      "duration_us": 31.9677734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68041
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584584609.66,
+      "end_us": 7759584584612.764,
+      "duration_us": 3.103515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68043
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584584668.061,
+      "end_us": 7759584584671.645,
+      "duration_us": 3.583984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68049
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584584748.669,
+      "end_us": 7759584584761.853,
+      "duration_us": 13.18359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68066
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584584840.221,
+      "end_us": 7759584584842.749,
+      "duration_us": 2.5283203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68070
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584584978.653,
+      "end_us": 7759584584981.086,
+      "duration_us": 2.4326171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68078
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584585151.55,
+      "end_us": 7759584585165.406,
+      "duration_us": 13.8564453125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68089
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584585209.694,
+      "end_us": 7759584585214.143,
+      "duration_us": 4.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68097
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584585314.558,
+      "end_us": 7759584585324.542,
+      "duration_us": 9.984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68113
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584585325.63,
+      "end_us": 7759584585328.478,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68115
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584585400.958,
+      "end_us": 7759584585404.478,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68121
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584585479.391,
+      "end_us": 7759584585540.383,
+      "duration_us": 60.9921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68132
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584585562.687,
+      "end_us": 7759584585565.311,
+      "duration_us": 2.6240234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68143
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584585646.527,
+      "end_us": 7759584585678.815,
+      "duration_us": 32.2880859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68159
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584585679.935,
+      "end_us": 7759584585683.038,
+      "duration_us": 3.103515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68161
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584585742.848,
+      "end_us": 7759584585746.592,
+      "duration_us": 3.744140625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68167
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584585844.544,
+      "end_us": 7759584585857.952,
+      "duration_us": 13.408203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68184
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584585941.408,
+      "end_us": 7759584585943.904,
+      "duration_us": 2.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68188
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584586088.736,
+      "end_us": 7759584586091.201,
+      "duration_us": 2.46484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68196
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584586264.033,
+      "end_us": 7759584586277.665,
+      "duration_us": 13.6318359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68207
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584586325.537,
+      "end_us": 7759584586329.985,
+      "duration_us": 4.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68215
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584586433.121,
+      "end_us": 7759584586443.041,
+      "duration_us": 9.919921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68231
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584586444.065,
+      "end_us": 7759584586446.913,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68233
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584586524.833,
+      "end_us": 7759584586528.226,
+      "duration_us": 3.392578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68239
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584586606.914,
+      "end_us": 7759584586667.362,
+      "duration_us": 60.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68250
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584586695.842,
+      "end_us": 7759584586698.594,
+      "duration_us": 2.751953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68261
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584586784.706,
+      "end_us": 7759584586816.962,
+      "duration_us": 32.255859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68277
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584586818.05,
+      "end_us": 7759584586821.153,
+      "duration_us": 3.103515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68279
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584586879.49,
+      "end_us": 7759584586883.267,
+      "duration_us": 3.7763671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68285
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584586964.258,
+      "end_us": 7759584586977.602,
+      "duration_us": 13.34375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68302
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584587068.739,
+      "end_us": 7759584587071.363,
+      "duration_us": 2.6240234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68306
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584587207.651,
+      "end_us": 7759584587210.115,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68314
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584587371.844,
+      "end_us": 7759584587385.668,
+      "duration_us": 13.82421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68325
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584587429.22,
+      "end_us": 7759584587433.667,
+      "duration_us": 4.447265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68333
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584587532.548,
+      "end_us": 7759584587542.244,
+      "duration_us": 9.6962890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68349
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584587543.332,
+      "end_us": 7759584587546.148,
+      "duration_us": 2.81640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68351
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584587618.404,
+      "end_us": 7759584587621.893,
+      "duration_us": 3.48828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68357
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584587696.068,
+      "end_us": 7759584587756.933,
+      "duration_us": 60.8642578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68368
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584587779.589,
+      "end_us": 7759584587782.148,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68379
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584587863.301,
+      "end_us": 7759584587895.685,
+      "duration_us": 32.3837890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68395
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584587896.677,
+      "end_us": 7759584587899.78,
+      "duration_us": 3.103515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68397
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584587953.701,
+      "end_us": 7759584587957.285,
+      "duration_us": 3.583984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68403
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584588034.821,
+      "end_us": 7759584588048.165,
+      "duration_us": 13.34375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68420
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584588126.629,
+      "end_us": 7759584588129.189,
+      "duration_us": 2.560546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68424
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584588268.582,
+      "end_us": 7759584588271.078,
+      "duration_us": 2.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68432
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584588432.358,
+      "end_us": 7759584588446.086,
+      "duration_us": 13.7275390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68443
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584588490.406,
+      "end_us": 7759584588494.855,
+      "duration_us": 4.44921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68451
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584588593.511,
+      "end_us": 7759584588603.398,
+      "duration_us": 9.8876953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68467
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584588604.327,
+      "end_us": 7759584588607.175,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68469
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584588680.487,
+      "end_us": 7759584588683.751,
+      "duration_us": 3.263671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68475
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584588758.727,
+      "end_us": 7759584588819.494,
+      "duration_us": 60.767578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68486
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584588842.023,
+      "end_us": 7759584588844.583,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68497
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584588925.0,
+      "end_us": 7759584588957.384,
+      "duration_us": 32.3837890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68513
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584588958.504,
+      "end_us": 7759584588961.704,
+      "duration_us": 3.2001953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68515
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584589016.168,
+      "end_us": 7759584589019.6875,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68521
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584589095.656,
+      "end_us": 7759584589109.064,
+      "duration_us": 13.408203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68538
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584589188.072,
+      "end_us": 7759584589190.632,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68542
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584589325.417,
+      "end_us": 7759584589327.881,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68550
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584589489.673,
+      "end_us": 7759584589503.688,
+      "duration_us": 14.015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68561
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584589548.618,
+      "end_us": 7759584589553.066,
+      "duration_us": 4.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68569
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584589651.146,
+      "end_us": 7759584589660.906,
+      "duration_us": 9.759765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68585
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584589661.866,
+      "end_us": 7759584589664.714,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68587
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584589745.674,
+      "end_us": 7759584589748.969,
+      "duration_us": 3.294921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68593
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584589847.082,
+      "end_us": 7759584589909.066,
+      "duration_us": 61.984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68604
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584589935.594,
+      "end_us": 7759584589938.153,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68615
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584590025.258,
+      "end_us": 7759584590057.481,
+      "duration_us": 32.2236328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68631
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584590058.635,
+      "end_us": 7759584590061.737,
+      "duration_us": 3.1025390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68633
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584590121.515,
+      "end_us": 7759584590125.065,
+      "duration_us": 3.55078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68639
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584590206.347,
+      "end_us": 7759584590219.851,
+      "duration_us": 13.50390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68656
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584590303.627,
+      "end_us": 7759584590306.123,
+      "duration_us": 2.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68660
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584590450.699,
+      "end_us": 7759584590453.196,
+      "duration_us": 2.4970703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68668
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584590625.356,
+      "end_us": 7759584590639.309,
+      "duration_us": 13.9521484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68679
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584590686.54,
+      "end_us": 7759584590690.988,
+      "duration_us": 4.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68687
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584590794.061,
+      "end_us": 7759584590803.852,
+      "duration_us": 9.791015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68703
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584590804.941,
+      "end_us": 7759584590807.788,
+      "duration_us": 2.8466796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68705
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584590883.533,
+      "end_us": 7759584590886.796,
+      "duration_us": 3.2626953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68711
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584590966.029,
+      "end_us": 7759584591027.47,
+      "duration_us": 61.4404296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68722
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584591062.733,
+      "end_us": 7759584591065.293,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68733
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584591146.381,
+      "end_us": 7759584591178.349,
+      "duration_us": 31.9677734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68749
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584591179.437,
+      "end_us": 7759584591182.542,
+      "duration_us": 3.10546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68751
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584591236.493,
+      "end_us": 7759584591240.142,
+      "duration_us": 3.6484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68757
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584591315.822,
+      "end_us": 7759584591328.975,
+      "duration_us": 13.15234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68774
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584591406.638,
+      "end_us": 7759584591409.294,
+      "duration_us": 2.65625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68778
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584591553.743,
+      "end_us": 7759584591556.206,
+      "duration_us": 2.462890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68786
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584591717.359,
+      "end_us": 7759584591731.087,
+      "duration_us": 13.7275390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68797
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584591774.895,
+      "end_us": 7759584591779.375,
+      "duration_us": 4.48046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68805
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584591876.495,
+      "end_us": 7759584591886.319,
+      "duration_us": 9.82421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68821
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584591887.375,
+      "end_us": 7759584591890.224,
+      "duration_us": 2.8486328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68823
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584591961.328,
+      "end_us": 7759584591964.848,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68829
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584592038.48,
+      "end_us": 7759584592099.729,
+      "duration_us": 61.248046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68840
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584592122.896,
+      "end_us": 7759584592125.456,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68851
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584592208.656,
+      "end_us": 7759584592240.784,
+      "duration_us": 32.1279296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68867
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584592241.872,
+      "end_us": 7759584592244.848,
+      "duration_us": 2.9755859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68869
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584592298.449,
+      "end_us": 7759584592302.257,
+      "duration_us": 3.8076171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68875
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584592378.033,
+      "end_us": 7759584592391.633,
+      "duration_us": 13.599609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68892
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584592471.153,
+      "end_us": 7759584592473.649,
+      "duration_us": 2.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68896
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584592608.594,
+      "end_us": 7759584592611.057,
+      "duration_us": 2.462890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68904
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584592772.498,
+      "end_us": 7759584592786.161,
+      "duration_us": 13.6630859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68915
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584592830.129,
+      "end_us": 7759584592834.609,
+      "duration_us": 4.48046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68923
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584592931.506,
+      "end_us": 7759584592941.426,
+      "duration_us": 9.919921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68939
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584592942.45,
+      "end_us": 7759584592945.298,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68941
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584593018.386,
+      "end_us": 7759584593021.618,
+      "duration_us": 3.232421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68947
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584593096.594,
+      "end_us": 7759584593157.395,
+      "duration_us": 60.80078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68958
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584593180.211,
+      "end_us": 7759584593182.802,
+      "duration_us": 2.5908203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68969
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584593264.307,
+      "end_us": 7759584593296.274,
+      "duration_us": 31.9677734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68985
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584593297.203,
+      "end_us": 7759584593300.371,
+      "duration_us": 3.16796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68987
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584593354.451,
+      "end_us": 7759584593358.003,
+      "duration_us": 3.5517578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 68993
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584593438.035,
+      "end_us": 7759584593451.1875,
+      "duration_us": 13.15234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69010
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584593529.747,
+      "end_us": 7759584593532.339,
+      "duration_us": 2.591796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69014
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584593666.356,
+      "end_us": 7759584593668.82,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69022
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584593858.804,
+      "end_us": 7759584593872.596,
+      "duration_us": 13.7919921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69033
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584593919.925,
+      "end_us": 7759584593924.341,
+      "duration_us": 4.416015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69041
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584594028.245,
+      "end_us": 7759584594038.133,
+      "duration_us": 9.8876953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69057
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584594039.253,
+      "end_us": 7759584594042.101,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69059
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584594118.677,
+      "end_us": 7759584594121.973,
+      "duration_us": 3.2958984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69065
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584594201.205,
+      "end_us": 7759584594261.75,
+      "duration_us": 60.544921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69076
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584594289.077,
+      "end_us": 7759584594291.67,
+      "duration_us": 2.5927734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69087
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584594400.342,
+      "end_us": 7759584594432.79,
+      "duration_us": 32.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69103
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584594433.782,
+      "end_us": 7759584594436.694,
+      "duration_us": 2.912109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69105
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584594496.694,
+      "end_us": 7759584594500.246,
+      "duration_us": 3.5517578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69111
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584594581.558,
+      "end_us": 7759584594594.838,
+      "duration_us": 13.2802734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69128
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584594678.935,
+      "end_us": 7759584594681.43,
+      "duration_us": 2.4951171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69132
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584594825.623,
+      "end_us": 7759584594828.119,
+      "duration_us": 2.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69140
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584595008.984,
+      "end_us": 7759584595022.681,
+      "duration_us": 13.6962890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69151
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584595066.391,
+      "end_us": 7759584595070.84,
+      "duration_us": 4.44921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69159
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584595177.784,
+      "end_us": 7759584595187.704,
+      "duration_us": 9.919921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69175
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584595188.664,
+      "end_us": 7759584595191.512,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69177
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584595265.656,
+      "end_us": 7759584595269.048,
+      "duration_us": 3.3916015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69183
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584595343.769,
+      "end_us": 7759584595403.833,
+      "duration_us": 60.064453125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69194
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584595428.377,
+      "end_us": 7759584595430.937,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69205
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584595511.769,
+      "end_us": 7759584595544.152,
+      "duration_us": 32.3837890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69221
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584595545.177,
+      "end_us": 7759584595548.44,
+      "duration_us": 3.263671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69223
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584595601.817,
+      "end_us": 7759584595605.434,
+      "duration_us": 3.6162109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69229
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584595682.169,
+      "end_us": 7759584595695.48,
+      "duration_us": 13.3115234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69246
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584595773.689,
+      "end_us": 7759584595776.249,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69250
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584595912.506,
+      "end_us": 7759584595914.9375,
+      "duration_us": 2.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69258
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584596079.386,
+      "end_us": 7759584596093.113,
+      "duration_us": 13.7275390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69269
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584596136.986,
+      "end_us": 7759584596141.435,
+      "duration_us": 4.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69277
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584596238.458,
+      "end_us": 7759584596248.251,
+      "duration_us": 9.79296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69293
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584596249.338,
+      "end_us": 7759584596252.186,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69295
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584596324.059,
+      "end_us": 7759584596327.45,
+      "duration_us": 3.3916015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69301
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584596402.523,
+      "end_us": 7759584596463.611,
+      "duration_us": 61.087890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69312
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584596485.627,
+      "end_us": 7759584596488.219,
+      "duration_us": 2.591796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69323
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584596569.211,
+      "end_us": 7759584596602.46,
+      "duration_us": 33.2490234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69339
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584596603.547,
+      "end_us": 7759584596606.65,
+      "duration_us": 3.103515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69341
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584596658.619,
+      "end_us": 7759584596662.268,
+      "duration_us": 3.6484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69347
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584596738.172,
+      "end_us": 7759584596751.548,
+      "duration_us": 13.3759765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69364
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584596829.116,
+      "end_us": 7759584596831.645,
+      "duration_us": 2.5283203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69368
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584596965.564,
+      "end_us": 7759584596968.061,
+      "duration_us": 2.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69376
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584597129.181,
+      "end_us": 7759584597143.005,
+      "duration_us": 13.82421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69387
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584597186.813,
+      "end_us": 7759584597191.262,
+      "duration_us": 4.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69395
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584597288.957,
+      "end_us": 7759584597298.942,
+      "duration_us": 9.9853515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69411
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584597299.997,
+      "end_us": 7759584597302.845,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69413
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584597374.334,
+      "end_us": 7759584597377.502,
+      "duration_us": 3.16796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69419
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584597452.03,
+      "end_us": 7759584597513.79,
+      "duration_us": 61.759765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69430
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584597535.326,
+      "end_us": 7759584597537.886,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69441
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584597618.334,
+      "end_us": 7759584597651.55,
+      "duration_us": 33.2158203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69457
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584597652.51,
+      "end_us": 7759584597655.613,
+      "duration_us": 3.103515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69459
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584597710.399,
+      "end_us": 7759584597713.983,
+      "duration_us": 3.583984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69465
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584597818.655,
+      "end_us": 7759584597831.871,
+      "duration_us": 13.2158203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69482
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584597917.503,
+      "end_us": 7759584597920.127,
+      "duration_us": 2.6240234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69486
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584598064.735,
+      "end_us": 7759584598067.199,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69494
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584598239.872,
+      "end_us": 7759584598253.504,
+      "duration_us": 13.6318359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69505
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584598300.864,
+      "end_us": 7759584598305.28,
+      "duration_us": 4.416015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69513
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584598409.536,
+      "end_us": 7759584598419.648,
+      "duration_us": 10.1123046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69529
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584598420.769,
+      "end_us": 7759584598423.648,
+      "duration_us": 2.8798828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69531
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584598500.257,
+      "end_us": 7759584598503.648,
+      "duration_us": 3.3916015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69537
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584598585.153,
+      "end_us": 7759584598646.561,
+      "duration_us": 61.4072265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69548
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584598673.697,
+      "end_us": 7759584598676.257,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69559
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584598763.169,
+      "end_us": 7759584598795.041,
+      "duration_us": 31.8720703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69575
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584598796.161,
+      "end_us": 7759584598799.361,
+      "duration_us": 3.2001953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69577
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584598859.105,
+      "end_us": 7759584598862.657,
+      "duration_us": 3.5517578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69583
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584598942.402,
+      "end_us": 7759584598955.586,
+      "duration_us": 13.18359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69600
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584599049.122,
+      "end_us": 7759584599051.65,
+      "duration_us": 2.5283203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69604
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584599186.978,
+      "end_us": 7759584599189.474,
+      "duration_us": 2.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69612
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584599350.466,
+      "end_us": 7759584599364.354,
+      "duration_us": 13.8876953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69623
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584599408.099,
+      "end_us": 7759584599412.547,
+      "duration_us": 4.4482421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69631
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584599509.411,
+      "end_us": 7759584599519.299,
+      "duration_us": 9.8876953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69647
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584599520.387,
+      "end_us": 7759584599523.234,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69649
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584599596.163,
+      "end_us": 7759584599599.3955,
+      "duration_us": 3.232421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69655
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584599674.819,
+      "end_us": 7759584599734.532,
+      "duration_us": 59.712890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69666
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584599759.94,
+      "end_us": 7759584599762.5,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69677
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584599844.26,
+      "end_us": 7759584599876.548,
+      "duration_us": 32.2880859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69693
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584599877.54,
+      "end_us": 7759584599880.612,
+      "duration_us": 3.072265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69695
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584599934.116,
+      "end_us": 7759584599937.668,
+      "duration_us": 3.5517578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69701
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759584600016.964,
+      "end_us": 7759584600030.212,
+      "duration_us": 13.248046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69718
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759584600110.116,
+      "end_us": 7759584600112.613,
+      "duration_us": 2.4970703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69722
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759584600247.557,
+      "end_us": 7759584600250.0205,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69730
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759584600411.365,
+      "end_us": 7759584600425.317,
+      "duration_us": 13.9521484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69741
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759584600468.55,
+      "end_us": 7759584600472.997,
+      "duration_us": 4.447265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69749
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584600571.558,
+      "end_us": 7759584600581.51,
+      "duration_us": 9.9521484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69765
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584600582.47,
+      "end_us": 7759584600585.317,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69767
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584600658.246,
+      "end_us": 7759584600661.702,
+      "duration_us": 3.4560546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69773
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_128x64_ldg8_f2f_stages_64x3_tn",
+      "category": "kernel",
+      "start_us": 7759584600736.615,
+      "end_us": 7759584600799.238,
+      "duration_us": 62.623046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69784
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759584600820.295,
+      "end_us": 7759584600822.886,
+      "duration_us": 2.5908203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69795
+    },
+    {
+      "name": "void cutlass::Kernel2<cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8>(cutlass_80_tensorop_s16816gemm_bf16_64x64_64x6_tn_align8::Params)",
+      "category": "kernel",
+      "start_us": 7759584600903.783,
+      "end_us": 7759584600936.871,
+      "duration_us": 33.087890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69811
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759584600937.927,
+      "end_us": 7759584600941.03,
+      "duration_us": 3.103515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69813
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759584600972.455,
+      "end_us": 7759584600976.007,
+      "duration_us": 3.5517578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69819
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759584601180.679,
+      "end_us": 7759584601544.137,
+      "duration_us": 363.4580078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69831
+    },
+    {
+      "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+      "category": "kernel",
+      "start_us": 7759584601545.289,
+      "end_us": 7759584601555.304,
+      "duration_us": 10.0146484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69844
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7759584601556.905,
+      "end_us": 7759584601557.961,
+      "duration_us": 1.0556640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69860
+    },
+    {
+      "name": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::ArgMaxOps<float>, unsigned int, long, 4, 4> >(at::native::ReduceOp<float, at::native::ArgMaxOps<float>, unsigned int, long, 4, 4>)",
+      "category": "kernel",
+      "start_us": 7759584601559.656,
+      "end_us": 7759584601573.033,
+      "duration_us": 13.376953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69862
+    },
+    {
+      "name": "void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native::index_put_kernel_impl<at::native::OpaqueType<8> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_put_kernel_impl<at::native::OpaqueType<8> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1}>(long, at::native::gpu_index_kernel<at::native::index_put_kernel_impl<at::native::OpaqueType<8> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_put_kernel_impl<at::native::OpaqueType<8> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7759584601588.777,
+      "end_us": 7759584601592.713,
+      "duration_us": 3.935546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 69869
+    }
+  ],
+  "unattributed_gpu_events": [],
+  "scope": "Instrumented native diagnostic only. GPU families are name-based, not exact AIC-op mappings. Wall-minus-union is not pure CPU time or a correction to formal labels.",
+  "input_interpretations": {
+    "extend": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "prefix": [
+      658,
+      518,
+      451,
+      3,
+      1019,
+      1058,
+      1045
+    ],
+    "runtime": [
+      663,
+      520,
+      453,
+      5,
+      1021,
+      1060,
+      1046
+    ],
+    "physical_before": [
+      662,
+      519,
+      452,
+      4,
+      1020,
+      1059,
+      1045
+    ]
+  },
+  "aic_predictions": {
+    "prefix": {
+      "total_ms": 5.948603806715329,
+      "operators_ms": {
+        "generation_embedding": 0.0030185219638242896,
+        "generation_add_norm_1": 0.11066716279069769,
+        "generation_qkv_gemm": 0.5242879986763,
+        "generation_attention": 0.5067753654847472,
+        "generation_proj_gemm": 0.4331519901752472,
+        "generation_add_norm_2": 0.11066716279069769,
+        "generation_gate_ffn1_gemm": 2.4176640510559086,
+        "generation_act_gate": 0.118752,
+        "generation_ffn2_gemm": 1.330175995826721,
+        "generation_logits_gemm": 0.39344355795118546,
+        "generation_embedding_ar": 0.0,
+        "generation_ar_1": 0.0,
+        "generation_ar_2": 0.0,
+        "generation_p2p": 0.0
+      }
+    },
+    "runtime": {
+      "total_ms": 5.94971743703701,
+      "operators_ms": {
+        "generation_embedding": 0.0030185219638242896,
+        "generation_add_norm_1": 0.11066716279069769,
+        "generation_qkv_gemm": 0.5242879986763,
+        "generation_attention": 0.5078889958064283,
+        "generation_proj_gemm": 0.4331519901752472,
+        "generation_add_norm_2": 0.11066716279069769,
+        "generation_gate_ffn1_gemm": 2.4176640510559086,
+        "generation_act_gate": 0.118752,
+        "generation_ffn2_gemm": 1.330175995826721,
+        "generation_logits_gemm": 0.39344355795118546,
+        "generation_embedding_ar": 0.0,
+        "generation_ar_1": 0.0,
+        "generation_ar_2": 0.0,
+        "generation_p2p": 0.0
+      }
+    },
+    "physical_before": {
+      "total_ms": 5.949389935113312,
+      "operators_ms": {
+        "generation_embedding": 0.0030185219638242896,
+        "generation_add_norm_1": 0.11066716279069769,
+        "generation_qkv_gemm": 0.5242879986763,
+        "generation_attention": 0.50756149388273,
+        "generation_proj_gemm": 0.4331519901752472,
+        "generation_add_norm_2": 0.11066716279069769,
+        "generation_gate_ffn1_gemm": 2.4176640510559086,
+        "generation_act_gate": 0.118752,
+        "generation_ffn2_gemm": 1.330175995826721,
+        "generation_logits_gemm": 0.39344355795118546,
+        "generation_embedding_ar": 0.0,
+        "generation_ar_1": 0.0,
+        "generation_ar_2": 0.0,
+        "generation_p2p": 0.0
+      }
+    }
+  },
+  "metadata_path": "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/analysis/workloads/matched_native_profiles/Qwen2.5-3B-Instruct/service_1024x256_r4/profiles/mode2_index16.trace.metadata.json"
+}

@@ -1,0 +1,122 @@
+--- a/csrc/flash_attn/src/static_switch.h
++++ b/csrc/flash_attn/src/static_switch.h
+@@ -76,6 +76,24 @@
+   #define LOCAL_SWITCH BOOL_SWITCH
+ #endif
+ 
++#ifdef FLASHATTENTION_MINIMAL_BF16_HDIM128
++// The simulator's isolated FA2 fallback is used only for the BF16, head-dim
++// 128 Qwen2.5-14B-1M inference path on SM80. Restricting the dispatch here
++// prevents the extension from requiring symbols for every other dtype/dim.
++#define FP16_SWITCH(COND, ...)                                                   \
++  [&] {                                                                          \
++    TORCH_CHECK(!(COND), "minimal FA2 supports BF16 only");                    \
++    using elem_type = cutlass::bfloat16_t;                                       \
++    return __VA_ARGS__();                                                         \
++  }()
++
++#define HEADDIM_SWITCH(HEADDIM, ...)                                             \
++  [&] {                                                                          \
++    TORCH_CHECK((HEADDIM) == 128, "minimal FA2 supports head dimension 128 only"); \
++    constexpr static int kHeadDim = 128;                                         \
++    return __VA_ARGS__();                                                         \
++  }()
++#else
+ #define FP16_SWITCH(COND, ...)               \
+   [&] {                                      \
+     if (COND) {                              \
+@@ -109,3 +127,4 @@
+       return __VA_ARGS__();                \
+     }                                      \
+   }()
++#endif  // FLASHATTENTION_MINIMAL_BF16_HDIM128
+--- a/csrc/flash_attn/flash_api.cpp
++++ b/csrc/flash_attn/flash_api.cpp
+@@ -4,6 +4,7 @@
+ 
+ // Include these 2 headers instead of torch/extension.h since we don't need all of the torch headers.
+ #include <torch/nn/functional.h>
++#include <torch/extension.h>
+ #include <c10/cuda/CUDAGuard.h>
+ #include <c10/cuda/CUDAStream.h>
+ #include <ATen/cuda/CUDAGeneratorImpl.h>  // For at::Generator and at::PhiloxCudaState
+@@ -1216,6 +1217,9 @@
+ }
+ 
+ void run_mha_bwd(Flash_bwd_params &params, cudaStream_t stream) {
++#ifdef FLASHATTENTION_MINIMAL_BF16_HDIM128
++    TORCH_CHECK(false, "This minimal FA2 build supports inference forward only.");
++#else
+     FP16_SWITCH(!params.is_bf16, [&] {
+         HEADDIM_SWITCH(params.d, [&] {
+             BOOL_SWITCH(params.is_causal, Is_causal, [&] {
+@@ -1223,6 +1227,7 @@
+             });
+         });
+     });
++#endif
+ }
+ 
+ std::vector<at::Tensor>
+@@ -1935,3 +1940,12 @@
+     return {out, softmax_lse};
+ }
+ } // namespace FLASH_NAMESPACE
++
++PYBIND11_MODULE(TORCH_EXTENSION_NAME, m) {
++    m.doc() = "FlashAttention";
++    m.def("fwd", &FLASH_NAMESPACE::mha_fwd, "Forward pass");
++    m.def("varlen_fwd", &FLASH_NAMESPACE::mha_varlen_fwd, "Forward pass (variable length)");
++    m.def("bwd", &FLASH_NAMESPACE::mha_bwd, "Backward pass");
++    m.def("varlen_bwd", &FLASH_NAMESPACE::mha_varlen_bwd, "Backward pass (variable length)");
++    m.def("fwd_kvcache", &FLASH_NAMESPACE::mha_fwd_kvcache, "Forward pass, with KV-cache");
++}
+--- a/setup.py
++++ b/setup.py
+@@ -272,8 +272,18 @@
+     # "-DFLASHATTENTION_DISABLE_UNEVEN_K",
+     # "-DFLASHATTENTION_DISABLE_LOCAL",
+     ]
++    minimal_sm80 = os.getenv("FLASHATTENTION_MINIMAL_SM80", "FALSE") == "TRUE"
++    if minimal_sm80:
++        nvcc_flags.extend([
++            "-DFLASHATTENTION_MINIMAL_BF16_HDIM128",
++            "-DFLASHATTENTION_DISABLE_DROPOUT",
++            "-DFLASHATTENTION_DISABLE_ALIBI",
++            "-DFLASHATTENTION_DISABLE_SOFTCAP",
++        ])
+ 
+     compiler_c17_flag=["-O3", "-std=c++17"]
++    if minimal_sm80:
++        compiler_c17_flag.append("-DFLASHATTENTION_MINIMAL_BF16_HDIM128")
+     # Add Windows-specific flags
+     if sys.platform == "win32" and os.getenv('DISTUTILS_USE_SDK') == '1':
+         nvcc_flags.extend(["-Xcompiler", "/Zc:__cplusplus"])
+@@ -282,7 +292,16 @@
+     ext_modules.append(
+         CUDAExtension(
+             name="flash_attn_2_cuda",
+-            sources=[
++            sources=(
++                [
++                    "csrc/flash_attn/flash_api.cpp",
++                    "csrc/flash_attn/src/flash_fwd_hdim128_bf16_sm80.cu",
++                    "csrc/flash_attn/src/flash_fwd_hdim128_bf16_causal_sm80.cu",
++                    "csrc/flash_attn/src/flash_fwd_sparse_hdim128_bf16_sm80.cu",
++                    "csrc/flash_attn/src/flash_fwd_sparse_hdim128_bf16_causal_sm80.cu",
++                    "csrc/flash_attn/src/flash_fwd_split_hdim128_bf16_sm80.cu",
++                    "csrc/flash_attn/src/flash_fwd_split_hdim128_bf16_causal_sm80.cu",
++                ] if minimal_sm80 else [
+                 "csrc/flash_attn/flash_api.cpp",
+                 "csrc/flash_attn/src/flash_fwd_hdim32_fp16_sm80.cu",
+                 "csrc/flash_attn/src/flash_fwd_hdim32_bf16_sm80.cu",
+@@ -360,7 +379,8 @@
+                 "csrc/flash_attn/src/flash_fwd_split_hdim192_bf16_causal_sm80.cu",
+                 "csrc/flash_attn/src/flash_fwd_split_hdim256_fp16_causal_sm80.cu",
+                 "csrc/flash_attn/src/flash_fwd_split_hdim256_bf16_causal_sm80.cu",
+-            ],
++                ]
++            ),
+             extra_compile_args={
+                 "cxx": compiler_c17_flag,
+                 "nvcc": append_nvcc_threads(nvcc_flags + cc_flag),

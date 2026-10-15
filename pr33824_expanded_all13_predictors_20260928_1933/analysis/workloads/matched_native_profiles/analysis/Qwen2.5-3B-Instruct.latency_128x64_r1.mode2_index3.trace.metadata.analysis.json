@@ -1,0 +1,4588 @@
+{
+  "native_marker": "sglang_native_run_batch/mode2/index3",
+  "native_cpu_range_us": 47917.3671875,
+  "instrumented_iteration_us": 48209.674656391144,
+  "native_gpu_event_count": 448,
+  "native_gpu_duration_sum_us": 5860.0771484375,
+  "native_gpu_interval_union_us": 5860.0771484375,
+  "unattributed_gpu_event_count": 0,
+  "unattributed_gpu_duration_sum_us": 0,
+  "gpu_attribution_duration_pct": 100.0,
+  "iteration_wall_minus_attributed_gpu_union_us": 42349.597507953644,
+  "families": {
+    "other_kernel": {
+      "event_count": 230,
+      "duration_sum_us": 693.7919921875
+    },
+    "gemm_gemv": {
+      "event_count": 145,
+      "duration_sum_us": 4869.2333984375
+    },
+    "triton_decode_attention": {
+      "event_count": 72,
+      "duration_sum_us": 295.99609375
+    },
+    "gpu_memset": {
+      "event_count": 1,
+      "duration_sum_us": 1.0556640625
+    }
+  },
+  "gpu_events": [
+    {
+      "name": "void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native::OpaqueType<8> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_kernel_impl<at::native::OpaqueType<8> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1}>(long, at::native::gpu_index_kernel<at::native::index_kernel_impl<at::native::OpaqueType<8> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_kernel_impl<at::native::OpaqueType<8> >(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7759744711849.528,
+      "end_us": 7759744711853.145,
+      "duration_us": 3.6162109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 12
+    },
+    {
+      "name": "void sglang::clamp_position_kernel<long>(long*, long const*, unsigned long)",
+      "category": "kernel",
+      "start_us": 7759744712120.025,
+      "end_us": 7759744712121.625,
+      "duration_us": 1.599609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 25
+    },
+    {
+      "name": "void at::native::(anonymous namespace)::multi_tensor_apply_kernel<at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::UnaryOpFunctor<long, 2, 1, 1>, at::native::Copy<long, long> >(at::native::(anonymous namespace)::TensorListMetadata<2>, at::native::(anonymous namespace)::UnaryOpFunctor<long, 2, 1, 1>, at::native::Copy<long, long>)",
+      "category": "kernel",
+      "start_us": 7759744712481.274,
+      "end_us": 7759744712485.052,
+      "duration_us": 3.77734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 43
+    },
+    {
+      "name": "void at_cuda_detail::cub::DeviceScanInitKernel<at_cuda_detail::cub::ScanTileState<long, true> >(at_cuda_detail::cub::ScanTileState<long, true>, int)",
+      "category": "kernel",
+      "start_us": 7759744712813.371,
+      "end_us": 7759744712814.747,
+      "duration_us": 1.3759765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 98
+    },
+    {
+      "name": "void at_cuda_detail::cub::DeviceScanKernel<at_cuda_detail::cub::DeviceScanPolicy<long, std::plus<long> >::Policy900, long const*, long*, at_cuda_detail::cub::ScanTileState<long, true>, std::plus<long>, at_cuda_detail::cub::NullType, int, long>(long const*, long*, at_cuda_detail::cub::ScanTileState<long, true>, int, std::plus<long>, at_cuda_detail::cub::NullType, int)",
+      "category": "kernel",
+      "start_us": 7759744712831.899,
+      "end_us": 7759744712834.523,
+      "duration_us": 2.6240234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 108
+    },
+    {
+      "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#3}::operator()() const::{lambda(int)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#3}::operator()() const::{lambda(int)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+      "category": "kernel",
+      "start_us": 7759744712879.867,
+      "end_us": 7759744712881.947,
+      "duration_us": 2.080078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 120
+    },
+    {
+      "name": "create_flashinfer_kv_indices_triton",
+      "category": "kernel",
+      "start_us": 7759744713036.284,
+      "end_us": 7759744713038.973,
+      "duration_us": 2.6884765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 143
+    },
+    {
+      "name": "get_num_kv_splits_triton",
+      "category": "kernel",
+      "start_us": 7759744713162.076,
+      "end_us": 7759744713165.085,
+      "duration_us": 3.0087890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 169
+    },
+    {
+      "name": "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<int>, std::array<char*, 1ul> >(int, at::native::FillFunctor<int>, std::array<char*, 1ul>)",
+      "category": "kernel",
+      "start_us": 7759744713275.261,
+      "end_us": 7759744713276.701,
+      "duration_us": 1.4404296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 201
+    },
+    {
+      "name": "void at::native::(anonymous namespace)::indexSelectSmallIndex<c10::BFloat16, long, unsigned int, 2, 2, -2>(at::cuda::detail::TensorInfo<c10::BFloat16, unsigned int>, at::cuda::detail::TensorInfo<c10::BFloat16 const, unsigned int>, at::cuda::detail::TensorInfo<long const, unsigned int>, int, int, unsigned int, long)",
+      "category": "kernel",
+      "start_us": 7759744713466.718,
+      "end_us": 7759744713470.27,
+      "duration_us": 3.5517578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 222
+    },
+    {
+      "name": "void flashinfer::norm::RMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744713611.454,
+      "end_us": 7759744713614.303,
+      "duration_us": 2.8486328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 236
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744713765.567,
+      "end_us": 7759744713778.815,
+      "duration_us": 13.248046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 255
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744713922.048,
+      "end_us": 7759744713924.511,
+      "duration_us": 2.462890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 259
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744714127.328,
+      "end_us": 7759744714129.44,
+      "duration_us": 2.1123046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 267
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744714352.449,
+      "end_us": 7759744714357.121,
+      "duration_us": 4.671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 278
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744714423.521,
+      "end_us": 7759744714427.041,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 286
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744714562.21,
+      "end_us": 7759744714572.93,
+      "duration_us": 10.7197265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 297
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744714669.891,
+      "end_us": 7759744714672.898,
+      "duration_us": 3.0078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 303
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744714773.699,
+      "end_us": 7759744714838.819,
+      "duration_us": 65.1201171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 314
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744714894.723,
+      "end_us": 7759744714897.475,
+      "duration_us": 2.751953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 325
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744714993.732,
+      "end_us": 7759744715036.677,
+      "duration_us": 42.9443359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 336
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744715037.86,
+      "end_us": 7759744715041.6045,
+      "duration_us": 3.744140625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 339
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744715104.772,
+      "end_us": 7759744715108.517,
+      "duration_us": 3.744140625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 345
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744715203.909,
+      "end_us": 7759744715217.062,
+      "duration_us": 13.15234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 362
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744715326.981,
+      "end_us": 7759744715329.445,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 366
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744715508.389,
+      "end_us": 7759744715510.502,
+      "duration_us": 2.11328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 374
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744715699.558,
+      "end_us": 7759744715704.263,
+      "duration_us": 4.705078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 385
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744715764.519,
+      "end_us": 7759744715768.038,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 393
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744715881.927,
+      "end_us": 7759744715892.455,
+      "duration_us": 10.5283203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 404
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744715970.28,
+      "end_us": 7759744715973.288,
+      "duration_us": 3.0078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 410
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744716066.152,
+      "end_us": 7759744716124.296,
+      "duration_us": 58.1435546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 421
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744716175.752,
+      "end_us": 7759744716178.44,
+      "duration_us": 2.6884765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 432
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744716271.913,
+      "end_us": 7759744716314.793,
+      "duration_us": 42.8798828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 443
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744716316.009,
+      "end_us": 7759744716320.009,
+      "duration_us": 4.0,
+      "device": 0,
+      "stream": 29,
+      "correlation": 446
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744716372.969,
+      "end_us": 7759744716376.553,
+      "duration_us": 3.583984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 452
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744716467.401,
+      "end_us": 7759744716480.489,
+      "duration_us": 13.087890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 469
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744716583.978,
+      "end_us": 7759744716586.537,
+      "duration_us": 2.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 473
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744716757.835,
+      "end_us": 7759744716759.851,
+      "duration_us": 2.015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 481
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744716937.707,
+      "end_us": 7759744716942.604,
+      "duration_us": 4.896484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 492
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744717000.3,
+      "end_us": 7759744717003.819,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 500
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744717114.156,
+      "end_us": 7759744717124.684,
+      "duration_us": 10.52734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 511
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744717202.252,
+      "end_us": 7759744717205.388,
+      "duration_us": 3.1357421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 517
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744717296.748,
+      "end_us": 7759744717355.276,
+      "duration_us": 58.5283203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 528
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744717401.165,
+      "end_us": 7759744717403.788,
+      "duration_us": 2.623046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 539
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744717495.853,
+      "end_us": 7759744717538.925,
+      "duration_us": 43.072265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 550
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744717540.109,
+      "end_us": 7759744717544.142,
+      "duration_us": 4.0322265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 553
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744717595.181,
+      "end_us": 7759744717598.732,
+      "duration_us": 3.5517578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 559
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744717693.326,
+      "end_us": 7759744717706.574,
+      "duration_us": 13.248046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 576
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744717823.79,
+      "end_us": 7759744717826.222,
+      "duration_us": 2.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 580
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744717999.823,
+      "end_us": 7759744718002.159,
+      "duration_us": 2.3359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 588
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744718178.48,
+      "end_us": 7759744718183.152,
+      "duration_us": 4.671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 599
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744718240.752,
+      "end_us": 7759744718244.24,
+      "duration_us": 3.48828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 607
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744718372.272,
+      "end_us": 7759744718383.058,
+      "duration_us": 10.78515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 618
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744718464.529,
+      "end_us": 7759744718467.665,
+      "duration_us": 3.1357421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 624
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744718563.345,
+      "end_us": 7759744718621.457,
+      "duration_us": 58.1123046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 635
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744718672.689,
+      "end_us": 7759744718675.569,
+      "duration_us": 2.8798828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 646
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744718772.114,
+      "end_us": 7759744718814.834,
+      "duration_us": 42.7197265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 657
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744718815.954,
+      "end_us": 7759744718819.794,
+      "duration_us": 3.83984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 660
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744718878.546,
+      "end_us": 7759744718882.098,
+      "duration_us": 3.5517578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 666
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744718988.979,
+      "end_us": 7759744719002.643,
+      "duration_us": 13.6640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 683
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744719104.467,
+      "end_us": 7759744719106.931,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 687
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744719277.812,
+      "end_us": 7759744719279.731,
+      "duration_us": 1.919921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 695
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744719454.996,
+      "end_us": 7759744719459.669,
+      "duration_us": 4.6728515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 706
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744719517.205,
+      "end_us": 7759744719520.725,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 714
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744719630.005,
+      "end_us": 7759744719640.725,
+      "duration_us": 10.7197265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 725
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744719716.533,
+      "end_us": 7759744719719.83,
+      "duration_us": 3.296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 731
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744719810.07,
+      "end_us": 7759744719868.822,
+      "duration_us": 58.751953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 742
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744719913.078,
+      "end_us": 7759744719915.895,
+      "duration_us": 2.81640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 753
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744720005.655,
+      "end_us": 7759744720048.439,
+      "duration_us": 42.7841796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 764
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744720049.495,
+      "end_us": 7759744720053.719,
+      "duration_us": 4.2236328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 767
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744720104.311,
+      "end_us": 7759744720107.702,
+      "duration_us": 3.3916015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 773
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744720199.511,
+      "end_us": 7759744720212.471,
+      "duration_us": 12.9599609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 790
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744720315.256,
+      "end_us": 7759744720317.6875,
+      "duration_us": 2.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 794
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744720488.728,
+      "end_us": 7759744720490.84,
+      "duration_us": 2.1123046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 802
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744720666.937,
+      "end_us": 7759744720671.736,
+      "duration_us": 4.7998046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 813
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744720730.489,
+      "end_us": 7759744720734.009,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 821
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744720843.674,
+      "end_us": 7759744720854.17,
+      "duration_us": 10.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 832
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744720929.594,
+      "end_us": 7759744720932.697,
+      "duration_us": 3.103515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 838
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744721023.035,
+      "end_us": 7759744721081.531,
+      "duration_us": 58.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 849
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744721127.035,
+      "end_us": 7759744721129.691,
+      "duration_us": 2.65625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 860
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744721220.86,
+      "end_us": 7759744721263.677,
+      "duration_us": 42.81640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 871
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744721264.86,
+      "end_us": 7759744721268.987,
+      "duration_us": 4.126953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 874
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744721320.412,
+      "end_us": 7759744721323.932,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 880
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744721415.292,
+      "end_us": 7759744721428.636,
+      "duration_us": 13.34375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 897
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744721530.78,
+      "end_us": 7759744721533.276,
+      "duration_us": 2.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 901
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744721703.421,
+      "end_us": 7759744721705.629,
+      "duration_us": 2.2080078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 909
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744721934.91,
+      "end_us": 7759744721939.678,
+      "duration_us": 4.767578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 920
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744721996.83,
+      "end_us": 7759744722000.35,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 928
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744722113.695,
+      "end_us": 7759744722124.19,
+      "duration_us": 10.4951171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 939
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744722200.767,
+      "end_us": 7759744722203.839,
+      "duration_us": 3.072265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 945
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744722295.455,
+      "end_us": 7759744722353.12,
+      "duration_us": 57.6650390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 956
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744722398.143,
+      "end_us": 7759744722400.703,
+      "duration_us": 2.560546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 967
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744722492.512,
+      "end_us": 7759744722535.359,
+      "duration_us": 42.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 978
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744722536.512,
+      "end_us": 7759744722540.4795,
+      "duration_us": 3.9677734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 981
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744722590.912,
+      "end_us": 7759744722594.72,
+      "duration_us": 3.8076171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 987
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744722686.369,
+      "end_us": 7759744722699.521,
+      "duration_us": 13.15234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1004
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744722804.289,
+      "end_us": 7759744722806.721,
+      "duration_us": 2.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1008
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744722980.642,
+      "end_us": 7759744722982.754,
+      "duration_us": 2.1123046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1016
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744723158.211,
+      "end_us": 7759744723162.946,
+      "duration_us": 4.7353515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1027
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744723220.643,
+      "end_us": 7759744723224.162,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1035
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744723335.203,
+      "end_us": 7759744723346.307,
+      "duration_us": 11.103515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1046
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744723421.603,
+      "end_us": 7759744723424.836,
+      "duration_us": 3.2333984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1052
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744723515.524,
+      "end_us": 7759744723574.0205,
+      "duration_us": 58.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1063
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744723620.485,
+      "end_us": 7759744723623.269,
+      "duration_us": 2.783203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1074
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744723714.821,
+      "end_us": 7759744723757.317,
+      "duration_us": 42.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1085
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744723758.309,
+      "end_us": 7759744723762.244,
+      "duration_us": 3.935546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1088
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744723812.613,
+      "end_us": 7759744723816.133,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1094
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744723907.941,
+      "end_us": 7759744723921.222,
+      "duration_us": 13.2802734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1111
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744724025.83,
+      "end_us": 7759744724028.358,
+      "duration_us": 2.5283203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1115
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744724201.607,
+      "end_us": 7759744724203.527,
+      "duration_us": 1.919921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1123
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744724380.519,
+      "end_us": 7759744724385.287,
+      "duration_us": 4.7685546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1134
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744724442.6,
+      "end_us": 7759744724446.119,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1142
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744724556.072,
+      "end_us": 7759744724566.44,
+      "duration_us": 10.3681640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1153
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744724642.888,
+      "end_us": 7759744724646.121,
+      "duration_us": 3.2333984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1159
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744724736.201,
+      "end_us": 7759744724794.665,
+      "duration_us": 58.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1170
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744724840.617,
+      "end_us": 7759744724843.273,
+      "duration_us": 2.65625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1181
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744724957.386,
+      "end_us": 7759744725000.714,
+      "duration_us": 43.328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1192
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744725001.77,
+      "end_us": 7759744725005.737,
+      "duration_us": 3.9677734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1195
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744725057.162,
+      "end_us": 7759744725060.618,
+      "duration_us": 3.4560546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1201
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744725153.514,
+      "end_us": 7759744725166.666,
+      "duration_us": 13.15234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1218
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744725271.563,
+      "end_us": 7759744725274.027,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1222
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744725445.996,
+      "end_us": 7759744725448.108,
+      "duration_us": 2.1123046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1230
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744725622.764,
+      "end_us": 7759744725627.34,
+      "duration_us": 4.576171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1241
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744725685.645,
+      "end_us": 7759744725689.132,
+      "duration_us": 3.4873046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1249
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744725810.157,
+      "end_us": 7759744725821.102,
+      "duration_us": 10.9443359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1260
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744725898.605,
+      "end_us": 7759744725901.773,
+      "duration_us": 3.16796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1266
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744725992.909,
+      "end_us": 7759744726051.149,
+      "duration_us": 58.240234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1277
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744726096.398,
+      "end_us": 7759744726099.215,
+      "duration_us": 2.81640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1288
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744726191.598,
+      "end_us": 7759744726234.733,
+      "duration_us": 43.1357421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1299
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744726235.726,
+      "end_us": 7759744726239.661,
+      "duration_us": 3.935546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1302
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744726289.774,
+      "end_us": 7759744726293.294,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1308
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744726384.43,
+      "end_us": 7759744726397.678,
+      "duration_us": 13.248046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1325
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744726504.367,
+      "end_us": 7759744726507.023,
+      "duration_us": 2.65625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1329
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744726679.6,
+      "end_us": 7759744726681.615,
+      "duration_us": 2.015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1337
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744726856.4,
+      "end_us": 7759744726861.138,
+      "duration_us": 4.7373046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1348
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744726917.808,
+      "end_us": 7759744726921.488,
+      "duration_us": 3.6806640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1356
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744727030.865,
+      "end_us": 7759744727041.297,
+      "duration_us": 10.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1367
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744727117.809,
+      "end_us": 7759744727120.914,
+      "duration_us": 3.10546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1373
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744727211.378,
+      "end_us": 7759744727269.65,
+      "duration_us": 58.2724609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1384
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744727313.458,
+      "end_us": 7759744727316.37,
+      "duration_us": 2.912109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1395
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744727407.411,
+      "end_us": 7759744727450.867,
+      "duration_us": 43.4560546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1406
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744727451.987,
+      "end_us": 7759744727455.892,
+      "duration_us": 3.904296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1409
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744727505.011,
+      "end_us": 7759744727508.5625,
+      "duration_us": 3.5517578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1415
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744727598.835,
+      "end_us": 7759744727611.924,
+      "duration_us": 13.0888671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1432
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744727714.644,
+      "end_us": 7759744727717.075,
+      "duration_us": 2.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1436
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744727887.381,
+      "end_us": 7759744727889.461,
+      "duration_us": 2.080078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1444
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744728064.661,
+      "end_us": 7759744728069.301,
+      "duration_us": 4.6396484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1455
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744728126.293,
+      "end_us": 7759744728129.814,
+      "duration_us": 3.521484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1463
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744728238.55,
+      "end_us": 7759744728249.397,
+      "duration_us": 10.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1474
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744728324.95,
+      "end_us": 7759744728328.086,
+      "duration_us": 3.1357421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1480
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744728417.43,
+      "end_us": 7759744728475.671,
+      "duration_us": 58.2412109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1491
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744728520.951,
+      "end_us": 7759744728523.607,
+      "duration_us": 2.65625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1502
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744728614.615,
+      "end_us": 7759744728657.4,
+      "duration_us": 42.78515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1513
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744728658.391,
+      "end_us": 7759744728662.487,
+      "duration_us": 4.0966796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1516
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744728712.92,
+      "end_us": 7759744728716.504,
+      "duration_us": 3.583984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1522
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744728807.096,
+      "end_us": 7759744728820.439,
+      "duration_us": 13.34375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1539
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744728923.353,
+      "end_us": 7759744728926.009,
+      "duration_us": 2.65625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1543
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744729096.537,
+      "end_us": 7759744729098.553,
+      "duration_us": 2.015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1551
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744729273.594,
+      "end_us": 7759744729278.266,
+      "duration_us": 4.671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1562
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744729335.642,
+      "end_us": 7759744729339.161,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1570
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744729447.099,
+      "end_us": 7759744729457.562,
+      "duration_us": 10.462890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1581
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744729532.923,
+      "end_us": 7759744729536.059,
+      "duration_us": 3.1357421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1587
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744729626.139,
+      "end_us": 7759744729685.18,
+      "duration_us": 59.041015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1598
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744729730.492,
+      "end_us": 7759744729733.181,
+      "duration_us": 2.6884765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1609
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744729865.82,
+      "end_us": 7759744729908.637,
+      "duration_us": 42.81640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1620
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744729909.66,
+      "end_us": 7759744729913.661,
+      "duration_us": 4.0009765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1623
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744729965.789,
+      "end_us": 7759744729969.213,
+      "duration_us": 3.423828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1629
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744730060.829,
+      "end_us": 7759744730073.757,
+      "duration_us": 12.927734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1646
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744730192.957,
+      "end_us": 7759744730195.389,
+      "duration_us": 2.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1650
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744730368.862,
+      "end_us": 7759744730370.975,
+      "duration_us": 2.1123046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1658
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744730545.726,
+      "end_us": 7759744730550.43,
+      "duration_us": 4.7041015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1669
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744730607.711,
+      "end_us": 7759744730611.23,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1677
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744730720.095,
+      "end_us": 7759744730730.879,
+      "duration_us": 10.7841796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1688
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744730826.303,
+      "end_us": 7759744730829.311,
+      "duration_us": 3.0078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1694
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744730935.936,
+      "end_us": 7759744730993.823,
+      "duration_us": 57.8876953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1705
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744731041.056,
+      "end_us": 7759744731043.872,
+      "duration_us": 2.81640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1716
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744731133.569,
+      "end_us": 7759744731176.514,
+      "duration_us": 42.9443359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1727
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744731177.697,
+      "end_us": 7759744731181.665,
+      "duration_us": 3.9677734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1730
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744731231.745,
+      "end_us": 7759744731235.265,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1736
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744731325.698,
+      "end_us": 7759744731338.657,
+      "duration_us": 12.958984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1753
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744731443.234,
+      "end_us": 7759744731445.698,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1757
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744731617.315,
+      "end_us": 7759744731619.202,
+      "duration_us": 1.88671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1765
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744731794.563,
+      "end_us": 7759744731799.203,
+      "duration_us": 4.6396484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1776
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744731856.291,
+      "end_us": 7759744731859.8125,
+      "duration_us": 3.521484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1784
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744731968.996,
+      "end_us": 7759744731979.236,
+      "duration_us": 10.240234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1795
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744732054.564,
+      "end_us": 7759744732057.572,
+      "duration_us": 3.0078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1801
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744732150.085,
+      "end_us": 7759744732208.421,
+      "duration_us": 58.3359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1812
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744732253.093,
+      "end_us": 7759744732255.749,
+      "duration_us": 2.65625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1823
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744732345.573,
+      "end_us": 7759744732387.975,
+      "duration_us": 42.4013671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1834
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744732389.158,
+      "end_us": 7759744732393.126,
+      "duration_us": 3.9677734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1837
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744732443.526,
+      "end_us": 7759744732447.175,
+      "duration_us": 3.6484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1843
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744732536.102,
+      "end_us": 7759744732549.222,
+      "duration_us": 13.1201171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1860
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744732651.174,
+      "end_us": 7759744732653.606,
+      "duration_us": 2.4326171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1864
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744732823.111,
+      "end_us": 7759744732825.191,
+      "duration_us": 2.080078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1872
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744733000.744,
+      "end_us": 7759744733005.48,
+      "duration_us": 4.736328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1883
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744733062.792,
+      "end_us": 7759744733066.312,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1891
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744733175.145,
+      "end_us": 7759744733185.769,
+      "duration_us": 10.6240234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1902
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744733260.329,
+      "end_us": 7759744733263.401,
+      "duration_us": 3.072265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1908
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744733353.321,
+      "end_us": 7759744733411.785,
+      "duration_us": 58.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1919
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744733456.97,
+      "end_us": 7759744733459.626,
+      "duration_us": 2.65625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1930
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744733549.418,
+      "end_us": 7759744733592.586,
+      "duration_us": 43.16796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1941
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744733593.77,
+      "end_us": 7759744733597.546,
+      "duration_us": 3.7763671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1944
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744733648.874,
+      "end_us": 7759744733652.3955,
+      "duration_us": 3.521484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1950
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744733753.451,
+      "end_us": 7759744733766.699,
+      "duration_us": 13.248046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1967
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744733874.859,
+      "end_us": 7759744733877.323,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1971
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744734047.756,
+      "end_us": 7759744734049.676,
+      "duration_us": 1.919921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1979
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744734224.973,
+      "end_us": 7759744734229.709,
+      "duration_us": 4.736328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1990
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744734286.829,
+      "end_us": 7759744734290.349,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 1998
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744734409.006,
+      "end_us": 7759744734419.821,
+      "duration_us": 10.8154296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2009
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744734510.254,
+      "end_us": 7759744734513.357,
+      "duration_us": 3.103515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2015
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744734610.638,
+      "end_us": 7759744734668.781,
+      "duration_us": 58.1435546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2026
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744734715.726,
+      "end_us": 7759744734718.573,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2037
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744734810.959,
+      "end_us": 7759744734853.615,
+      "duration_us": 42.65625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2048
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744734854.799,
+      "end_us": 7759744734858.734,
+      "duration_us": 3.935546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2051
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744734909.103,
+      "end_us": 7759744734912.398,
+      "duration_us": 3.2958984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2057
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744735005.103,
+      "end_us": 7759744735018.383,
+      "duration_us": 13.2802734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2074
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744735120.08,
+      "end_us": 7759744735122.512,
+      "duration_us": 2.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2078
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744735296.529,
+      "end_us": 7759744735298.641,
+      "duration_us": 2.111328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2086
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744735474.577,
+      "end_us": 7759744735479.281,
+      "duration_us": 4.7041015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2097
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744735537.169,
+      "end_us": 7759744735540.688,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2105
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744735650.194,
+      "end_us": 7759744735660.818,
+      "duration_us": 10.6240234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2116
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744735736.274,
+      "end_us": 7759744735739.41,
+      "duration_us": 3.1357421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2122
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744735829.458,
+      "end_us": 7759744735888.371,
+      "duration_us": 58.9130859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2133
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744735933.171,
+      "end_us": 7759744735935.955,
+      "duration_us": 2.7841796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2144
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744736026.419,
+      "end_us": 7759744736069.267,
+      "duration_us": 42.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2155
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744736070.323,
+      "end_us": 7759744736074.323,
+      "duration_us": 4.0,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2158
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744736123.828,
+      "end_us": 7759744736127.252,
+      "duration_us": 3.423828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2164
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744736219.796,
+      "end_us": 7759744736232.9795,
+      "duration_us": 13.18359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2181
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744736334.388,
+      "end_us": 7759744736337.012,
+      "duration_us": 2.6240234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2185
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744736506.133,
+      "end_us": 7759744736508.309,
+      "duration_us": 2.17578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2193
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744736685.302,
+      "end_us": 7759744736689.878,
+      "duration_us": 4.576171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2204
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744736747.734,
+      "end_us": 7759744736751.446,
+      "duration_us": 3.7119140625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2212
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744736860.822,
+      "end_us": 7759744736871.095,
+      "duration_us": 10.2724609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2223
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744736946.903,
+      "end_us": 7759744736950.039,
+      "duration_us": 3.1357421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2229
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744737040.759,
+      "end_us": 7759744737099.703,
+      "duration_us": 58.9443359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2240
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744737144.471,
+      "end_us": 7759744737147.224,
+      "duration_us": 2.7529296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2251
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744737237.176,
+      "end_us": 7759744737280.12,
+      "duration_us": 42.9443359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2262
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744737281.24,
+      "end_us": 7759744737285.112,
+      "duration_us": 3.8720703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2265
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744737335.896,
+      "end_us": 7759744737339.545,
+      "duration_us": 3.6484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2271
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744737430.137,
+      "end_us": 7759744737443.097,
+      "duration_us": 12.9599609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2288
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744737545.785,
+      "end_us": 7759744737548.377,
+      "duration_us": 2.591796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2292
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744737756.282,
+      "end_us": 7759744737758.395,
+      "duration_us": 2.1123046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2300
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744737967.451,
+      "end_us": 7759744737972.027,
+      "duration_us": 4.576171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2311
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744738033.435,
+      "end_us": 7759744738036.954,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2319
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744738154.075,
+      "end_us": 7759744738164.923,
+      "duration_us": 10.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2330
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744738245.724,
+      "end_us": 7759744738248.859,
+      "duration_us": 3.1357421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2336
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744738344.444,
+      "end_us": 7759744738402.94,
+      "duration_us": 58.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2347
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744738454.589,
+      "end_us": 7759744738457.277,
+      "duration_us": 2.6884765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2358
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744738554.333,
+      "end_us": 7759744738597.053,
+      "duration_us": 42.7197265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2369
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744738598.077,
+      "end_us": 7759744738602.013,
+      "duration_us": 3.935546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2372
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744738658.557,
+      "end_us": 7759744738662.236,
+      "duration_us": 3.6796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2378
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744738758.59,
+      "end_us": 7759744738772.094,
+      "duration_us": 13.50390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2395
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744738882.463,
+      "end_us": 7759744738884.99,
+      "duration_us": 2.52734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2399
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744739069.791,
+      "end_us": 7759744739071.775,
+      "duration_us": 1.984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2407
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744739248.319,
+      "end_us": 7759744739253.216,
+      "duration_us": 4.896484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2418
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744739310.496,
+      "end_us": 7759744739314.015,
+      "duration_us": 3.5185546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2426
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744739423.136,
+      "end_us": 7759744739433.567,
+      "duration_us": 10.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2437
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744739508.16,
+      "end_us": 7759744739511.296,
+      "duration_us": 3.1357421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2443
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744739601.473,
+      "end_us": 7759744739660.673,
+      "duration_us": 59.2001953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2454
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744739706.657,
+      "end_us": 7759744739709.346,
+      "duration_us": 2.6884765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2465
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744739800.194,
+      "end_us": 7759744739842.723,
+      "duration_us": 42.5283203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2476
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744739843.746,
+      "end_us": 7759744739847.618,
+      "duration_us": 3.8720703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2479
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744739899.426,
+      "end_us": 7759744739902.85,
+      "duration_us": 3.423828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2485
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744739994.082,
+      "end_us": 7759744740007.106,
+      "duration_us": 13.0244140625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2502
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744740111.939,
+      "end_us": 7759744740114.371,
+      "duration_us": 2.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2506
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744740285.028,
+      "end_us": 7759744740287.141,
+      "duration_us": 2.1123046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2514
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744740463.204,
+      "end_us": 7759744740467.78,
+      "duration_us": 4.576171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2525
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744740525.092,
+      "end_us": 7759744740528.58,
+      "duration_us": 3.48828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2533
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744740638.757,
+      "end_us": 7759744740649.732,
+      "duration_us": 10.9755859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2544
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744740725.093,
+      "end_us": 7759744740728.101,
+      "duration_us": 3.0078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2550
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744740817.989,
+      "end_us": 7759744740876.198,
+      "duration_us": 58.208984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2561
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744740921.926,
+      "end_us": 7759744740924.582,
+      "duration_us": 2.65625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2572
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744741016.038,
+      "end_us": 7759744741058.758,
+      "duration_us": 42.7197265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2583
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744741059.782,
+      "end_us": 7759744741063.783,
+      "duration_us": 4.0009765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2586
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744741115.719,
+      "end_us": 7759744741119.303,
+      "duration_us": 3.583984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2592
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744741209.863,
+      "end_us": 7759744741223.047,
+      "duration_us": 13.18359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2609
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744741325.095,
+      "end_us": 7759744741327.56,
+      "duration_us": 2.46484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2613
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744741522.44,
+      "end_us": 7759744741524.425,
+      "duration_us": 1.984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2621
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744741704.777,
+      "end_us": 7759744741709.514,
+      "duration_us": 4.736328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2632
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744741801.321,
+      "end_us": 7759744741804.841,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2640
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744741924.81,
+      "end_us": 7759744741935.338,
+      "duration_us": 10.5283203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2651
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744742017.898,
+      "end_us": 7759744742021.099,
+      "duration_us": 3.2001953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2657
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744742117.642,
+      "end_us": 7759744742176.011,
+      "duration_us": 58.369140625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2668
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744742227.723,
+      "end_us": 7759744742230.411,
+      "duration_us": 2.6884765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2679
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744742327.083,
+      "end_us": 7759744742369.868,
+      "duration_us": 42.78515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2690
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744742371.083,
+      "end_us": 7759744742375.18,
+      "duration_us": 4.0966796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2693
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744742432.236,
+      "end_us": 7759744742435.788,
+      "duration_us": 3.5517578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2699
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744742533.26,
+      "end_us": 7759744742546.54,
+      "duration_us": 13.2802734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2716
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744742656.62,
+      "end_us": 7759744742659.053,
+      "duration_us": 2.4326171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2720
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744742840.493,
+      "end_us": 7759744742842.605,
+      "duration_us": 2.1123046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2728
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744743034.446,
+      "end_us": 7759744743039.15,
+      "duration_us": 4.7041015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2739
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744743096.302,
+      "end_us": 7759744743099.821,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2747
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744743210.607,
+      "end_us": 7759744743220.943,
+      "duration_us": 10.3359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2758
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744743298.543,
+      "end_us": 7759744743301.711,
+      "duration_us": 3.16796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2764
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744743391.663,
+      "end_us": 7759744743449.904,
+      "duration_us": 58.2412109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2775
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744743494.928,
+      "end_us": 7759744743497.616,
+      "duration_us": 2.6884765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2786
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744743590.128,
+      "end_us": 7759744743633.36,
+      "duration_us": 43.232421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2797
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744743634.353,
+      "end_us": 7759744743638.416,
+      "duration_us": 4.0634765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2800
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744743689.648,
+      "end_us": 7759744743693.2,
+      "duration_us": 3.5517578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2806
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744743784.177,
+      "end_us": 7759744743797.329,
+      "duration_us": 13.15234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2823
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744743899.537,
+      "end_us": 7759744743902.065,
+      "duration_us": 2.5283203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2827
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744744075.57,
+      "end_us": 7759744744077.585,
+      "duration_us": 2.0146484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2835
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744744252.882,
+      "end_us": 7759744744257.427,
+      "duration_us": 4.544921875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2846
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744744315.859,
+      "end_us": 7759744744319.378,
+      "duration_us": 3.5185546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2854
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744744429.715,
+      "end_us": 7759744744440.274,
+      "duration_us": 10.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2865
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744744515.188,
+      "end_us": 7759744744518.291,
+      "duration_us": 3.1025390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2871
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744744610.708,
+      "end_us": 7759744744669.172,
+      "duration_us": 58.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2882
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744744714.068,
+      "end_us": 7759744744716.757,
+      "duration_us": 2.6884765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2893
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744744806.612,
+      "end_us": 7759744744849.302,
+      "duration_us": 42.689453125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2904
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744744850.452,
+      "end_us": 7759744744854.325,
+      "duration_us": 3.873046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2907
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744744906.165,
+      "end_us": 7759744744909.877,
+      "duration_us": 3.7119140625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2913
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744745001.749,
+      "end_us": 7759744745015.093,
+      "duration_us": 13.34375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2930
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744745118.006,
+      "end_us": 7759744745120.4375,
+      "duration_us": 2.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2934
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744745290.327,
+      "end_us": 7759744745292.63,
+      "duration_us": 2.302734375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2942
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744745467.447,
+      "end_us": 7759744745471.991,
+      "duration_us": 4.5439453125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2953
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744745530.616,
+      "end_us": 7759744745534.135,
+      "duration_us": 3.5185546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2961
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744745642.616,
+      "end_us": 7759744745653.433,
+      "duration_us": 10.81640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2972
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744745729.144,
+      "end_us": 7759744745732.279,
+      "duration_us": 3.1357421875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2978
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744745859.928,
+      "end_us": 7759744745917.944,
+      "duration_us": 58.0166015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 2989
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744745970.969,
+      "end_us": 7759744745973.753,
+      "duration_us": 2.7841796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3000
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744746070.937,
+      "end_us": 7759744746113.817,
+      "duration_us": 42.880859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3011
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744746114.905,
+      "end_us": 7759744746118.842,
+      "duration_us": 3.9365234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3014
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744746176.698,
+      "end_us": 7759744746180.41,
+      "duration_us": 3.7119140625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3020
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744746276.25,
+      "end_us": 7759744746289.402,
+      "duration_us": 13.15234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3037
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744746399.259,
+      "end_us": 7759744746401.915,
+      "duration_us": 2.65625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3041
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744746583.164,
+      "end_us": 7759744746585.179,
+      "duration_us": 2.0146484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3049
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744746772.7,
+      "end_us": 7759744746777.276,
+      "duration_us": 4.576171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3060
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744746839.964,
+      "end_us": 7759744746843.485,
+      "duration_us": 3.521484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3068
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744746959.421,
+      "end_us": 7759744746970.013,
+      "duration_us": 10.591796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3079
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744747057.629,
+      "end_us": 7759744747060.732,
+      "duration_us": 3.103515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3085
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744747151.357,
+      "end_us": 7759744747210.654,
+      "duration_us": 59.296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3096
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744747256.126,
+      "end_us": 7759744747258.654,
+      "duration_us": 2.5283203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3107
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744747349.918,
+      "end_us": 7759744747392.767,
+      "duration_us": 42.8486328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3118
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744747393.886,
+      "end_us": 7759744747397.982,
+      "duration_us": 4.0966796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3121
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744747448.703,
+      "end_us": 7759744747452.319,
+      "duration_us": 3.6162109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3127
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744747543.103,
+      "end_us": 7759744747556.255,
+      "duration_us": 13.15234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3144
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744747659.775,
+      "end_us": 7759744747662.208,
+      "duration_us": 2.4326171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3148
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744747842.529,
+      "end_us": 7759744747844.641,
+      "duration_us": 2.111328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3156
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744748020.353,
+      "end_us": 7759744748025.057,
+      "duration_us": 4.7041015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3167
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744748083.585,
+      "end_us": 7759744748087.1045,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3175
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744748194.977,
+      "end_us": 7759744748206.4,
+      "duration_us": 11.423828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3186
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744748280.609,
+      "end_us": 7759744748283.585,
+      "duration_us": 2.9755859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3192
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744748374.178,
+      "end_us": 7759744748432.994,
+      "duration_us": 58.81640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3203
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744748478.658,
+      "end_us": 7759744748481.506,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3214
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744748573.987,
+      "end_us": 7759744748616.932,
+      "duration_us": 42.9443359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3225
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744748617.955,
+      "end_us": 7759744748621.731,
+      "duration_us": 3.7763671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3228
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744748673.027,
+      "end_us": 7759744748676.547,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3234
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744748768.003,
+      "end_us": 7759744748781.22,
+      "duration_us": 13.216796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3251
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744748884.324,
+      "end_us": 7759744748886.82,
+      "duration_us": 2.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3255
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744749059.301,
+      "end_us": 7759744749061.316,
+      "duration_us": 2.015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3263
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744749236.261,
+      "end_us": 7759744749241.028,
+      "duration_us": 4.767578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3274
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744749298.47,
+      "end_us": 7759744749301.988,
+      "duration_us": 3.5185546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3282
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744749410.918,
+      "end_us": 7759744749421.222,
+      "duration_us": 10.3037109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3293
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744749496.678,
+      "end_us": 7759744749499.75,
+      "duration_us": 3.072265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3299
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744749589.639,
+      "end_us": 7759744749648.486,
+      "duration_us": 58.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3310
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744749694.055,
+      "end_us": 7759744749696.711,
+      "duration_us": 2.65625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3321
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744749818.696,
+      "end_us": 7759744749861.544,
+      "duration_us": 42.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3332
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744749862.696,
+      "end_us": 7759744749866.568,
+      "duration_us": 3.8720703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3335
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744749924.872,
+      "end_us": 7759744749928.232,
+      "duration_us": 3.3603515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3341
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744750024.68,
+      "end_us": 7759744750038.088,
+      "duration_us": 13.408203125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3358
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744750148.713,
+      "end_us": 7759744750151.145,
+      "duration_us": 2.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3362
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744750337.962,
+      "end_us": 7759744750340.074,
+      "duration_us": 2.1123046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3370
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744750526.922,
+      "end_us": 7759744750531.658,
+      "duration_us": 4.736328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3381
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744750593.354,
+      "end_us": 7759744750596.97,
+      "duration_us": 3.6162109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3389
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744750712.139,
+      "end_us": 7759744750722.73,
+      "duration_us": 10.591796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3400
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744750802.54,
+      "end_us": 7759744750805.516,
+      "duration_us": 2.9755859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3406
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744750902.54,
+      "end_us": 7759744750960.908,
+      "duration_us": 58.3681640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3417
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744751019.052,
+      "end_us": 7759744751021.74,
+      "duration_us": 2.6884765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3428
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744751136.077,
+      "end_us": 7759744751179.053,
+      "duration_us": 42.9755859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3439
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744751180.045,
+      "end_us": 7759744751183.853,
+      "duration_us": 3.8076171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3442
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744751236.109,
+      "end_us": 7759744751239.789,
+      "duration_us": 3.6796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3448
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744751331.598,
+      "end_us": 7759744751344.653,
+      "duration_us": 13.0556640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3465
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744751449.71,
+      "end_us": 7759744751452.174,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3469
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744751623.759,
+      "end_us": 7759744751625.774,
+      "duration_us": 2.015625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3477
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744751801.391,
+      "end_us": 7759744751806.128,
+      "duration_us": 4.7373046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3488
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744751863.248,
+      "end_us": 7759744751866.768,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3496
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744751976.112,
+      "end_us": 7759744751986.608,
+      "duration_us": 10.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3507
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744752061.264,
+      "end_us": 7759744752064.271,
+      "duration_us": 3.0078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3513
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744752154.961,
+      "end_us": 7759744752213.329,
+      "duration_us": 58.3681640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3524
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744752257.777,
+      "end_us": 7759744752260.434,
+      "duration_us": 2.65625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3535
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744752350.641,
+      "end_us": 7759744752393.329,
+      "duration_us": 42.6884765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3546
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744752394.482,
+      "end_us": 7759744752398.547,
+      "duration_us": 4.064453125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3549
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744752447.826,
+      "end_us": 7759744752451.314,
+      "duration_us": 3.48828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3555
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744752542.45,
+      "end_us": 7759744752555.603,
+      "duration_us": 13.15234375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3572
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744752658.386,
+      "end_us": 7759744752660.817,
+      "duration_us": 2.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3576
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744752833.299,
+      "end_us": 7759744752835.411,
+      "duration_us": 2.1123046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3584
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744753012.532,
+      "end_us": 7759744753017.235,
+      "duration_us": 4.703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3595
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744753074.388,
+      "end_us": 7759744753077.907,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3603
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744753187.188,
+      "end_us": 7759744753198.708,
+      "duration_us": 11.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3614
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744753273.556,
+      "end_us": 7759744753276.661,
+      "duration_us": 3.10546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3620
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744753367.253,
+      "end_us": 7759744753425.909,
+      "duration_us": 58.65625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3631
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744753469.685,
+      "end_us": 7759744753472.532,
+      "duration_us": 2.84765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3642
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744753563.03,
+      "end_us": 7759744753606.038,
+      "duration_us": 43.0078125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3653
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744753607.03,
+      "end_us": 7759744753611.254,
+      "duration_us": 4.2236328125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3656
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744753662.23,
+      "end_us": 7759744753665.942,
+      "duration_us": 3.7119140625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3662
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744753785.239,
+      "end_us": 7759744753798.615,
+      "duration_us": 13.3759765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3679
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744753910.903,
+      "end_us": 7759744753913.399,
+      "duration_us": 2.49609375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3683
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744754094.68,
+      "end_us": 7759744754096.664,
+      "duration_us": 1.984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3691
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744754283.672,
+      "end_us": 7759744754288.345,
+      "duration_us": 4.6728515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3702
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744754350.201,
+      "end_us": 7759744754353.721,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3710
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744754468.473,
+      "end_us": 7759744754479.032,
+      "duration_us": 10.5595703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3721
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744754559.034,
+      "end_us": 7759744754562.137,
+      "duration_us": 3.1025390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3727
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744754658.682,
+      "end_us": 7759744754717.401,
+      "duration_us": 58.7197265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3738
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744754768.251,
+      "end_us": 7759744754771.13,
+      "duration_us": 2.87890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3749
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744754866.779,
+      "end_us": 7759744754909.659,
+      "duration_us": 42.8798828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3760
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744754914.331,
+      "end_us": 7759744754918.267,
+      "duration_us": 3.935546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3763
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744754980.475,
+      "end_us": 7759744754983.835,
+      "duration_us": 3.3603515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3769
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744755075.164,
+      "end_us": 7759744755088.284,
+      "duration_us": 13.1201171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3786
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744755191.612,
+      "end_us": 7759744755194.044,
+      "duration_us": 2.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3790
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744755363.933,
+      "end_us": 7759744755366.076,
+      "duration_us": 2.1435546875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3798
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744755560.573,
+      "end_us": 7759744755565.246,
+      "duration_us": 4.6728515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3809
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744755630.91,
+      "end_us": 7759744755634.43,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3817
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744755754.814,
+      "end_us": 7759744755765.215,
+      "duration_us": 10.400390625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3828
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744755843.071,
+      "end_us": 7759744755846.175,
+      "duration_us": 3.103515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3834
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744755937.247,
+      "end_us": 7759744755995.551,
+      "duration_us": 58.3037109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3845
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744756041.855,
+      "end_us": 7759744756044.544,
+      "duration_us": 2.6884765625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3856
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744756137.632,
+      "end_us": 7759744756181.472,
+      "duration_us": 43.83984375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3867
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744756182.496,
+      "end_us": 7759744756186.4,
+      "duration_us": 3.904296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3870
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744756238.112,
+      "end_us": 7759744756241.536,
+      "duration_us": 3.423828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3876
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744756332.096,
+      "end_us": 7759744756345.184,
+      "duration_us": 13.087890625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3893
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744756449.633,
+      "end_us": 7759744756452.097,
+      "duration_us": 2.4638671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3897
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744756622.306,
+      "end_us": 7759744756624.32,
+      "duration_us": 2.0146484375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3905
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744756799.522,
+      "end_us": 7759744756804.194,
+      "duration_us": 4.671875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3916
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744756861.73,
+      "end_us": 7759744756865.219,
+      "duration_us": 3.48828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3924
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744756975.235,
+      "end_us": 7759744756985.73,
+      "duration_us": 10.4951171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3935
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744757061.795,
+      "end_us": 7759744757064.898,
+      "duration_us": 3.103515625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3941
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744757156.131,
+      "end_us": 7759744757215.62,
+      "duration_us": 59.4892578125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3952
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744757260.132,
+      "end_us": 7759744757262.948,
+      "duration_us": 2.81640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3963
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744757353.38,
+      "end_us": 7759744757396.324,
+      "duration_us": 42.9443359375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3974
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744757397.444,
+      "end_us": 7759744757401.316,
+      "duration_us": 3.8720703125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3977
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744757452.004,
+      "end_us": 7759744757455.62,
+      "duration_us": 3.6162109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 3983
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_relu_f2f_stages_64x6_tn",
+      "category": "kernel",
+      "start_us": 7759744757550.629,
+      "end_us": 7759744757563.877,
+      "duration_us": 13.248046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4000
+    },
+    {
+      "name": "void sglang::fused_rope_kernel<true, 128l, false, __nv_bfloat16, __nv_bfloat16, long, 16u>(sglang::FusedRopeParams)",
+      "category": "kernel",
+      "start_us": 7759744757668.613,
+      "end_us": 7759744757671.045,
+      "duration_us": 2.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4004
+    },
+    {
+      "name": "void sglang::store_kvcache<512l, 512l, 1, false, long>(sglang::StoreKVCacheParams)",
+      "category": "kernel",
+      "start_us": 7759744757858.502,
+      "end_us": 7759744757860.614,
+      "duration_us": 2.1123046875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4012
+    },
+    {
+      "name": "_fwd_grouped_kernel_stage1",
+      "category": "kernel",
+      "start_us": 7759744758036.839,
+      "end_us": 7759744758041.414,
+      "duration_us": 4.5751953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4023
+    },
+    {
+      "name": "_fwd_kernel_stage2",
+      "category": "kernel",
+      "start_us": 7759744758098.663,
+      "end_us": 7759744758102.343,
+      "duration_us": 3.6796875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4031
+    },
+    {
+      "name": "std::enable_if<!(false), void>::type internal::gemvx::kernel<int, int, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, float, false, true, true, false, 7, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<__nv_bfloat16>, float>)",
+      "category": "kernel",
+      "start_us": 7759744758212.743,
+      "end_us": 7759744758223.655,
+      "duration_us": 10.912109375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4042
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744758299.592,
+      "end_us": 7759744758302.664,
+      "duration_us": 3.072265625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4048
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744758393.48,
+      "end_us": 7759744758451.912,
+      "duration_us": 58.431640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4059
+    },
+    {
+      "name": "void sglang::act_and_mul_kernel<__nv_bfloat16, (sglang::ActivationKind)0, false, false, false, false>(sglang::ActivationParams)",
+      "category": "kernel",
+      "start_us": 7759744758513.673,
+      "end_us": 7759744758516.489,
+      "duration_us": 2.81640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4070
+    },
+    {
+      "name": "void gemv2T_kernel_val<int, int, __nv_bfloat16, float, float, float, 128, 16, 4, 4, false, false, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float> >(cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<__nv_bfloat16 const>, cublasGemvTensorStridedBatched<float const>, cublasGemvTensorStridedBatched<float>, float>, float, float)",
+      "category": "kernel",
+      "start_us": 7759744758612.137,
+      "end_us": 7759744758654.953,
+      "duration_us": 42.81640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4081
+    },
+    {
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, false, __nv_bfloat16, __nv_bfloat16, __nv_bfloat16, true, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, __nv_bfloat16*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float const*, float const*, float const*, float const*)",
+      "category": "kernel",
+      "start_us": 7759744758655.945,
+      "end_us": 7759744758659.753,
+      "duration_us": 3.8076171875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4084
+    },
+    {
+      "name": "void flashinfer::norm::FusedAddRMSNormKernel<8u, __nv_bfloat16>(__nv_bfloat16*, __nv_bfloat16*, __nv_bfloat16*, unsigned int, unsigned int, unsigned int, float, float)",
+      "category": "kernel",
+      "start_us": 7759744758696.265,
+      "end_us": 7759744758699.784,
+      "duration_us": 3.51953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4090
+    },
+    {
+      "name": "ampere_bf16_s16816gemm_bf16_64x64_sliced1x2_ldg8_f2f_stages_64x5_tn",
+      "category": "kernel",
+      "start_us": 7759744758888.618,
+      "end_us": 7759744759242.219,
+      "duration_us": 353.6005859375,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4101
+    },
+    {
+      "name": "void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, 4, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1> >(int, at::native::direct_copy_kernel_cuda(at::TensorIteratorBase&)::{lambda()#3}::operator()() const::{lambda()#7}::operator()() const::{lambda(float)#1}, std::array<char*, 2ul>, TrivialOffsetCalculator<1, unsigned int>, TrivialOffsetCalculator<1, unsigned int>, at::native::memory::LoadWithCast<1>, at::native::memory::StoreWithCast<1>)",
+      "category": "kernel",
+      "start_us": 7759744759243.339,
+      "end_us": 7759744759249.164,
+      "duration_us": 5.8251953125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4114
+    },
+    {
+      "name": "Memset (Device)",
+      "category": "gpu_memset",
+      "start_us": 7759744759260.363,
+      "end_us": 7759744759261.419,
+      "duration_us": 1.0556640625,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4130
+    },
+    {
+      "name": "void at::native::reduce_kernel<512, 1, at::native::ReduceOp<float, at::native::ArgMaxOps<float>, unsigned int, long, 4, 4> >(at::native::ReduceOp<float, at::native::ArgMaxOps<float>, unsigned int, long, 4, 4>)",
+      "category": "kernel",
+      "start_us": 7759744759274.092,
+      "end_us": 7759744759284.972,
+      "duration_us": 10.8798828125,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4132
+    },
+    {
+      "name": "void at::native::index_elementwise_kernel<128, 4, at::native::gpu_index_kernel<at::native::index_put_kernel_impl<at::native::OpaqueType<8> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_put_kernel_impl<at::native::OpaqueType<8> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1}>(long, at::native::gpu_index_kernel<at::native::index_put_kernel_impl<at::native::OpaqueType<8> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1}>(at::TensorIteratorBase&, c10::ArrayRef<long>, c10::ArrayRef<long>, at::native::index_put_kernel_impl<at::native::OpaqueType<8> >(at::TensorIterator&, c10::ArrayRef<long>, c10::ArrayRef<long>)::{lambda(char*, char const*, long)#1} const&, bool)::{lambda(int)#1})",
+      "category": "kernel",
+      "start_us": 7759744759408.78,
+      "end_us": 7759744759412.908,
+      "duration_us": 4.1279296875,
+      "device": 0,
+      "stream": 29,
+      "correlation": 4139
+    }
+  ],
+  "unattributed_gpu_events": [],
+  "scope": "Instrumented native diagnostic only. GPU families are name-based, not exact AIC-op mappings. Wall-minus-union is not pure CPU time or a correction to formal labels.",
+  "input_interpretations": {
+    "extend": [
+      1
+    ],
+    "prefix": [
+      119
+    ],
+    "runtime": [
+      122
+    ],
+    "physical_before": [
+      121
+    ]
+  },
+  "aic_predictions": {
+    "prefix": {
+      "total_ms": 5.888903753338087,
+      "operators_ms": {
+        "generation_embedding": 0.0030026459948320414,
+        "generation_add_norm_1": 0.10838102325581396,
+        "generation_qkv_gemm": 0.4925439953804016,
+        "generation_attention": 0.3359232003986836,
+        "generation_proj_gemm": 0.3676159977912903,
+        "generation_add_norm_2": 0.10838102325581396,
+        "generation_gate_ffn1_gemm": 2.3336958885192876,
+        "generation_act_gate": 0.109536,
+        "generation_ffn2_gemm": 1.640447974205017,
+        "generation_logits_gemm": 0.3893760045369466,
+        "generation_embedding_ar": 0.0,
+        "generation_ar_1": 0.0,
+        "generation_ar_2": 0.0,
+        "generation_p2p": 0.0
+      }
+    },
+    "runtime": {
+      "total_ms": 5.89085140052222,
+      "operators_ms": {
+        "generation_embedding": 0.0030026459948320414,
+        "generation_add_norm_1": 0.10838102325581396,
+        "generation_qkv_gemm": 0.4925439953804016,
+        "generation_attention": 0.33787084758281705,
+        "generation_proj_gemm": 0.3676159977912903,
+        "generation_add_norm_2": 0.10838102325581396,
+        "generation_gate_ffn1_gemm": 2.3336958885192876,
+        "generation_act_gate": 0.109536,
+        "generation_ffn2_gemm": 1.640447974205017,
+        "generation_logits_gemm": 0.3893760045369466,
+        "generation_embedding_ar": 0.0,
+        "generation_ar_1": 0.0,
+        "generation_ar_2": 0.0,
+        "generation_p2p": 0.0
+      }
+    },
+    "physical_before": {
+      "total_ms": 5.889702472267378,
+      "operators_ms": {
+        "generation_embedding": 0.0030026459948320414,
+        "generation_add_norm_1": 0.10838102325581396,
+        "generation_qkv_gemm": 0.4925439953804016,
+        "generation_attention": 0.33672191932797435,
+        "generation_proj_gemm": 0.3676159977912903,
+        "generation_add_norm_2": 0.10838102325581396,
+        "generation_gate_ffn1_gemm": 2.3336958885192876,
+        "generation_act_gate": 0.109536,
+        "generation_ffn2_gemm": 1.640447974205017,
+        "generation_logits_gemm": 0.3893760045369466,
+        "generation_embedding_ar": 0.0,
+        "generation_ar_1": 0.0,
+        "generation_ar_2": 0.0,
+        "generation_p2p": 0.0
+      }
+    }
+  },
+  "metadata_path": "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/analysis/workloads/matched_native_profiles/Qwen2.5-3B-Instruct/latency_128x64_r1/profiles/mode2_index3.trace.metadata.json"
+}

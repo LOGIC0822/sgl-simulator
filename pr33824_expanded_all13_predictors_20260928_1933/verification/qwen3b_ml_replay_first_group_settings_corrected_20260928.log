@@ -1,0 +1,8 @@
+latency_128x64_r1 verified_requests= 32 exact_real_KV_capacity_tokens= 1661131
+latency_256x128_r1 verified_requests= 32 exact_real_KV_capacity_tokens= 1661131
+saturation_1024x256_inf verified_requests= 64 exact_real_KV_capacity_tokens= 1661131
+saturation_1536x384_inf verified_requests= 64 exact_real_KV_capacity_tokens= 1661131
+service_1024x256_r4 verified_requests= 64 exact_real_KV_capacity_tokens= 1661131
+PASS: five first-group replays; 256 heldout requests; exact real trace/arrival source, KV capacity and shared scheduler settings.
+The earlier diagnostic incorrectly required a CUDA attention-backend launch flag on the CPU/mock replay. That flag is intentionally omitted; triton is retained only as real-source metadata, not executed as a GPU attention kernel during replay.
+Both diagnostic logs retained. No experiment configuration, data, predictor or running scripts modified.

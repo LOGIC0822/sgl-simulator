@@ -1,0 +1,423 @@
+diff --git a/python/sglang/kernels/jit/csrc/gemm/awq_dequantize.cuh b/python/sglang/kernels/jit/csrc/gemm/awq_dequantize.cuh
+index 600720238b..dceb0788ab 100644
+--- a/python/sglang/kernels/jit/csrc/gemm/awq_dequantize.cuh
++++ b/python/sglang/kernels/jit/csrc/gemm/awq_dequantize.cuh
+@@ -2,6 +2,8 @@
+ // https://github.com/vllm-project/vllm/blob/eb59b5a6cba6727d3727c0372258db9002f687c1/csrc/quantization/awq/gemm_kernels.cu#L350
+ #pragma once
+ 
++#include <cassert>
++
+ #include <sgl_kernel/tensor.h>
+ 
+ #include <sgl_kernel/utils.cuh>
+diff --git a/python/sglang/srt/configs/model_config.py b/python/sglang/srt/configs/model_config.py
+index 2a87a7e0be..fb303614b0 100644
+--- a/python/sglang/srt/configs/model_config.py
++++ b/python/sglang/srt/configs/model_config.py
+@@ -1667,7 +1667,10 @@ class ModelConfig:
+                     )
+ 
+     def _verify_dual_chunk_attention_config(self) -> None:
+-        if hasattr(self.hf_config, "dual_chunk_attention_config"):
++        # A server-side JSON override may deliberately set this optional
++        # long-context configuration to ``null``.  Treat that the same as an
++        # absent configuration rather than indexing into None.
++        if getattr(self.hf_config, "dual_chunk_attention_config", None) is not None:
+             # Try loading the sparse attention config
+             sparse_attn_config = get_sparse_attention_config(self.model_path)
+             if not sparse_attn_config:
+diff --git a/python/sglang/srt/layers/attention/triton_backend.py b/python/sglang/srt/layers/attention/triton_backend.py
+index 0e04dd0ebe..b9b5d54215 100644
+--- a/python/sglang/srt/layers/attention/triton_backend.py
++++ b/python/sglang/srt/layers/attention/triton_backend.py
+@@ -63,7 +63,13 @@ _is_gfx942 = is_gfx942_supported()
+ _is_xpu = is_xpu()
+ 
+ if _is_cuda:
+-    from sgl_kernel.utils import is_arch_support_pdl
++    # PDL is a Hopper-and-newer launch feature.  Importing ``sgl_kernel`` just
++    # to answer this capability question forces its architecture-specific
++    # extension loader to run, although SM80 never enables PDL.  Use the
++    # source-tree JIT probe instead: it has the same capability predicate and
++    # lets the Triton attention backend run on CUDA-12 A100 installations whose
++    # optional sgl_kernel wheel targets a newer CUDA runtime.
++    from sglang.kernels.jit.utils import is_arch_support_pdl
+ 
+ if TYPE_CHECKING:
+     from sglang.srt.layers.radix_attention import RadixAttention
+diff --git a/python/sglang/srt/layers/rotary_embedding/base.py b/python/sglang/srt/layers/rotary_embedding/base.py
+index f3161b35c0..d6b7181b9b 100644
+--- a/python/sglang/srt/layers/rotary_embedding/base.py
++++ b/python/sglang/srt/layers/rotary_embedding/base.py
+@@ -242,9 +242,6 @@ class RotaryEmbedding(BaseFusedOp):
+         fused_set_kv_buffer_arg: Optional[FusedSetKVBufferArg] = None,
+     ) -> Tuple[torch.Tensor, torch.Tensor]:
+         """A PyTorch-native implementation of forward()."""
+-        assert fused_set_kv_buffer_arg is None, (
+-            "fused_set_kv_buffer_arg is not supported for native implementation"
+-        )
+ 
+         if offsets is not None:
+             positions = positions + offsets
+@@ -273,6 +270,22 @@ class RotaryEmbedding(BaseFusedOp):
+         key_pass = key[..., self.rotary_dim :]
+         key_rot = self._apply_rotary_emb_wrapped(key_rot, cos, sin, self.is_neox_style)
+         key = torch.cat((key_rot, key_pass), dim=-1).reshape(key_shape)
++
++        # The CUDA fused RoPE kernel writes the rotated key and unrotated value
++        # into the KV cache.  Keep that observable contract in the PyTorch
++        # fallback: Qwen3-MoE relies on it when its attention call is told that
++        # KV storage has already happened.
++        if fused_set_kv_buffer_arg is not None:
++            fused_set_kv_buffer_arg.k_buffer.index_copy_(
++                0,
++                fused_set_kv_buffer_arg.cache_loc,
++                key.reshape(num_tokens, -1),
++            )
++            fused_set_kv_buffer_arg.v_buffer.index_copy_(
++                0,
++                fused_set_kv_buffer_arg.cache_loc,
++                fused_set_kv_buffer_arg.value.reshape(num_tokens, -1),
++            )
+         return query, key
+ 
+     def forward_npu(
+diff --git a/tools/sglang-simulator/src/sglang_simulator/compat.py b/tools/sglang-simulator/src/sglang_simulator/compat.py
+index a344b07d5a..d6123b81b8 100644
+--- a/tools/sglang-simulator/src/sglang_simulator/compat.py
++++ b/tools/sglang-simulator/src/sglang_simulator/compat.py
+@@ -1,6 +1,7 @@
+ """Early compatibility checks for the SGLang surfaces used by the simulator."""
+ 
+ import inspect
++import os
+ from importlib import metadata
+ 
+ SIMULATOR_SERVER_ARG_OVERRIDES = {
+@@ -45,20 +46,79 @@ def _require_parameters(function, required: set[str], surface: str) -> None:
+ 
+ def apply_simulator_server_args(target) -> None:
+     """Apply simulator-owned values before constructing the final ServerArgs."""
++    # Most CPU simulator runs use the no-kernel torch-native backend.  Keep
++    # this optional override for callers that intentionally own another
++    # backend contract.  The data-tools dual-chunk replay instead uses the
++    # narrower validation bypass below and retains torch-native allocation.
++    overrides = dict(SIMULATOR_SERVER_ARG_OVERRIDES)
++    attention_backend = os.getenv("SGLANG_SIMULATOR_ATTENTION_BACKEND")
++    if attention_backend:
++        overrides["attention_backend"] = attention_backend
++        overrides["prefill_attention_backend"] = attention_backend
++        overrides["decode_attention_backend"] = attention_backend
+     if isinstance(target, dict):
+-        target.update(SIMULATOR_SERVER_ARG_OVERRIDES)
++        target.update(overrides)
+         return
+ 
+-    for name, value in SIMULATOR_SERVER_ARG_OVERRIDES.items():
++    for name, value in overrides.items():
+         setattr(target, name, value)
+ 
+ 
++def install_cpu_dual_chunk_validation_bypass() -> None:
++    """Allow the CPU simulator to use torch-native scheduling for dual-chunk models.
++
++    The simulator never executes the model's attention kernel: its forward
++    duration comes from the configured predictor.  SGLang nevertheless
++    validates a checkpoint's ``dual_chunk_attention_config`` before scheduler
++    hooks take over and rejects the CPU engine's required ``torch_native``
++    backend.  This opt-in patch suppresses only that contradiction.  It does
++    not enable dual-chunk CUDA execution, alter a GPU server, or affect a
++    checkpoint without dual-chunk configuration.
++    """
++    if os.getenv("SGLANG_SIMULATOR_ALLOW_CPU_DUAL_CHUNK") != "1":
++        return
++
++    from sglang.srt.arg_groups import attention_hook, overrides
++
++    original = overrides._attention_backend_dual_chunk
++    if getattr(original, "_sglang_simulator_cpu_bypass", False):
++        return
++
++    def cpu_compatible_dual_chunk(view):
++        model_config = overrides.model_config_of(view)
++        dual_chunk_config = getattr(
++            getattr(model_config, "hf_config", None),
++            "dual_chunk_attention_config",
++            None,
++        )
++        if dual_chunk_config is not None and view.attention_backend == "torch_native":
++            return {}
++        return original(view)
++
++    cpu_compatible_dual_chunk._sglang_simulator_cpu_bypass = True
++    overrides._attention_backend_dual_chunk = cpu_compatible_dual_chunk
++    # ``attention_hook`` imports this function directly, so patch both module
++    # references before ServerArgs resolves the backend policy.
++    attention_hook._attention_backend_dual_chunk = cpu_compatible_dual_chunk
++
++
+ def validate_simulator_server_args(server_args) -> None:
+     """Fail early if a process bypassed a simulator-owned launch entry point."""
++    expected = dict(SIMULATOR_SERVER_ARG_OVERRIDES)
++    # Keep this validation in lockstep with ``apply_simulator_server_args``.
++    # The CPU simulator normally declares torch_native, whereas a dual-chunk
++    # checkpoint must retain its model-required backend declaration through
++    # SGLang's argument-resolution phase even though no CUDA attention kernel
++    # is executed by the simulator hooks.
++    attention_backend = os.getenv("SGLANG_SIMULATOR_ATTENTION_BACKEND")
++    if attention_backend:
++        expected["attention_backend"] = attention_backend
++        expected["prefill_attention_backend"] = attention_backend
++        expected["decode_attention_backend"] = attention_backend
+     mismatches = [
+         f"{name}={getattr(server_args, name, None)!r} (expected {expected!r})"
+-        for name, expected in SIMULATOR_SERVER_ARG_OVERRIDES.items()
+-        if getattr(server_args, name, None) != expected
++        for name, expected_value in expected.items()
++        if getattr(server_args, name, None) != expected_value
+     ]
+     if mismatches:
+         raise SGLangCompatibilityError(
+diff --git a/tools/sglang-simulator/src/sglang_simulator/simulation/sglang/launch_server.py b/tools/sglang-simulator/src/sglang_simulator/simulation/sglang/launch_server.py
+index ec8d5fbe3f..5a21f25bb4 100644
+--- a/tools/sglang-simulator/src/sglang_simulator/simulation/sglang/launch_server.py
++++ b/tools/sglang-simulator/src/sglang_simulator/simulation/sglang/launch_server.py
+@@ -6,6 +6,7 @@ from typing import Optional
+ 
+ from sglang_simulator.compat import (
+     apply_simulator_server_args,
++    install_cpu_dual_chunk_validation_bypass,
+     validate_launch_runtime,
+ )
+ from sglang_simulator.simulation.sglang.hook_bootstrap import (
+@@ -90,6 +91,7 @@ if __name__ == "__main__":
+     raw_args = parser.parse_args(argv)
+     apply_simulator_defaults(raw_args, argv)
+     apply_simulator_server_args(raw_args)
++    install_cpu_dual_chunk_validation_bypass()
+     server_args = ServerArgs.from_cli_args(raw_args)
+     simulation_args = SimulationArgs.from_cli_args(raw_args)
+ 
+diff --git a/tools/sglang-simulator/src/sglang_simulator/time_predictor/aiconfigurator.py b/tools/sglang-simulator/src/sglang_simulator/time_predictor/aiconfigurator.py
+index 12d2023578..b758947474 100644
+--- a/tools/sglang-simulator/src/sglang_simulator/time_predictor/aiconfigurator.py
++++ b/tools/sglang-simulator/src/sglang_simulator/time_predictor/aiconfigurator.py
+@@ -1,7 +1,13 @@
+-from typing import Optional
++import json
++import threading
++from contextlib import contextmanager
++from pathlib import Path
++from typing import Iterator, Optional
+ 
+ import numpy as np
++from aiconfigurator.sdk import common as aic_common
+ from aiconfigurator.sdk import models
++from aiconfigurator.sdk.models import helpers as aic_model_helpers
+ from aiconfigurator.sdk.backends.factory import get_backend
+ from aiconfigurator.sdk.common import (
+     CommQuantMode,
+@@ -76,6 +82,85 @@ MAP_DTYPE_TO_CommQuantMode = {
+ logger = get_logger("sgl_simulator")
+ 
+ 
++# AIConfigurator 0.10.0 does not list MistralForCausalLM in its public
++# architecture map.  The dense Mistral checkpoint has the same decoder
++# operator structure represented by AIC's LLAMA family, including GQA.
++_AIC_ARCHITECTURE_ALIASES = {"MistralForCausalLM": "LLAMA"}
++_AIC_SDK_PATCH_LOCK = threading.Lock()
++
++
++def _register_aic_architecture_aliases() -> None:
++    """Register known-compatible HuggingFace architectures missing from AIC."""
++    architecture_map = aic_common.ARCHITECTURE_TO_MODEL_FAMILY
++    for architecture, family in _AIC_ARCHITECTURE_ALIASES.items():
++        registered_family = architecture_map.get(architecture)
++        if registered_family is None:
++            architecture_map[architecture] = family
++            logger.info(
++                "Registered AIConfigurator architecture compatibility alias: "
++                "%s -> %s",
++                architecture,
++                family,
++            )
++        elif registered_family != family:
++            logger.warning(
++                "AIConfigurator architecture %s maps to %s, expected %s; "
++                "using the SDK mapping.",
++                architecture,
++                registered_family,
++                family,
++            )
++
++
++def _uses_awq_quantization(model_path: str) -> bool:
++    """Return whether a local HuggingFace checkpoint declares AWQ weights."""
++    config_path = Path(model_path) / "config.json"
++    try:
++        config = json.loads(config_path.read_text(encoding="utf-8"))
++    except (OSError, json.JSONDecodeError):
++        return False
++    quantization_config = config.get("quantization_config")
++    return (
++        isinstance(quantization_config, dict)
++        and str(quantization_config.get("quant_method", "")).lower() == "awq"
++    )
++
++
++@contextmanager
++def _aic_awq_bf16_compat(model_path: str) -> Iterator[None]:
++    """Parse unsupported AWQ metadata with the configured BF16 operator mode.
++
++    AIC 0.10 has no dense AWQ parser or SM80 AWQ GEMM table.  The experiment's
++    70B AWQ row therefore preserves the real checkpoint topology while using
++    BF16 operator data as an explicit proxy; it is never reported as native
++    AWQ calibration.
++    """
++    if not _uses_awq_quantization(model_path):
++        yield
++        return
++
++    original_infer = aic_model_helpers._infer_quant_modes_from_raw_config
++
++    def infer_without_awq(raw_config: dict, architecture: Optional[str] = None):
++        if raw_config.get("quant_algo") == "awq":
++            raw_config = dict(raw_config)
++            raw_config["quant_algo"] = None
++        return original_infer(raw_config, architecture)
++
++    with _AIC_SDK_PATCH_LOCK:
++        logger.warning(
++            "AIConfigurator 0.10 has no dense AWQ parser or SM80 AWQ GEMM "
++            "table for %s; using the configured BF16 operator proxy. "
++            "Do not treat this as AWQ-native calibration.",
++            model_path,
++        )
++        aic_model_helpers._infer_quant_modes_from_raw_config = infer_without_awq
++        try:
++            yield
++        finally:
++            aic_model_helpers._infer_quant_modes_from_raw_config = original_infer
++
++
+ def _resolve_comm_quant_mode(sched_config: SchedulerConfig) -> CommQuantMode:
+     if sched_config.comm_quant_mode_override:
+         return getattr(CommQuantMode, sched_config.comm_quant_mode_override)
+@@ -98,6 +183,7 @@ def get_perf_model(
+     model: ModelInfo,
+     workload_distribution: str = "balanced",
+ ) -> models.BaseModel:
++    _register_aic_architecture_aliases()
+     model_config = ModelConfig(
+         pp_size=sched_config.pp_size,
+         tp_size=sched_config.attn_tp_size,
+@@ -132,11 +218,12 @@ def get_perf_model(
+ 
+     logger.info(f"Model config for AIConfigurator: {model_config}")
+ 
+-    return models.get_model(
+-        model_path=model.model_path,
+-        model_config=model_config,
+-        backend_name=sched_config.backend_name,
+-    )
++    with _aic_awq_bf16_compat(model.model_path):
++        return models.get_model(
++            model_path=model.model_path,
++            model_config=model_config,
++            backend_name=sched_config.backend_name,
++        )
+ 
+ 
+ class AIConfiguratorTimePredictor(InferTimePredictor):
+diff --git a/tools/sglang-simulator/src/sglang_simulator/time_predictor/ml.py b/tools/sglang-simulator/src/sglang_simulator/time_predictor/ml.py
+index d495695567..f4fb868045 100644
+--- a/tools/sglang-simulator/src/sglang_simulator/time_predictor/ml.py
++++ b/tools/sglang-simulator/src/sglang_simulator/time_predictor/ml.py
+@@ -10,7 +10,6 @@ sim_config.json usage:
+     }
+ """
+ 
+-import math
+ import os
+ 
+ import joblib
+@@ -18,6 +17,10 @@ from sglang_simulator.simulation.types import SchedulerConfig
+ from sglang_simulator.spec.accelerator import AcceleratorInfo
+ from sglang_simulator.spec.model import ModelInfo
+ from sglang_simulator.time_predictor.base import InferTimePredictor, ScheduleBatch
++from sglang_simulator.time_predictor.ml_features import (
++    ML_FEATURE_NAMES,
++    extract_ml_features,
++)
+ from sglang_simulator.utils import get_logger
+ 
+ logger = get_logger("sgl_simulator")
+@@ -39,26 +42,7 @@ class MLTimePredictor(InferTimePredictor):
+     # The concrete regressor algorithm is intentionally unrestricted as long
+     # as it exposes sklearn-compatible predict([[18 features]]) -> [seconds].
+ 
+-    FEATURE_NAMES = [
+-        "batch_size",
+-        "sum_extend",
+-        "max_extend",
+-        "min_extend",
+-        "sum_past",
+-        "max_past",
+-        "min_past",
+-        "sum_extend_x_past",
+-        "sum_extend_squared",
+-        "sum_past_squared",
+-        "sum_attn_flops",
+-        "sum_extend_x_max_past",
+-        "log1p_sum_past",
+-        "log1p_sum_attn_flops",
+-        "batch_size_x_sum_extend",
+-        "max_past_minus_min_past",
+-        "is_decode",
+-        "is_prefill",
+-    ]
++    FEATURE_NAMES = list(ML_FEATURE_NAMES)
+ 
+     def __init__(
+         self,
+@@ -119,38 +103,7 @@ class MLTimePredictor(InferTimePredictor):
+         exts = [req.extend_length for req in batch.reqs]
+         pasts = [req.past_kv_length for req in batch.reqs]
+ 
+-        bs = len(exts)
+-        sum_e = sum(exts)
+-        sum_p = sum(pasts)
+-        sum_ep = sum(e * p for e, p in zip(exts, pasts))
+-        sum_e2 = sum(e * e for e in exts)
+-        sum_p2 = sum(p * p for p in pasts)
+-        sum_attn = sum(e * (p + e / 2) for e, p in zip(exts, pasts))
+-        max_e = max(exts)
+-        max_p = max(pasts)
+-        min_e = min(exts)
+-        min_p = min(pasts)
+-
+-        feats = [
+-            bs,
+-            sum_e,
+-            max_e,
+-            min_e,
+-            sum_p,
+-            max_p,
+-            min_p,
+-            sum_ep,
+-            sum_e2,
+-            sum_p2,
+-            sum_attn,
+-            sum_e * max_p,
+-            math.log1p(sum_p),
+-            math.log1p(sum_attn),
+-            bs * sum_e,
+-            max_p - min_p,
+-            int(all(e == 1 for e in exts)),
+-            int(any(e > 1 for e in exts)),
+-        ]
++        feats = extract_ml_features(exts, pasts)
+ 
+         self._call_count += 1
+         return float(self._model.predict([feats])[0]) * self._latency_scale

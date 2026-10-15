@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "plan": "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/aic_calibration/aic_interpolation_support_plan.json",
+  "data_dir": "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/aic_calibration/aic-systems/data/a100_pcie_local/sglang/0.5.10",
+  "device": "cuda:0",
+  "attention_backend": "triton",
+  "timing_policy": "AIC collector default: 3 warmups and 20 timed iterations per operator point",
+  "selection_policy": {
+    "source": "training trace plans plus declared scheduler limits only",
+    "holdout_policy": "holdout ScheduleBatch rows and holdout measured latencies are not read",
+    "why": "AIC Silicon requires support along every three-dimensional interpolation axis for unseen batch and sequence combinations"
+  },
+  "declared_workload_bounds": {
+    "max_context_tokens": 2048,
+    "max_running_requests": 32,
+    "generation_query_coverage_upper": 2304,
+    "generation_coverage_reason": "AIC samples 0.9--1.1 times each decode sequence length"
+  },
+  "grid": {
+    "batch_sizes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ],
+    "context_input_lengths": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      128,
+      192,
+      256,
+      320,
+      384,
+      448,
+      512,
+      576,
+      640,
+      704,
+      768,
+      832,
+      896,
+      960,
+      1024,
+      1088,
+      1152,
+      1216,
+      1280,
+      1344,
+      1408,
+      1472,
+      1536,
+      1600,
+      1664,
+      1728,
+      1792,
+      1856,
+      1920,
+      1984,
+      2048
+    ],
+    "generation_input_lengths": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64,
+      128,
+      192,
+      256,
+      320,
+      384,
+      448,
+      512,
+      576,
+      640,
+      704,
+      768,
+      832,
+      896,
+      960,
+      1024,
+      1088,
+      1152,
+      1216,
+      1280,
+      1344,
+      1408,
+      1472,
+      1536,
+      1600,
+      1664,
+      1728,
+      1792,
+      1856,
+      1920,
+      1984,
+      2048,
+      2112,
+      2176,
+      2240,
+      2304
+    ],
+    "additional_sequence_grid_step": 64
+  },
+  "expected": {
+    "context": 12160,
+    "generation": 13440,
+    "total": 25600
+  },
+  "new": {
+    "context": 11647,
+    "generation": 13220
+  },
+  "reused": {
+    "context": 513,
+    "generation": 220
+  },
+  "per_slice": {
+    "nkv_lookup=0,head_dim=128": {
+      "new": {
+        "context": 2377,
+        "generation": 2655
+      },
+      "reused": {
+        "context": 55,
+        "generation": 33
+      }
+    },
+    "nkv_lookup=2,head_dim=128": {
+      "new": {
+        "context": 2327,
+        "generation": 2658
+      },
+      "reused": {
+        "context": 105,
+        "generation": 30
+      }
+    },
+    "nkv_lookup=4,head_dim=128": {
+      "new": {
+        "context": 2317,
+        "generation": 2646
+      },
+      "reused": {
+        "context": 115,
+        "generation": 42
+      }
+    },
+    "nkv_lookup=8,head_dim=128": {
+      "new": {
+        "context": 4626,
+        "generation": 5261
+      },
+      "reused": {
+        "context": 238,
+        "generation": 115
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "model": "Qwen3-8B",
+  "bundle_path": "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-8B/calibration/training/Qwen3-8B_hgbmono_p50.pkl",
+  "bundle_sha256": "c31e3669617441d1e4c9b5b985fcd87d07ad46653069369c42aa2eb7fc8df338",
+  "training_requests": 800,
+  "independent_test_requests": 1280,
+  "training_rows": 10328,
+  "independent_test_rows": 17291,
+  "heldout_predictions": "Recomputed with frozen bundle and exactly matched original per-batch scores",
+  "fit_invoked": false,
+  "fit_guard": "HistGradientBoostingRegressor.fit raises",
+  "completion_guard": "All ten native collection markers and forty case statuses, executed calibration/saved-score audits; no E2E completion required or claimed",
+  "auxiliary_execution_context": "Low-priority CPU readback while original CPU E2E replay remains live; not a new or isolated timing experiment",
+  "gpu_collection_invoked": false,
+  "new_e2e_replay_invoked": false,
+  "original_files_verified_unchanged": 182,
+  "metric_scope": "Three separate workload-equal macros: fit input, independent seen, independent unseen",
+  "interpretation": "Fit-input readback is not independent validation; differences are not a request-ID-only causal ablation",
+  "all_phase_macro": [
+    {
+      "model": "Qwen3-8B",
+      "stage": "fit_input",
+      "phase": "all",
+      "workloads": "3",
+      "n": "10328",
+      "mean_actual_ms": "33.7601745426015",
+      "mean_predicted_ms": "32.7032467643679",
+      "mape_pct": "1.6086134044375513",
+      "mape_change_from_fit_input_pp": "0.0",
+      "bundle_sha256": "c31e3669617441d1e4c9b5b985fcd87d07ad46653069369c42aa2eb7fc8df338"
+    },
+    {
+      "model": "Qwen3-8B",
+      "stage": "independent_seen",
+      "phase": "all",
+      "workloads": "3",
+      "n": "10439",
+      "mean_actual_ms": "33.68422142774361",
+      "mean_predicted_ms": "32.68852213333431",
+      "mape_pct": "3.445558138902584",
+      "mape_change_from_fit_input_pp": "1.8369447344650325",
+      "bundle_sha256": "c31e3669617441d1e4c9b5b985fcd87d07ad46653069369c42aa2eb7fc8df338"
+    },
+    {
+      "model": "Qwen3-8B",
+      "stage": "independent_unseen",
+      "phase": "all",
+      "workloads": "2",
+      "n": "6852",
+      "mean_actual_ms": "34.624923250515806",
+      "mean_predicted_ms": "32.67209973696173",
+      "mape_pct": "6.046292565945338",
+      "mape_change_from_fit_input_pp": "4.437679161507787",
+      "bundle_sha256": "c31e3669617441d1e4c9b5b985fcd87d07ad46653069369c42aa2eb7fc8df338"
+    }
+  ]
+}

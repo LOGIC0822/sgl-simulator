@@ -1,0 +1,67 @@
+{
+  "scope": "Prepared AWQ-only CPU readback scripts and a polling worker, not executed statistical audits, predictor accuracy or complete experiment.",
+  "source_templates": [
+    {
+      "kind": "saved_score",
+      "from": "qwen3_14b_full_holdout_saved_score_20260929_1135/audit.py",
+      "to": "awq_full_holdout_saved_score_20260929_1505/audit.py"
+    },
+    {
+      "kind": "frozen",
+      "from": "frozen_fit_input_qwen3_14b_20260929_1135/readback.py",
+      "to": "frozen_fit_input_awq_20260929_1505/readback.py"
+    },
+    {
+      "kind": "endpoints",
+      "from": "qwen3_14b_full_e2e_score_integrity_20260929_1135/audit.py",
+      "to": "awq_full_e2e_score_integrity_20260929_1505/audit.py"
+    },
+    {
+      "kind": "waiter",
+      "from": "wait_qwen3_14b_audits_20260929_1135.py",
+      "to": "wait_awq_audits_20260929_1505.py"
+    },
+    {
+      "kind": "tests",
+      "from": "test_wait_qwen3_14b_audits_20260929_1135.py",
+      "to": "test_wait_awq_audits_20260929_1505.py"
+    }
+  ],
+  "fixture_tests": {
+    "command": "CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONNOUSERSITE=1 PYTHONPATH=src nice -n 15 /home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python -m pytest -q test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/test_wait_awq_audits_20260929_1505.py",
+    "original_session_id": 86456,
+    "completion": {
+      "chunk_id": "f6b1b8",
+      "wall_time_seconds": 0.000035397,
+      "exit_code": 0,
+      "original_token_count": 23,
+      "output": "........                                                      [100%]\n19 passed in 10.23s\n"
+    },
+    "scope": "19 schema/readiness fixture tests only. Not native accuracy or the unresolved full test-suite failure."
+  },
+  "actual_calibration_gate_and_syntax_check": {
+    "command": "CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONNOUSERSITE=1 PYTHONPATH=src nice -n 15 /home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python - <<'PY'\nfrom pathlib import Path\nimport ast, hashlib, importlib.util, json\nroot=Path.cwd()/'test-results/pr33824_expanded_all13_predictors_20260928_1933'\nverification=root/'verification'\nfiles=[verification/'awq_full_holdout_saved_score_20260929_1505/audit.py',verification/'frozen_fit_input_awq_20260929_1505/readback.py',verification/'awq_full_e2e_score_integrity_20260929_1505/audit.py',verification/'wait_awq_audits_20260929_1505.py',verification/'test_wait_awq_audits_20260929_1505.py']\nfor path in files:\n    ast.parse(path.read_text(),filename=str(path))\nspec=importlib.util.spec_from_file_location('awq_waiter_actual_readback',files[3])\nmodule=importlib.util.module_from_spec(spec)\nspec.loader.exec_module(module)\nassert module.MODEL=='Meta-Llama-3.1-70B-Instruct-AWQ'\nassert module.successful_audit(verification/module.CALIBRATION)\nassert not module.native_complete(root)\nassert all(not module.ready(root,stage) for stage,_,_ in module.STAGES)\nprint(json.dumps({'scope':'Prepared read-only audit syntax and actual current calibration/readiness gates only, not execution or accuracy.','model':module.MODEL,'actual_calibration_audit_accepted':True,'premature_saved_score_frozen_and_endpoint_execution_rejected':True,'source_sha256':{str(path):hashlib.sha256(path.read_bytes()).hexdigest() for path in files}},ensure_ascii=False))\nPY",
+    "chunk_id": "be4333",
+    "wall_time_seconds": 0.000037315,
+    "exit_code": 0,
+    "original_token_count": 415,
+    "output": "{\"scope\": \"Prepared read-only audit syntax and actual current calibration/readiness gates only, not execution or accuracy.\", \"model\": \"Meta-Llama-3.1-70B-Instruct-AWQ\", \"actual_calibration_audit_accepted\": true, \"premature_saved_score_frozen_and_endpoint_execution_rejected\": true, \"source_sha256\": {\"/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/awq_full_holdout_saved_score_20260929_1505/audit.py\": \"54e48faf014294659fa6cbe25c0139096232c0fefc6980258148228f20447cd6\", \"/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/frozen_fit_input_awq_20260929_1505/readback.py\": \"f0b40077bcd87d7174f83a9350711e53ec2f592014a9c494f71cff8e0f7f75b2\", \"/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/awq_full_e2e_score_integrity_20260929_1505/audit.py\": \"1fd0e6ab09d09240b994f3b863eca80bdd9063f143bda78c346423ca3201b689\", \"/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/wait_awq_audits_20260929_1505.py\": \"afbf1a1d866a3804d027df398ad5a5c59788789c1be66a916549b96a0aaeb252\", \"/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/test_wait_awq_audits_20260929_1505.py\": \"f99009a26184ae8bdc1da68695bd2c2a32d39cb7a1198ec8287673d4b936f36b\"}}\n"
+  },
+  "launch": {
+    "command": "CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 PYTHONNOUSERSITE=1 PYTHONPATH=src nice -n 15 /home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/wait_awq_audits_20260929_1505.py --results-root /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933 --matrix-pid 1379749 --interval 600",
+    "chunk_id": "015093",
+    "wall_time_seconds": 1.001299966,
+    "session_id": 44800,
+    "original_token_count": 40,
+    "output": "{\"completed_readbacks\": [], \"state\": \"running\", \"updated_at\": \"2026-09-29T15:05:51.134189+08:00\", \"stage\": \"saved_score\", \"ready\": false, \"owner_live\": true}\n"
+  },
+  "live_process_readback": {
+    "command": "date -Is; ps -p 2054153,1379749,1379762,2043970,2052877 -o pid,ppid,lstart,stat,ni,args; tail -n 5 test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Meta-Llama-3.1-70B-Instruct-AWQ/holdout/real/repeat-1/cases/saturation_1024x256_inf.server.log",
+    "chunk_id": "82c55a",
+    "wall_time_seconds": 0.000046494,
+    "exit_code": 0,
+    "original_token_count": 709,
+    "output": "2026-09-29T15:06:45+08:00\n    PID    PPID                  STARTED STAT  NI COMMAND\n1379749 1142476 Mon Sep 28 20:43:59 2026 Ss     0 bash /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/scripts/run_pr33824_comprehensive_predictor_matrix.sh --resume --results-root /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933\n1379762 1379749 Mon Sep 28 20:44:00 2026 S      0 bash /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/scripts/run_pr33824_data_tools_same_distribution_matrix.sh --results-root /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933 --models Qwen3-0.6B,Qwen2.5-3B-Instruct,llama-2-7b,Mistral-7B-Instruct-v0.2,Qwen2.5-7B-Instruct,Qwen3-8B,Qwen2.5-14B-Instruct,Qwen2.5-14B-Instruct-1M,Qwen3-14B,Meta-Llama-3.1-70B-Instruct-AWQ,Qwen3-30B-A3B,Qwen3-30B-A3B-Instruct-2507,Qwen3-32B --train-repeats 5 --holdout-repeats 5 --prompt-multiplier 2 --resume\n2043970 1379762 Tue Sep 29 14:45:27 2026 S      0 bash /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/scripts/run_pr33824_data_tools_baseline.sh\n2052877 2043970 Tue Sep 29 15:02:19 2026 Sl     0 /home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python -m sglang_simulator.baseline.launch_server --collection-output-dir /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Meta-Llama-3.1-70B-Instruct-AWQ/holdout/real/repeat-1/cases/saturation_1024x256_inf --model-path /home/ms-admin/data/models/Meta-Llama-3.1-70B-Instruct-AWQ --host 127.0.0.1 --port 30227 --device cuda --tp-size 1 --context-length 2048 --mem-fraction-static 0.80 --max-running-requests 32 --chunked-prefill-size 512 --attention-backend triton --disable-cuda-graph --disable-overlap-schedule\n2054153 1142476 Tue Sep 29 15:05:50 2026 SNs   15 /home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/wait_awq_audits_20260929_1505.py --results-root /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933 --matrix-pid 1379749 --interval 600\n[2026-09-29 15:03:30] INFO:     127.0.0.1:47252 - \"GET /model_info HTTP/1.1\" 200 OK\n[2026-09-29 15:03:31] INFO:     127.0.0.1:47264 - \"POST /generate HTTP/1.1\" 200 OK\n[2026-09-29 15:03:31] INFO:     127.0.0.1:47274 - \"POST /generate HTTP/1.1\" 200 OK\n[2026-09-29 15:03:31] INFO:     127.0.0.1:47276 - \"POST /generate HTTP/1.1\" 200 OK\n[2026-09-29 15:03:31] INFO:     127.0.0.1:47282 - \"POST /generate HTTP/1.1\" 200 OK\n"
+  },
+  "changes": "Adapted previously executed Qwen3-14B readbacks with AWQ checkpoint, fraction0.80, 7069 audited calibration rows, verified frozen SHA and new output paths. Explicit CPU-only thread/env records. Original training, collection, replay, scoring, predictor and report sources unchanged."
+}

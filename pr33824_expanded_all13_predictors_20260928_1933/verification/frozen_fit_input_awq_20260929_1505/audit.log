@@ -1,0 +1,57 @@
+{
+  "model": "Meta-Llama-3.1-70B-Instruct-AWQ",
+  "bundle_path": "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/training/Meta-Llama-3.1-70B-Instruct-AWQ_hgbmono_p50.pkl",
+  "bundle_sha256": "5f212c17d088c78a916801fecd7cbc1634418413ed1c3cb60694565ea09301a7",
+  "training_requests": 800,
+  "independent_test_requests": 1280,
+  "training_rows": 7069,
+  "independent_test_rows": 12674,
+  "heldout_predictions": "Recomputed with frozen bundle and exactly matched original per-batch scores",
+  "fit_invoked": false,
+  "fit_guard": "HistGradientBoostingRegressor.fit raises",
+  "completion_guard": "All ten native collection markers and forty case statuses, executed calibration/saved-score audits; no E2E completion required or claimed",
+  "auxiliary_execution_context": "Low-priority CPU readback while original CPU E2E replay remains live; not a new or isolated timing experiment",
+  "gpu_collection_invoked": false,
+  "new_e2e_replay_invoked": false,
+  "original_files_verified_unchanged": 182,
+  "metric_scope": "Three separate workload-equal macros: fit input, independent seen, independent unseen",
+  "interpretation": "Fit-input readback is not independent validation; differences are not a request-ID-only causal ablation",
+  "all_phase_macro": [
+    {
+      "model": "Meta-Llama-3.1-70B-Instruct-AWQ",
+      "stage": "fit_input",
+      "phase": "all",
+      "workloads": "3",
+      "n": "7069",
+      "mean_actual_ms": "115.21420439977813",
+      "mean_predicted_ms": "113.64940514728325",
+      "mape_pct": "2.29666234190807",
+      "mape_change_from_fit_input_pp": "0.0",
+      "bundle_sha256": "5f212c17d088c78a916801fecd7cbc1634418413ed1c3cb60694565ea09301a7"
+    },
+    {
+      "model": "Meta-Llama-3.1-70B-Instruct-AWQ",
+      "stage": "independent_seen",
+      "phase": "all",
+      "workloads": "3",
+      "n": "7129",
+      "mean_actual_ms": "112.13149229973475",
+      "mean_predicted_ms": "112.8027094535061",
+      "mape_pct": "5.545469200841372",
+      "mape_change_from_fit_input_pp": "3.248806858933302",
+      "bundle_sha256": "5f212c17d088c78a916801fecd7cbc1634418413ed1c3cb60694565ea09301a7"
+    },
+    {
+      "model": "Meta-Llama-3.1-70B-Instruct-AWQ",
+      "stage": "independent_unseen",
+      "phase": "all",
+      "workloads": "2",
+      "n": "5545",
+      "mean_actual_ms": "104.1746177855786",
+      "mean_predicted_ms": "100.76934914205552",
+      "mape_pct": "4.3421418176202815",
+      "mape_change_from_fit_input_pp": "2.0454794757122117",
+      "bundle_sha256": "5f212c17d088c78a916801fecd7cbc1634418413ed1c3cb60694565ea09301a7"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "at": "2026-09-29T12:00:27.838562+08:00",
+  "report_source_before_sha256": "6c51369a881308bd643d6a960f8c45d70c9d6a34f3a06eebffb48cc126797b76",
+  "report_source_after_sha256": "47999dc5f94dd7be2c5051df1a9e9a08f4d19762c1b6f4b4ccf971325869d43b",
+  "test_source_after_sha256": "9702220b702063010ced117916e0b1b87a35b2a09e6dac7e63a789bfbe5186cd",
+  "exact_prose_reversal_matches_before": true,
+  "changed_functions": [
+    "main"
+  ],
+  "all_non_main_functions_unchanged": true,
+  "report_literal_changes": 3,
+  "test_assertions_added": 6,
+  "frozen_qwen3_14b_bundle_unchanged": true,
+  "scope": "Report prose/render regression only; native/training/predictor/scoring/workflow/settings unchanged; no actual profile, final report or full-suite completion claim.",
+  "verification_execution": {
+    "inline_source": "import ast,hashlib,json\nfrom datetime import datetime\nfrom pathlib import Path\nsim=Path.cwd().resolve()\nroot=(sim/\"test-results/pr33824_expanded_all13_predictors_20260928_1933\").resolve()\ndirectory=root/\"verification/report_profile_wording_20260929_1159\"\nbefore=(directory/\"source_before.py\").read_bytes()\nafter=(directory/\"source_after.py\").read_bytes()\ncurrent=(sim/\"tools/append_pr33824_expanded_report.py\").read_bytes()\nchanges=json.loads((directory/\"prose_changes.json\").read_text())[\"changes\"]\ndigest=lambda data:hashlib.sha256(data).hexdigest()\nassert digest(before)==\"6c51369a881308bd643d6a960f8c45d70c9d6a34f3a06eebffb48cc126797b76\"\nassert after==current\nrestored=after.decode()\nfor old,new in changes:\n    assert restored.count(new)==1\n    restored=restored.replace(new,old)\nassert restored.encode()==before\ndef functions(data):\n    return {node.name:ast.dump(node,include_attributes=False) for node in ast.parse(data).body if isinstance(node,ast.FunctionDef)}\nold_functions,new_functions=functions(before),functions(after)\nassert set(old_functions)==set(new_functions)\nchanged=[name for name in old_functions if old_functions[name]!=new_functions[name]]\nassert changed==[\"main\"]\ntests_path=sim/\"test/test_append_expanded_report.py\"\ntests=tests_path.read_text()\nadded=['    assert \"3B、7B、32B 抽样 profile\" in markdown.read_text()',\n'    assert \"不是元数据准备、编译等开销的逐项受控对照\" in markdown.read_text()',\n'    assert \"不单独测量缓存命中率\" in markdown.read_text()',\n'    assert \"算子族统计不等于隔离 QK norm 的单项计时\" in markdown.read_text()',\n'    assert \"尚无同配置逐项 profile\" not in markdown.read_text()',\n'    assert \"没有当前逐项 profile 证据\" not in markdown.read_text()']\nold_tests=tests\nfor line in added:\n    assert old_tests.count(line)==1\n    old_tests=old_tests.replace(line+\"\\n\",\"\")\nassert digest(old_tests.encode())==\"293d109e75e17257d822153e3c6c56f850f494a308e7acee25509f3d854d701e\"\ncompile(current,str(sim/\"tools/append_pr33824_expanded_report.py\"),\"exec\")\ncompile(tests,str(tests_path),\"exec\")\nbundle=root/\"models/Qwen3-14B/calibration/training/Qwen3-14B_hgbmono_p50.pkl\"\nassert digest(bundle.read_bytes())==\"79524eef95bf8adeb4d0ea8cd7b185130fedcd0f76716f6b128f7dfba1dc5956\"\nprint(json.dumps({\"at\":datetime.now().astimezone().isoformat(),\"report_source_before_sha256\":digest(before),\"report_source_after_sha256\":digest(after),\"test_source_after_sha256\":digest(tests_path.read_bytes()),\"exact_prose_reversal_matches_before\":True,\"changed_functions\":[\"main\"],\"all_non_main_functions_unchanged\":True,\"report_literal_changes\":3,\"test_assertions_added\":6,\"frozen_qwen3_14b_bundle_unchanged\":True,\"scope\":\"Report prose/render regression only; native/training/predictor/scoring/workflow/settings unchanged; no actual profile, final report or full-suite completion claim.\"}))\n",
+    "source_submitted_via": "stdin",
+    "command": "CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=1 PYTHONNOUSERSITE=1 nice -n 15 /home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python -",
+    "cwd": "/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator",
+    "exit_code": 0
+  },
+  "report_tests": {
+    "command": "CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=1 PYTHONNOUSERSITE=1 PYTHONPATH=src nice -n 15 /home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python -m pytest -q test/test_append_expanded_report.py",
+    "chunk_id": "acddd1",
+    "wall_time_seconds": 8.206908471,
+    "exit_code": 0,
+    "original_token_count": 45,
+    "output": "........................................................................ [ 75%]\n.......................                                                  [100%]\n95 passed in 7.62s\n",
+    "scope": "95 report-module tests including plot/SimSun DOCX fixtures; not a formal experimental report and not the full repository suite."
+  }
+}

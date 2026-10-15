@@ -1,0 +1,9631 @@
+{
+  "schema_version": 1,
+  "purpose": "AIC Silicon calibration targets derived from training traces only",
+  "model_path": "/home/ms-admin/data/models/Mistral-7B-Instruct-v0.2",
+  "topology": {
+    "num_attention_heads": 32,
+    "num_key_value_heads": 8,
+    "head_dim": 128
+  },
+  "input_data_roots": [
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Mistral-7B-Instruct-v0.2/calibration/real/repeat-1/cases",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Mistral-7B-Instruct-v0.2/calibration/real/repeat-2/cases",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Mistral-7B-Instruct-v0.2/calibration/real/repeat-3/cases",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Mistral-7B-Instruct-v0.2/calibration/real/repeat-4/cases",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Mistral-7B-Instruct-v0.2/calibration/real/repeat-5/cases"
+  ],
+  "schedule_files": [
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Mistral-7B-Instruct-v0.2/calibration/real/repeat-1/cases/latency_256x128_r1/TP0.schedule_batch.jsonl",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Mistral-7B-Instruct-v0.2/calibration/real/repeat-1/cases/saturation_1024x256_inf/TP0.schedule_batch.jsonl",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Mistral-7B-Instruct-v0.2/calibration/real/repeat-1/cases/service_1024x256_r4/TP0.schedule_batch.jsonl",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Mistral-7B-Instruct-v0.2/calibration/real/repeat-2/cases/latency_256x128_r1/TP0.schedule_batch.jsonl",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Mistral-7B-Instruct-v0.2/calibration/real/repeat-2/cases/saturation_1024x256_inf/TP0.schedule_batch.jsonl",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Mistral-7B-Instruct-v0.2/calibration/real/repeat-2/cases/service_1024x256_r4/TP0.schedule_batch.jsonl",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Mistral-7B-Instruct-v0.2/calibration/real/repeat-3/cases/latency_256x128_r1/TP0.schedule_batch.jsonl",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Mistral-7B-Instruct-v0.2/calibration/real/repeat-3/cases/saturation_1024x256_inf/TP0.schedule_batch.jsonl",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Mistral-7B-Instruct-v0.2/calibration/real/repeat-3/cases/service_1024x256_r4/TP0.schedule_batch.jsonl",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Mistral-7B-Instruct-v0.2/calibration/real/repeat-4/cases/latency_256x128_r1/TP0.schedule_batch.jsonl",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Mistral-7B-Instruct-v0.2/calibration/real/repeat-4/cases/saturation_1024x256_inf/TP0.schedule_batch.jsonl",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Mistral-7B-Instruct-v0.2/calibration/real/repeat-4/cases/service_1024x256_r4/TP0.schedule_batch.jsonl",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Mistral-7B-Instruct-v0.2/calibration/real/repeat-5/cases/latency_256x128_r1/TP0.schedule_batch.jsonl",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Mistral-7B-Instruct-v0.2/calibration/real/repeat-5/cases/saturation_1024x256_inf/TP0.schedule_batch.jsonl",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Mistral-7B-Instruct-v0.2/calibration/real/repeat-5/cases/service_1024x256_r4/TP0.schedule_batch.jsonl"
+  ],
+  "schedule_rows": {
+    "forward_mode_1": 1079,
+    "forward_mode_2": 10240,
+    "total": 11319,
+    "skipped_zero_length_aic_shape": {}
+  },
+  "attention_targets": [
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 2,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 4,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 6,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 8,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 9,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 13,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 14,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 17,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 19,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 20,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 21,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 22,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 23,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 24,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 29,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 30,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 32,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 33,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 34,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 35,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 40,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 41,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 44,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 46,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 47,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 50,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 54,
+      "occurrences": 4
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 56,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 58,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 60,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 61,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 63,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 64,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 65,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 66,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 67,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 71,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 72,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 75,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 76,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 77,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 78,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 80,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 81,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 82,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 83,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 84,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 85,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 86,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 88,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 89,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 90,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 95,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 96,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 98,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 99,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 100,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 101,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 103,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 106,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 107,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 109,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 110,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 111,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 112,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 113,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 115,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 116,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 117,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 118,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 119,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 121,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 122,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 124,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 125,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 131,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 132,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 138,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 139,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 140,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 141,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 144,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 147,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 150,
+      "occurrences": 4
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 151,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 152,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 154,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 155,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 156,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 158,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 160,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 161,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 164,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 165,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 166,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 168,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 173,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 174,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 178,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 179,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 181,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 182,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 183,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 185,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 186,
+      "occurrences": 4
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 187,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 189,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 191,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 192,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 194,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 199,
+      "occurrences": 4
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 201,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 202,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 203,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 205,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 207,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 210,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 211,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 212,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 213,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 214,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 216,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 217,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 223,
+      "occurrences": 4
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 226,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 230,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 232,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 233,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 237,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 238,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 241,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 244,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 247,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 248,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 250,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 252,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 253,
+      "occurrences": 4
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 254,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 256,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 257,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 258,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 259,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 260,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 263,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 266,
+      "occurrences": 4
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 267,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 268,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 270,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 272,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 275,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 277,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 278,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 285,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 291,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 304,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 306,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 309,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 311,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 317,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 326,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 328,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 330,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 337,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 344,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 347,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 354,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 359,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 363,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 382,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 385,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 390,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 397,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 406,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 410,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 417,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 418,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 419,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 421,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 423,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 424,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 426,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 436,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 442,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 448,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 451,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 455,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 463,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 464,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 466,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 468,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 477,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 482,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 489,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 498,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 502,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 503,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 506,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 512,
+      "occurrences": 9
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 513,
+      "occurrences": 215
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 514,
+      "occurrences": 27
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 516,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 517,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 519,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 520,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 523,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 524,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 532,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 535,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 539,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 542,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 547,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 549,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 551,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 552,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 561,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 563,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 564,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 567,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 568,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 569,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 574,
+      "occurrences": 4
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 582,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 589,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 592,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 593,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 594,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 595,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 597,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 603,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 605,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 607,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 608,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 611,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 612,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 613,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 614,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 615,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 616,
+      "occurrences": 6
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 617,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 620,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 621,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 622,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 623,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 624,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 626,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 627,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 628,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 630,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 637,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 638,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 639,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 640,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 641,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 648,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 649,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 650,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 652,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 655,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 656,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 657,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 659,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 661,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 668,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 673,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 675,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 678,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 681,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 682,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 683,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 684,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 686,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 691,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 694,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 708,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 725,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 728,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 729,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 741,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 742,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 743,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 744,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 748,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 749,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 750,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 751,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 753,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 758,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 760,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 767,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 769,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 770,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 771,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 774,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 775,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 776,
+      "occurrences": 6
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 779,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 780,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 786,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 790,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 791,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 795,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 801,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 806,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 807,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 808,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 812,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 818,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 819,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 820,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 823,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 826,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 828,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 830,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 834,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 836,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 837,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 839,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 845,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 849,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 852,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 853,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 862,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 865,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 868,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 872,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 875,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 880,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 881,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 883,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 884,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 886,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 887,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 890,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 891,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 894,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 896,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 899,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 903,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 909,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 912,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 914,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 919,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 922,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 924,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 925,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 927,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 930,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 933,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 934,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 935,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 940,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 941,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 947,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 951,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 955,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 956,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 957,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 958,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 967,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 969,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 970,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 971,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 972,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 973,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 975,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 976,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 983,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 987,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 989,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 992,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 994,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 996,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 1000,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 1004,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 1011,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 1017,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 1019,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 1025,
+      "occurrences": 25
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 1027,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 1039,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 1044,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 1047,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 1051,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 1065,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 1067,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 1070,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 1078,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 1079,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 1080,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 1,
+      "input_len": 1085,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 62,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 93,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 120,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 149,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 189,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 222,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 226,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 245,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 252,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 257,
+      "occurrences": 10
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 258,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 259,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 260,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 273,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 277,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 279,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 280,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 292,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 305,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 307,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 311,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 315,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 320,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 321,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 322,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 330,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 333,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 334,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 339,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 344,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 347,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 351,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 357,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 359,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 361,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 367,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 368,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 370,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 375,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 377,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 384,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 392,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 395,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 408,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 414,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 422,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 423,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 427,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 431,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 434,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 437,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 438,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 440,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 443,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 444,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 445,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 447,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 456,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 458,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 461,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 462,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 474,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 478,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 479,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 480,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 484,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 486,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 488,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 490,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 492,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 494,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 498,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 500,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 504,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 505,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 507,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 511,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 512,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 513,
+      "occurrences": 24
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 514,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 515,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 517,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 526,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 532,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 553,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 554,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 555,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 560,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 562,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 564,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 570,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 584,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 587,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 597,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 598,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 602,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 610,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 619,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 627,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 630,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 640,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 659,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 669,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 671,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 702,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 711,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 723,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 734,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 741,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 766,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 2,
+      "input_len": 769,
+      "occurrences": 4
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 114,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 171,
+      "occurrences": 2
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 185,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 198,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 249,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 266,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 284,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 306,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 332,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 340,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 341,
+      "occurrences": 3
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 358,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 360,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 369,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 380,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 389,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 406,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 420,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 444,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 450,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 3,
+      "input_len": 469,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 4,
+      "input_len": 152,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 4,
+      "input_len": 221,
+      "occurrences": 1
+    },
+    {
+      "phase": "context",
+      "batch_size": 4,
+      "input_len": 293,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 9,
+      "occurrences": 95
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 13,
+      "occurrences": 30
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 19,
+      "occurrences": 35
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 20,
+      "occurrences": 62
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 23,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 30,
+      "occurrences": 65
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 35,
+      "occurrences": 17
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 41,
+      "occurrences": 13
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 54,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 56,
+      "occurrences": 53
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 58,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 63,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 65,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 67,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 76,
+      "occurrences": 24
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 80,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 82,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 85,
+      "occurrences": 13
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 89,
+      "occurrences": 73
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 96,
+      "occurrences": 48
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 99,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 101,
+      "occurrences": 24
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 106,
+      "occurrences": 93
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 109,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 110,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 111,
+      "occurrences": 55
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 112,
+      "occurrences": 28
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 113,
+      "occurrences": 94
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 117,
+      "occurrences": 44
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 122,
+      "occurrences": 36
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 124,
+      "occurrences": 33
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 131,
+      "occurrences": 55
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 138,
+      "occurrences": 84
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 147,
+      "occurrences": 178
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 150,
+      "occurrences": 35
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 151,
+      "occurrences": 20
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 154,
+      "occurrences": 16
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 155,
+      "occurrences": 101
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 160,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 166,
+      "occurrences": 53
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 179,
+      "occurrences": 15
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 199,
+      "occurrences": 60
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 201,
+      "occurrences": 54
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 205,
+      "occurrences": 13
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 217,
+      "occurrences": 61
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 223,
+      "occurrences": 31
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 226,
+      "occurrences": 51
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 232,
+      "occurrences": 18
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 233,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 237,
+      "occurrences": 53
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 250,
+      "occurrences": 22
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 253,
+      "occurrences": 29
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 254,
+      "occurrences": 20
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 256,
+      "occurrences": 23
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 257,
+      "occurrences": 54
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 266,
+      "occurrences": 27
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 270,
+      "occurrences": 23
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 330,
+      "occurrences": 55
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 539,
+      "occurrences": 15
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 626,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 650,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 675,
+      "occurrences": 41
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 823,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 849,
+      "occurrences": 46
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 872,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 925,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 1,
+      "input_len": 951,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 36,
+      "occurrences": 22
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 39,
+      "occurrences": 45
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 40,
+      "occurrences": 11
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 48,
+      "occurrences": 22
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 55,
+      "occurrences": 14
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 56,
+      "occurrences": 31
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 59,
+      "occurrences": 35
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 64,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 65,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 68,
+      "occurrences": 34
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 69,
+      "occurrences": 36
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 73,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 76,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 82,
+      "occurrences": 30
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 87,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 88,
+      "occurrences": 118
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 91,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 92,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 93,
+      "occurrences": 30
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 96,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 99,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 100,
+      "occurrences": 27
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 107,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 108,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 110,
+      "occurrences": 15
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 112,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 113,
+      "occurrences": 25
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 115,
+      "occurrences": 39
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 116,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 117,
+      "occurrences": 11
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 119,
+      "occurrences": 69
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 124,
+      "occurrences": 28
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 128,
+      "occurrences": 59
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 129,
+      "occurrences": 44
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 133,
+      "occurrences": 49
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 134,
+      "occurrences": 17
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 135,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 137,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 138,
+      "occurrences": 11
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 139,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 143,
+      "occurrences": 36
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 144,
+      "occurrences": 18
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 145,
+      "occurrences": 13
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 147,
+      "occurrences": 17
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 150,
+      "occurrences": 18
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 151,
+      "occurrences": 34
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 152,
+      "occurrences": 25
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 153,
+      "occurrences": 11
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 154,
+      "occurrences": 51
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 158,
+      "occurrences": 38
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 159,
+      "occurrences": 51
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 166,
+      "occurrences": 35
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 167,
+      "occurrences": 53
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 168,
+      "occurrences": 98
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 171,
+      "occurrences": 50
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 175,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 183,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 189,
+      "occurrences": 28
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 192,
+      "occurrences": 18
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 194,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 195,
+      "occurrences": 18
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 202,
+      "occurrences": 44
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 209,
+      "occurrences": 28
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 210,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 234,
+      "occurrences": 18
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 235,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 239,
+      "occurrences": 32
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 245,
+      "occurrences": 37
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 248,
+      "occurrences": 48
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 251,
+      "occurrences": 15
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 495,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 502,
+      "occurrences": 13
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 507,
+      "occurrences": 50
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 520,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 538,
+      "occurrences": 18
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 583,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 633,
+      "occurrences": 113
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 652,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 816,
+      "occurrences": 19
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 837,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 2,
+      "input_len": 968,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 51,
+      "occurrences": 21
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 52,
+      "occurrences": 17
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 55,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 69,
+      "occurrences": 17
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 73,
+      "occurrences": 18
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 74,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 75,
+      "occurrences": 13
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 78,
+      "occurrences": 36
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 79,
+      "occurrences": 16
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 86,
+      "occurrences": 47
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 94,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 95,
+      "occurrences": 58
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 97,
+      "occurrences": 21
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 100,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 102,
+      "occurrences": 17
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 114,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 115,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 116,
+      "occurrences": 66
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 117,
+      "occurrences": 34
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 119,
+      "occurrences": 11
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 120,
+      "occurrences": 48
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 121,
+      "occurrences": 39
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 124,
+      "occurrences": 26
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 125,
+      "occurrences": 18
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 126,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 129,
+      "occurrences": 40
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 138,
+      "occurrences": 27
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 139,
+      "occurrences": 18
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 141,
+      "occurrences": 23
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 142,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 147,
+      "occurrences": 28
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 148,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 151,
+      "occurrences": 15
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 161,
+      "occurrences": 36
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 163,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 167,
+      "occurrences": 36
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 169,
+      "occurrences": 26
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 173,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 174,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 180,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 182,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 183,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 186,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 187,
+      "occurrences": 40
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 188,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 191,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 192,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 197,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 199,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 202,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 215,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 229,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 240,
+      "occurrences": 15
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 401,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 481,
+      "occurrences": 29
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 517,
+      "occurrences": 21
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 562,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 625,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 655,
+      "occurrences": 68
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 660,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 685,
+      "occurrences": 98
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 733,
+      "occurrences": 49
+    },
+    {
+      "phase": "generation",
+      "batch_size": 3,
+      "input_len": 863,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 63,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 65,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 77,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 91,
+      "occurrences": 18
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 98,
+      "occurrences": 24
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 104,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 106,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 116,
+      "occurrences": 15
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 117,
+      "occurrences": 23
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 123,
+      "occurrences": 17
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 135,
+      "occurrences": 21
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 141,
+      "occurrences": 13
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 143,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 151,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 152,
+      "occurrences": 26
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 156,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 168,
+      "occurrences": 20
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 189,
+      "occurrences": 31
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 191,
+      "occurrences": 11
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 214,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 228,
+      "occurrences": 27
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 389,
+      "occurrences": 18
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 438,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 490,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 503,
+      "occurrences": 13
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 522,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 541,
+      "occurrences": 19
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 545,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 593,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 667,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 723,
+      "occurrences": 15
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 734,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 738,
+      "occurrences": 19
+    },
+    {
+      "phase": "generation",
+      "batch_size": 4,
+      "input_len": 798,
+      "occurrences": 23
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 79,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 105,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 117,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 125,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 129,
+      "occurrences": 15
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 153,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 155,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 186,
+      "occurrences": 18
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 203,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 223,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 328,
+      "occurrences": 29
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 437,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 481,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 539,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 579,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 586,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 602,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 626,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 683,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 723,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 5,
+      "input_len": 778,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 6,
+      "input_len": 187,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 6,
+      "input_len": 206,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 6,
+      "input_len": 277,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 6,
+      "input_len": 443,
+      "occurrences": 32
+    },
+    {
+      "phase": "generation",
+      "batch_size": 6,
+      "input_len": 512,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 6,
+      "input_len": 518,
+      "occurrences": 21
+    },
+    {
+      "phase": "generation",
+      "batch_size": 6,
+      "input_len": 570,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 6,
+      "input_len": 602,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 6,
+      "input_len": 643,
+      "occurrences": 17
+    },
+    {
+      "phase": "generation",
+      "batch_size": 6,
+      "input_len": 666,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 6,
+      "input_len": 671,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 6,
+      "input_len": 680,
+      "occurrences": 118
+    },
+    {
+      "phase": "generation",
+      "batch_size": 6,
+      "input_len": 764,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 7,
+      "input_len": 178,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 7,
+      "input_len": 265,
+      "occurrences": 68
+    },
+    {
+      "phase": "generation",
+      "batch_size": 7,
+      "input_len": 458,
+      "occurrences": 69
+    },
+    {
+      "phase": "generation",
+      "batch_size": 7,
+      "input_len": 553,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 7,
+      "input_len": 563,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 7,
+      "input_len": 584,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 7,
+      "input_len": 637,
+      "occurrences": 24
+    },
+    {
+      "phase": "generation",
+      "batch_size": 7,
+      "input_len": 671,
+      "occurrences": 15
+    },
+    {
+      "phase": "generation",
+      "batch_size": 7,
+      "input_len": 694,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 8,
+      "input_len": 258,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 8,
+      "input_len": 363,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 8,
+      "input_len": 463,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 8,
+      "input_len": 472,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 8,
+      "input_len": 491,
+      "occurrences": 13
+    },
+    {
+      "phase": "generation",
+      "batch_size": 8,
+      "input_len": 531,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 8,
+      "input_len": 580,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 8,
+      "input_len": 616,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 8,
+      "input_len": 634,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 8,
+      "input_len": 635,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 8,
+      "input_len": 645,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 8,
+      "input_len": 691,
+      "occurrences": 21
+    },
+    {
+      "phase": "generation",
+      "batch_size": 8,
+      "input_len": 692,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 8,
+      "input_len": 732,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 9,
+      "input_len": 247,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 9,
+      "input_len": 340,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 9,
+      "input_len": 519,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 9,
+      "input_len": 520,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 9,
+      "input_len": 521,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 9,
+      "input_len": 529,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 9,
+      "input_len": 531,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 9,
+      "input_len": 541,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 9,
+      "input_len": 588,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 9,
+      "input_len": 619,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 9,
+      "input_len": 623,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 9,
+      "input_len": 657,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 9,
+      "input_len": 666,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 9,
+      "input_len": 672,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 9,
+      "input_len": 677,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 9,
+      "input_len": 678,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 9,
+      "input_len": 687,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 9,
+      "input_len": 714,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 9,
+      "input_len": 750,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 9,
+      "input_len": 771,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 10,
+      "input_len": 223,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 10,
+      "input_len": 328,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 10,
+      "input_len": 487,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 10,
+      "input_len": 489,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 10,
+      "input_len": 528,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 10,
+      "input_len": 553,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 10,
+      "input_len": 559,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 10,
+      "input_len": 564,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 10,
+      "input_len": 571,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 10,
+      "input_len": 580,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 10,
+      "input_len": 599,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 10,
+      "input_len": 642,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 10,
+      "input_len": 643,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 10,
+      "input_len": 653,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 10,
+      "input_len": 655,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 10,
+      "input_len": 675,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 10,
+      "input_len": 682,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 10,
+      "input_len": 696,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 10,
+      "input_len": 705,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 10,
+      "input_len": 719,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 11,
+      "input_len": 298,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 11,
+      "input_len": 317,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 11,
+      "input_len": 477,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 11,
+      "input_len": 490,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 11,
+      "input_len": 496,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 11,
+      "input_len": 497,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 11,
+      "input_len": 522,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 11,
+      "input_len": 541,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 11,
+      "input_len": 553,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 11,
+      "input_len": 563,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 11,
+      "input_len": 587,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 11,
+      "input_len": 665,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 11,
+      "input_len": 682,
+      "occurrences": 14
+    },
+    {
+      "phase": "generation",
+      "batch_size": 11,
+      "input_len": 683,
+      "occurrences": 19
+    },
+    {
+      "phase": "generation",
+      "batch_size": 11,
+      "input_len": 692,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 11,
+      "input_len": 711,
+      "occurrences": 13
+    },
+    {
+      "phase": "generation",
+      "batch_size": 11,
+      "input_len": 714,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 11,
+      "input_len": 753,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 291,
+      "occurrences": 24
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 484,
+      "occurrences": 18
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 496,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 497,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 503,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 513,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 518,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 529,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 535,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 559,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 563,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 568,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 573,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 578,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 588,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 596,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 601,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 675,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 677,
+      "occurrences": 17
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 678,
+      "occurrences": 11
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 680,
+      "occurrences": 24
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 691,
+      "occurrences": 16
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 692,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 695,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 700,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 12,
+      "input_len": 724,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 272,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 331,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 479,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 485,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 507,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 515,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 544,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 552,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 555,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 570,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 571,
+      "occurrences": 11
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 596,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 607,
+      "occurrences": 11
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 623,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 629,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 645,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 661,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 662,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 681,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 688,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 691,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 696,
+      "occurrences": 21
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 706,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 13,
+      "input_len": 714,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 306,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 346,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 442,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 484,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 486,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 504,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 512,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 516,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 519,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 527,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 550,
+      "occurrences": 14
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 553,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 567,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 571,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 589,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 594,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 602,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 607,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 608,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 620,
+      "occurrences": 19
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 623,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 629,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 642,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 651,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 661,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 665,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 667,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 671,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 672,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 680,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 685,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 14,
+      "input_len": 697,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 320,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 385,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 414,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 425,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 443,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 462,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 469,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 475,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 482,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 503,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 504,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 527,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 530,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 533,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 536,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 543,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 548,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 555,
+      "occurrences": 24
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 565,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 568,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 570,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 574,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 592,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 595,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 597,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 599,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 611,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 613,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 626,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 627,
+      "occurrences": 14
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 632,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 633,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 638,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 644,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 646,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 656,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 668,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 683,
+      "occurrences": 14
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 693,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 15,
+      "input_len": 701,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 334,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 404,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 409,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 412,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 414,
+      "occurrences": 17
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 440,
+      "occurrences": 15
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 454,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 464,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 473,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 475,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 482,
+      "occurrences": 11
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 483,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 484,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 494,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 507,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 517,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 519,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 528,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 530,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 532,
+      "occurrences": 13
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 536,
+      "occurrences": 19
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 538,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 554,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 556,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 561,
+      "occurrences": 22
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 563,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 564,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 571,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 581,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 590,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 593,
+      "occurrences": 26
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 599,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 619,
+      "occurrences": 11
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 624,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 627,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 632,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 640,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 646,
+      "occurrences": 11
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 667,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 668,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 669,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 678,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 697,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 16,
+      "input_len": 706,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 377,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 392,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 422,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 433,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 459,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 462,
+      "occurrences": 14
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 465,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 469,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 474,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 480,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 481,
+      "occurrences": 14
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 511,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 529,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 535,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 540,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 541,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 555,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 557,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 558,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 559,
+      "occurrences": 19
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 563,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 564,
+      "occurrences": 11
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 567,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 576,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 580,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 581,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 588,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 613,
+      "occurrences": 11
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 615,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 627,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 651,
+      "occurrences": 14
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 653,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 659,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 681,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 690,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 692,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 17,
+      "input_len": 707,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 381,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 408,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 409,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 452,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 454,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 458,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 472,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 474,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 475,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 490,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 503,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 504,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 542,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 556,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 575,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 577,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 585,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 590,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 593,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 598,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 603,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 605,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 633,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 638,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 643,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 645,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 669,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 680,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 686,
+      "occurrences": 17
+    },
+    {
+      "phase": "generation",
+      "batch_size": 18,
+      "input_len": 691,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 362,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 402,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 413,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 443,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 459,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 467,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 471,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 479,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 483,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 485,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 509,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 529,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 531,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 540,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 563,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 564,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 572,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 575,
+      "occurrences": 15
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 578,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 581,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 588,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 589,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 591,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 592,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 606,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 624,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 637,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 658,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 675,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 684,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 19,
+      "input_len": 688,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 393,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 429,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 452,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 462,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 465,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 485,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 512,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 515,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 517,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 525,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 536,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 552,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 567,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 578,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 579,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 586,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 593,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 594,
+      "occurrences": 32
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 624,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 651,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 656,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 20,
+      "input_len": 675,
+      "occurrences": 20
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 451,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 456,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 459,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 462,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 488,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 506,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 521,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 522,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 531,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 555,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 569,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 571,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 594,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 604,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 607,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 643,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 645,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 651,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 664,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 675,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 21,
+      "input_len": 686,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 443,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 451,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 457,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 468,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 476,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 480,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 481,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 484,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 508,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 519,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 520,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 524,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 542,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 546,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 555,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 581,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 583,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 584,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 595,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 597,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 607,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 609,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 613,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 628,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 634,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 635,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 643,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 648,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 650,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 22,
+      "input_len": 658,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 451,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 460,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 465,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 474,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 476,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 483,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 486,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 503,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 505,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 509,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 513,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 528,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 534,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 572,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 573,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 581,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 604,
+      "occurrences": 16
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 607,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 613,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 614,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 631,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 641,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 648,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 663,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 679,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 23,
+      "input_len": 682,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 24,
+      "input_len": 477,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 24,
+      "input_len": 481,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 24,
+      "input_len": 489,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 24,
+      "input_len": 491,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 24,
+      "input_len": 514,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 24,
+      "input_len": 515,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 24,
+      "input_len": 545,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 24,
+      "input_len": 561,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 24,
+      "input_len": 581,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 24,
+      "input_len": 585,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 24,
+      "input_len": 589,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 24,
+      "input_len": 599,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 24,
+      "input_len": 609,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 24,
+      "input_len": 623,
+      "occurrences": 13
+    },
+    {
+      "phase": "generation",
+      "batch_size": 24,
+      "input_len": 629,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 24,
+      "input_len": 638,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 24,
+      "input_len": 663,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 24,
+      "input_len": 677,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 24,
+      "input_len": 698,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 25,
+      "input_len": 437,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 25,
+      "input_len": 442,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 25,
+      "input_len": 445,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 25,
+      "input_len": 479,
+      "occurrences": 11
+    },
+    {
+      "phase": "generation",
+      "batch_size": 25,
+      "input_len": 483,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 25,
+      "input_len": 498,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 25,
+      "input_len": 507,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 25,
+      "input_len": 516,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 25,
+      "input_len": 593,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 25,
+      "input_len": 601,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 25,
+      "input_len": 602,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 25,
+      "input_len": 603,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 25,
+      "input_len": 629,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 25,
+      "input_len": 640,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 25,
+      "input_len": 655,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 25,
+      "input_len": 680,
+      "occurrences": 17
+    },
+    {
+      "phase": "generation",
+      "batch_size": 26,
+      "input_len": 433,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 26,
+      "input_len": 446,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 26,
+      "input_len": 457,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 26,
+      "input_len": 466,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 26,
+      "input_len": 481,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 26,
+      "input_len": 579,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 26,
+      "input_len": 611,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 26,
+      "input_len": 617,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 26,
+      "input_len": 639,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 26,
+      "input_len": 640,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 27,
+      "input_len": 421,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 27,
+      "input_len": 436,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 27,
+      "input_len": 451,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 27,
+      "input_len": 464,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 27,
+      "input_len": 493,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 27,
+      "input_len": 500,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 27,
+      "input_len": 547,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 27,
+      "input_len": 563,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 27,
+      "input_len": 608,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 27,
+      "input_len": 618,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 27,
+      "input_len": 620,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 27,
+      "input_len": 625,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 27,
+      "input_len": 635,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 28,
+      "input_len": 406,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 28,
+      "input_len": 409,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 28,
+      "input_len": 420,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 28,
+      "input_len": 444,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 28,
+      "input_len": 453,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 28,
+      "input_len": 458,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 28,
+      "input_len": 459,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 28,
+      "input_len": 461,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 28,
+      "input_len": 509,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 28,
+      "input_len": 572,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 28,
+      "input_len": 587,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 28,
+      "input_len": 601,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 28,
+      "input_len": 604,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 28,
+      "input_len": 619,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 28,
+      "input_len": 634,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 28,
+      "input_len": 635,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 29,
+      "input_len": 396,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 29,
+      "input_len": 414,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 29,
+      "input_len": 425,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 29,
+      "input_len": 427,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 29,
+      "input_len": 445,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 29,
+      "input_len": 448,
+      "occurrences": 13
+    },
+    {
+      "phase": "generation",
+      "batch_size": 29,
+      "input_len": 461,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 29,
+      "input_len": 471,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 29,
+      "input_len": 477,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 29,
+      "input_len": 493,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 29,
+      "input_len": 532,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 29,
+      "input_len": 567,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 29,
+      "input_len": 575,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 29,
+      "input_len": 582,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 29,
+      "input_len": 598,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 29,
+      "input_len": 613,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 29,
+      "input_len": 633,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 29,
+      "input_len": 646,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 29,
+      "input_len": 657,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 414,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 418,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 434,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 437,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 444,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 462,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 471,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 479,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 497,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 501,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 506,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 508,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 520,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 521,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 523,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 525,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 526,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 532,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 550,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 580,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 582,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 584,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 588,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 591,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 592,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 601,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 604,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 612,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 614,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 617,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 619,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 640,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 643,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 30,
+      "input_len": 644,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 406,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 412,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 427,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 428,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 445,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 454,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 458,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 469,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 481,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 482,
+      "occurrences": 14
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 484,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 490,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 492,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 499,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 501,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 503,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 506,
+      "occurrences": 25
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 507,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 508,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 509,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 511,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 514,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 517,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 519,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 520,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 521,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 522,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 523,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 527,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 529,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 531,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 532,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 533,
+      "occurrences": 22
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 534,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 535,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 538,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 542,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 543,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 544,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 547,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 548,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 550,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 551,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 553,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 554,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 559,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 561,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 564,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 565,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 568,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 569,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 571,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 573,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 574,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 575,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 577,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 578,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 581,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 582,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 583,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 584,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 586,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 587,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 588,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 589,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 590,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 592,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 593,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 595,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 598,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 600,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 604,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 605,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 606,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 607,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 609,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 612,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 614,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 620,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 621,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 622,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 626,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 628,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 629,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 633,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 637,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 640,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 642,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 648,
+      "occurrences": 21
+    },
+    {
+      "phase": "generation",
+      "batch_size": 31,
+      "input_len": 653,
+      "occurrences": 32
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 414,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 417,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 423,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 424,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 443,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 464,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 482,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 491,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 493,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 494,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 496,
+      "occurrences": 47
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 499,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 503,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 504,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 506,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 507,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 508,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 511,
+      "occurrences": 13
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 512,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 516,
+      "occurrences": 26
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 521,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 524,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 525,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 526,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 528,
+      "occurrences": 28
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 529,
+      "occurrences": 21
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 530,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 531,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 535,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 540,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 541,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 542,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 543,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 546,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 548,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 549,
+      "occurrences": 23
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 550,
+      "occurrences": 7
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 553,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 554,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 556,
+      "occurrences": 16
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 557,
+      "occurrences": 11
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 558,
+      "occurrences": 6
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 560,
+      "occurrences": 13
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 561,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 566,
+      "occurrences": 13
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 567,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 568,
+      "occurrences": 8
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 570,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 571,
+      "occurrences": 20
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 574,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 581,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 582,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 584,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 586,
+      "occurrences": 5
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 587,
+      "occurrences": 18
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 589,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 590,
+      "occurrences": 18
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 591,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 592,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 593,
+      "occurrences": 15
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 595,
+      "occurrences": 12
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 596,
+      "occurrences": 4
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 599,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 600,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 602,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 608,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 614,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 618,
+      "occurrences": 9
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 620,
+      "occurrences": 2
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 622,
+      "occurrences": 16
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 623,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 626,
+      "occurrences": 10
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 628,
+      "occurrences": 1
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 629,
+      "occurrences": 3
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 633,
+      "occurrences": 11
+    },
+    {
+      "phase": "generation",
+      "batch_size": 32,
+      "input_len": 635,
+      "occurrences": 11
+    }
+  ],
+  "attention_targets_observed": {
+    "context": 525,
+    "generation": 1016
+  },
+  "attention_targets_omitted_by_cap": {
+    "context": 0,
+    "generation": 0
+  },
+  "gemm_m_values": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    36,
+    38,
+    39,
+    40,
+    42,
+    43,
+    45,
+    46,
+    49,
+    50,
+    51,
+    53,
+    54,
+    55,
+    57,
+    59,
+    60,
+    61,
+    62,
+    64,
+    65,
+    68,
+    69,
+    70,
+    71,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    82,
+    83,
+    84,
+    85,
+    87,
+    88,
+    89,
+    90,
+    92,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    108,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    130,
+    131,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    142,
+    143,
+    145,
+    146,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    157,
+    159,
+    160,
+    162,
+    163,
+    164,
+    165,
+    167,
+    168,
+    169,
+    171,
+    172,
+    173,
+    177,
+    179,
+    180,
+    181,
+    182,
+    184,
+    185,
+    186,
+    188,
+    190,
+    191,
+    193,
+    198,
+    200,
+    201,
+    202,
+    203,
+    205,
+    206,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    215,
+    216,
+    221,
+    222,
+    225,
+    228,
+    229,
+    231,
+    232,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241,
+    243,
+    246,
+    247,
+    249,
+    251,
+    252,
+    253,
+    255,
+    256,
+    257,
+    258,
+    259,
+    261,
+    262,
+    263,
+    265,
+    266,
+    267,
+    270,
+    271,
+    273,
+    274,
+    277,
+    281,
+    282,
+    283,
+    287,
+    288,
+    290,
+    294,
+    295,
+    296,
+    297,
+    299,
+    302,
+    303,
+    305,
+    306,
+    307,
+    308,
+    310,
+    311,
+    313,
+    314,
+    315,
+    316,
+    321,
+    322,
+    323,
+    324,
+    325,
+    326,
+    327,
+    329,
+    331,
+    332,
+    336,
+    339,
+    340,
+    341,
+    343,
+    346,
+    349,
+    350,
+    351,
+    352,
+    353,
+    355,
+    358,
+    360,
+    365,
+    367,
+    368,
+    370,
+    373,
+    374,
+    376,
+    377,
+    381,
+    384,
+    386,
+    389,
+    390,
+    396,
+    399,
+    401,
+    405,
+    406,
+    409,
+    411,
+    412,
+    414,
+    416,
+    417,
+    418,
+    420,
+    421,
+    422,
+    423,
+    425,
+    426,
+    428,
+    434,
+    435,
+    438,
+    442,
+    443,
+    444,
+    445,
+    446,
+    447,
+    450,
+    454,
+    455,
+    457,
+    458,
+    459,
+    460,
+    462,
+    463,
+    465,
+    467,
+    474,
+    475,
+    476,
+    477,
+    478,
+    480,
+    481,
+    483,
+    486,
+    488,
+    491,
+    493,
+    497,
+    501,
+    502,
+    503,
+    504,
+    505,
+    508,
+    510,
+    511,
+    512
+  ],
+  "gemm_m_values_observed": 325,
+  "gemm_m_values_omitted_by_cap": 0,
+  "selection_policy": {
+    "source": "training ScheduleBatch rows only",
+    "aic_shape_reduction": "matches AIConfiguratorTimePredictor mean-length RuntimeConfig construction",
+    "max_attention_targets_per_phase": 0,
+    "max_gemm_m_values": 0
+  }
+}

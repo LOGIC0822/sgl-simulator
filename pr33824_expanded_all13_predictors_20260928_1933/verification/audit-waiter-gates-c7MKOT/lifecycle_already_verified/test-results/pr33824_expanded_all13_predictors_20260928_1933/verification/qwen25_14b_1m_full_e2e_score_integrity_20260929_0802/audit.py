@@ -1,0 +1,1 @@
+Synthetic non-executable fixture

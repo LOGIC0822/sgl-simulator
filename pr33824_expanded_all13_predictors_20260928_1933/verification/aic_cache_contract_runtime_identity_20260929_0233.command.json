@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python",
+    "-c",
+    "\nimport csv, json\nfrom pathlib import Path\nroot=Path('test-results/pr33824_expanded_all13_predictors_20260928_1933')\na=root/'provenance/formal_start_after_ninja_fix'\nb=root/'provenance/aic_cache_contract_20260929_0230'\nold=json.loads((a/'sha256.json').read_text()); new=json.loads((b/'sha256.json').read_text())\nkeys=[key for key in old if key.startswith(('python/sglang/', 'tools/sglang-simulator/src/'))]\nassert len(keys)==60, len(keys)\nassert all(old[key]==new[key] for key in keys)\nassert (a/'tracked_changes.patch').read_bytes()==(b/'tracked_changes.patch').read_bytes()\ni=json.loads((b/'identity.json').read_text())\nassert i['kernel_matches_reference']['native_files']==1\nassert i['aic_import_source_match']['checked_python_files']==133\nassert not i['aic_import_source_match']['mismatches']\nassert i['source_revision']=='59799a368793b9f795baf59b067233a65ad8e38e'\nassert i['aic_revision']=='c5f139662be28b177ca9f62f83543bbf10f133a0'\ncounts=list(csv.DictReader((root/'verification/aic_cache_contract_dense3_20260929_0228/cache_contract_counts.csv').open()))\nmanifest=json.loads((root/'verification/aic_cache_contract_dense3_20260929_0228/manifest.json').read_text())\nassert sum(int(row['rows']) for row in counts)==88830\nassert sum(int(row['exact_alias_rows']) for row in counts)==0\nassert manifest['source_unchanged'] and not manifest['gpu_fit_or_database_query_invoked']\nfor name in ('scorer','predictor'):\n    path=Path(manifest['source_contract'][name]['path'])\n    relative=str(path.relative_to(Path.cwd().parents[1]))\n    assert old[relative]==new[relative]==manifest['source_contract'][name]['sha256']\nprint(json.dumps({'old_native_runtime_files_unchanged':len(keys),'tracked_patch_unchanged':True,'kernel_binary_matches_reference':True,'sdk_byte_matches':133,'latest_experiment_files':len(new),'cache_audit_rows':88830,'cache_alias_rows':0,'cache_audit_sources_unchanged':manifest['source_files_verified_unchanged']}))\n"
+  ],
+  "cwd": "/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONNOUSERSITE": "1",
+    "OMP_NUM_THREADS": "1"
+  },
+  "started_unix": 1790620275.662825,
+  "finished_unix": 1790620275.7063963,
+  "exit_code": 0
+}

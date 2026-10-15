@@ -1,0 +1,55 @@
+{
+  "model": "Qwen2.5-7B-Instruct",
+  "bundle_path": "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen2.5-7B-Instruct/calibration/training/Qwen2.5-7B-Instruct_hgbmono_p50.pkl",
+  "bundle_sha256": "09b75806a25dd7de5337b87883368a6ef64ef811218d5b2877025a8ef4eb19dd",
+  "training_requests": 800,
+  "independent_test_requests": 1280,
+  "training_rows": 11598,
+  "independent_test_rows": 19018,
+  "heldout_predictions": "Recomputed with frozen bundle and exactly matched original per-batch scores",
+  "fit_invoked": false,
+  "fit_guard": "HistGradientBoostingRegressor.fit raises",
+  "gpu_collection_invoked": false,
+  "new_e2e_replay_invoked": false,
+  "original_files_verified_unchanged": 179,
+  "metric_scope": "Three separate workload-equal macros: fit input, independent seen, independent unseen",
+  "interpretation": "Fit-input readback is not independent validation; differences are not a request-ID-only causal ablation",
+  "all_phase_macro": [
+    {
+      "model": "Qwen2.5-7B-Instruct",
+      "stage": "fit_input",
+      "phase": "all",
+      "workloads": "3",
+      "n": "11598",
+      "mean_actual_ms": "26.778599537688283",
+      "mean_predicted_ms": "25.840307114000357",
+      "mape_pct": "1.48862580798407",
+      "mape_change_from_fit_input_pp": "0.0",
+      "bundle_sha256": "09b75806a25dd7de5337b87883368a6ef64ef811218d5b2877025a8ef4eb19dd"
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct",
+      "stage": "independent_seen",
+      "phase": "all",
+      "workloads": "3",
+      "n": "11868",
+      "mean_actual_ms": "26.733671173960328",
+      "mean_predicted_ms": "25.98630537445138",
+      "mape_pct": "6.118279412630231",
+      "mape_change_from_fit_input_pp": "4.629653604646161",
+      "bundle_sha256": "09b75806a25dd7de5337b87883368a6ef64ef811218d5b2877025a8ef4eb19dd"
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct",
+      "stage": "independent_unseen",
+      "phase": "all",
+      "workloads": "2",
+      "n": "7150",
+      "mean_actual_ms": "26.991814761571966",
+      "mean_predicted_ms": "26.158478019427285",
+      "mape_pct": "5.776517031110398",
+      "mape_change_from_fit_input_pp": "4.287891223126328",
+      "bundle_sha256": "09b75806a25dd7de5337b87883368a6ef64ef811218d5b2877025a8ef4eb19dd"
+    }
+  ]
+}

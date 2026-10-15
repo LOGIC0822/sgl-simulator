@@ -1,0 +1,21 @@
+created_or_resumed_at=2026-09-30T03:23:01+08:00
+source_revision=59799a368793b9f795baf59b067233a65ad8e38e
+models=Qwen3-0.6B,Qwen2.5-3B-Instruct,llama-2-7b,Mistral-7B-Instruct-v0.2,Qwen2.5-7B-Instruct,Qwen3-8B,Qwen2.5-14B-Instruct,Qwen2.5-14B-Instruct-1M,Qwen3-14B,Meta-Llama-3.1-70B-Instruct-AWQ,Qwen3-30B-A3B,Qwen3-30B-A3B-Instruct-2507,Qwen3-32B
+train_repeats=5
+collector_backend_version=0.5.10
+collector_triton_page_size=1
+input_policy=training ScheduleBatch shapes only; independent holdout trace paths were not read
+operator_timing_policy=attention: 3 warmups,min 20 CUDA-event iterations; GEMM: 3 warmups,min 6 CUDA-event iterations (each iteration contains a cache-aware op list); adaptive run count and CUDA graph replay as defined by collector/helper.py
+interpolation_support_policy=regular attention grid from training plans plus context_length=2048 and max_running_requests=32; holdout paths were not read
+additional_sequence_grid_step=64
+interpolation_support_plan=/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/aic_calibration/aic_interpolation_support_plan.json
+interpolation_support_manifest=/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/aic_calibration/aic_interpolation_support_manifest.json
+scoring_database_policy=for relevant context-attention slices, retain only direct regular-grid measurements so sparse training keys cannot shadow Silicon batch interpolation; all other operator tables are copied unchanged
+scoring_systems=/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/aic_calibration/aic-systems-regular-context
+scoring_simulator_config=/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/aic_calibration/simulator-config.a100_pcie_local_aic010_regular_context.json
+scoring_database_manifest=/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/aic_calibration/aic_regular_context_scoring_database_manifest.json
+kernel_compat_stage=/mnt/data/sglang-pr33824-merged/test-results/pr33824_sglang_kernel_sm80_compat_20260908_1915/minimal-stage-v4
+aic_source_revision=c5f139662be28b177ca9f62f83543bbf10f133a0
+sglang_cache_dir=/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/aic_calibration/cache
+sglang_jit_cache_dir=/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/aic_calibration/jit-cache
+flashinfer_workspace_base=/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/aic_calibration/flashinfer-workspace

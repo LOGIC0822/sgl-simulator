@@ -1,0 +1,47 @@
+{
+  "observed_at_utc": "2026-09-29 05:49:25 UTC",
+  "scope": "Readonly verification of closed native training case and shutdown chronology; no extra collection, fitting, prediction/profile or restart.",
+  "inspection": [
+    {
+      "command": "date -Iseconds; sed -n '1,3p' models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/service_1024x256_r4/status.txt; sed -n '1,80p' models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/service_1024x256_r4/TP0.manifest.json; wc -l models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/service_1024x256_r4/TP0.raw_request.jsonl models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/service_1024x256_r4/TP0.request.jsonl models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/service_1024x256_r4/TP0.schedule_batch.jsonl; rg -n 'start_profile|stop_profile|SIGTERM|CancelledError|Exception|ERROR|Traceback|took.*compile' models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/service_1024x256_r4.server.log; rg -n 'Successful requests|Benchmark duration|Total generated tokens|Profiler stopped' models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/service_1024x256_r4.benchmark.log; sha256sum models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/service_1024x256_r4/status.txt models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/service_1024x256_r4/TP0.manifest.json; ps -p 1379749,1379762,1992413,2003375,2004351 -o pid,ppid,lstart,stat",
+      "chunk_id": "c6b826",
+      "wall_time_seconds": 0.000020307,
+      "exit_code": 0,
+      "original_token_count": 643,
+      "output": "2026-09-29T13:48:11+08:00\nok\n{\n  \"schema_version\": 1,\n  \"rank_prefix\": \"TP0\",\n  \"request_count\": 64,\n  \"schedule_batch_count\": 499,\n  \"batch_latency_unit\": \"seconds\",\n  \"batch_timing\": \"device_synchronized\",\n  \"request_file\": \"TP0.request.jsonl\",\n  \"raw_request_file\": \"TP0.raw_request.jsonl\",\n  \"schedule_batch_file\": \"TP0.schedule_batch.jsonl\"\n}\n     64 models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/service_1024x256_r4/TP0.raw_request.jsonl\n     64 models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/service_1024x256_r4/TP0.request.jsonl\n    499 models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/service_1024x256_r4/TP0.schedule_batch.jsonl\n    627 total\n38:[2026-09-29 13:38:43] Triton kernel 'write_req_to_token_pool_triton' took 1.38 s to compile after serving started. Serving-time compilation can stall the engine; pre-compile it during engine init.\n44:[2026-09-29 13:44:37] Triton kernel '_fwd_kernel' took 2.17 s to compile after serving started. Serving-time compilation can stall the engine; pre-compile it during engine init.\n47:[2026-09-29 13:44:50] Triton kernel '_fwd_kernel' took 2.10 s to compile after serving started. Serving-time compilation can stall the engine; pre-compile it during engine init.\n58:[2026-09-29 13:45:05] INFO:     127.0.0.1:56526 - \"POST /start_profile HTTP/1.1\" 200 OK\n219:[2026-09-29 13:46:14] INFO:     127.0.0.1:57050 - \"POST /stop_profile HTTP/1.1\" 200 OK\n222:[2026-09-29 13:46:16] SIGTERM received. signum=None frame=None. Draining requests and shutting down...\n225:[2026-09-29 13:46:17] ERROR:    Traceback (most recent call last):\n243:Traceback (most recent call last):\n250:asyncio.exceptions.CancelledError\n14:Profiler stopped\n20:Successful requests:                     64        \n21:Benchmark duration (s):                  69.57     \n24:Total generated tokens:                  8199      \n25:Total generated tokens (retokenized):    7986      \ndc51b8c96c2d745df3bd5590d990230a482fd247123599548e0632fdbf97fc22  models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/service_1024x256_r4/status.txt\nc30d8fc0b9f9f53a41d38925600a9109eaa92ee96f52d0abf9d9e86e160a1ba2  models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/service_1024x256_r4/TP0.manifest.json\n    PID    PPID                  STARTED STAT\n1379749 1142476 Mon Sep 28 20:43:59 2026 Ss\n1379762 1379749 Mon Sep 28 20:44:00 2026 S\n1992413 1379762 Tue Sep 29 13:29:37 2026 S\n2003375 1992413 Tue Sep 29 13:46:17 2026 Sl\n2004351 1992413 Tue Sep 29 13:47:15 2026 Sl\n"
+    },
+    {
+      "command": "sed -n '216,255p' models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/service_1024x256_r4.server.log; date -Iseconds; ps -p 1379749,1379762,1992413,2003375,2004351 -o pid,ppid,lstart,stat",
+      "chunk_id": "ec9582",
+      "wall_time_seconds": 0.000038998,
+      "exit_code": 0,
+      "original_token_count": 774,
+      "output": "[2026-09-29 13:46:05] Decode batch, #running-req: 6, #token: 4174, token usage: 0.05, cuda graph: False, gen throughput (token/s): 88.38, #queue-req: 0\n[2026-09-29 13:46:09] Decode batch, #running-req: 2, #token: 1664, token usage: 0.02, cuda graph: False, gen throughput (token/s): 35.45, #queue-req: 0\n[2026-09-29 13:46:13] Decode batch, #running-req: 1, #token: 1089, token usage: 0.01, cuda graph: False, gen throughput (token/s): 17.86, #queue-req: 0\n[2026-09-29 13:46:14] INFO:     127.0.0.1:57050 - \"POST /stop_profile HTTP/1.1\" 200 OK\n[2026-09-29 13:46:14] INFO:     127.0.0.1:57060 - \"GET /server_info HTTP/1.1\" 200 OK\n[2026-09-29 13:46:14] INFO:     127.0.0.1:57064 - \"GET /server_info HTTP/1.1\" 200 OK\n[2026-09-29 13:46:16] SIGTERM received. signum=None frame=None. Draining requests and shutting down...\n[2026-09-29 13:46:17] Gracefully exiting... Remaining number of requests 0. Remaining requests remaining_rids=[].\n[2026-09-29 13:46:17] kill_process_tree called: parent_pid=1997537, include_parent=False, pid=1997537\n[2026-09-29 13:46:17] ERROR:    Traceback (most recent call last):\n  File \"/home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/lib/python3.10/site-packages/uvicorn/_compat.py\", line 60, in asyncio_run\n    return loop.run_until_complete(main)\n  File \"uvloop/loop.pyx\", line 1512, in uvloop.loop.Loop.run_until_complete\n  File \"uvloop/loop.pyx\", line 1505, in uvloop.loop.Loop.run_until_complete\n  File \"uvloop/loop.pyx\", line 1379, in uvloop.loop.Loop.run_forever\n  File \"uvloop/loop.pyx\", line 557, in uvloop.loop.Loop._run\n  File \"uvloop/loop.pyx\", line 476, in uvloop.loop.Loop._on_idle\n  File \"uvloop/cbhandles.pyx\", line 83, in uvloop.loop.Handle._run\n  File \"uvloop/cbhandles.pyx\", line 63, in uvloop.loop.Handle._run\n  File \"/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/python/sglang/srt/managers/tokenizer_manager.py\", line 3618, in print_exception_wrapper\n    await func()\n  File \"/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/python/sglang/srt/managers/tokenizer_manager.py\", line 3193, in sigterm_watchdog\n    sys.exit(0)\nSystemExit: 0\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/lib/python3.10/site-packages/starlette/routing.py\", line 655, in lifespan\n    await receive()\n  File \"/home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/lib/python3.10/site-packages/uvicorn/lifespan/on.py\", line 137, in receive\n    return await self.receive_queue.get()\n  File \"/home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/lib/python3.10/asyncio/queues.py\", line 159, in get\n    await getter\nasyncio.exceptions.CancelledError\n\n[2026-09-29 13:46:17] kill_process_tree called: parent_pid=1997537, include_parent=False, pid=1997537\n2026-09-29T13:49:25+08:00\n    PID    PPID                  STARTED STAT\n1379749 1142476 Mon Sep 28 20:43:59 2026 Ss\n1379762 1379749 Mon Sep 28 20:44:00 2026 S\n1992413 1379762 Tue Sep 29 13:29:37 2026 S\n2003375 1992413 Tue Sep 29 13:46:17 2026 Sl\n2004351 1992413 Tue Sep 29 13:47:15 2026 Sl\n"
+    }
+  ],
+  "conclusion": {
+    "repeat": 3,
+    "case": "service_1024x256_r4",
+    "status": "ok",
+    "requests": 64,
+    "successful_benchmark_requests": 64,
+    "batch_timings": 499,
+    "cumulative_closed_case_requests": 416,
+    "cumulative_closed_case_timings": 3614,
+    "completed_training_groups": 2,
+    "planned_training_groups": 5,
+    "profile_start": "2026-09-29 13:45:05",
+    "profile_stop": "2026-09-29 13:46:14",
+    "owned_shutdown_SIGTERM": "2026-09-29 13:46:16",
+    "shutdown_error_logged": "2026-09-29 13:46:17",
+    "shutdown_exception": "asyncio.exceptions.CancelledError",
+    "qualification": "Observed cancellation follows successful collection and owned shutdown; it is not evidence of an in-window measurement failure.",
+    "logged_slow_compilations_before_profile": 3,
+    "logged_slow_compilations_inside_profile": 0,
+    "compilation_qualification": "Logged-warning scope, not proof all kernels/shapes were precompiled.",
+    "next_original_server_pid": 2003375,
+    "next_original_client_pid": 2004351,
+    "completed_native_ml_models": 9,
+    "completed_joint_aic_models": 0
+  }
+}

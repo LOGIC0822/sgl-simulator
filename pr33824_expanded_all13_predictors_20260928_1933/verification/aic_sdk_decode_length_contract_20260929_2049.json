@@ -1,0 +1,55 @@
+{
+  "observed_at": "2026-09-29T20:49:36.481400+08:00",
+  "kind": "AST_EXECUTED_SDK_LENGTH_CONTRACT_NOT_BENCHMARK",
+  "scope": "Unchanged SDK functions extracted via AST and executed with capturing mock operation and one synthetic CSV row; no SDK module, model, GPU, table query, or actual predicted latency is loaded.",
+  "generation_phase_checks": [
+    {
+      "batch_size": 1,
+      "isl": 0,
+      "osl": 2,
+      "operator_query_count": 1,
+      "observed_query_s": 1
+    },
+    {
+      "batch_size": 1,
+      "isl": 1,
+      "osl": 2,
+      "operator_query_count": 1,
+      "observed_query_s": 2
+    },
+    {
+      "batch_size": 1,
+      "isl": 658,
+      "osl": 2,
+      "operator_query_count": 1,
+      "observed_query_s": 659
+    },
+    {
+      "batch_size": 4,
+      "isl": 741,
+      "osl": 2,
+      "operator_query_count": 1,
+      "observed_query_s": 742
+    },
+    {
+      "batch_size": 32,
+      "isl": 1024,
+      "osl": 2,
+      "operator_query_count": 1,
+      "observed_query_s": 1025
+    }
+  ],
+  "synthetic_csv_row": {
+    "isl": 1,
+    "step": 658,
+    "loaded_s_key": 659
+  },
+  "source_sha256": {
+    "/home/ms-admin/workspace1/yiheng/ali/aiconfigurator-v0.10.0/src/aiconfigurator/sdk/backends/base_backend.py": "91ea00d35b25177e2b83baf475f8fc664b218de0808ea3cf2d3ed9169eafde50",
+    "/home/ms-admin/workspace1/yiheng/ali/aiconfigurator-v0.10.0/src/aiconfigurator/sdk/operations/attention.py": "f8851d366e1743398dcbee11ee676b4047b51a46c1e255847eaced7b2a7f0e35"
+  },
+  "all_source_hashes_unchanged": true,
+  "executed_program": "import ast, hashlib, json\nfrom collections import defaultdict\nfrom datetime import datetime\nfrom pathlib import Path\nfrom types import SimpleNamespace\nbackend = Path(\"/home/ms-admin/workspace1/yiheng/ali/aiconfigurator-v0.10.0/src/aiconfigurator/sdk/backends/base_backend.py\")\nattention = backend.parents[1] / \"operations/attention.py\"\npaths = [backend, attention]\nbefore = {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in paths}\nbackend_tree = ast.parse(backend.read_text())\nfunctions = [node for node in ast.walk(backend_tree)\n             if isinstance(node, ast.FunctionDef) and node.name == \"_run_generation_phase\"]\nassert len(functions) == 1\nfunction = functions[0]\nassert not function.decorator_list\nmodule = ast.Module(body=[ast.ImportFrom(module=\"__future__\", names=[ast.alias(name=\"annotations\")], level=0), function], type_ignores=[])\nnamespace = {\"defaultdict\": defaultdict}\nexec(compile(ast.fix_missing_locations(module), str(backend), \"exec\"), namespace)\ncalls = []\nclass CaptureOperation:\n    _name = \"contract_only_no_measured_latency\"\n    def query(self, database, **kwargs):\n        assert database is sentinel\n        calls.append(kwargs)\n        return 0.0\nsentinel = object()\nmodel = SimpleNamespace(_nextn=0, generation_ops=[CaptureOperation()])\nconfig = SimpleNamespace(gen_seq_imbalance_correction_scale=1.0)\nchecks = []\nfor batch_size, isl in ((1,0),(1,1),(1,658),(4,741),(32,1024)):\n    previous = len(calls)\n    namespace[\"_run_generation_phase\"](None, model, sentinel, config, batch_size, 1, isl, 2, 32)\n    assert len(calls) == previous + 1\n    value = calls[-1]\n    assert value[\"s\"] == isl + 1 and value[\"x\"] == batch_size\n    assert value[\"batch_size\"] == batch_size and value[\"beam_width\"] == 1\n    checks.append({\"batch_size\": batch_size, \"isl\": isl, \"osl\": 2,\n                   \"operator_query_count\": 1, \"observed_query_s\": value[\"s\"]})\nattention_tree = ast.parse(attention.read_text())\nloaders = [node for node in attention_tree.body if isinstance(node, ast.FunctionDef) and node.name == \"load_generation_attention_data\"]\nassert len(loaders) == 1\nloader_rows = [{\"window_size\":0, \"attn_dtype\":\"bfloat16\", \"kv_cache_dtype\":\"bfloat16\",\n                \"batch_size\":4, \"isl\":1, \"num_heads\":28, \"num_key_value_heads\":4,\n                \"head_dim\":128, \"step\":658, \"latency\":0.0}]\nloader_ns = {\"defaultdict\":defaultdict,\n             \"_read_filtered_rows\":lambda _: loader_rows,\n             \"logger\":SimpleNamespace(debug=lambda *args, **kwargs: None),\n             \"common\":SimpleNamespace(KVCacheQuantMode={\"bfloat16\":\"bfloat16\"})}\nloader_module = ast.Module(body=[loaders[0]], type_ignores=[])\nexec(compile(ast.fix_missing_locations(loader_module), str(attention), \"exec\"), loader_ns)\nloaded = loader_ns[\"load_generation_attention_data\"](None)\nassert loaded[\"bfloat16\"][4][128][0][28][4][659][\"latency\"] == 0.0\nassert sorted(loaded[\"bfloat16\"][4][128][0][28][4]) == [659]\nafter = {str(path):hashlib.sha256(path.read_bytes()).hexdigest() for path in paths}\nassert before == after\nprint(json.dumps({\"observed_at\":datetime.now().astimezone().isoformat(),\n                  \"kind\":\"AST_EXECUTED_SDK_LENGTH_CONTRACT_NOT_BENCHMARK\",\n                  \"scope\":\"Unchanged SDK functions extracted via AST and executed with capturing mock operation and one synthetic CSV row; no SDK module, model, GPU, table query, or actual predicted latency is loaded.\",\n                  \"generation_phase_checks\":checks,\n                  \"synthetic_csv_row\":{\"isl\":1,\"step\":658,\"loaded_s_key\":659},\n                  \"source_sha256\":before,\"all_source_hashes_unchanged\":True}))\n",
+  "command": "env CUDA_VISIBLE_DEVICES='' PYTHONNOUSERSITE=1 OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 nice -n 15 /home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python - <<'PY'\nimport ast, hashlib, json\nfrom collections import defaultdict\nfrom datetime import datetime\nfrom pathlib import Path\nfrom types import SimpleNamespace\nbackend = Path(\"/home/ms-admin/workspace1/yiheng/ali/aiconfigurator-v0.10.0/src/aiconfigurator/sdk/backends/base_backend.py\")\nattention = backend.parents[1] / \"operations/attention.py\"\npaths = [backend, attention]\nbefore = {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in paths}\nbackend_tree = ast.parse(backend.read_text())\nfunctions = [node for node in ast.walk(backend_tree)\n             if isinstance(node, ast.FunctionDef) and node.name == \"_run_generation_phase\"]\nassert len(functions) == 1\nfunction = functions[0]\nassert not function.decorator_list\nmodule = ast.Module(body=[ast.ImportFrom(module=\"__future__\", names=[ast.alias(name=\"annotations\")], level=0), function], type_ignores=[])\nnamespace = {\"defaultdict\": defaultdict}\nexec(compile(ast.fix_missing_locations(module), str(backend), \"exec\"), namespace)\ncalls = []\nclass CaptureOperation:\n    _name = \"contract_only_no_measured_latency\"\n    def query(self, database, **kwargs):\n        assert database is sentinel\n        calls.append(kwargs)\n        return 0.0\nsentinel = object()\nmodel = SimpleNamespace(_nextn=0, generation_ops=[CaptureOperation()])\nconfig = SimpleNamespace(gen_seq_imbalance_correction_scale=1.0)\nchecks = []\nfor batch_size, isl in ((1,0),(1,1),(1,658),(4,741),(32,1024)):\n    previous = len(calls)\n    namespace[\"_run_generation_phase\"](None, model, sentinel, config, batch_size, 1, isl, 2, 32)\n    assert len(calls) == previous + 1\n    value = calls[-1]\n    assert value[\"s\"] == isl + 1 and value[\"x\"] == batch_size\n    assert value[\"batch_size\"] == batch_size and value[\"beam_width\"] == 1\n    checks.append({\"batch_size\": batch_size, \"isl\": isl, \"osl\": 2,\n                   \"operator_query_count\": 1, \"observed_query_s\": value[\"s\"]})\nattention_tree = ast.parse(attention.read_text())\nloaders = [node for node in attention_tree.body if isinstance(node, ast.FunctionDef) and node.name == \"load_generation_attention_data\"]\nassert len(loaders) == 1\nloader_rows = [{\"window_size\":0, \"attn_dtype\":\"bfloat16\", \"kv_cache_dtype\":\"bfloat16\",\n                \"batch_size\":4, \"isl\":1, \"num_heads\":28, \"num_key_value_heads\":4,\n                \"head_dim\":128, \"step\":658, \"latency\":0.0}]\nloader_ns = {\"defaultdict\":defaultdict,\n             \"_read_filtered_rows\":lambda _: loader_rows,\n             \"logger\":SimpleNamespace(debug=lambda *args, **kwargs: None),\n             \"common\":SimpleNamespace(KVCacheQuantMode={\"bfloat16\":\"bfloat16\"})}\nloader_module = ast.Module(body=[loaders[0]], type_ignores=[])\nexec(compile(ast.fix_missing_locations(loader_module), str(attention), \"exec\"), loader_ns)\nloaded = loader_ns[\"load_generation_attention_data\"](None)\nassert loaded[\"bfloat16\"][4][128][0][28][4][659][\"latency\"] == 0.0\nassert sorted(loaded[\"bfloat16\"][4][128][0][28][4]) == [659]\nafter = {str(path):hashlib.sha256(path.read_bytes()).hexdigest() for path in paths}\nassert before == after\nprint(json.dumps({\"observed_at\":datetime.now().astimezone().isoformat(),\n                  \"kind\":\"AST_EXECUTED_SDK_LENGTH_CONTRACT_NOT_BENCHMARK\",\n                  \"scope\":\"Unchanged SDK functions extracted via AST and executed with capturing mock operation and one synthetic CSV row; no SDK module, model, GPU, table query, or actual predicted latency is loaded.\",\n                  \"generation_phase_checks\":checks,\n                  \"synthetic_csv_row\":{\"isl\":1,\"step\":658,\"loaded_s_key\":659},\n                  \"source_sha256\":before,\"all_source_hashes_unchanged\":True}))\n\nPY",
+  "exit_code": 0
+}

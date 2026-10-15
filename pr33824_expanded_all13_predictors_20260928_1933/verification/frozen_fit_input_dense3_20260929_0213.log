@@ -1,0 +1,37 @@
+FROZEN READBACK PASS: no training, GPU/server, source or original artifact mutation
+Original sources/bundles/score/raw/trace SHA matches: 369
+## 同一 ML 预测器的训练样本回评分与独立测试
+
+固定每模型最终 p50 bundle，回评分传入最终 fit 的训练样本，并与同一 bundle 的独立测试比较；不重新训练、不选择新的参数。训练侧沿用 bundle 的时延过滤，核对行数/用例数及数据来源；测试侧保留全部有效正时延，逐行复算并核验与正式评分完全一致。
+
+训练样本回评分不是独立验证；最终 HGB fit 内仍有 early-stopping 保留部分，因此也不表示每行都用于构建树。它与前文 80%/20% 内部分行验证的模型不同。下表各格为负载等权的实测/预测均值 ms（MAPE）；差距同时包含请求组成、batch 分布与采集时段变化，不能归因于请求不同这一单一因素。此处仅比较单步，不补跑训练请求的端到端服务。
+
+| 模型 | 训练样本回评分 ms（MAPE） | 同负载独立测试 ms（MAPE） | 跨负载独立测试 ms（MAPE） |
+| --- | --- | --- | --- |
+| Qwen3-0.6B | 26.808/25.756（2.32%） | 26.036/25.894（6.23%） | 26.340/25.823（5.77%） |
+| Qwen2.5-3B-Instruct | 32.107/30.920（1.88%） | 32.204/31.430（4.96%） | 31.815/31.118（4.41%） |
+| llama-2-7b | 28.875/27.924（1.35%） | 28.795/27.778（4.37%） | 28.348/27.509（3.14%） |
+
+![同一冻结 ML 预测器的三类样本对照](ml_fit_input_vs_independent_mape.png)
+
+逐负载、prefill/decode、样本数和 bundle SHA256 见 ml_fit_input_vs_independent_by_workload.csv；等权汇总及相对训练回评分的百分点差见 ml_fit_input_vs_independent_macro.csv。训练逐行预测保存在 ml_fit_input_readback/，正式独立测试文件不修改。
+
+## 训练与测试请求核对
+
+直接检查真机保存的 input_ids、实际输出长度和 request ID，不只依靠 seed 声明；逐条核验回放 trace 的输入 ID/输出长度未改变。下表的重叠比例以测试请求数为分母。相同 prompt、相同 18 维特征与同一条时延标签是不同概念；少量 prompt 重复不自动构成时延标签泄漏。正式拟合仍只读取训练目录。
+
+| 模型 | 训练/测试请求 | 测试 prompt 与训练重叠 | 输入 ID+输出长度同时重叠 | 回放 ID 核验请求 |
+| --- | --- | --- | --- | --- |
+| Qwen3-0.6B | 800 / 1280 | 0.00% | 0.00% | 2080 |
+| Qwen2.5-3B-Instruct | 800 / 1280 | 0.00% | 0.00% | 2080 |
+| llama-2-7b | 800 / 1280 | 0.00% | 0.00% | 2080 |
+
+{"model": "Qwen3-0.6B", "stage": "fit_input", "phase": "all", "workloads": "3", "n": "11533", "mean_actual_ms": "26.808480868891866", "mean_predicted_ms": "25.756308927130686", "mape_pct": "2.3231195190049525", "mape_change_from_fit_input_pp": "0.0", "bundle_sha256": "d5250353d9d4cfc1aa8602a1a8f647d67d0dd7bd2d23fbfd4ab3cfc38160773c"}
+{"model": "Qwen3-0.6B", "stage": "independent_seen", "phase": "all", "workloads": "3", "n": "11938", "mean_actual_ms": "26.036087246536866", "mean_predicted_ms": "25.894196397825365", "mape_pct": "6.228265443165108", "mape_change_from_fit_input_pp": "3.905145924160155", "bundle_sha256": "d5250353d9d4cfc1aa8602a1a8f647d67d0dd7bd2d23fbfd4ab3cfc38160773c"}
+{"model": "Qwen3-0.6B", "stage": "independent_unseen", "phase": "all", "workloads": "2", "n": "7142", "mean_actual_ms": "26.34033409359691", "mean_predicted_ms": "25.822698091305405", "mape_pct": "5.773353311911012", "mape_change_from_fit_input_pp": "3.4502337929060594", "bundle_sha256": "d5250353d9d4cfc1aa8602a1a8f647d67d0dd7bd2d23fbfd4ab3cfc38160773c"}
+{"model": "Qwen2.5-3B-Instruct", "stage": "fit_input", "phase": "all", "workloads": "3", "n": "10557", "mean_actual_ms": "32.1065927432703", "mean_predicted_ms": "30.91964355918935", "mape_pct": "1.879814212346486", "mape_change_from_fit_input_pp": "0.0", "bundle_sha256": "408b8fb5c40e5edec3c69e7510cdbc506a9fe71fe6690f73371cd342f6d261ab"}
+{"model": "Qwen2.5-3B-Instruct", "stage": "independent_seen", "phase": "all", "workloads": "3", "n": "10699", "mean_actual_ms": "32.204217453624615", "mean_predicted_ms": "31.429592918142266", "mape_pct": "4.960467679287637", "mape_change_from_fit_input_pp": "3.0806534669411514", "bundle_sha256": "408b8fb5c40e5edec3c69e7510cdbc506a9fe71fe6690f73371cd342f6d261ab"}
+{"model": "Qwen2.5-3B-Instruct", "stage": "independent_unseen", "phase": "all", "workloads": "2", "n": "6929", "mean_actual_ms": "31.815004137300136", "mean_predicted_ms": "31.117614630166265", "mape_pct": "4.405946028862245", "mape_change_from_fit_input_pp": "2.5261318165157594", "bundle_sha256": "408b8fb5c40e5edec3c69e7510cdbc506a9fe71fe6690f73371cd342f6d261ab"}
+{"model": "llama-2-7b", "stage": "fit_input", "phase": "all", "workloads": "3", "n": "11532", "mean_actual_ms": "28.87461073430893", "mean_predicted_ms": "27.92402759634834", "mape_pct": "1.3543991827024031", "mape_change_from_fit_input_pp": "0.0", "bundle_sha256": "89940263c77cc12919785d639a06a3ec4ea99260e0281ce65796ec6965cc7189"}
+{"model": "llama-2-7b", "stage": "independent_seen", "phase": "all", "workloads": "3", "n": "11293", "mean_actual_ms": "28.794647330270447", "mean_predicted_ms": "27.778435354897187", "mape_pct": "4.369741041293513", "mape_change_from_fit_input_pp": "3.0153418585911096", "bundle_sha256": "89940263c77cc12919785d639a06a3ec4ea99260e0281ce65796ec6965cc7189"}
+{"model": "llama-2-7b", "stage": "independent_unseen", "phase": "all", "workloads": "2", "n": "7207", "mean_actual_ms": "28.348457892634805", "mean_predicted_ms": "27.50898844836016", "mape_pct": "3.1391068869732974", "mape_change_from_fit_input_pp": "1.7847077042708943", "bundle_sha256": "89940263c77cc12919785d639a06a3ec4ea99260e0281ce65796ec6965cc7189"}

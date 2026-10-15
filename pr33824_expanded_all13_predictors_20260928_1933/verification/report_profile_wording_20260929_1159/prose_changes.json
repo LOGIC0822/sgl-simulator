@@ -1,0 +1,17 @@
+{
+  "changes": [
+    [
+      "元数据准备、首次 shape 编译和稳态 GPU 算子测量的边界应区分；尚无同配置逐项 profile，不能为这些开销分配具体误差比例。",
+      "前文的 3B、7B、32B 抽样 profile 用于检查实际时序和算子族；它不是元数据准备、编译等开销的逐项受控对照，不能直接分摊总误差。"
+    ],
+    [
+      "不同层权重、缓存和发射开销的影响仍需同配置 GPU profile 验证。",
+      "前文的抽样 GPU profile 不单独测量缓存命中率，不能据此量化缓存或权重复用对误差的独立影响。"
+    ],
+    [
+      "没有当前逐项 profile 证据，不能据此量化它占总误差的比例。",
+      "算子族统计不等于隔离 QK norm 的单项计时，不能由这项公式差值量化其对总误差的贡献。"
+    ]
+  ],
+  "scope": "Exactly three report explanation strings; no numeric, predictor, sampler, scorer, workflow or model-setting change. Full old/new report source archived."
+}

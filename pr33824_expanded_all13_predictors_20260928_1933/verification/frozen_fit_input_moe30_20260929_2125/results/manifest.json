@@ -1,0 +1,54 @@
+{
+  "model": "Qwen3-30B-A3B",
+  "bundle_sha256": "3f9325c0b04c3fbc99389dba9cac328abff876122c014ebd305a8bc9e95d9f61",
+  "training_requests": 800,
+  "independent_test_requests": 1280,
+  "training_rows": 6951,
+  "independent_test_rows": 12223,
+  "all_phase_macro": [
+    {
+      "model": "Qwen3-30B-A3B",
+      "stage": "fit_input",
+      "phase": "all",
+      "workloads": "3",
+      "n": "6951",
+      "mean_actual_ms": "93.79202005496298",
+      "mean_predicted_ms": "84.43488880687296",
+      "mape_pct": "1.8361483469201325",
+      "mape_change_from_fit_input_pp": "0.0",
+      "bundle_sha256": "3f9325c0b04c3fbc99389dba9cac328abff876122c014ebd305a8bc9e95d9f61"
+    },
+    {
+      "model": "Qwen3-30B-A3B",
+      "stage": "independent_seen",
+      "phase": "all",
+      "workloads": "3",
+      "n": "6964",
+      "mean_actual_ms": "96.22705328303807",
+      "mean_predicted_ms": "84.47491928072395",
+      "mape_pct": "4.569994381715482",
+      "mape_change_from_fit_input_pp": "2.7338460347953495",
+      "bundle_sha256": "3f9325c0b04c3fbc99389dba9cac328abff876122c014ebd305a8bc9e95d9f61"
+    },
+    {
+      "model": "Qwen3-30B-A3B",
+      "stage": "independent_unseen",
+      "phase": "all",
+      "workloads": "2",
+      "n": "5259",
+      "mean_actual_ms": "97.07414841860972",
+      "mean_predicted_ms": "84.3587864586372",
+      "mape_pct": "4.553374161803225",
+      "mape_change_from_fit_input_pp": "2.7172258148830926",
+      "bundle_sha256": "3f9325c0b04c3fbc99389dba9cac328abff876122c014ebd305a8bc9e95d9f61"
+    }
+  ],
+  "fit_invoked": false,
+  "fit_guard": "HGB.fit raises",
+  "original_files_verified_unchanged": 180,
+  "heldout_predictions": "Recomputed and matched original per-batch identities and values exactly",
+  "metric_scope": "Workload-equal single-step macros; not pooled MAPE or E2E",
+  "interpretation": "Fit-input rescore is not independent validation; request composition, batch distribution and time all differ",
+  "gpu_aic_or_new_replay_invoked": false,
+  "auxiliary_context": "Low-priority CPU diagnostic alongside original CPU replay; not a new timing baseline"
+}

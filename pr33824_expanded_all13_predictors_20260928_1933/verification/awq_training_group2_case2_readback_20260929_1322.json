@@ -1,0 +1,51 @@
+{
+  "observed_at_utc": "2026-09-29 05:23:35 UTC",
+  "scope": "Readonly inspection of a closed original native case and downstream wait gates; no source/runtime change, no extra collection or fit.",
+  "inspection": [
+    {
+      "command": "date -Iseconds; sed -n '1,3p' models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-2/cases/service_1024x256_r4/status.txt; sed -n '1,80p' models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-2/cases/service_1024x256_r4/TP0.manifest.json; wc -l models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-2/cases/service_1024x256_r4/TP0.raw_request.jsonl models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-2/cases/service_1024x256_r4/TP0.request.jsonl models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-2/cases/service_1024x256_r4/TP0.schedule_batch.jsonl; rg -n 'start_profile|stop_profile|took.*compile' models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-2/cases/service_1024x256_r4.server.log; sha256sum models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-2/cases/service_1024x256_r4/status.txt models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-2/cases/service_1024x256_r4/TP0.manifest.json; ps -p 1379749,1379762,1972282,1986994 -o pid,ppid,lstart,stat",
+      "chunk_id": "a74db6",
+      "wall_time_seconds": 0.000062977,
+      "exit_code": 0,
+      "original_token_count": 508,
+      "output": "2026-09-29T13:22:21+08:00\nok\n{\n  \"schema_version\": 1,\n  \"rank_prefix\": \"TP0\",\n  \"request_count\": 64,\n  \"schedule_batch_count\": 466,\n  \"batch_latency_unit\": \"seconds\",\n  \"batch_timing\": \"device_synchronized\",\n  \"request_file\": \"TP0.request.jsonl\",\n  \"raw_request_file\": \"TP0.raw_request.jsonl\",\n  \"schedule_batch_file\": \"TP0.schedule_batch.jsonl\"\n}\n     64 models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-2/cases/service_1024x256_r4/TP0.raw_request.jsonl\n     64 models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-2/cases/service_1024x256_r4/TP0.request.jsonl\n    466 models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-2/cases/service_1024x256_r4/TP0.schedule_batch.jsonl\n    594 total\n38:[2026-09-29 13:13:31] Triton kernel 'write_req_to_token_pool_triton' took 1.36 s to compile after serving started. Serving-time compilation can stall the engine; pre-compile it during engine init.\n44:[2026-09-29 13:19:25] Triton kernel '_fwd_kernel' took 2.12 s to compile after serving started. Serving-time compilation can stall the engine; pre-compile it during engine init.\n47:[2026-09-29 13:19:38] Triton kernel '_fwd_kernel' took 2.14 s to compile after serving started. Serving-time compilation can stall the engine; pre-compile it during engine init.\n57:[2026-09-29 13:19:53] INFO:     127.0.0.1:45908 - \"POST /start_profile HTTP/1.1\" 200 OK\n222:[2026-09-29 13:20:58] INFO:     127.0.0.1:55758 - \"POST /stop_profile HTTP/1.1\" 200 OK\ndc51b8c96c2d745df3bd5590d990230a482fd247123599548e0632fdbf97fc22  models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-2/cases/service_1024x256_r4/status.txt\nc4b3bf990a453601eb8e9c04959bdcdb7c77074f36b0d7eaf47a06f105a0be19  models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-2/cases/service_1024x256_r4/TP0.manifest.json\n    PID    PPID                  STARTED STAT\n1379749 1142476 Mon Sep 28 20:43:59 2026 Ss\n1379762 1379749 Mon Sep 28 20:44:00 2026 S\n1972282 1379762 Tue Sep 29 13:04:10 2026 S\n1986994 1972282 Tue Sep 29 13:21:06 2026 Sl\n"
+    },
+    {
+      "command": "cmp models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/package_versions.txt models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-2/package_versions.txt",
+      "chunk_id": "0d4b15",
+      "wall_time_seconds": 0.000036606,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": ""
+    },
+    {
+      "command": "sed -n '58,88p' tools/run_pr33824_previous_calibration_comparison.py; date -Iseconds; ps -p 1379749,1379762,1972282,1986994,1356872 -o pid,ppid,lstart,stat",
+      "chunk_id": "3c1787",
+      "wall_time_seconds": 0.000038836,
+      "exit_code": 0,
+      "original_token_count": 573,
+      "output": "        parser.error(\"interval must be positive\")\n    models = validate(root, previous)\n    if args.validate_only:\n        print(f\"Compatible historical calibration reference: {len(models)} models\")\n        return\n    target = root / \"previous_calibration\"\n    target.mkdir(exist_ok=True)\n    (target / \"owner.json\").write_text(json.dumps({\"pid\": os.getpid(), \"created_at\": datetime.now().astimezone().isoformat()}, indent=2))\n    old_meta = metadata(previous / \"run_metadata.txt\")\n    (target / \"reference.json\").write_text(json.dumps({\n        \"previous_root\": str(previous), \"source_revision\": old_meta[\"source_revision\"],\n        \"kernel_stage\": old_meta[\"kernel_compat_stage\"],\n        \"training_requests_per_model\": int(old_meta[\"training_requests_total\"]),\n        \"training_cases\": old_meta[\"training_case\"],\n        \"evaluation\": \"same new holdout ScheduleBatch rows; teacher-forced only\",\n        \"limitation\": \"training workload coverage and request count both change; not a request-count-only comparison\",\n    }, indent=2, ensure_ascii=False))\n    while not complete(root / \"REAL_ML_ALL_MODELS_COMPLETE\"):\n        print(f\"{datetime.now().astimezone().isoformat(timespec='seconds')} waiting for all real/ML collection\", flush=True)\n        time.sleep(args.interval)\n    sim = Path(__file__).resolve().parents[1]\n    manifest = root / \"model_manifest.tsv\"\n    with manifest.open() as source:\n        model_paths = {row[\"model\"]: row[\"model_path\"] for row in csv.DictReader(source, delimiter=\"\\t\")}\n    env = dict(os.environ, OMP_NUM_THREADS=\"1\", PYTHONNOUSERSITE=\"1\")\n    torch_spec = importlib.util.find_spec(\"torch\")\n    if torch_spec and torch_spec.origin:\n        env[\"LD_LIBRARY_PATH\"] = str(Path(torch_spec.origin).parent / \"lib\") + \":\" + env.get(\"LD_LIBRARY_PATH\", \"\")\n    env[\"PYTHONPATH\"] = \":\".join([\n        old_meta[\"kernel_compat_stage\"], str(sim / \"src\"), str(sim.parents[1] / \"python\"),\n        str(Path('/home/ms-admin/workspace1/yiheng/ali/aiconfigurator-v0.10.0/src')),\n2026-09-29T13:23:35+08:00\n    PID    PPID                  STARTED STAT\n1356872 1142476 Mon Sep 28 20:09:48 2026 SNs\n1379749 1142476 Mon Sep 28 20:43:59 2026 Ss\n1379762 1379749 Mon Sep 28 20:44:00 2026 S\n1972282 1379762 Tue Sep 29 13:04:10 2026 S\n1986994 1972282 Tue Sep 29 13:21:06 2026 Sl\n"
+    }
+  ],
+  "conclusion": {
+    "case": "service_1024x256_r4",
+    "repeat": 2,
+    "status": "ok",
+    "requests": 64,
+    "timing_records": 466,
+    "cumulative_closed_case_requests": 256,
+    "cumulative_closed_case_timing_records": 2219,
+    "completed_training_groups": 1,
+    "planned_training_groups": 5,
+    "package_version_records_byte_equal": true,
+    "logged_profile_start": "2026-09-29 13:19:53",
+    "logged_profile_stop": "2026-09-29 13:20:58",
+    "logged_slow_compilations_before_profile": 3,
+    "logged_slow_compilations_inside_profile": 0,
+    "compilation_scope_qualification": "Only logged slow compilations; not a proof that all kernels/shapes were precompiled.",
+    "next_case": "saturation_1024x256_inf",
+    "next_native_server_pid": 1986994,
+    "completed_native_ml_models": 9,
+    "completed_joint_aic_models": 0
+  }
+}

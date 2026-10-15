@@ -1,0 +1,234 @@
+{
+  "model": "Meta-Llama-3.1-70B-Instruct-AWQ",
+  "runtime_snapshot": {
+    "started": {
+      "current_time": "2026-09-29 04:46:44 UTC"
+    },
+    "finished": {
+      "current_time": "2026-09-29 04:46:44 UTC"
+    },
+    "commands": [
+      {
+        "cmd": "ps -p 1379749,1379762,1943014,1943110,1945440 -o pid,ppid,lstart,etime,stat,args",
+        "max_output_tokens": 4200
+      },
+      {
+        "cmd": "tail -n 9 status.tsv",
+        "workdir": "/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933",
+        "max_output_tokens": 2000
+      },
+      {
+        "cmd": "rg -n 'awq_marlin|quant=|KV Cache is allocated|POST /flush_cache|POST /start_profile|POST /stop_profile|ERROR|Traceback' models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1.server.log | rg -v 'server_args='",
+        "workdir": "/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933",
+        "max_output_tokens": 4300
+      },
+      {
+        "cmd": "rg --files models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases -g '*status.txt' -g '*manifest.json' -g '*schedule_batch*' -g '*raw_request*'",
+        "workdir": "/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933",
+        "max_output_tokens": 2500
+      },
+      {
+        "cmd": "tail -n 18 models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1.benchmark.log",
+        "workdir": "/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933",
+        "max_output_tokens": 3000
+      }
+    ],
+    "results": [
+      {
+        "chunk_id": "12ab56",
+        "wall_time_seconds": 0.00001638,
+        "exit_code": 0,
+        "original_token_count": 324,
+        "output": "    PID    PPID                  STARTED     ELAPSED STAT COMMAND\n1379749 1142476 Mon Sep 28 20:43:59 2026    16:02:44 Ss   bash /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/scripts/run_pr33824_comprehensive_predictor_matrix.sh --resume --results-root /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933\n1379762 1379749 Mon Sep 28 20:44:00 2026    16:02:43 S    bash /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/scripts/run_pr33824_data_tools_same_distribution_matrix.sh --results-root /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933 --models Qwen3-0.6B,Qwen2.5-3B-Instruct,llama-2-7b,Mistral-7B-Instruct-v0.2,Qwen2.5-7B-Instruct,Qwen3-8B,Qwen2.5-14B-Instruct,Qwen2.5-14B-Instruct-1M,Qwen3-14B,Meta-Llama-3.1-70B-Instruct-AWQ,Qwen3-30B-A3B,Qwen3-30B-A3B-Instruct-2507,Qwen3-32B --train-repeats 5 --holdout-repeats 5 --prompt-multiplier 2 --resume\n1943014 1379762 Tue Sep 29 12:36:22 2026       10:21 S    bash /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/scripts/run_pr33824_data_tools_baseline.sh\n"
+      },
+      {
+        "chunk_id": "2ffd57",
+        "wall_time_seconds": 0.000018368,
+        "exit_code": 0,
+        "original_token_count": 191,
+        "output": "2026-09-29T12:28:20+08:00\tQwen3-14B\treplay-repeat-3\tcomplete\t\n2026-09-29T12:28:20+08:00\tQwen3-14B\treplay-repeat-4\tstarted\tCPU ML replay of held-out trace\n2026-09-29T12:32:24+08:00\tQwen3-14B\treplay-repeat-4\tcomplete\t\n2026-09-29T12:32:24+08:00\tQwen3-14B\treplay-repeat-5\tstarted\tCPU ML replay of held-out trace\n2026-09-29T12:36:22+08:00\tQwen3-14B\treplay-repeat-5\tcomplete\t\n2026-09-29T12:36:22+08:00\tQwen3-14B\te2e_comparison\tstarted\tpaired held-out real/replay summaries\n2026-09-29T12:36:22+08:00\tQwen3-14B\te2e_comparison\tcomplete\t\n2026-09-29T12:36:22+08:00\tQwen3-14B\tmodel\tcomplete\t\n2026-09-29T12:36:23+08:00\tMeta-Llama-3.1-70B-Instruct-AWQ\ttraining-repeat-1\tstarted\tcases=latency_256x128_r1,service_1024x256_r4,saturation_1024x256_inf seed=202609280 multiplier=2\n"
+      },
+      {
+        "chunk_id": "d016c8",
+        "wall_time_seconds": 0.000016733,
+        "exit_code": 0,
+        "original_token_count": 241,
+        "output": "2:[2026-09-29 12:36:38] The model is convertible to awq_marlin during runtime. Using awq_marlin kernel.\n6:[2026-09-29 12:36:38] The model is convertible to awq_marlin during runtime. Using awq_marlin kernel.\n8:[2026-09-29 12:36:48] The model is convertible to awq_marlin during runtime. Using awq_marlin kernel.\n9:[2026-09-29 12:36:53] The model is convertible to awq_marlin during runtime. Using awq_marlin kernel.\n20:[2026-09-29 12:38:28] Load weight end. elapsed=93.37 s, type=LlamaForCausalLM, quant=awq, bits=4, avail mem=41.46 GB, mem usage=37.19 GB.\n21:[2026-09-29 12:38:32] KV Cache is allocated. dtype: torch.float16, #tokens: 84291, K size: 12.86 GB, V size: 12.86 GB\n56:[2026-09-29 12:45:03] INFO:     127.0.0.1:50200 - \"POST /flush_cache?timeout=60.0 HTTP/1.1\" 200 OK\n57:[2026-09-29 12:45:04] INFO:     127.0.0.1:50212 - \"POST /start_profile HTTP/1.1\" 200 OK\n129:[2026-09-29 12:45:41] INFO:     127.0.0.1:38916 - \"POST /stop_profile HTTP/1.1\" 200 OK\n"
+      },
+      {
+        "chunk_id": "68d4c9",
+        "wall_time_seconds": 0.000019235,
+        "exit_code": 0,
+        "original_token_count": 139,
+        "output": "models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1/status.txt\nmodels/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1/autobench_trace.manifest.json\nmodels/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1/TP0.manifest.json\nmodels/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1/TP0.schedule_batch.jsonl\nmodels/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1/TP0.raw_request.jsonl\n"
+      },
+      {
+        "chunk_id": "465a91",
+        "wall_time_seconds": 0.000016194,
+        "exit_code": 0,
+        "original_token_count": 234,
+        "output": "Median TTFT (ms):                        242.03    \nP90 TTFT (ms):                           439.27    \nP95 TTFT (ms):                           591.90    \nP99 TTFT (ms):                           767.49    \n-----Time per Output Token (excl. 1st token)------\nMean TPOT (ms):                          88.17     \nMedian TPOT (ms):                        86.65     \nP90 TPOT (ms):                           92.37     \nP95 TPOT (ms):                           97.55     \nP99 TPOT (ms):                           139.36    \n---------------Inter-Token Latency----------------\nMean ITL (ms):                           87.89     \nMedian ITL (ms):                         77.66     \nP90 ITL (ms):                            80.49     \nP95 ITL (ms):                            157.50    \nP99 ITL (ms):                            302.13    \nMax ITL (ms):                            588.34    \n==================================================\n"
+      }
+    ],
+    "scope": "Read-only snapshots of original live AWQ group1; log is live, not a closed/model-complete accuracy result."
+  },
+  "closed_case_readback": {
+    "started": {
+      "current_time": "2026-09-29 04:47:31 UTC"
+    },
+    "finished": {
+      "current_time": "2026-09-29 04:47:31 UTC"
+    },
+    "commands": [
+      {
+        "cmd": "sed -n '1,8p' models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1/status.txt",
+        "workdir": "/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933",
+        "max_output_tokens": 1000
+      },
+      {
+        "cmd": "sed -n '1,90p' models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1/TP0.manifest.json",
+        "workdir": "/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933",
+        "max_output_tokens": 2400
+      },
+      {
+        "cmd": "wc -l models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1/TP0.raw_request.jsonl models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1/TP0.schedule_batch.jsonl",
+        "workdir": "/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933",
+        "max_output_tokens": 1500
+      },
+      {
+        "cmd": "rg -n '^python=|^torch=|^torch_cuda=|^sgl_kernel_|^sglang=|^sglang-kernel=|^triton=' models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/package_versions.txt",
+        "workdir": "/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933",
+        "max_output_tokens": 2500
+      },
+      {
+        "cmd": "sha256sum models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1/status.txt models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1/TP0.manifest.json models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1/TP0.raw_request.jsonl models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1/TP0.schedule_batch.jsonl",
+        "workdir": "/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933",
+        "max_output_tokens": 2200
+      },
+      {
+        "cmd": "ps -p 1379749,1379762,1943014 -o pid,ppid,lstart,etime,stat,args",
+        "max_output_tokens": 3200
+      },
+      {
+        "cmd": "ps --ppid 1943014 -o pid,ppid,lstart,etime,stat,args",
+        "max_output_tokens": 3300
+      }
+    ],
+    "results": [
+      {
+        "chunk_id": "20a758",
+        "wall_time_seconds": 0.00002056,
+        "exit_code": 0,
+        "original_token_count": 1,
+        "output": "ok\n"
+      },
+      {
+        "chunk_id": "7cb814",
+        "wall_time_seconds": 0.000040009,
+        "exit_code": 0,
+        "original_token_count": 80,
+        "output": "{\n  \"schema_version\": 1,\n  \"rank_prefix\": \"TP0\",\n  \"request_count\": 32,\n  \"schedule_batch_count\": 442,\n  \"batch_latency_unit\": \"seconds\",\n  \"batch_timing\": \"device_synchronized\",\n  \"request_file\": \"TP0.request.jsonl\",\n  \"raw_request_file\": \"TP0.raw_request.jsonl\",\n  \"schedule_batch_file\": \"TP0.schedule_batch.jsonl\"\n}\n"
+      },
+      {
+        "chunk_id": "6df353",
+        "wall_time_seconds": 0.000019351,
+        "exit_code": 0,
+        "original_token_count": 64,
+        "output": "    32 models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1/TP0.raw_request.jsonl\n   442 models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1/TP0.schedule_batch.jsonl\n   474 total\n"
+      },
+      {
+        "chunk_id": "e54e34",
+        "wall_time_seconds": 0.000019171,
+        "exit_code": 0,
+        "original_token_count": 79,
+        "output": "1:python=3.10.21\n2:torch=2.9.1+cu126\n3:torch_cuda=12.6\n4:sgl_kernel_file=/mnt/data/sglang-pr33824-merged/test-results/pr33824_sglang_kernel_sm80_compat_20260908_1915/minimal-stage-v4/sgl_kernel/__init__.py\n5:sgl_kernel_runtime_version=0.4.6.post1\n18:sglang=0.0.0\n20:sglang-kernel=0.4.6.post1+cu129\n25:triton=3.5.1\n"
+      },
+      {
+        "chunk_id": "9c14a6",
+        "wall_time_seconds": 0.000036497,
+        "exit_code": 0,
+        "original_token_count": 175,
+        "output": "dc51b8c96c2d745df3bd5590d990230a482fd247123599548e0632fdbf97fc22  models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1/status.txt\ncaddb902574acb5ce3f46bdc4b3a61f4cef199d96260af79ad7ff176a0f63f24  models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1/TP0.manifest.json\n81f77e46bae08e6f8730fcca0b4f87ef4a41c193b456b2473ea332f57ed2e3a6  models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1/TP0.raw_request.jsonl\n8648df259f52d978a287e7a6811ecb3e0e10d531f8518a542fad14b34cb8fbbd  models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/latency_256x128_r1/TP0.schedule_batch.jsonl\n"
+      },
+      {
+        "chunk_id": "98efda",
+        "wall_time_seconds": 0.000054101,
+        "exit_code": 0,
+        "original_token_count": 324,
+        "output": "    PID    PPID                  STARTED     ELAPSED STAT COMMAND\n1379749 1142476 Mon Sep 28 20:43:59 2026    16:03:31 Ss   bash /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/scripts/run_pr33824_comprehensive_predictor_matrix.sh --resume --results-root /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933\n1379762 1379749 Mon Sep 28 20:44:00 2026    16:03:30 S    bash /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/scripts/run_pr33824_data_tools_same_distribution_matrix.sh --results-root /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933 --models Qwen3-0.6B,Qwen2.5-3B-Instruct,llama-2-7b,Mistral-7B-Instruct-v0.2,Qwen2.5-7B-Instruct,Qwen3-8B,Qwen2.5-14B-Instruct,Qwen2.5-14B-Instruct-1M,Qwen3-14B,Meta-Llama-3.1-70B-Instruct-AWQ,Qwen3-30B-A3B,Qwen3-30B-A3B-Instruct-2507,Qwen3-32B --train-repeats 5 --holdout-repeats 5 --prompt-multiplier 2 --resume\n1943014 1379762 Tue Sep 29 12:36:22 2026       11:08 S    bash /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/scripts/run_pr33824_data_tools_baseline.sh\n"
+      },
+      {
+        "chunk_id": "fe9753",
+        "wall_time_seconds": 0.000052627,
+        "exit_code": 0,
+        "original_token_count": 215,
+        "output": "    PID    PPID                  STARTED     ELAPSED STAT COMMAND\n1952892 1943014 Tue Sep 29 12:45:49 2026       01:41 Sl   /home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python -m sglang_simulator.baseline.launch_server --collection-output-dir /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/service_1024x256_r4 --model-path /home/ms-admin/data/models/Meta-Llama-3.1-70B-Instruct-AWQ --host 127.0.0.1 --port 30227 --device cuda --tp-size 1 --context-length 2048 --mem-fraction-static 0.80 --max-running-requests 32 --chunked-prefill-size 512 --attention-backend triton --disable-cuda-graph --disable-overlap-schedule\n1954298 1943014 Tue Sep 29 12:47:30 2026       00:00 S    sleep 1\n"
+      }
+    ],
+    "scope": "Closed first training case only; no prediction, model fit, independent test or all-model completion claim."
+  },
+  "nonblocking_stack_attempts": {
+    "started": {
+      "current_time": "2026-09-29 04:44:42 UTC"
+    },
+    "finished": {
+      "current_time": "2026-09-29 04:44:42 UTC"
+    },
+    "pids": [
+      1945440,
+      1943110,
+      1943262,
+      1943263
+    ],
+    "commands": [
+      "/home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/py-spy dump --pid 1945440 --nonblocking --full-filenames",
+      "/home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/py-spy dump --pid 1943110 --nonblocking --full-filenames",
+      "/home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/py-spy dump --pid 1943262 --nonblocking --full-filenames",
+      "/home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/py-spy dump --pid 1943263 --nonblocking --full-filenames"
+    ],
+    "results": [
+      {
+        "chunk_id": "c38ab0",
+        "wall_time_seconds": 0.000017008,
+        "exit_code": 1,
+        "original_token_count": 25,
+        "output": "Permission Denied: Try running again with elevated permissions by going 'sudo env \"PATH=$PATH\" !!'\n"
+      },
+      {
+        "chunk_id": "486a0d",
+        "wall_time_seconds": 0.000037716,
+        "exit_code": 1,
+        "original_token_count": 25,
+        "output": "Permission Denied: Try running again with elevated permissions by going 'sudo env \"PATH=$PATH\" !!'\n"
+      },
+      {
+        "chunk_id": "29b4b9",
+        "wall_time_seconds": 0.000058698,
+        "exit_code": 1,
+        "original_token_count": 25,
+        "output": "Permission Denied: Try running again with elevated permissions by going 'sudo env \"PATH=$PATH\" !!'\n"
+      },
+      {
+        "chunk_id": "941916",
+        "wall_time_seconds": 0.000044588,
+        "exit_code": 1,
+        "original_token_count": 25,
+        "output": "Permission Denied: Try running again with elevated permissions by going 'sudo env \"PATH=$PATH\" !!'\n"
+      }
+    ],
+    "scope": "Nonblocking read-only dumps of owned AWQ processes; no locals, no pause, no GPU profiling or restart."
+  },
+  "interpretation": [
+    "First latency training case is closed/ok with 32 native requests and 442 synchronized wall-second batch records; no model accuracy result.",
+    "Runtime logs report awq_marlin, AWQ bits=4 and allocated KV dtype torch.float16. A GPU native server and benchmark were used, not CPU simulator replay.",
+    "The stack attempts all failed with OS Permission Denied. They provide no stack attribution; no sudo, permissions change, pause or restart was performed.",
+    "HTTP 200 streaming headers alone do not prove a warmup response is fully consumed.",
+    "Collector CollectionState exports only on stop_and_export; absence of exported TP0 files alone does not prove collection inactive.",
+    "Original first-case profile endpoints completed 12:45:04–12:45:41. Earlier quiescent observations are not a proof of a terminal job or an error cause.",
+    "Later checkpoints and fresh AIC/learning curves/profiles/final report remain required."
+  ],
+  "source_refs": [
+    "src/sglang_simulator/baseline/collector.py:CollectionState.start/stop_and_export",
+    "python/sglang/benchmark/serving.py:benchmark/async_request_sglang_generate"
+  ]
+}

@@ -1,0 +1,61 @@
+schema_version: 1
+architecture: A100PCIeAll13DenseCalibration
+description: >
+  A100 PCIe BF16 operator keys required by the 13-model, TP=1 accuracy matrix.
+  The three workload classes use 256/1024-token prefills, 128/256-token
+  decodes, and at most 32 concurrent requests.  MoE is collected separately
+  with the official Qwen3MoeForCausalLM model plan.
+
+all_frameworks_op_cases:
+  gemm:
+    rules:
+      - fields: [gemm_type, batch_size, N, K]
+        match: {gemm_type: bfloat16, batch_size: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 1280, 2048, 4096, 8192], N: [1024, 3072, 6144, 151936], K: 1024}
+      - fields: [gemm_type, batch_size, N, K]
+        match: {gemm_type: bfloat16, batch_size: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 1280, 2048, 4096, 8192], N: [256, 512, 2048, 6144, 12288, 22016, 151936], K: 2048}
+      - fields: [gemm_type, batch_size, N, K]
+        match: {gemm_type: bfloat16, batch_size: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 1280, 2048, 4096, 8192], N: [512, 3584, 37888, 152064], K: 3584}
+      - fields: [gemm_type, batch_size, N, K]
+        match: {gemm_type: bfloat16, batch_size: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 1280, 2048, 4096, 8192], N: [1024, 4096, 8192, 22016, 24576, 28672], K: 4096}
+      - fields: [gemm_type, batch_size, N, K]
+        match: {gemm_type: bfloat16, batch_size: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 1280, 2048, 4096, 8192], N: [1024, 5120, 27648, 34816, 51200, 151936, 152064], K: 5120}
+      - fields: [gemm_type, batch_size, N, K]
+        match: {gemm_type: bfloat16, batch_size: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 1280, 2048, 4096, 8192], N: [1024, 8192, 57344, 128256], K: 8192}
+
+  attention_context:
+    rules:
+      - fields: [batch_size, input_len, num_heads, num_key_value_heads, head_dim, use_fp8_kv_cache, use_fp8_context_fmha, is_context_phase, window_size]
+        match: {batch_size: [1, 2, 4, 8, 16, 32], input_len: [1, 16, 32, 64, 128, 256, 512, 1024], num_heads: 16, num_key_value_heads: 8, head_dim: 128, use_fp8_kv_cache: false, use_fp8_context_fmha: false, is_context_phase: true, window_size: 0}
+      - fields: [batch_size, input_len, num_heads, num_key_value_heads, head_dim, use_fp8_kv_cache, use_fp8_context_fmha, is_context_phase, window_size]
+        match: {batch_size: [1, 2, 4, 8, 16, 32], input_len: [1, 16, 32, 64, 128, 256, 512, 1024], num_heads: 16, num_key_value_heads: 2, head_dim: 128, use_fp8_kv_cache: false, use_fp8_context_fmha: false, is_context_phase: true, window_size: 0}
+      - fields: [batch_size, input_len, num_heads, num_key_value_heads, head_dim, use_fp8_kv_cache, use_fp8_context_fmha, is_context_phase, window_size]
+        match: {batch_size: [1, 2, 4, 8, 16, 32], input_len: [1, 16, 32, 64, 128, 256, 512, 1024], num_heads: 28, num_key_value_heads: 4, head_dim: 128, use_fp8_kv_cache: false, use_fp8_context_fmha: false, is_context_phase: true, window_size: 0}
+      - fields: [batch_size, input_len, num_heads, num_key_value_heads, head_dim, use_fp8_kv_cache, use_fp8_context_fmha, is_context_phase, window_size]
+        match: {batch_size: [1, 2, 4, 8, 16, 32], input_len: [1, 16, 32, 64, 128, 256, 512, 1024], num_heads: 32, num_key_value_heads: 4, head_dim: 128, use_fp8_kv_cache: false, use_fp8_context_fmha: false, is_context_phase: true, window_size: 0}
+      - fields: [batch_size, input_len, num_heads, num_key_value_heads, head_dim, use_fp8_kv_cache, use_fp8_context_fmha, is_context_phase, window_size]
+        match: {batch_size: [1, 2, 4, 8, 16, 32], input_len: [1, 16, 32, 64, 128, 256, 512, 1024], num_heads: 32, num_key_value_heads: 8, head_dim: 128, use_fp8_kv_cache: false, use_fp8_context_fmha: false, is_context_phase: true, window_size: 0}
+      - fields: [batch_size, input_len, num_heads, num_key_value_heads, head_dim, use_fp8_kv_cache, use_fp8_context_fmha, is_context_phase, window_size]
+        match: {batch_size: [1, 2, 4, 8, 16, 32], input_len: [1, 16, 32, 64, 128, 256, 512, 1024], num_heads: 32, num_key_value_heads: 32, head_dim: 128, use_fp8_kv_cache: false, use_fp8_context_fmha: false, is_context_phase: true, window_size: 0}
+      - fields: [batch_size, input_len, num_heads, num_key_value_heads, head_dim, use_fp8_kv_cache, use_fp8_context_fmha, is_context_phase, window_size]
+        match: {batch_size: [1, 2, 4, 8, 16, 32], input_len: [1, 16, 32, 64, 128, 256, 512, 1024], num_heads: 40, num_key_value_heads: 8, head_dim: 128, use_fp8_kv_cache: false, use_fp8_context_fmha: false, is_context_phase: true, window_size: 0}
+      - fields: [batch_size, input_len, num_heads, num_key_value_heads, head_dim, use_fp8_kv_cache, use_fp8_context_fmha, is_context_phase, window_size]
+        match: {batch_size: [1, 2, 4, 8, 16, 32], input_len: [1, 16, 32, 64, 128, 256, 512, 1024], num_heads: 64, num_key_value_heads: 8, head_dim: 128, use_fp8_kv_cache: false, use_fp8_context_fmha: false, is_context_phase: true, window_size: 0}
+
+  attention_generation:
+    rules:
+      - fields: [batch_size, input_len, num_heads, num_key_value_heads, head_dim, use_fp8_kv_cache, use_fp8_context_fmha, is_context_phase, window_size]
+        match: {batch_size: [1, 2, 4, 8, 16, 32], input_len: [1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047], num_heads: 16, num_key_value_heads: 8, head_dim: 128, use_fp8_kv_cache: false, use_fp8_context_fmha: false, is_context_phase: false, window_size: 0}
+      - fields: [batch_size, input_len, num_heads, num_key_value_heads, head_dim, use_fp8_kv_cache, use_fp8_context_fmha, is_context_phase, window_size]
+        match: {batch_size: [1, 2, 4, 8, 16, 32], input_len: [1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047], num_heads: 16, num_key_value_heads: 2, head_dim: 128, use_fp8_kv_cache: false, use_fp8_context_fmha: false, is_context_phase: false, window_size: 0}
+      - fields: [batch_size, input_len, num_heads, num_key_value_heads, head_dim, use_fp8_kv_cache, use_fp8_context_fmha, is_context_phase, window_size]
+        match: {batch_size: [1, 2, 4, 8, 16, 32], input_len: [1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047], num_heads: 28, num_key_value_heads: 4, head_dim: 128, use_fp8_kv_cache: false, use_fp8_context_fmha: false, is_context_phase: false, window_size: 0}
+      - fields: [batch_size, input_len, num_heads, num_key_value_heads, head_dim, use_fp8_kv_cache, use_fp8_context_fmha, is_context_phase, window_size]
+        match: {batch_size: [1, 2, 4, 8, 16, 32], input_len: [1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047], num_heads: 32, num_key_value_heads: 4, head_dim: 128, use_fp8_kv_cache: false, use_fp8_context_fmha: false, is_context_phase: false, window_size: 0}
+      - fields: [batch_size, input_len, num_heads, num_key_value_heads, head_dim, use_fp8_kv_cache, use_fp8_context_fmha, is_context_phase, window_size]
+        match: {batch_size: [1, 2, 4, 8, 16, 32], input_len: [1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047], num_heads: 32, num_key_value_heads: 8, head_dim: 128, use_fp8_kv_cache: false, use_fp8_context_fmha: false, is_context_phase: false, window_size: 0}
+      - fields: [batch_size, input_len, num_heads, num_key_value_heads, head_dim, use_fp8_kv_cache, use_fp8_context_fmha, is_context_phase, window_size]
+        match: {batch_size: [1, 2, 4, 8, 16, 32], input_len: [1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047], num_heads: 32, num_key_value_heads: 32, head_dim: 128, use_fp8_kv_cache: false, use_fp8_context_fmha: false, is_context_phase: false, window_size: 0}
+      - fields: [batch_size, input_len, num_heads, num_key_value_heads, head_dim, use_fp8_kv_cache, use_fp8_context_fmha, is_context_phase, window_size]
+        match: {batch_size: [1, 2, 4, 8, 16, 32], input_len: [1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047], num_heads: 40, num_key_value_heads: 8, head_dim: 128, use_fp8_kv_cache: false, use_fp8_context_fmha: false, is_context_phase: false, window_size: 0}
+      - fields: [batch_size, input_len, num_heads, num_key_value_heads, head_dim, use_fp8_kv_cache, use_fp8_context_fmha, is_context_phase, window_size]
+        match: {batch_size: [1, 2, 4, 8, 16, 32], input_len: [1, 3, 7, 15, 31, 63, 127, 255, 511, 1023, 2047], num_heads: 64, num_key_value_heads: 8, head_dim: 128, use_fp8_kv_cache: false, use_fp8_context_fmha: false, is_context_phase: false, window_size: 0}

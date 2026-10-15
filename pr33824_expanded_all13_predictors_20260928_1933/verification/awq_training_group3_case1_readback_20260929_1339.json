@@ -1,0 +1,44 @@
+{
+  "observed_at_utc": "2026-09-29 05:40:54 UTC",
+  "scope": "Readonly original native case completion/count/version observation; no fit, prediction, profile, extra collection, restart or runtime change.",
+  "inspection": [
+    {
+      "command": "date -Iseconds; sed -n '1,3p' models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/latency_256x128_r1/status.txt; sed -n '1,80p' models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/latency_256x128_r1/TP0.manifest.json; wc -l models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/latency_256x128_r1/TP0.raw_request.jsonl models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/latency_256x128_r1/TP0.request.jsonl models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/latency_256x128_r1/TP0.schedule_batch.jsonl; rg -n 'start_profile|stop_profile|took.*compile' models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/latency_256x128_r1.server.log; sha256sum models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/latency_256x128_r1/status.txt models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/latency_256x128_r1/TP0.manifest.json; ps -p 1379749,1379762,1992413 -o pid,ppid,lstart,stat; ps --ppid 1992413 -o pid,ppid,lstart,stat,args",
+      "chunk_id": "cb0f8d",
+      "wall_time_seconds": 0.000040157,
+      "exit_code": 0,
+      "original_token_count": 875,
+      "output": "2026-09-29T13:39:09+08:00\nok\n{\n  \"schema_version\": 1,\n  \"rank_prefix\": \"TP0\",\n  \"request_count\": 32,\n  \"schedule_batch_count\": 431,\n  \"batch_latency_unit\": \"seconds\",\n  \"batch_timing\": \"device_synchronized\",\n  \"request_file\": \"TP0.request.jsonl\",\n  \"raw_request_file\": \"TP0.raw_request.jsonl\",\n  \"schedule_batch_file\": \"TP0.schedule_batch.jsonl\"\n}\n    32 models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/latency_256x128_r1/TP0.raw_request.jsonl\n    32 models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/latency_256x128_r1/TP0.request.jsonl\n   431 models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/latency_256x128_r1/TP0.schedule_batch.jsonl\n   495 total\n38:[2026-09-29 13:30:43] Triton kernel 'write_req_to_token_pool_triton' took 1.39 s to compile after serving started. Serving-time compilation can stall the engine; pre-compile it during engine init.\n44:[2026-09-29 13:36:31] Triton kernel '_fwd_kernel' took 2.15 s to compile after serving started. Serving-time compilation can stall the engine; pre-compile it during engine init.\n46:[2026-09-29 13:36:44] Triton kernel '_fwd_kernel' took 2.13 s to compile after serving started. Serving-time compilation can stall the engine; pre-compile it during engine init.\n56:[2026-09-29 13:36:58] INFO:     127.0.0.1:48378 - \"POST /start_profile HTTP/1.1\" 200 OK\n130:[2026-09-29 13:37:34] INFO:     127.0.0.1:59634 - \"POST /stop_profile HTTP/1.1\" 200 OK\ndc51b8c96c2d745df3bd5590d990230a482fd247123599548e0632fdbf97fc22  models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/latency_256x128_r1/status.txt\n805349b8904a5040eef2e80673eaa014e56f5784eab79f6a8dd97e5dfcfabcdd  models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/latency_256x128_r1/TP0.manifest.json\n    PID    PPID                  STARTED STAT\n1379749 1142476 Mon Sep 28 20:43:59 2026 Ss\n1379762 1379749 Mon Sep 28 20:44:00 2026 S\n1992413 1379762 Tue Sep 29 13:29:37 2026 S\n    PID    PPID                  STARTED STAT COMMAND\n1997537 1992413 Tue Sep 29 13:37:42 2026 Sl   /home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python -m sglang_simulator.baseline.launch_server --collection-output-dir /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/service_1024x256_r4 --model-path /home/ms-admin/data/models/Meta-Llama-3.1-70B-Instruct-AWQ --host 127.0.0.1 --port 30227 --device cuda --tp-size 1 --context-length 2048 --mem-fraction-static 0.80 --max-running-requests 32 --chunked-prefill-size 512 --attention-backend triton --disable-cuda-graph --disable-overlap-schedule\n1998581 1992413 Tue Sep 29 13:38:41 2026 Sl   /home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python -m sglang.benchmark.serving --backend sglang --base-url http://127.0.0.1:30227 --model /home/ms-admin/data/models/Meta-Llama-3.1-70B-Instruct-AWQ --dataset-name random-ids --num-prompts 64 --random-input-len 1024 --random-output-len 256 --random-range-ratio 0 --request-rate 4 --seed 202609282 --warmup-requests 4 --flush-cache --disable-tqdm --ready-check-timeout-sec 0 --profile --output-file /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/cases/service_1024x256_r4/benchmark.jsonl\n"
+    },
+    {
+      "command": "cmp models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-2/package_versions.txt models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-3/package_versions.txt",
+      "chunk_id": "8a340d",
+      "wall_time_seconds": 0.000036175,
+      "exit_code": 0,
+      "original_token_count": 0,
+      "output": ""
+    }
+  ],
+  "conclusion": {
+    "repeat": 3,
+    "case": "latency_256x128_r1",
+    "status": "ok",
+    "requests": 32,
+    "timing_records": 431,
+    "cumulative_closed_case_requests": 352,
+    "cumulative_closed_case_timings": 3115,
+    "completed_training_groups": 2,
+    "planned_training_groups": 5,
+    "package_versions_repeat2_repeat3_byte_equal": true,
+    "logged_profile_start": "2026-09-29 13:36:58",
+    "logged_profile_stop": "2026-09-29 13:37:34",
+    "logged_slow_compilations_before_profile": 3,
+    "logged_slow_compilations_inside_profile": 0,
+    "qualification": "Logged warning scope only; not a proof of compile-free operation.",
+    "next_original_native_server_pid": 1997537,
+    "next_original_client_pid": 1998581,
+    "original_group_seed": 202609282,
+    "completed_native_ml_models": 9,
+    "completed_joint_aic_models": 0
+  }
+}

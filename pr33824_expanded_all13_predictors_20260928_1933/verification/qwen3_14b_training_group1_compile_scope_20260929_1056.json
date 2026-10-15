@@ -1,0 +1,97 @@
+{
+  "started_at": "2026-09-29T10:56:16.661318+08:00",
+  "finished_at": "2026-09-29T10:56:16.734835+08:00",
+  "model": "Qwen3-14B",
+  "role": "training",
+  "repeat": 1,
+  "seed": 202609280,
+  "exit_code": 0,
+  "completed_requests": 160,
+  "timing_rows": 1779,
+  "cases": [
+    {
+      "case": "latency_256x128_r1",
+      "requests": 32,
+      "timing_rows": 825,
+      "prefill_rows": 32,
+      "decode_rows": 793,
+      "start_profile_local": "2026-09-29T10:48:58",
+      "stop_profile_local": "2026-09-29T10:49:33",
+      "logged_compile_warnings_before_window": 3,
+      "logged_compile_warnings_inside_window": 0,
+      "logged_compile_warnings_after_window": 0,
+      "compile_warning_lines": [
+        "[2026-09-29 10:48:01] Triton kernel 'write_req_to_token_pool_triton' took 2.15 s to compile after serving started. Serving-time compilation can stall the engine; pre-compile it during engine init.",
+        "[2026-09-29 10:48:33] Triton kernel '_fwd_kernel' took 2.08 s to compile after serving started. Serving-time compilation can stall the engine; pre-compile it during engine init.",
+        "[2026-09-29 10:48:45] Triton kernel '_fwd_kernel' took 2.12 s to compile after serving started. Serving-time compilation can stall the engine; pre-compile it during engine init."
+      ]
+    },
+    {
+      "case": "service_1024x256_r4",
+      "requests": 64,
+      "timing_rows": 494,
+      "prefill_rows": 88,
+      "decode_rows": 406,
+      "start_profile_local": "2026-09-29T10:52:03",
+      "stop_profile_local": "2026-09-29T10:52:30",
+      "logged_compile_warnings_before_window": 3,
+      "logged_compile_warnings_inside_window": 0,
+      "logged_compile_warnings_after_window": 0,
+      "compile_warning_lines": [
+        "[2026-09-29 10:51:05] Triton kernel 'write_req_to_token_pool_triton' took 1.39 s to compile after serving started. Serving-time compilation can stall the engine; pre-compile it during engine init.",
+        "[2026-09-29 10:51:37] Triton kernel '_fwd_kernel' took 2.10 s to compile after serving started. Serving-time compilation can stall the engine; pre-compile it during engine init.",
+        "[2026-09-29 10:51:50] Triton kernel '_fwd_kernel' took 2.13 s to compile after serving started. Serving-time compilation can stall the engine; pre-compile it during engine init."
+      ]
+    },
+    {
+      "case": "saturation_1024x256_inf",
+      "requests": 64,
+      "timing_rows": 460,
+      "prefill_rows": 82,
+      "decode_rows": 378,
+      "start_profile_local": "2026-09-29T10:54:12",
+      "stop_profile_local": "2026-09-29T10:54:33",
+      "logged_compile_warnings_before_window": 3,
+      "logged_compile_warnings_inside_window": 0,
+      "logged_compile_warnings_after_window": 0,
+      "compile_warning_lines": [
+        "[2026-09-29 10:53:16] Triton kernel 'write_req_to_token_pool_triton' took 1.35 s to compile after serving started. Serving-time compilation can stall the engine; pre-compile it during engine init.",
+        "[2026-09-29 10:53:46] Triton kernel '_fwd_kernel' took 2.12 s to compile after serving started. Serving-time compilation can stall the engine; pre-compile it during engine init.",
+        "[2026-09-29 10:53:59] Triton kernel '_fwd_kernel' took 2.10 s to compile after serving started. Serving-time compilation can stall the engine; pre-compile it during engine init."
+      ]
+    }
+  ],
+  "source_sha256_unchanged": {
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-14B/calibration/real/repeat-1/BASELINE_COLLECTION_COMPLETE": "37a40f08d8548dba289b9b0bb35bcf63b359f6d37ee86044ebc6b6da080b9ec1",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-14B/calibration/real/repeat-1/cases/latency_256x128_r1/status.txt": "dc51b8c96c2d745df3bd5590d990230a482fd247123599548e0632fdbf97fc22",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-14B/calibration/real/repeat-1/cases/latency_256x128_r1/autobench_trace.manifest.json": "9327684e02d8553a67f6d4f91ba7d78a180c68a62eaff35e5ee385447f907313",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-14B/calibration/real/repeat-1/cases/latency_256x128_r1/benchmark.jsonl": "df333562af5dcdd614a620829bac98ac9a1288494f765d703e8bea9af7a76686",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-14B/calibration/real/repeat-1/cases/latency_256x128_r1.server.log": "c5139e71d77b4269b18de601b848ff6b68075d5e289f2e2362a1ec8c391dbeaa",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-14B/calibration/real/repeat-1/cases/latency_256x128_r1/TP0.schedule_batch.jsonl": "d7cda546eca93aceb92c61cedd90c39202f8bb894b78281fb976506983184e9b",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-14B/calibration/real/repeat-1/cases/service_1024x256_r4/status.txt": "dc51b8c96c2d745df3bd5590d990230a482fd247123599548e0632fdbf97fc22",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-14B/calibration/real/repeat-1/cases/service_1024x256_r4/autobench_trace.manifest.json": "f1bcad219050c45a559edbefae21374c1fc60ccc62c59d5b04660e2a23629c31",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-14B/calibration/real/repeat-1/cases/service_1024x256_r4/benchmark.jsonl": "4b4b1e880b5dbf2b6ba048806556ded725ad52c42b72ef5c0de074647b26df44",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-14B/calibration/real/repeat-1/cases/service_1024x256_r4.server.log": "b57d1ebb0610db2577923e7964949f3e175cb80c07b4df3908fa1570b76a50d3",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-14B/calibration/real/repeat-1/cases/service_1024x256_r4/TP0.schedule_batch.jsonl": "72f7a22f3fd2e427975470889536ab4deec71fa5755dfdc482f1756ff34211e1",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-14B/calibration/real/repeat-1/cases/saturation_1024x256_inf/status.txt": "dc51b8c96c2d745df3bd5590d990230a482fd247123599548e0632fdbf97fc22",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-14B/calibration/real/repeat-1/cases/saturation_1024x256_inf/autobench_trace.manifest.json": "4b72c11d51d6c3a46a48148db8a8dd695966bf3d6217ff71c459ca06b3c28ff9",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-14B/calibration/real/repeat-1/cases/saturation_1024x256_inf/benchmark.jsonl": "40f0d14bfe093dfe029a0c8ba720625df657b0a2077c42ce522a91604ed8fd99",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-14B/calibration/real/repeat-1/cases/saturation_1024x256_inf.server.log": "b3ffa42f113e7f1f087c0780de410c2cd8848582ca7de0a420f4da8e80ecfa0a",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-14B/calibration/real/repeat-1/cases/saturation_1024x256_inf/TP0.schedule_batch.jsonl": "8198a46a07f00cd788fe746088ef0ecd7c4ae9edcf28b2f0f4f7d70962901b14"
+  },
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "OMP_NUM_THREADS": "1",
+    "PYTHONNOUSERSITE": "1",
+    "nice": "15"
+  },
+  "fit_prediction_gpu_or_measurement_change_invoked": false,
+  "claim_scope": "One completed native training group only. Counted logged Triton compilation warnings against explicit start/stop_profile timestamps; zero logged warnings inside does not prove no compilation or absence of other stalls. No outlier exclusion, label adjustment, AIC result or all-model completion claim.",
+  "execution": {
+    "source_submitted_via": "stdin",
+    "actual_launch": "CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=1 PYTHONNOUSERSITE=1 nice -n 15 /home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python -",
+    "cwd": "/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator",
+    "inline_source": "import csv,hashlib,json,os,re\nfrom datetime import datetime\nfrom pathlib import Path\nassert os.environ.get(\"CUDA_VISIBLE_DEVICES\")==\"\"\nstart=datetime.now().astimezone().isoformat()\nroot=Path(\"test-results/pr33824_expanded_all13_predictors_20260928_1933\").resolve()\ngroup=root/\"models/Qwen3-14B/calibration/real/repeat-1\"\nhashes={}\ndef read(path):\n    digest=hashlib.sha256(path.read_bytes()).hexdigest(); hashes[str(path)]=digest; return path.read_text()\nassert read(group/\"BASELINE_COLLECTION_COMPLETE\").strip()==\"complete\"\ncases={\"latency_256x128_r1\":32,\"service_1024x256_r4\":64,\"saturation_1024x256_inf\":64}\ntimestamp=re.compile(r\"^\\[(\\d{4}-\\d\\d-\\d\\d \\d\\d:\\d\\d:\\d\\d)\\]\")\nresult=[]\nfor case,n in cases.items():\n    path=group/\"cases\"/case\n    assert read(path/\"status.txt\").strip()==\"ok\"\n    manifest=json.loads(read(path/\"autobench_trace.manifest.json\"))\n    native=[json.loads(line) for line in read(path/\"benchmark.jsonl\").splitlines() if line.strip()][-1]\n    assert manifest[\"request_count\"]==native[\"completed\"]==n\n    assert native[\"server_info\"][\"device\"]==\"cuda\" and native[\"server_info\"][\"attention_backend\"]==\"triton\"\n    assert native[\"server_info\"][\"context_length\"]==2048\n    assert native[\"server_info\"][\"disable_cuda_graph\"] and native[\"server_info\"][\"disable_overlap_schedule\"]\n    log=read(group/\"cases\"/f\"{case}.server.log\").splitlines()\n    begins=[]; ends=[]; warnings=[]\n    for line in log:\n        match=timestamp.match(line)\n        if not match: continue\n        at=datetime.strptime(match.group(1),\"%Y-%m-%d %H:%M:%S\")\n        if \"POST /start_profile HTTP/1.1\" in line: begins.append(at)\n        if \"POST /stop_profile HTTP/1.1\" in line: ends.append(at)\n        if \"compile after serving started\" in line: warnings.append((at,line))\n    assert len(begins)==len(ends)==1 and begins[0]<ends[0]\n    before=[line for at,line in warnings if at<begins[0]]\n    within=[line for at,line in warnings if begins[0]<=at<=ends[0]]\n    after=[line for at,line in warnings if at>ends[0]]\n    schedules=[json.loads(line) for line in read(path/\"TP0.schedule_batch.jsonl\").splitlines() if line.strip()]\n    selected=[row for row in schedules if row.get(\"forward_mode\") in (1,2) and row.get(\"request_infos\") and float(row[\"iter_latency\"])>0]\n    assert selected\n    result.append({\"case\":case,\"requests\":n,\"timing_rows\":len(selected),\"prefill_rows\":sum(row[\"forward_mode\"]==1 for row in selected),\"decode_rows\":sum(row[\"forward_mode\"]==2 for row in selected),\"start_profile_local\":begins[0].isoformat(),\"stop_profile_local\":ends[0].isoformat(),\"logged_compile_warnings_before_window\":len(before),\"logged_compile_warnings_inside_window\":len(within),\"logged_compile_warnings_after_window\":len(after),\"compile_warning_lines\":before+within+after})\nfor path,digest in hashes.items(): assert hashlib.sha256(Path(path).read_bytes()).hexdigest()==digest\nrecord={\"started_at\":start,\"finished_at\":datetime.now().astimezone().isoformat(),\"model\":\"Qwen3-14B\",\"role\":\"training\",\"repeat\":1,\"seed\":202609280,\"exit_code\":0,\"completed_requests\":sum(r[\"requests\"] for r in result),\"timing_rows\":sum(r[\"timing_rows\"] for r in result),\"cases\":result,\"source_sha256_unchanged\":hashes,\"environment\":{\"CUDA_VISIBLE_DEVICES\":\"\",\"OMP_NUM_THREADS\":\"1\",\"PYTHONNOUSERSITE\":\"1\",\"nice\":\"15\"},\"fit_prediction_gpu_or_measurement_change_invoked\":False,\"claim_scope\":\"One completed native training group only. Counted logged Triton compilation warnings against explicit start/stop_profile timestamps; zero logged warnings inside does not prove no compilation or absence of other stalls. No outlier exclusion, label adjustment, AIC result or all-model completion claim.\"}\nprint(json.dumps(record,ensure_ascii=False))\n",
+    "tool_exit_code": 0
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "kind": "CPU_SOURCE_CONTRACT_PROBE_NOT_BENCHMARK",
+  "warning": "Synthetic attention result is 0.01 ms. No CUDA call, performance-table measurement, training label, or accuracy result is produced.",
+  "aiconfigurator_version": "0.10.0",
+  "attention_geometry": {
+    "heads": 16,
+    "kv_heads": 8,
+    "head_dim": 128
+  },
+  "system_mem_parameters": {
+    "mem_bw": 1935000000000,
+    "mem_bw_empirical_scaling_factor": 0.8,
+    "mem_empirical_constant_latency": 3e-06
+  },
+  "calls": [
+    {
+      "phase": "prefill",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "use_qk_norm": false,
+      "synthetic_total_ms": 0.023211642377260984,
+      "analytic_mem_call_count": 3,
+      "analytic_mem_call_bytes": [
+        6144,
+        2048,
+        2048
+      ]
+    },
+    {
+      "phase": "prefill",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "use_qk_norm": true,
+      "synthetic_total_ms": 0.04962910594315246,
+      "analytic_mem_call_count": 5,
+      "analytic_mem_call_bytes": [
+        4096,
+        2048,
+        6144,
+        2048,
+        2048
+      ]
+    },
+    {
+      "phase": "decode",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "use_qk_norm": false,
+      "synthetic_total_ms": 0.01,
+      "analytic_mem_call_count": 0,
+      "analytic_mem_call_bytes": []
+    },
+    {
+      "phase": "decode",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "use_qk_norm": true,
+      "synthetic_total_ms": 0.01,
+      "analytic_mem_call_count": 0,
+      "analytic_mem_call_bytes": []
+    },
+    {
+      "phase": "prefill",
+      "batch_size": 8,
+      "sequence_length": 1024,
+      "use_qk_norm": false,
+      "synthetic_total_ms": 0.023211642377260984,
+      "analytic_mem_call_count": 3,
+      "analytic_mem_call_bytes": [
+        6144,
+        2048,
+        2048
+      ]
+    },
+    {
+      "phase": "prefill",
+      "batch_size": 8,
+      "sequence_length": 1024,
+      "use_qk_norm": true,
+      "synthetic_total_ms": 0.04962910594315246,
+      "analytic_mem_call_count": 5,
+      "analytic_mem_call_bytes": [
+        4096,
+        2048,
+        6144,
+        2048,
+        2048
+      ]
+    },
+    {
+      "phase": "decode",
+      "batch_size": 8,
+      "sequence_length": 1024,
+      "use_qk_norm": false,
+      "synthetic_total_ms": 0.01,
+      "analytic_mem_call_count": 0,
+      "analytic_mem_call_bytes": []
+    },
+    {
+      "phase": "decode",
+      "batch_size": 8,
+      "sequence_length": 1024,
+      "use_qk_norm": true,
+      "synthetic_total_ms": 0.01,
+      "analytic_mem_call_count": 0,
+      "analytic_mem_call_bytes": []
+    }
+  ],
+  "qk_norm_flag_differences": [
+    {
+      "phase": "prefill",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "qk_norm_analytic_delta_ms_per_layer": 0.026417463565891475
+    },
+    {
+      "phase": "decode",
+      "batch_size": 1,
+      "sequence_length": 128,
+      "qk_norm_analytic_delta_ms_per_layer": 0.0
+    },
+    {
+      "phase": "prefill",
+      "batch_size": 8,
+      "sequence_length": 1024,
+      "qk_norm_analytic_delta_ms_per_layer": 0.026417463565891475
+    },
+    {
+      "phase": "decode",
+      "batch_size": 8,
+      "sequence_length": 1024,
+      "qk_norm_analytic_delta_ms_per_layer": 0.0
+    }
+  ]
+}

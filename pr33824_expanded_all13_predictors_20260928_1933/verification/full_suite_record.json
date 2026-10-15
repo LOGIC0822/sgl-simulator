@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-28",
+  "command": "python -m pytest -q test",
+  "source_record": "verification/verification_20260928.md#full-simulator-test-directory",
+  "result": {
+    "failed": 1,
+    "passed": 47,
+    "warnings": 5,
+    "elapsed_seconds": 395.20,
+    "exit_code": 1
+  },
+  "scope_note": "该次全套检查使用 CUDA_VISIBLE_DEVICES='' 的 CPU fixture 服务，运行于 20:19–20:26，与 3B 真机训练采集重叠，不是隔离的性能测试。它不覆盖随后新增的测试；后续局部检查通过不能替代这次全套结果，也不能证明模型预测精度。",
+  "failure": {
+    "test": "test/test_simulation_offline_blocking.py::test_request_rate_offline_matches_blocking",
+    "outputs": {
+      "offline": "verification/full_suite/offline_blocking_failure/offline/output/metrics.json",
+      "blocking": "verification/full_suite/offline_blocking_failure/blocking/output/metrics.json"
+    },
+    "tolerances": {
+      "mean_ttft_ms": 0.10,
+      "mean_e2e_latency_ms": 0.10,
+      "duration": 0.01
+    },
+    "interpretation_note": "TTFT 相对差异超出原有 10% 容差；本次运行尚未隔离具体原因。未放宽容差，也未修改模拟器来隐藏失败。表格只核对列出的三个保存指标，不表示失败之后的全部断言均已执行。具体环境和保存位置见 verification/verification_20260928.md。"
+  }
+}

@@ -1,0 +1,25 @@
+created_at=2026-09-28T19:32:45+08:00
+source_revision=59799a368793b9f795baf59b067233a65ad8e38e
+source_path=/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged
+python=/home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python
+models=Qwen3-0.6B,Qwen2.5-3B-Instruct,llama-2-7b,Mistral-7B-Instruct-v0.2,Qwen2.5-7B-Instruct,Qwen3-8B,Qwen2.5-14B-Instruct,Qwen2.5-14B-Instruct-1M,Qwen3-14B,Meta-Llama-3.1-70B-Instruct-AWQ,Qwen3-30B-A3B,Qwen3-30B-A3B-Instruct-2507,Qwen3-32B
+protocol=same_workload_independent_train_holdout
+training_case=latency_256x128_r1,service_1024x256_r4,saturation_1024x256_inf
+training_real_repeats=5
+training_seeds=202609280,202609281,202609282,202609283,202609284
+heldout_case=latency_256x128_r1,service_1024x256_r4,saturation_1024x256_inf,latency_128x64_r1,saturation_1536x384_inf
+heldout_real_repeats=5
+heldout_seeds=202609380,202609381,202609382,202609383,202609384
+requests_per_training_repeat=160
+requests_per_holdout_repeat=256
+training_requests_total=800
+heldout_requests_total=1280
+prompt_multiplier=2
+leakage_policy=training and holdout ScheduleBatch rows are separately collected with disjoint seeds; holdout rows are never used for ML fitting or AIC trace-target selection
+hardware_policy=one A100 PCIe collector at a time; CPU predictor replay begins after each model training/holdout collection
+kernel_policy=isolated_SM80_AOT; SGLANG_FORCE_FUSED_OP_BACKEND=unset
+kernel_compat_stage=/mnt/data/sglang-pr33824-merged/test-results/pr33824_sglang_kernel_sm80_compat_20260908_1915/minimal-stage-v4
+fa2_compat_stage=/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_sm80_fa2_compat_v6_20260918_1305/stage
+collector_source=https://github.com/littlefatfat/sglang/tree/simulator-data-tools-0914
+collector_commit=9cfddcedc9d1e00885c28db75a45513eddbb6271
+scheduler_settings=attention=per-model (triton except 1M dual_chunk_flash_attn); 1M_page_size=256_for_FA2_paged_KV; overlap=disabled; cuda_graph=disabled; context_length=2048; max_running_requests=32; chunked_prefill_size=512; random_range_ratio=0

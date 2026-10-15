@@ -1,0 +1,97 @@
+{
+  "observed_at": "2026-09-29T10:32:34+08:00",
+  "scope": "Recovery of the auxiliary 14B-1M readback worker only; original matrix, completed experiment data, kernel, AIC tables and predictor remain unchanged.",
+  "original_matrix": {
+    "pid": 1379749,
+    "child_pid": 1379762,
+    "start_ticks": 217356399,
+    "session_id": 77941
+  },
+  "original_auxiliary": {
+    "pid": 1785475,
+    "session_id": 29816,
+    "session_exit_code": 1,
+    "preserved_state": "qwen25_14b_1m_audit_waiter_20260929_0852/state.json",
+    "reason": "successful_audit required manifest.model, but the pinned successful saved-score audit's actual schema has no top-level model key."
+  },
+  "substantive_saved_score_audit": {
+    "directory": "qwen25_14b_1m_full_holdout_saved_score_20260929_0802",
+    "exit_code": 0,
+    "launcher_started_at": "2026-09-29T10:28:23.051979+08:00",
+    "launcher_finished_at": "2026-09-29T10:28:28.384075+08:00",
+    "native_test_requests": 1280,
+    "native_timing_rows": 9974,
+    "training_requests": 800,
+    "complete_prompt_overlap": 0,
+    "reused_request_ids": 0,
+    "unchanged_source_files": 4020,
+    "mean_actual_ms": 310.803497095247,
+    "mean_predicted_ms": 300.5954506506314,
+    "row_weighted_mape_pct": 12.182504675584088
+  },
+  "repair": {
+    "new_source": "wait_qwen25_14b_1m_audits_schemafix_20260929_1030.py",
+    "source_sha256": "f3d098ee2bc376fb84b08ed83eb825fef330c98adbb481506da6d4e295400a06",
+    "strategy": "Recognize the existing model-less schema only for its pinned audit source and exact executed target, bundle, five group seeds/counts, score identities, dual-chunk/page256 configuration and successful completed calibration. Other model-labelled schemas retain original handling. Native/endpoint readiness and owner/source guards retain identical source.",
+    "completed_audit_reexecuted": false,
+    "completed_manifest_modified": false,
+    "original_worker_and_failure_outputs_modified": false
+  },
+  "regression": {
+    "file": "test_wait_qwen25_14b_1m_audits_schemafix_20260929_1030.py",
+    "source_sha256": "617dc4fcceac8ded3b676575ad686fba1a669e63f45e3507eb84b63850fc19d5",
+    "count": 16,
+    "exit_code": 0,
+    "program_reported_seconds": 0.027,
+    "finished_observed_at": "2026-09-29T10:31:09+08:00",
+    "stdout_stderr": "qwen25_14b_1m_audit_waiter_schemafix_tests_20260929_1030.log",
+    "subprocess_launch_forbidden": true
+  },
+  "corrected_auxiliary": {
+    "session_id": 25569,
+    "pid": 1831018,
+    "ppid": 1831016,
+    "started_at": "2026-09-29T10:31:32.711712+08:00",
+    "interval_seconds": 600,
+    "environment": {
+      "PYTHONNOUSERSITE": "1",
+      "CUDA_VISIBLE_DEVICES": "",
+      "OMP_NUM_THREADS": "1",
+      "PYTHONPATH": "src"
+    },
+    "nice": 15,
+    "source_sha256": {
+      "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/qwen25_14b_1m_full_holdout_saved_score_20260929_0802/audit.py": "836e9b661e71923e4c80f30c6e31c5b85288c3c79a4aeac5d6188e440a2dd2c2",
+      "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/frozen_fit_input_qwen25_14b_1m_20260929_0802/readback.py": "dc4fb9ff7ec34fdbf2c36c03c771523c339a90109717519cc7e43152b6967307",
+      "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/qwen25_14b_1m_full_e2e_score_integrity_20260929_0802/audit.py": "f2191413bbbaf959182120ba17345d56e88cdfadb776eacb0d89be24c7d197eb",
+      "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/wait_qwen25_14b_1m_audits_schemafix_20260929_1030.py": "f3d098ee2bc376fb84b08ed83eb825fef330c98adbb481506da6d4e295400a06",
+      "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/qwen25_14b_1m_completed_calibration_20260929_0750/results/manifest.json": "ceb1a47571519aefe56f9c3fc9b3c10f0f5baf1246c7d042a6535bb1bfb53474",
+      "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen2.5-14B-Instruct-1M/calibration/training/Qwen2.5-14B-Instruct-1M_hgbmono_p50.pkl": "3e05a39f06627711016bdb2094f5fc9747197738d6ab638670c9a868194b31e1"
+    },
+    "log": "wait_qwen25_14b_1m_audits_schemafix_20260929_1030.log",
+    "state": "qwen25_14b_1m_audit_waiter_schemafix_20260929_1030/state.json",
+    "saved_score_accepted_at": "2026-09-29T10:31:32.712519+08:00",
+    "frozen_fit_input_verified_at": "2026-09-29T10:31:39.083985+08:00",
+    "pending_stage": "endpoints",
+    "pending_gate_ready": false
+  },
+  "frozen_readback": {
+    "directory": "frozen_fit_input_qwen25_14b_1m_20260929_0802",
+    "exit_code": 0,
+    "fit_invoked": false,
+    "unchanged_source_files": 182,
+    "training_rows": 5862,
+    "independent_test_rows": 9974,
+    "workload_equal_mape_pct": {
+      "fit_input": 5.459469390543913,
+      "independent_seen": 13.446206009934782,
+      "independent_unseen": 21.303516498671904
+    },
+    "fit_input_is_independent_validation": false,
+    "request_id_only_causal_ablation": false,
+    "figure_visually_inspected": true
+  },
+  "all_model_completion_claimed": false,
+  "fresh_AIC_completion_claimed": false,
+  "final_report_generated": false
+}

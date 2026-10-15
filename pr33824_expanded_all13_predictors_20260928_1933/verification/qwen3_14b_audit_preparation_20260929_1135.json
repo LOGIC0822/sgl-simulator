@@ -1,0 +1,47 @@
+{
+  "at": "2026-09-29T11:36:52.031241+08:00",
+  "model": "Qwen3-14B",
+  "source_syntax_valid": true,
+  "native_and_stage_gate_ast_unchanged": [
+    "latest_status",
+    "native_complete",
+    "ready",
+    "process_identity"
+  ],
+  "actual_current_readiness": {
+    "saved_score": false,
+    "frozen_fit_input": false,
+    "endpoints": false
+  },
+  "calibration_audit_verified": true,
+  "source_sha256_unchanged": {
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/qwen3_14b_full_holdout_saved_score_20260929_1135/audit.py": "b0c4ee79ce25b012c8e38eca4a270e9aadb9e5b48911318b855f70f774fdeecf",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/frozen_fit_input_qwen3_14b_20260929_1135/readback.py": "5bb528d5a8545691a94578d6b9c7eca6d60fd73014645e947e775c822f86aaff",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/qwen3_14b_full_e2e_score_integrity_20260929_1135/audit.py": "ecdcc9614e6fc0af2015635a2aaf2ebe4a0271f12dff4c02c812113baf06f330",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/wait_qwen3_14b_audits_20260929_1135.py": "9679c3e2c657f6f1734df62bbbda002679178c8f102326da1d6daa0aeaa17186",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/test_wait_qwen3_14b_audits_20260929_1135.py": "483c4ba09b493385f28f95783de615c46030be49d705a022c7e9491efd13c44b",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/qwen25_14b_full_holdout_saved_score_20260929_0643/audit.py": "ea5b83b502b006afcc31e421ffa7a3fc003e32728435605e421fbc98526b527a",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/frozen_fit_input_qwen25_14b_20260929_0643/readback.py": "01b530495444ed436569b1c89778436809262defa34df95fbdc16c520b4654a1",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/qwen25_14b_full_e2e_score_integrity_20260929_0643/audit.py": "291851b02fd25f3d5cf20c629a6121760ecb1db3eb15496156ed0e2cc4ab2d00",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/wait_qwen25_14b_1m_audits_schemafix_20260929_1030.py": "f3d098ee2bc376fb84b08ed83eb825fef330c98adbb481506da6d4e295400a06",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/qwen3_14b_completed_calibration_20260929_1124/results/manifest.json": "8e35c8f8a9571cd9d0f32d69be0c9c575a6c67320204bd1c5ce2396770ad1d22",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/qwen3_14b_completed_calibration_20260929_1124/execution.command.json": "f32b807f8f09f9a69c1ec93fec2c7befd017a775e4c49c3cecbc359aecb54d66",
+    "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen3-14B/calibration/training/Qwen3-14B_hgbmono_p50.pkl": "79524eef95bf8adeb4d0ea8cd7b185130fedcd0f76716f6b128f7dfba1dc5956"
+  },
+  "actual_audits_executed": false,
+  "scope": "Prepared CPU audits and readiness only; actual independent-test/scoring/replay results are still required.",
+  "validation_execution": {
+    "inline_source": "import ast,hashlib,importlib.util,json,os\nfrom datetime import datetime\nfrom pathlib import Path\nassert os.environ.get(\"CUDA_VISIBLE_DEVICES\")==\"\"\nroot=Path(\"test-results/pr33824_expanded_all13_predictors_20260928_1933\").resolve()\nv=root/\"verification\"\npaths=[\nv/\"qwen3_14b_full_holdout_saved_score_20260929_1135/audit.py\",\nv/\"frozen_fit_input_qwen3_14b_20260929_1135/readback.py\",\nv/\"qwen3_14b_full_e2e_score_integrity_20260929_1135/audit.py\",\nv/\"wait_qwen3_14b_audits_20260929_1135.py\",\nv/\"test_wait_qwen3_14b_audits_20260929_1135.py\",\nv/\"qwen25_14b_full_holdout_saved_score_20260929_0643/audit.py\",\nv/\"frozen_fit_input_qwen25_14b_20260929_0643/readback.py\",\nv/\"qwen25_14b_full_e2e_score_integrity_20260929_0643/audit.py\",\nv/\"wait_qwen25_14b_1m_audits_schemafix_20260929_1030.py\",\nv/\"qwen3_14b_completed_calibration_20260929_1124/results/manifest.json\",\nv/\"qwen3_14b_completed_calibration_20260929_1124/execution.command.json\",\nroot/\"models/Qwen3-14B/calibration/training/Qwen3-14B_hgbmono_p50.pkl\"]\nhashes={str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}\nfor path in paths[:9]:\n    if path.suffix==\".py\":compile(path.read_text(),str(path),\"exec\")\ndef functions(path):\n    return {n.name:ast.dump(n,include_attributes=False) for n in ast.parse(path.read_text()).body if isinstance(n,ast.FunctionDef)}\nold,new=functions(paths[8]),functions(paths[3])\nunchanged=[name for name in (\"latest_status\",\"native_complete\",\"ready\",\"process_identity\") if old[name]==new[name]]\nassert len(unchanged)==4\nspec=importlib.util.spec_from_file_location(\"qwen3_waiter_validation\",paths[3])\nmodule=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)\nassert module.MODEL==\"Qwen3-14B\"\nassert module.successful_audit(v/module.CALIBRATION)\ngates={stage:module.ready(root,stage) for stage,_,_ in module.STAGES}\nassert gates=={\"saved_score\":False,\"frozen_fit_input\":False,\"endpoints\":False}\ncal=json.loads(paths[9].read_text())\nassert (cal[\"training_requests\"],cal[\"timing_rows\"],cal[\"training_cases\"])==(800,9256,15)\nassert hashes[str(paths[-1])]==cal[\"p50_bundle_sha256\"]\nfor p,h in hashes.items():assert hashlib.sha256(Path(p).read_bytes()).hexdigest()==h\nprint(json.dumps({\"at\":datetime.now().astimezone().isoformat(),\"model\":\"Qwen3-14B\",\"source_syntax_valid\":True,\"native_and_stage_gate_ast_unchanged\":unchanged,\"actual_current_readiness\":gates,\"calibration_audit_verified\":True,\"source_sha256_unchanged\":hashes,\"actual_audits_executed\":False,\"scope\":\"Prepared CPU audits and readiness only; actual independent-test/scoring/replay results are still required.\"}))\n",
+    "source_submitted_via": "stdin",
+    "launch_command": "CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=1 PYTHONNOUSERSITE=1 PYTHONPATH=src nice -n 15 /home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python -",
+    "cwd": "/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator",
+    "tool_exit_code": 0
+  },
+  "focused_fixture_tests": {
+    "command": "CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=1 PYTHONNOUSERSITE=1 PYTHONPATH=src nice -n 15 /home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python -m pytest -q /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/test_wait_qwen3_14b_audits_20260929_1135.py",
+    "exit_code": 0,
+    "passed": 19,
+    "pytest_seconds": 1.92,
+    "scope": "Readiness/schema fixtures only, not native experiments, actual audit completion or full repository tests."
+  }
+}

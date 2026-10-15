@@ -1,0 +1,24 @@
+{
+  "scope": "Last held group first-case completion/manifest count only. Not full-group provenance, all1280 identity, predictor accuracy, or experiment completion.",
+  "inspection": {
+    "clock_sleep_ms": 20000,
+    "command": "date -Is; ps -p 1379762,2116929,2125407,2125892 -o pid,ppid,lstart,stat,etime; ps --ppid 2125365 -o pid,ppid,lstart,stat,etime,args; rg -n 'POST /start_profile|POST /stop_profile' test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Meta-Llama-3.1-70B-Instruct-AWQ/holdout/real/repeat-5/cases/latency_256x128_r1.server.log; rg -n 'Successful requests|Benchmark duration' test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Meta-Llama-3.1-70B-Instruct-AWQ/holdout/real/repeat-5/cases/latency_256x128_r1.benchmark.log; if test -f test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Meta-Llama-3.1-70B-Instruct-AWQ/holdout/real/repeat-5/cases/latency_256x128_r1/status.txt; then sed -n '1p' test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Meta-Llama-3.1-70B-Instruct-AWQ/holdout/real/repeat-5/cases/latency_256x128_r1/status.txt; fi",
+    "chunk_id": "55e53a",
+    "wall_time_seconds": 0.000021774,
+    "exit_code": 0,
+    "original_token_count": 338,
+    "output": "2026-09-29T17:43:26+08:00\n    PID    PPID                  STARTED STAT     ELAPSED\n1379762       1 Mon Sep 28 20:44:00 2026 S       20:59:26\n2116929       1 Tue Sep 29 17:07:20 2026 Ss         36:06\n    PID    PPID                  STARTED STAT     ELAPSED COMMAND\n2127708 2125365 Tue Sep 29 17:42:36 2026 Sl         00:50 /home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python -m sglang_simulator.baseline.launch_server --collection-output-dir /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Meta-Llama-3.1-70B-Instruct-AWQ/holdout/real/repeat-5/cases/service_1024x256_r4 --model-path /home/ms-admin/data/models/Meta-Llama-3.1-70B-Instruct-AWQ --host 127.0.0.1 --port 30227 --device cuda --tp-size 1 --context-length 2048 --mem-fraction-static 0.80 --max-running-requests 32 --chunked-prefill-size 512 --attention-backend triton --disable-cuda-graph --disable-overlap-schedule\n2128028 2125365 Tue Sep 29 17:43:25 2026 S          00:01 sleep 1\n57:[2026-09-29 17:41:50] INFO:     127.0.0.1:60084 - \"POST /start_profile HTTP/1.1\" 200 OK\n128:[2026-09-29 17:42:33] INFO:     127.0.0.1:43766 - \"POST /stop_profile HTTP/1.1\" 200 OK\n20:Successful requests:                     32        \n21:Benchmark duration (s):                  42.88     \nok\n"
+  },
+  "manifest": {
+    "command": "jq '{request_count,schedule_batch_count,batch_latency_unit,batch_timing}' test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Meta-Llama-3.1-70B-Instruct-AWQ/holdout/real/repeat-5/cases/latency_256x128_r1/TP0.manifest.json",
+    "chunk_id": "a0f0e4",
+    "wall_time_seconds": 0.000022721,
+    "exit_code": 0,
+    "original_token_count": 34,
+    "output": "{\n  \"request_count\": 32,\n  \"schedule_batch_count\": 456,\n  \"batch_latency_unit\": \"seconds\",\n  \"batch_timing\": \"device_synchronized\"\n}\n"
+  },
+  "closed_awq_requests": 1056,
+  "closed_awq_timings": 10591,
+  "full_held_groups_complete": 4,
+  "planned_held_groups": 5
+}

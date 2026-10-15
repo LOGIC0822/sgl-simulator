@@ -1,0 +1,57 @@
+{
+  "model": "Qwen2.5-14B-Instruct",
+  "bundle_path": "/mnt/data/sglang-pr33824-merged/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Qwen2.5-14B-Instruct/calibration/training/Qwen2.5-14B-Instruct_hgbmono_p50.pkl",
+  "bundle_sha256": "e018e42500f000028fa1e1af75969fcb0c15c2a9e824c8e8b2648147d163b12b",
+  "training_requests": 800,
+  "independent_test_requests": 1280,
+  "training_rows": 9073,
+  "independent_test_rows": 15701,
+  "heldout_predictions": "Recomputed with frozen bundle and exactly matched original per-batch scores",
+  "fit_invoked": false,
+  "fit_guard": "HistGradientBoostingRegressor.fit raises",
+  "completion_guard": "All ten native collection markers and forty case statuses, executed calibration/saved-score audits; no E2E completion required or claimed",
+  "auxiliary_execution_context": "Low-priority CPU readback while original CPU E2E replay remains live; not a new or isolated timing experiment",
+  "gpu_collection_invoked": false,
+  "new_e2e_replay_invoked": false,
+  "original_files_verified_unchanged": 182,
+  "metric_scope": "Three separate workload-equal macros: fit input, independent seen, independent unseen",
+  "interpretation": "Fit-input readback is not independent validation; differences are not a request-ID-only causal ablation",
+  "all_phase_macro": [
+    {
+      "model": "Qwen2.5-14B-Instruct",
+      "stage": "fit_input",
+      "phase": "all",
+      "workloads": "3",
+      "n": "9073",
+      "mean_actual_ms": "44.88122604184585",
+      "mean_predicted_ms": "43.743524945872046",
+      "mape_pct": "1.459398950696345",
+      "mape_change_from_fit_input_pp": "0.0",
+      "bundle_sha256": "e018e42500f000028fa1e1af75969fcb0c15c2a9e824c8e8b2648147d163b12b"
+    },
+    {
+      "model": "Qwen2.5-14B-Instruct",
+      "stage": "independent_seen",
+      "phase": "all",
+      "workloads": "3",
+      "n": "9144",
+      "mean_actual_ms": "45.57443320500776",
+      "mean_predicted_ms": "43.97198437017757",
+      "mape_pct": "4.4764000013179155",
+      "mape_change_from_fit_input_pp": "3.0170010506215705",
+      "bundle_sha256": "e018e42500f000028fa1e1af75969fcb0c15c2a9e824c8e8b2648147d163b12b"
+    },
+    {
+      "model": "Qwen2.5-14B-Instruct",
+      "stage": "independent_unseen",
+      "phase": "all",
+      "workloads": "2",
+      "n": "6557",
+      "mean_actual_ms": "43.44421657702944",
+      "mean_predicted_ms": "43.0424216994618",
+      "mape_pct": "2.2737263522099065",
+      "mape_change_from_fit_input_pp": "0.8143274015135615",
+      "bundle_sha256": "e018e42500f000028fa1e1af75969fcb0c15c2a9e824c8e8b2648147d163b12b"
+    }
+  ]
+}

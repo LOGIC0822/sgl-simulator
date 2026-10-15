@@ -1,0 +1,52 @@
+{
+  "inspected_at": "2026-09-29T07:58:46+08:00",
+  "scope": "Read-only inspection of actual local collector and native timing sources; no GPU experiment or measured cache-effect result.",
+  "aic_revision": "c5f139662be28b177ca9f62f83543bbf10f133a0",
+  "aic_source_sha256": {
+    "collector/helper.py": "22014255f499e19cc21e47aa7db616c752b07e77ba2697ce58bec8af9da7bc90",
+    "collector/sglang/collect_gemm.py": "0a82f3e03990d32e8b4f2d342a5448dad1cd2e630ca77a7925ba1dcc84ca6eda",
+    "collector/sglang/collect_attn.py": "8f320e7b48d49c4dfa46f5c61dea51320fa0a294de722f1a9ec4abf2747a17bb"
+  },
+  "source_ranges": {
+    "collector/helper.py": "benchmark_with_power, lines 178-385",
+    "collector/sglang/collect_gemm.py": "BF16 closure and budgeted op-list construction, lines 228-316",
+    "collector/sglang/collect_attn.py": "init_forward_metadata before run_iter, lines 590-654",
+    "src/sglang_simulator/baseline/collector.py": "wrapped_run_batch, lines 415-445"
+  },
+  "findings": {
+    "collector_default_cuda_graph": true,
+    "warmup_before_and_after_capture": true,
+    "gemm_matrix_groups": "1-6 independent closures, limited by a 45% device-total-memory budget, latency divided by actual op-list length",
+    "attention_inputs": "one layer's q/k/v and KV-pool references reused by captured run_iter",
+    "deliberate_cache_eviction_inside_timed_loop": false,
+    "native_measurement": "device sync, perf_counter, original Scheduler.run_batch, device sync; graph/overlap disabled in current native argv",
+    "caveat": "No measured cache-hit rate, per-family GPU comparison, or numerical allocation of error. No constant latency correction is justified."
+  },
+  "provenance": "provenance/aic_collector_timing_scope_verified_20260929_0758",
+  "comparison_against": "provenance/historical_request_identity_verified_20260929_0306",
+  "source_checks": {
+    "original_checksums": 176,
+    "experiment_sources_archived": 175,
+    "changed_only": [
+      "tools/sglang-simulator/test/test_append_expanded_report.py",
+      "tools/sglang-simulator/tools/append_pr33824_expanded_report.py"
+    ],
+    "aic_sources_unchanged": 385,
+    "imported_sdk_files_matched": 133,
+    "native_kernel_files_match_formal_start": 1
+  },
+  "focused_report_test": {
+    "cmd": "env PYTHONNOUSERSITE=1 CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 PYTHONPATH=src nice -n 15 /home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python -m pytest -q test/test_append_expanded_report.py --basetemp test-results/pr33824_expanded_all13_predictors_20260928_1933/verification/pytest_aic_collector_timing_scope_full_20260929_0759",
+    "started_at": "2026-09-28 23:58:37 UTC",
+    "result": {
+      "chunk_id": "55bb14",
+      "wall_time_seconds": 0.000026486,
+      "exit_code": 0,
+      "original_token_count": 42,
+      "output": "........................................................... [ 75%]\n.......................                                                  [100%]\n95 passed in 6.53s\n"
+    },
+    "finished_at": "2026-09-28 23:58:46 UTC"
+  },
+  "full_suite_claimed": false,
+  "formal_report_generated": false
+}

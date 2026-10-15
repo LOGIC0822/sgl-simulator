@@ -1,0 +1,13 @@
+Qwen3-0.6B: five complete independent real test groups; ML teacher-forced batches only.
+| workload | n | actual ms | ML predicted ms | MAPE % | MAE ms | P95 APE % |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| latency_256x128_r1 | 5451 | 24.9126 | 25.9353 | 7.2335 | 2.2192 | 16.2112 |
+| service_1024x256_r4 | 4067 | 26.0288 | 25.9718 | 6.1988 | 2.4145 | 14.6189 |
+| saturation_1024x256_inf | 2420 | 27.1669 | 25.7755 | 5.2525 | 2.8170 | 13.0521 |
+| latency_128x64_r1 | 3542 | 25.9870 | 25.9810 | 6.6583 | 2.3725 | 15.6249 |
+| saturation_1536x384_inf | 3600 | 26.6936 | 25.6644 | 4.8884 | 2.2471 | 12.8142 |
+seen workload macro MAPE=6.228265% (equal workload weights)
+unseen workload macro MAPE=5.773353% (equal workload weights)
+All row: {'group': 'all', 'value': 'all', 'n': '19080', 'mean_actual_ms': '25.971943749929046', 'mean_predicted_ms': '25.88017324688674', 'mae_ms': '2.370361080048013', 'rmse_ms': '19.482887853917532', 'mean_signed_error_pct': '3.0750720989229228', 'mape_pct': '6.212432616003264', 'median_ape_pct': '4.17904144388155', 'p95_ape_pct': '15.176957944253921'}
+The new short/long workloads do not show a higher aggregate batch MAPE in this one model; this does not establish the result for other models or end-to-end requests.
+Expanded AIC collection and all five ML E2E replays remain pending; no AIC accuracy is inferred.

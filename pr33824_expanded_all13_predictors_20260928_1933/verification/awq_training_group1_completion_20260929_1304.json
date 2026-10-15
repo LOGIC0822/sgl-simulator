@@ -1,0 +1,51 @@
+{
+  "observed_at_utc": "2026-09-29 05:04:50 UTC",
+  "scope": "Readonly completion/count observation, no fit or prediction/accuracy claim; original matrix not restarted.",
+  "inspection": [
+    {
+      "command": "date -Iseconds; sed -n '1,30p' models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/case_manifest.tsv; sed -n '1,3p' models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/BASELINE_COLLECTION_COMPLETE; sed -n '1,3p' models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/saturation_1024x256_inf/status.txt; sed -n '1,80p' models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/saturation_1024x256_inf/TP0.manifest.json; wc -l models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/saturation_1024x256_inf/TP0.raw_request.jsonl models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/saturation_1024x256_inf/TP0.request.jsonl models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/saturation_1024x256_inf/TP0.schedule_batch.jsonl; tail -n 3 status.tsv; ps --ppid 1379762 -o pid,ppid,lstart,stat,args",
+      "chunk_id": "f2cde3",
+      "wall_time_seconds": 0.000039559,
+      "exit_code": 0,
+      "original_token_count": 394,
+      "output": "2026-09-29T13:04:23+08:00\ncase\tprompts\tinput_len\toutput_len\trequest_rate\nlatency_256x128_r1\t32\t256\t128\t1\nservice_1024x256_r4\t64\t1024\t256\t4\nsaturation_1024x256_inf\t64\t1024\t256\tinf\ncomplete\nok\n{\n  \"schema_version\": 1,\n  \"rank_prefix\": \"TP0\",\n  \"request_count\": 64,\n  \"schedule_batch_count\": 461,\n  \"batch_latency_unit\": \"seconds\",\n  \"batch_timing\": \"device_synchronized\",\n  \"request_file\": \"TP0.request.jsonl\",\n  \"raw_request_file\": \"TP0.raw_request.jsonl\",\n  \"schedule_batch_file\": \"TP0.schedule_batch.jsonl\"\n}\n     64 models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/saturation_1024x256_inf/TP0.raw_request.jsonl\n     64 models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/saturation_1024x256_inf/TP0.request.jsonl\n    461 models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-1/cases/saturation_1024x256_inf/TP0.schedule_batch.jsonl\n    589 total\n2026-09-29T12:36:23+08:00\tMeta-Llama-3.1-70B-Instruct-AWQ\ttraining-repeat-1\tstarted\tcases=latency_256x128_r1,service_1024x256_r4,saturation_1024x256_inf seed=202609280 multiplier=2\n2026-09-29T13:04:10+08:00\tMeta-Llama-3.1-70B-Instruct-AWQ\ttraining-repeat-1\tcomplete\t\n2026-09-29T13:04:10+08:00\tMeta-Llama-3.1-70B-Instruct-AWQ\ttraining-repeat-2\tstarted\tcases=latency_256x128_r1,service_1024x256_r4,saturation_1024x256_inf seed=202609281 multiplier=2\n    PID    PPID                  STARTED STAT COMMAND\n1972282 1379762 Tue Sep 29 13:04:10 2026 S    bash /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/scripts/run_pr33824_data_tools_baseline.sh\n"
+    },
+    {
+      "command": "date -Iseconds; ps -p 1379749,1379762,1943014,1972282 -o pid,ppid,lstart,stat,args; ps --ppid 1972282 -o pid,ppid,lstart,stat,args",
+      "chunk_id": "1db409",
+      "wall_time_seconds": 0.000017704,
+      "exit_code": 0,
+      "original_token_count": 524,
+      "output": "2026-09-29T13:04:49+08:00\n    PID    PPID                  STARTED STAT COMMAND\n1379749 1142476 Mon Sep 28 20:43:59 2026 Ss   bash /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/scripts/run_pr33824_comprehensive_predictor_matrix.sh --resume --results-root /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933\n1379762 1379749 Mon Sep 28 20:44:00 2026 S    bash /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/scripts/run_pr33824_data_tools_same_distribution_matrix.sh --results-root /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933 --models Qwen3-0.6B,Qwen2.5-3B-Instruct,llama-2-7b,Mistral-7B-Instruct-v0.2,Qwen2.5-7B-Instruct,Qwen3-8B,Qwen2.5-14B-Instruct,Qwen2.5-14B-Instruct-1M,Qwen3-14B,Meta-Llama-3.1-70B-Instruct-AWQ,Qwen3-30B-A3B,Qwen3-30B-A3B-Instruct-2507,Qwen3-32B --train-repeats 5 --holdout-repeats 5 --prompt-multiplier 2 --resume\n1972282 1379762 Tue Sep 29 13:04:10 2026 S    bash /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/scripts/run_pr33824_data_tools_baseline.sh\n    PID    PPID                  STARTED STAT COMMAND\n1972360 1972282 Tue Sep 29 13:04:15 2026 Sl   /home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python -m sglang_simulator.baseline.launch_server --collection-output-dir /home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator/test-results/pr33824_expanded_all13_predictors_20260928_1933/models/Meta-Llama-3.1-70B-Instruct-AWQ/calibration/real/repeat-2/cases/latency_256x128_r1 --model-path /home/ms-admin/data/models/Meta-Llama-3.1-70B-Instruct-AWQ --host 127.0.0.1 --port 30227 --device cuda --tp-size 1 --context-length 2048 --mem-fraction-static 0.80 --max-running-requests 32 --chunked-prefill-size 512 --attention-backend triton --disable-cuda-graph --disable-overlap-schedule\n1972863 1972282 Tue Sep 29 13:04:49 2026 S    sleep 1\n"
+    }
+  ],
+  "conclusion": {
+    "model": "Meta-Llama-3.1-70B-Instruct-AWQ",
+    "completed_training_groups": 1,
+    "total_planned_training_groups": 5,
+    "completed_group_requests": 160,
+    "completed_group_timing_records": 1364,
+    "cases": [
+      {
+        "name": "latency_256x128_r1",
+        "requests": 32,
+        "timing_records": 442
+      },
+      {
+        "name": "service_1024x256_r4",
+        "requests": 64,
+        "timing_records": 461
+      },
+      {
+        "name": "saturation_1024x256_inf",
+        "requests": 64,
+        "timing_records": 461
+      }
+    ],
+    "original_group_completion_logged_at": "2026-09-29T13:04:10+08:00",
+    "original_next_group_parent": 1972282,
+    "original_next_group_seed": 202609281,
+    "completed_native_ml_models": 9,
+    "completed_joint_aic_models": 0
+  }
+}

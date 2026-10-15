@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/home/ms-admin/workspace1/.miniforge3/envs/hbf-cxl/bin/python",
+    "-c",
+    "\nimport csv,importlib.util,json\nfrom pathlib import Path\nroot=Path('test-results/pr33824_expanded_all13_predictors_20260928_1933')\nhelper=Path('tools/append_pr33824_expanded_report.py')\nspec=importlib.util.spec_from_file_location('historical_report_readback',helper)\nmodule=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)\nmodels=module.key_values(root/'run_metadata.txt')['models'].split(',')\nout=root/'verification/historical_identity_report_readback_20260929_0306';out.mkdir()\nlines=module.historical_request_identity_details(root,models,out)\nrows=module.read_csv(out/'historical_train_test_request_identity.csv')\nassert len(rows)==13\nassert sum(int(r['real_to_replay_ids_verified']) for r in rows)==8320\nassert all(float(r['heldout_prompt_overlap_pct'])==float(r['heldout_input_and_output_length_overlap_pct'])==0 for r in rows)\ntext='\\n'.join(lines);assert '\u5e76\u975e\u4e0a\u6e38\u811a\u672c\u6309 batch \u884c\u5212\u5206\u7684\u5185\u90e8\u9a8c\u8bc1' in text\n(out/'report_sections.md').write_text(text,encoding='utf-8')\nprint(json.dumps({'models':len(rows),'requests_verified':8320,'prompt_overlap':0,'report_fragment_only':True}))\n"
+  ],
+  "cwd": "/home/ms-admin/workspace1/yiheng/ali/sglang-pr33824-merged/tools/sglang-simulator",
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "PYTHONNOUSERSITE": "1",
+    "OMP_NUM_THREADS": "1",
+    "PYTHONPATH": null,
+    "PATH": "/home/ms-admin/.local/bin:/home/ms-admin/.codex/packages/app-server-daemon/releases/0.158.0-x86_64-unknown-linux-musl/codex-path:/home/ms-admin/.codex/tmp/arg0/codex-arg0e7Qo0p:/home/ms-admin/.codex/tmp/arg0/codex-arg004LQMF:/home/ms-admin/.codex/packages/standalone/releases/0.158.0-x86_64-unknown-linux-musl/codex-path:/home/ms-admin/.grok/bin:/home/ms-admin/.local/bin:/usr/local/cuda-12.2/bin:/home/ms-admin/.npm-global/bin:/home/ms-admin/miniconda3/bin:/usr/lib/jvm/java-11-openjdk-amd64/bin:/home/ms-admin/.grok/bin:/home/ms-admin/.local/bin:/usr/local/cuda-12.2/bin:/home/ms-admin/.npm-global/bin:/home/ms-admin/miniconda3/bin:/usr/lib/jvm/java-11-openjdk-amd64/bin:/home/ms-admin/.vscode-server/cli/servers/Stable-cd4ee3b1c348a13bafd8f9ad8060705f6d4b9cba/server/bin/remote-cli:/home/ms-admin/.local/bin:/home/ms-admin/.grok/bin:/home/ms-admin/.cargo/bin:/home/ms-admin/.local/bin:/usr/local/cuda-12.2/bin:/home/ms-admin/.npm-global/bin:/home/ms-admin/miniconda3/bin:/usr/lib/jvm/java-11-openjdk-amd64/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/ms-admin/sunshi/hadoop-3.3.6/bin:/home/ms-admin/sunshi/spark-3.1.1/bin:/usr/local/scala-2.11.8/bin:/home/ms-admin/sunshi/hadoop-3.3.6/bin:/home/ms-admin/sunshi/spark-3.1.1/bin:/usr/local/scala-2.11.8/bin:/home/ms-admin/sunshi/hadoop-3.3.6/bin:/home/ms-admin/sunshi/spark-3.1.1/bin:/usr/local/scala-2.11.8/bin"
+  },
+  "started_unix": 1790622345.1423037,
+  "finished_unix": 1790622346.0248334,
+  "exit_code": 0
+}
